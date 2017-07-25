@@ -33,6 +33,8 @@
 \hypersetup{urlcolor=black, colorlinks=true} % Colors hyperlinks in blue - change to black if annoying
 \title{\ttitle} % Defines the thesis title - don't touch this
 
+\usepackage{courier}
+\usepackage{listings}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{bezier}
 \usepackage{graphicx}
@@ -280,14 +282,13 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 % Include the chapters of the thesis as separate files from the Chapters folder
 % Uncomment the lines as you write the chapters
 
-%\input{Chapters/Chapter1}
-%\input{Chapters/Chapter2} 
-%\input{Chapters/Chapter3}
-%\input{Chapters/Chapter4} 
-%\input{Chapters/Chapter5} 
-%\input{Chapters/Chapter6} 
-%\input{Chapters/Chapter7}
-\input{Chapters/Chapter_ref}
+\input{Chapters/introduction}
+\input{Chapters/background} 
+\input{Chapters/approach}
+\input{Chapters/cfd}  
+\input{Chapters/noise_code} 
+\input{Chapters/results}
+\input{Chapters/conclusions}
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
