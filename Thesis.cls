@@ -194,7 +194,7 @@
 %	defined as \examname above so you cite it as \examname
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Aeroacoustic Optimisation of Turbofan Engine} % Your thesis title - this is used in the title and abstract
+\thesistitle{Noise analysis of NASA R67 axial compressor blade with use of CFD tools} % Your thesis title - this is used in the title and abstract
 %-------------------------------------------------  
 \supervisor{Prof. Michał \textsc{Ciałkowski}} % You supervisor's name - this is used in the title page
 %-------------------------------------------------   

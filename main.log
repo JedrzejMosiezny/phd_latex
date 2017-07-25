@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.1.15)  25 JUL 2017 19:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.1.15)  25 JUL 2017 21:05
 entering extended mode
 **./main.tex
 (main.tex
@@ -1206,7 +1206,7 @@ s/pp_logo2.jpg>]
  Declaration of Authorship
 ------------------------------------------------------------------------------
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 149--149
 
  []
 
@@ -1296,7 +1296,7 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ------------------------------------------------------------------------------
 [17] [18
 
-] (Chapters/Chapter1.tex
+] (Chapters/Chapter_ref.tex
 Chapter 1.
 ------------------------------------------------------------------------------
  1 Chapter Title Here
@@ -1335,22 +1335,22 @@ Appendix A.
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 320.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 323.
 [15
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 320.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 323.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 320.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 320.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 323.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 323.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: B96BEB177C650094A12E36609383D64E;5607.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 320.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 323.
  ) 
 Here is how much of TeX's memory you used:
  21673 strings out of 493634
- 351868 string characters out of 3141308
- 499057 words of memory out of 3000000
+ 351877 string characters out of 3141308
+ 499084 words of memory out of 3000000
  24646 multiletter control sequences out of 15000+200000
  37855 words of font info for 103 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
@@ -1386,7 +1386,7 @@ pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1200.pfb
 ><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/cm-super/sfti2074.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/cm-super/sftt1095.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/cm-super/sftt1440.pfb>
-Output written on main.pdf (33 pages, 692799 bytes).
+Output written on main.pdf (33 pages, 694986 bytes).
 PDF statistics:
  560 PDF objects out of 1000 (max. 8388607)
  83 named destinations out of 1000 (max. 500000)
