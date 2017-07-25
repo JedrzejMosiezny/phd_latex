@@ -13,7 +13,7 @@
 ### Chapter "Approach/Methodology"
 Describe workflow 
 
-### CFD and model validation
+### Chapter "CFD and model validation"
 #### Initial
 Describe meshing, mesh sizing 
 Describe initial CFD analysis, BCs, solvers etc
@@ -24,7 +24,7 @@ Describe full analysis
 Describe initial CFD analysis, BCs, solvers etc
 Justify pick
 
-### Simplified noise analysis of flowfield
+### Chapter "Simplified noise analysis of flowfield"
 Describe noise analysis code in near field. Justify simplifications, compare to baked in FF-W
 
 
