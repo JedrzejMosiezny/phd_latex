@@ -91,24 +91,29 @@
 \emph{Author:} \\
 {\authornames} % Author name - remove the \href bracket to remove the link
 \end{center}
-\end{minipage}
 
-\begin{minipage}{0.4\textwidth}
-\begin{flushright} \large
-%\emph{Author:} \\
+\begin{center} \large
 \emph{Supervisor:} \\
-\emph{1st Auxilary Supervisor:} \\
-\emph{2nd Auxilary Supervisor:} \\
-\end{flushright}
-\end{minipage}
-\begin{minipage}{0.4\textwidth}
-\begin{flushleft} \large
-%{\authornames} % Author name - remove the \href bracket to remove the link
-{\supname} \\ % Supervisor name - remove the \href bracket to remove the link 
-{\auxnameone} \\ % Supervisor name - remove the \href bracket to remove the link
-{\auxnametwo} \\ % Supervisor name - remove the \href bracket to remove the link
-\end{flushleft}
+{\supname} \\ % Author name - remove the \href bracket to remove the link
+\end{center}
 \end{minipage}\\[3cm]
+
+%\begin{minipage}{0.4\textwidth}
+%\begin{flushright} \large
+%\emph{Author:} \\
+%\emph{Supervisor:} \\
+%\emph{1st Auxilary Supervisor:} \\
+%\emph{2nd Auxilary Supervisor:} \\
+%\end{flushright}
+%\end{minipage}
+%\begin{minipage}{0.4\textwidth}
+%\begin{flushleft} \large
+%{\authornames} % Author name - remove the \href bracket to remove the link
+%{\supname} \\ % Supervisor name - remove the \href bracket to remove the link 
+%{\auxnameone} \\ % Supervisor name - remove the \href bracket to remove the link
+%{\auxnametwo} \\ % Supervisor name - remove the \href bracket to remove the link
+%\end{flushleft}
+%\end{minipage}\\[3cm]
 
  
 \large \textit{A thesis submitted in fulfilment of the requirements\\ for the degree of \sciencename}\\[0.3cm] % University requirement text
@@ -178,7 +183,12 @@ Date:\\
 
 \abstract{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
 
-The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+This thesis proposes a simplified method of assessing flow generated noise in transonic flows in any point of computational domain without use of Ffowcs-Williams Hawkings and other aeroacoustic analogies.
+
+First a steady state Reynolds Averaged Navier-Stokes analysis of NASA R67 transonic axial compressor is performed as a validation study of the mesh and numerical setup. The result of the steady state analysis is then used as an initialization for transient DDES analysis performed on high quality, 11 million cells mesh. The transient analysis cover 0.05s of flow time, which corresponds to c.a 800 revolutions of the rotor. Both steady state and transient simulations are performed on PL-Grid HPC infrastructure.
+
+Transient results are analyzed with in-house build script written in Python 3.6.x, with use of Dask, Pandas and Numpy libraries. Noise analysis script uses information about transient static pressure and transient particle velocity and vorticity gathered from CFD analysis to generate information on noise pressure levels, noise frequency, effective noise power. The advantage of the script is that the only limitation of therein are: the quality of the input data and computational power of workstation running the script 
+
 }
 
 \clearpage % Start a new page
@@ -191,7 +201,10 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 
 \acknowledgements{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
 
-The acknowledgements and the people to thank go here, don't forget to include your project advisor\ldots
+In this place I would like to thank the Chair of Thermal Engineering of Poznań University of Technology, with special recognition to MSc. Eng. Bartosz Ziegler and PhD Eng. Przemysław Grzymisławski for thorough scientific and personal support.
+
+I would also like to thank my beloved wife, Inez Mosiężna, for limitless patience and countless support during this project.
+
 }
 \clearpage % Start a new page
 
@@ -267,7 +280,7 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 
 \pagestyle{empty} % Page style needs to be empty for this page
 
-\dedicatory{For/Dedicated to/To my\ldots} % Dedication text
+\dedicatory{To my wife. For limitless patience\ldots} % Dedication text
 
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 
