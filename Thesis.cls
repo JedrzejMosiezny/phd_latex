@@ -196,7 +196,7 @@
 
 \thesistitle{Noise analysis of NASA R67 axial compressor blade with use of CFD tools} % Your thesis title - this is used in the title and abstract
 %-------------------------------------------------  
-\supervisor{Prof. Michał \textsc{Ciałkowski}} % You supervisor's name - this is used in the title page
+\supervisor{Prof. DSc. Eng. Michał \textsc{Ciałkowski}} % You supervisor's name - this is used in the title page
 %-------------------------------------------------   
 \examiner{} % Your examiner's name - this is not currently used anywhere in the template, cite it with \examname if you want it
 %------------------------------------------------- 

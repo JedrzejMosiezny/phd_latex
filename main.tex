@@ -183,12 +183,13 @@ Date:\\
 
 \abstract{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
 
-This thesis proposes a simplified method of assessing flow generated noise in transonic flows in any point of computational domain without use of Ffowcs-Williams Hawkings and other aeroacoustic analogies.
+This thesis proposes a method of assessing flow generated noise in transonic flows by direct formulation.
 
-First a steady state Reynolds Averaged Navier-Stokes analysis of NASA R67 transonic axial compressor is performed as a validation study of the mesh and numerical setup. The result of the steady state analysis is then used as an initialization for transient DDES analysis performed on high quality, 11 million cells mesh. The transient analysis cover 0.05s of flow time, which corresponds to c.a 800 revolutions of the rotor. Both steady state and transient simulations are performed on PL-Grid HPC infrastructure.
+First a steady state Reynolds Averaged Navier-Stokes analysis of NASA R67 transonic axial compressor is performed as a validation study of the mesh and numerical setup. The result of the steady state analysis is then used as an initialization for transient DDES analysis performed on high quality, 11 million cells hexagonal mesh. The transient analysis covers 0.05s of physical flow time, which corresponds to about 800 revolutions of the rotor. Both steady state and transient simulations are performed on PL-Grid HPC infrastructure.
 
-Transient results are analyzed with in-house build script written in Python 3.6.x, with use of Dask, Pandas and Numpy libraries. Noise analysis script uses information about transient static pressure and transient particle velocity and vorticity gathered from CFD analysis to generate information on noise pressure levels, noise frequency, effective noise power. The advantage of the script is that the only limitation of therein are: the quality of the input data and computational power of workstation running the script 
+Transient results are analyzed with an in-house build program. The program uses information about static pressure, transient particle velocity and vorticity from each timestep. This data is then postprocessed into sound pressure levels, sound frequency and effective sound power level.
 
+Information on generation of sound phenomena occurring in the blade passage are gathered from direct formulation and may be used as a validation case for FW-H or other computational aeroacoustic analogies dealing with flows in transonic regimes in rotating machinery. 
 }
 
 \clearpage % Start a new page
@@ -201,9 +202,9 @@ Transient results are analyzed with in-house build script written in Python 3.6.
 
 \acknowledgements{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
 
-In this place I would like to thank the Chair of Thermal Engineering of Poznań University of Technology, with special recognition to MSc. Eng. Bartosz Ziegler and PhD Eng. Przemysław Grzymisławski for thorough scientific and personal support.
+In this place I would like to thank the Chair of Thermal Engineering of Poznań University of Technology, with special recognition to MSc. Eng. Bartosz Ziegler and PhD Eng. Przemysław Grzymisławski for thorough scientific and personal support during this project.
 
-I would also like to thank my beloved wife, Inez Mosiężna, for limitless patience and countless support during this project.
+A big recognition goes to the owners and maintainers of the PLGRID - Polish HPC infrastructure, especially team in HPC Cyfronet center in AGH University of Science and Technology in Kraków. Being able to use the state of the art HPC clusters for analyses made this project possible.
 
 }
 \clearpage % Start a new page
@@ -234,7 +235,16 @@ I would also like to thank my beloved wife, Inez Mosiężna, for limitless patie
 \lhead{\emph{Abbreviations}} % Set the left side page header to "Abbreviations"
 \listofsymbols{ll} % Include a list of Abbreviations (a table of two columns)
 {
-\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
+\textbf{CAA} & \textbf{C}omputional \textbf{A}ero \textbf{A}coustics \\
+\textbf{CFD} & \textbf{C}omputional \textbf{F}luid \textbf{D}ynamics \\
+\textbf{DDES} & \textbf{D}elayed \textbf{D}etached \textbf{E}ddy \textbf{S}imulation \\
+\textbf{DES} & \textbf{D}etached \textbf{E}ddy \textbf{S}imulation \\
+\textbf{HPC} & \textbf{H}ight \textbf{P}ower \textbf{C}omputing \\
+\textbf{LES} & \textbf{L}arge \textbf{E}ddy \textbf{S}imulation \\
+\textbf{N-S} & \textbf{N}avier \textbf{S}tokes \\
+\textbf{SRS} & \textbf{S}cale \textbf{R}resolving \textbf{S}imulation \\
+
+%\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
 %\textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
 }
 
