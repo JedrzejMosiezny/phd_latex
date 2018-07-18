@@ -1,6 +1,6 @@
 % Chapter Template
 
-\chapter{Approach} % Main chapter title
+\chapter{Approach and direct formulation noise analysis} % Main chapter title
 
 \label{approach} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
@@ -10,28 +10,45 @@
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
-\section{Main Section 1}
+\section{Nasa R67 - zmienić tytuł}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.
+Direct noise formulation method as described in chapter \ref{background} is applied on a single blade of the test compressor. NASA R67 
 
 %-----------------------------------
 %	SUBSECTION 1
 %-----------------------------------
-\subsection{Subsection 1}
+%\subsection{Subsection 1}
 
-Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
+%Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
 
 %-----------------------------------
 %	SUBSECTION 2
 %-----------------------------------
 
-\subsection{Subsection 2}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+%\subsection{Subsection 2}
+%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
 
-\section{Main Section 2}
+\section{Research approach}
+%Wyjebać to zdalnie
+A following approach is used to obtain data describing sound propagation in the acoustic near-field. Each step is described in detail in further chapters of this work
 
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
+First a simplified CFD project is performed. A number of simplified cases is run. The simplified case is a steady state, density based, RANS (k-omega SST) on a coarse mesh with cell count under 500k elements. The goal of this simplified calculation is to get a stable numerical scheme that reaches convergence while delivering the results correlating with the experiment. Also a number of methods for efficient gathering of data are tested.  
+
+Based on the initial results, a number of calculations is performed in order to estimate proper mesh sizing, boundary layer thickness and time step. 
+
+A coarse mesh is refined to desired cell sizing. The cell count of a refined mesh is around 11.5 million. A steady state RANS case with numerical setup obtained from simplified project is performed. The reason for this case is to estimate the amount of postprocessing data to be generated.
+
+Once a converged steady state solution is reached and the results are validated, the setup is switched to a pressure based, SIMPLE algorithm, DDES (LES and k-omega SST) calculation.   This setup is then computed for around 38 thousand timesteps. The reason for this intermittent calculation is to generate a flowfield that resembles random movement of turbulent boundary layer. This run is also used to test the data aquisition from the case.
+
+Finally, the transient setup is left to generate 50150 timesteps. Static pressure, velocity magnitude, temperature and density is exported from blade surfaces and conical design surfaces for each timestep and stored for further analysis
+
+As for postprocessing of the data, the files 
+
+
+\subsection{Geometry}
+First, a geometry of the single blade is created. Studies by NASA (tutaj referencja) provide a 
+
