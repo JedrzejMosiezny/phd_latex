@@ -1,30 +1,66 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Arnold et~al.(1998)Arnold, Wilson, and Boshier]{Reference3}
-A.~S. Arnold, J.~S. Wilson, and M.~G. Boshier.
-\newblock A simple extended-cavity diode laser.
-\newblock \emph{Review of Scientific Instruments}, 69\penalty0 (3):\penalty0
-  1236--1239, March 1998.
-\newblock URL \url{http://link.aip.org/link/?RSI/69/1236/1}.
+\bibitem[J.~E. Ffowcs~Williams(1969)]{FWH}
+D.~L.~Hawkings J.~E. Ffowcs~Williams.
+\newblock Sound generation by turbulence and surfaces in arbitrary motion.
+\newblock \emph{Philosophical Transactions of the Royal Society of London.
+  Series A, Mathematical and Physical Sciences}, 264\penalty0 (1151):\penalty0
+  321--342, May 1969.
+\newblock URL \url{http://www.jstor.org/stable/73790}.
 
-\bibitem[Wieman and Hollberg(1991)]{Reference2}
-Carl~E. Wieman and Leo Hollberg.
-\newblock Using diode lasers for atomic physics.
-\newblock \emph{Review of Scientific Instruments}, 62\penalty0 (1):\penalty0
-  1--20, January 1991.
-\newblock URL \url{http://link.aip.org/link/?RSI/62/1/1}.
+\bibitem[W.~S.~Cunnan and Urasek(1978)]{r67design}
+W.~Stevans W.~S.~Cunnan and D.~C. Urasek.
+\newblock Design and performance of a 427-meter-per-second-tip-speed two stage
+  fan having a 2.40 pressure ratio.
+\newblock \emph{NASA Technical Paper}, \penalty0 (TP-1314), October 1978.
 
-\bibitem[Hawthorn et~al.(2001)Hawthorn, Weber, and Scholten]{Reference1}
-C.~J. Hawthorn, K.~P. Weber, and R.~E. Scholten.
-\newblock Littrow configuration tunable external cavity diode laser with fixed
-  direction output beam.
-\newblock \emph{Review of Scientific Instruments}, 72\penalty0 (12):\penalty0
-  4477--4479, December 2001.
-\newblock URL \url{http://link.aip.org/link/?RSI/72/4477/1}.
+\bibitem[D.~C.~Urasek and Cunnan(1979)]{r67performance}
+W.~T.~Gorrel D.~C.~Urasek and W.~S. Cunnan.
+\newblock Performance of a two-stage fan having a low-aspect-ratio, first-stage
+  rotor blading.
+\newblock \emph{NASA Technical Paper}, \penalty0 (TP-1493), August 1979.
+
+\bibitem[A.~J.~Strazisar and Suder(1989)]{r67laser}
+M.~D.~Hathaway A.~J.~Strazisar, J. R.~Wood and Kenneth~L. Suder.
+\newblock Laser anemometer measurements in a transonic axial-flow fan rotor.
+\newblock \emph{NASA Technical Paper}, \penalty0 (TP-2897), November 1989.
+
+\bibitem[Lighthill(1952)]{Light1}
+M.~J. Lighthill.
+\newblock On sound generated aerodynamically i. general theory.
+\newblock \emph{Proceedings of the Royal Society. Series A, Mathematical,
+  Physical and Engineering Sciences}, 211\penalty0 (1107):\penalty0 564--587,
+  March 1952.
+\newblock URL
+  \url{http://rspa.royalsocietypublishing.org/content/211/1107/564}.
+
+\bibitem[Lighthill(1954)]{Light2}
+M.~J. Lighthill.
+\newblock On sound generated aerodynamically ii. turbulence as a source of
+  sound.
+\newblock \emph{Proceedings of the Royal Society. Series A, Mathematical,
+  Physical and Engineering Sciences}, 222\penalty0 (1148):\penalty0 1--32,
+  March 1954.
+\newblock URL \url{http://rspa.royalsocietypublishing.org/content/222/1148/1}.
+
+\bibitem[Curle(1955)]{curle}
+N.~Curle.
+\newblock The influence of solid boundaries upon aerodynamic sound.
+\newblock \emph{Proceedings of the Royal Society. Series A, Mathematical,
+  Physical and Engineering Sciences}, 231\penalty0 (1187):\penalty0 505--514,
+  September 1955.
+\newblock URL
+  \url{http://rspa.royalsocietypublishing.org/content/231/1187/505}.
+
+\bibitem[J.~E.~Crouse and Schwirian(1969)]{bladecompose}
+J.~S. David C.~Janetzke J.~E.~Crouse and R.~E. Schwirian.
+\newblock A computer program for composing blading from simulated circular-arc
+  elements on conical surfaces.
+\newblock \emph{NASA Technical Note}, \penalty0 (TN D-5437), September 1969.
 
 \end{thebibliography}

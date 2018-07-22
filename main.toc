@@ -22,37 +22,46 @@
 \contentsline {subsection}{\numberline {2.1.1}Subsection 1}{3}{subsection.26}
 \contentsline {subsection}{\numberline {2.1.2}Subsection 2}{3}{subsection.27}
 \contentsline {section}{\numberline {2.2}Main Section 2}{4}{section.28}
-\contentsline {chapter}{\numberline {3}Approach and direct formulation noise analysis}{5}{chapter.29}
-\contentsline {section}{\numberline {3.1}Nasa R67 - zmieni\IeC {\'c} tytu\IeC {\l }}{5}{section.30}
-\contentsline {section}{\numberline {3.2}Research approach}{5}{section.31}
-\contentsline {subsection}{\numberline {3.2.1}Geometry}{6}{subsection.32}
-\contentsline {chapter}{\numberline {4}Test case}{7}{chapter.33}
-\contentsline {section}{\numberline {4.1}NASA Rotor 67 description}{7}{section.34}
-\contentsline {subsection}{\numberline {4.1.1}Efficiency figures}{7}{subsection.35}
-\contentsline {subsection}{\numberline {4.1.2}Subsection 2}{7}{subsection.36}
-\contentsline {section}{\numberline {4.2}CFD}{8}{section.37}
-\contentsline {chapter}{\numberline {5}RANS Analysis}{9}{chapter.38}
-\contentsline {section}{\numberline {5.1}Main Section 1}{9}{section.39}
-\contentsline {subsection}{\numberline {5.1.1}Subsection 1}{9}{subsection.40}
-\contentsline {subsection}{\numberline {5.1.2}Subsection 2}{9}{subsection.41}
-\contentsline {section}{\numberline {5.2}Main Section 2}{10}{section.42}
-\contentsline {chapter}{\numberline {6}DDES Analysis}{11}{chapter.43}
-\contentsline {section}{\numberline {6.1}Main Section 1}{11}{section.44}
-\contentsline {subsection}{\numberline {6.1.1}Subsection 1}{11}{subsection.45}
-\contentsline {subsection}{\numberline {6.1.2}Subsection 2}{11}{subsection.46}
-\contentsline {section}{\numberline {6.2}Main Section 2}{12}{section.47}
-\contentsline {chapter}{\numberline {7}Results of flowfield noise analysis}{13}{chapter.48}
-\contentsline {section}{\numberline {7.1}Main Section 1}{13}{section.49}
-\contentsline {subsection}{\numberline {7.1.1}Subsection 1}{13}{subsection.50}
-\contentsline {subsection}{\numberline {7.1.2}Subsection 2}{13}{subsection.51}
-\contentsline {section}{\numberline {7.2}Main Section 2}{14}{section.52}
-\contentsline {chapter}{\numberline {8}Conclusions \& Further work}{15}{chapter.53}
-\contentsline {section}{\numberline {8.1}Main Section 1}{15}{section.54}
-\contentsline {subsection}{\numberline {8.1.1}Subsection 1}{15}{subsection.55}
-\contentsline {subsection}{\numberline {8.1.2}Subsection 2}{15}{subsection.56}
-\contentsline {section}{\numberline {8.2}Main Section 2}{16}{section.57}
+\contentsline {chapter}{\numberline {3}Approach and direct formulation of noise analysis}{5}{chapter.29}
+\contentsline {section}{\numberline {3.1}Basic conservation equations in CFD}{5}{section.30}
+\contentsline {subsection}{\numberline {3.1.1}Momentum equations}{5}{subsection.31}
+\contentsline {subsection}{\numberline {3.1.2}Continuity Equations}{5}{subsection.32}
+\contentsline {subsection}{\numberline {3.1.3}Energy equation}{6}{subsection.33}
+\contentsline {section}{\numberline {3.2}Resolving turbulence}{6}{section.34}
+\contentsline {subsection}{\numberline {3.2.1}RANS formulation of turbulent flow}{6}{subsection.35}
+\contentsline {subsection}{\numberline {3.2.2}DDES Formulation of turbulence}{6}{subsection.36}
+\contentsline {subsection}{\numberline {3.2.3}DDES Formulation of turbulence}{6}{subsection.37}
+\contentsline {chapter}{\numberline {4}Test case}{9}{chapter.38}
+\contentsline {section}{\numberline {4.1}NASA Rotor 67 transonic axial compressor}{9}{section.39}
+\contentsline {subsection}{\numberline {4.1.1}Efficiency figures}{10}{subsection.40}
+\contentsline {subsection}{\numberline {4.1.2}LDA Validation results}{10}{subsection.41}
+\contentsline {section}{\numberline {4.2}3D geometry preparation}{10}{section.42}
+\contentsline {section}{\numberline {4.3}Structural Mesh}{10}{section.43}
+\contentsline {section}{\numberline {4.4}Case preprocessing}{11}{section.44}
+\contentsline {subsection}{\numberline {4.4.1}Boundary conditions}{11}{subsection.45}
+\contentsline {subsection}{\numberline {4.4.2}Numerical scheme}{11}{subsection.46}
+\contentsline {chapter}{\numberline {5}RANS Analysis}{13}{chapter.47}
+\contentsline {section}{\numberline {5.1}Main Section 1}{13}{section.48}
+\contentsline {subsection}{\numberline {5.1.1}Subsection 1}{13}{subsection.49}
+\contentsline {subsection}{\numberline {5.1.2}Subsection 2}{13}{subsection.50}
+\contentsline {section}{\numberline {5.2}Main Section 2}{14}{section.51}
+\contentsline {chapter}{\numberline {6}DDES Analysis}{15}{chapter.52}
+\contentsline {section}{\numberline {6.1}Main Section 1}{15}{section.53}
+\contentsline {subsection}{\numberline {6.1.1}Subsection 1}{15}{subsection.54}
+\contentsline {subsection}{\numberline {6.1.2}Subsection 2}{15}{subsection.55}
+\contentsline {section}{\numberline {6.2}Main Section 2}{16}{section.56}
+\contentsline {chapter}{\numberline {7}Results of flow field noise analysis}{17}{chapter.57}
+\contentsline {section}{\numberline {7.1}Main Section 1}{17}{section.58}
+\contentsline {subsection}{\numberline {7.1.1}Subsection 1}{17}{subsection.59}
+\contentsline {subsection}{\numberline {7.1.2}Subsection 2}{17}{subsection.60}
+\contentsline {section}{\numberline {7.2}Main Section 2}{18}{section.61}
+\contentsline {chapter}{\numberline {8}Conclusions \& Further work}{19}{chapter.62}
+\contentsline {section}{\numberline {8.1}Main Section 1}{19}{section.63}
+\contentsline {subsection}{\numberline {8.1.1}Subsection 1}{19}{subsection.64}
+\contentsline {subsection}{\numberline {8.1.2}Subsection 2}{19}{subsection.65}
+\contentsline {section}{\numberline {8.2}Main Section 2}{20}{section.66}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Code for direct formulation of noise analysis}{17}{appendix.58}
-\contentsline {chapter}{\numberline {B}Code for discrete Fourier analysis}{19}{appendix.59}
+\contentsline {chapter}{\numberline {A}Code for direct formulation of noise analysis}{21}{appendix.67}
+\contentsline {chapter}{\numberline {B}Code for discrete Fourier analysis}{23}{appendix.68}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{21}{dummy.60}
+\contentsline {chapter}{Bibliography}{25}{dummy.69}
