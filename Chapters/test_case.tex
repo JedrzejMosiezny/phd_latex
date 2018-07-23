@@ -9,10 +9,9 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-
 \section{NASA Rotor 67 transonic axial compressor}
 
-The test specimen for given analysis is a NASA Rotor 67 transonic axial compressor. Originating as a first stage of two stage fan for evaluation of design procedures, validation of experimental facilities as well as meshing and CFD tools. Both stages were used in a multitude of studies for aerodynamics, geometry optimisation, noise analyses and structural analyses. Full design procedure can be found in references \cite{r67design} and \citep{r67performance}. The CFD analysis and further post processing of the pressure signals shall be performed on a single passage of a first stage rotor of the compressor. The setup for the  calculations (apart from the single passage constraint) is relevant do case described in \citep{r67laser}, which was the main source for geometry and flowfield data.
+The test specimen for given analysis is a NASA Rotor 67 (R67) transonic axial compressor. Originating as a first stage of two stage fan for evaluation of design procedures, validation of experimental facilities as well as meshing and CFD tools. Both stages were used in a multitude of studies for aerodynamics, geometry optimisation, noise analyses and structural analyses. Full design procedure can be found in references \cite{r67design} and \citep{r67performance}. The CFD analysis and further post processing of the pressure signals shall be performed on a single passage of a first stage rotor of the compressor. The setup for the  calculations (apart from the single passage constraint) is relevant do case described in \citep{r67laser}, which was the main source for geometry and flowfield data.
 
 Basic figures of the given rotor are, design pressure ratio of 1.63 at massflow of 33.25 kg/sec. The design rotational speed is 16 043 rpm, which yields a tip speed of 429 m/s and an inlet tip relative Mach number of 1.38. The rotor has 22 blades and an aspect ratio of 1.56 (based on average span/root axial chord). The inlet and exit tip diameters are 514 and 485 mm, respectively, and the inlet and exit hub/tip radius ratios are 0.375 and 0.478, respectively. A fillet radius of 1.78 mm is used at the airfoil-hub juncture. The square root of the mean square of the airfoil surface finish is 0.8 $\mu${}m or better, the airfoil surface tolerance is $\pm$ 0.04 mm, and the running tip clearance is approximately 1.0 mm \citep{r67laser}. Surface roughness and some of the geometrical features are omitted during the preparation of the geometry and CFD mesh for reasons described in sections \ref{3dgeom} and \ref{mesh}. 
 
@@ -20,31 +19,89 @@ Basic figures of the given rotor are, design pressure ratio of 1.63 at massflow 
 %	SUBSECTION
 %-----------------------------------
 \subsection{Efficiency figures}
-
-Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
+%Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
 
 %-----------------------------------
 %	SUBSECTION
 %-----------------------------------
 \subsection{LDA Validation results}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
 
 %----------------------------------------------------------------------------------------
-%	SECTION 2
+%	SECTION
 %----------------------------------------------------------------------------------------
 \section{3D geometry preparation} \label{3dgeom}
+Geometry was prepared in Ansys ICEM 14.5 meshing software. Creating the geometry directly in the meshing software reduces the risk of creating flaws in the geometry, due to file translations. Mesh is created in millimeters.
 
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
+The R67 blade coordinates for rotor and stator on both stages is given in references \citep{r67design} and \citep{r67performance} and provide the blade elements in a Multiple-Circular-Arc fashion. In such approach the design blade elements lie on conical surfaces which approximate the actual stream flow surfaces. A blade-element-layout method is developed which preserves the constant-angle change characteristic of the circular-arc profile. More specifically, the mean camber line and the suction and pressure surface lines of a blade element are lines with a constant rate of angle change with path distance on a specified conical surface \citep{bladecompose}. Although relatively comfortable for design purposes, such approach requires implementing a macro or script to desired CAD tool for creating the blade elements or transforming the MCA blade to Cartesian or cylindrical coordinates. Reference \citep{bladecompose} provides an extended definition of MCA blade description as well as Fortran code for generating blade cross-section and geometric properties of the blade. Source \citep{r67laser} provides a list of coordinates for 14 profiles of the 1st stage rotor blade suction and pressure side, as well as coordinates for hub and casing int the meridional plane. These coordinates were used to create the geometry of the single passage of the subject blade. Coordinates are also available in Appendix \ref{r67_coords_data} and project Github repository \citep{github}.
+
+Geometry alignment is presented on figure \ref{geom_gcs}. The coordinate system is a standard right-hand Cartesian CS. Rotation axis is set to Z-axis with flow in positive Z direction. The compressor rotation is set as in right-hand rule, the compressor rotates in clockwise direction when facing the blade leading edge. $Z = 0$ coordinate is defined by point number 1 on 1st blade design surface (see Appendix \ref{r67_coords_data} for details). 
+
+\begin{figure}
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/kitten-placeholder.jpg}
+\caption{Global coordinate system for geometry}
+\label{geom_gcs}
+\end{figure}
+
+Hub and casing flow path were created by importing formatted point data as a b-spline curve, followed by extrusion the curve to surface by rotating it by $\pm 60 \degree$. Blade surfaces cylindrical coordinates were transformed to Cartesian coordinates using simple trigonometric calculations and imported as set of splines. Suction and pressure surface of the blade were created by lofting the surface along the imported splines. Leading and trailing edge radii were created in a similar manner with use of edge radius and edge tangency points given in \citep{r67laser}. Tip gap of the blade was created by offsetting the casing surface by 1.016 mm in the normal direction towards the rotation axis and creating a section line between blade surfaces and the offset surface.
+
+Due to the estimated mesh cell count, only one blade passage is created, therefore a set of periodic surfaces must be defined. ICEM software is capable of creating a midline as an average of coordinates of two given lines. A midline was created for every design profile and was manually extended beyond the blade leading and trailing edge. Midlines were lofted to create a midsurface which was later on copied with rotation by $\pm 0.5 \cdot \frac{360 \degree}{22}$ to create two identical periodic surfaces.
+
+Aforementioned midlines were also rotated along Z-axis to create control surfaces for mesh stabilization and data acquisition down the process.
+
+Reference \citep{r67laser} provides coordinates of hub and casing for the full experiment, however only a rotating part of the experimental rotor setup will be used. Two surfaces normal to Z direction at coordinates Z = -13.74 and Z = 93.65 are placed as inlet and outlet boundary conditions. Geometry was finished by necessary extrusions, trimming and other finishing operations to ensure high quality surface for meshing. Usually, the geometry must be watertight  to ensure proper meshing process, however ICEM as patch-independent meshing software does not require that.
+
+Physical experiment test compressor has a 1.78 mm fillet at airfoil-hub juncture. This feature was omitted as it would unnecessarily complicate the meshing process and increase the cell count.
+
+Such approach allowed for creating a geometry for single blade passage with centered blade of 1st stage rotor of the test compressor (Fig \ref{geom_final}).
+
+\begin{figure}
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/kitten-placeholder.jpg}
+\caption{Final single passage geometry}
+\label{geom_final}
+\end{figure}
 
 %----------------------------------------------------------------------------------------
-%	SECTION 2
+%	SECTION
 %----------------------------------------------------------------------------------------
-\section{Structural Mesh} \label{mesh}
+\section{Meshing approach} \label{mesh}
+Following requisites are posed to the mesh for the discussed case:
+\begin{itemize}
+\item Possibly low number of elements fulfilling the mesh sizing requirements stated in chapter \ref{direct_approach},
+\item Mesh should be a fully structural mesh including the tip gap,
+\item The periodic boundary mesh must be identical/conforming for both boundaries,
+\item The mesh must have high quality metrics in terms of cell orthogonality and skew as defined by equations \ref{eq:ortho} \& \ref{eq:skew} respectively.  
+\end{itemize}
 
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
+
+\begin{equation} \label{eq:ortho}
+6^2 - 5 = 36-5 = 31
+\end{equation}
+
+
+\begin{equation} \label{eq:skew}
+6^2 - 5 = 36-5 = 31
+\end{equation}
+
+One of the initial mesh concepts was an unstructured mesh with triangular surface mesh extruded to prism boundary layer and mostly isotropic tetrahedra in the volume. This approach was quickly rejected for bad quality elements near the airfoil/hub junction and tip gap, as well as element count in range of 4.5 million cells for sizing relevant for RANS analysis. This approach was quickly dropped.
+
+A non-trivial topology with fully conforming periodic boundaries was introduced (fig \ref{cj_topo}). This topology fulfills all the prerequisites stated apart from possibility to mesh a structural tip gap. Such approach makes it impossible from topological standpoint to place a structural mesh in this area. A RANS sufficient mesh without tip gap area (blade was extended to the casing surface) was created. The cell count for this mesh is below 0.5 million cells with better skewness and orthogonal quality. This mesh was utilized for numerical setup and data acquisition testing as it was faster to converge.
+
+\begin{figure}
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/kitten-placeholder.jpg}
+\caption{Mesh topology with conforming periodic boundaries}
+\label{cj_topo}
+\end{figure}
+
+Final topology was a standard h-grid topology for airfoil meshing. Although it is impossible to create a conforming periodic interface with such mesh, it is possible to create a fully structured tip gap. 
+
+%Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
 
 %----------------------------------------------------------------------------------------
-%	SECTION 2
+%	SECTION
 %----------------------------------------------------------------------------------------
 \section{Case preprocessing} \label{casepre}
 

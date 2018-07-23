@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{9}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -30,6 +30,18 @@ M.~D.~Hathaway A.~J.~Strazisar, J. R.~Wood and Kenneth~L. Suder.
 \newblock Laser anemometer measurements in a transonic axial-flow fan rotor.
 \newblock \emph{NASA Technical Paper}, \penalty0 (TP-2897), November 1989.
 
+\bibitem[J.~E.~Crouse and Schwirian(1969)]{bladecompose}
+J.~S. David C.~Janetzke J.~E.~Crouse and R.~E. Schwirian.
+\newblock A computer program for composing blading from simulated circular-arc
+  elements on conical surfaces.
+\newblock \emph{NASA Technical Note}, \penalty0 (TN D-5437), September 1969.
+
+\bibitem[Mosiezny(2018)]{github}
+J.~Mosiezny.
+\newblock Github repository for nasa r67 input data and noise analysis.
+\newblock 2018.
+\newblock URL \url{https://github.com/JedrzejMosiezny/R67-data-analysis}.
+
 \bibitem[Lighthill(1952)]{Light1}
 M.~J. Lighthill.
 \newblock On sound generated aerodynamically i. general theory.
@@ -56,11 +68,5 @@ N.~Curle.
   September 1955.
 \newblock URL
   \url{http://rspa.royalsocietypublishing.org/content/231/1187/505}.
-
-\bibitem[J.~E.~Crouse and Schwirian(1969)]{bladecompose}
-J.~S. David C.~Janetzke J.~E.~Crouse and R.~E. Schwirian.
-\newblock A computer program for composing blading from simulated circular-arc
-  elements on conical surfaces.
-\newblock \emph{NASA Technical Note}, \penalty0 (TN D-5437), September 1969.
 
 \end{thebibliography}
