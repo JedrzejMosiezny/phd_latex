@@ -6,11 +6,11 @@
 \contentsline {chapter}{Acknowledgements}{iv}{dummy.3}
 \vspace {1em}
 \contentsline {chapter}{Contents}{v}{dummy.4}
-\contentsline {chapter}{List of Figures}{vii}{dummy.6}
-\contentsline {chapter}{List of Tables}{ix}{dummy.8}
-\contentsline {chapter}{Abbreviations}{xi}{dummy.10}
-\contentsline {chapter}{Physical Constants}{xiii}{dummy.13}
-\contentsline {chapter}{Symbols}{xv}{dummy.16}
+\contentsline {chapter}{List of Figures}{ix}{dummy.6}
+\contentsline {chapter}{List of Tables}{xi}{dummy.8}
+\contentsline {chapter}{Abbreviations}{xiii}{dummy.10}
+\contentsline {chapter}{Physical Constants}{xv}{dummy.13}
+\contentsline {chapter}{Symbols}{xvii}{dummy.16}
 \vspace {2em}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.19}
 \contentsline {section}{\numberline {1.1}Main Section 1}{1}{section.20}
@@ -32,38 +32,39 @@
 \contentsline {subsection}{\numberline {3.2.2}DDES Formulation of turbulence}{6}{subsection.36}
 \contentsline {subsection}{\numberline {3.2.3}DDES Formulation of turbulence}{6}{subsection.37}
 \contentsline {section}{\numberline {3.3}Direct formulation of noise signal}{7}{section.38}
-\contentsline {chapter}{\numberline {4}Test case}{9}{chapter.39}
-\contentsline {section}{\numberline {4.1}NASA Rotor 67 transonic axial compressor}{9}{section.40}
-\contentsline {subsection}{\numberline {4.1.1}Efficiency figures}{10}{subsection.41}
-\contentsline {subsection}{\numberline {4.1.2}LDA Validation results}{10}{subsection.42}
-\contentsline {section}{\numberline {4.2}3D geometry preparation}{10}{section.43}
-\contentsline {section}{\numberline {4.3}Meshing approach}{12}{section.46}
-\contentsline {section}{\numberline {4.4}Case preprocessing}{13}{section.50}
-\contentsline {subsection}{\numberline {4.4.1}Boundary conditions}{14}{subsection.51}
-\contentsline {subsection}{\numberline {4.4.2}Numerical scheme}{14}{subsection.52}
-\contentsline {chapter}{\numberline {5}RANS Analysis}{15}{chapter.53}
-\contentsline {section}{\numberline {5.1}Main Section 1}{15}{section.54}
-\contentsline {subsection}{\numberline {5.1.1}Subsection 1}{15}{subsection.55}
-\contentsline {subsection}{\numberline {5.1.2}Subsection 2}{15}{subsection.56}
-\contentsline {section}{\numberline {5.2}Main Section 2}{16}{section.57}
-\contentsline {chapter}{\numberline {6}DDES Analysis}{17}{chapter.58}
-\contentsline {section}{\numberline {6.1}Main Section 1}{17}{section.59}
-\contentsline {subsection}{\numberline {6.1.1}Subsection 1}{17}{subsection.60}
-\contentsline {subsection}{\numberline {6.1.2}Subsection 2}{17}{subsection.61}
-\contentsline {section}{\numberline {6.2}Main Section 2}{18}{section.62}
-\contentsline {chapter}{\numberline {7}Results of flow field noise analysis}{19}{chapter.63}
-\contentsline {section}{\numberline {7.1}Main Section 1}{19}{section.64}
-\contentsline {subsection}{\numberline {7.1.1}Subsection 1}{19}{subsection.65}
-\contentsline {subsection}{\numberline {7.1.2}Subsection 2}{19}{subsection.66}
-\contentsline {section}{\numberline {7.2}Main Section 2}{20}{section.67}
-\contentsline {chapter}{\numberline {8}Conclusions \& Further work}{21}{chapter.68}
-\contentsline {section}{\numberline {8.1}Main Section 1}{21}{section.69}
-\contentsline {subsection}{\numberline {8.1.1}Subsection 1}{21}{subsection.70}
-\contentsline {subsection}{\numberline {8.1.2}Subsection 2}{21}{subsection.71}
-\contentsline {section}{\numberline {8.2}Main Section 2}{22}{section.72}
+\contentsline {subsection}{\numberline {3.3.1}Mesh size requirements}{7}{subsection.39}
+\contentsline {chapter}{\numberline {4}Test case}{9}{chapter.40}
+\contentsline {section}{\numberline {4.1}NASA Rotor 67 transonic axial compressor}{9}{section.41}
+\contentsline {subsection}{\numberline {4.1.1}Efficiency figures}{10}{subsection.42}
+\contentsline {subsection}{\numberline {4.1.2}LDA Validation results}{10}{subsection.43}
+\contentsline {section}{\numberline {4.2}3D geometry preparation}{10}{section.44}
+\contentsline {section}{\numberline {4.3}Meshing approach}{12}{section.47}
+\contentsline {section}{\numberline {4.4}Case preprocessing}{15}{section.57}
+\contentsline {subsection}{\numberline {4.4.1}Boundary conditions}{16}{subsection.58}
+\contentsline {subsection}{\numberline {4.4.2}Numerical scheme}{16}{subsection.59}
+\contentsline {chapter}{\numberline {5}RANS Analysis}{17}{chapter.60}
+\contentsline {section}{\numberline {5.1}Main Section 1}{17}{section.61}
+\contentsline {subsection}{\numberline {5.1.1}Subsection 1}{17}{subsection.62}
+\contentsline {subsection}{\numberline {5.1.2}Subsection 2}{17}{subsection.63}
+\contentsline {section}{\numberline {5.2}Main Section 2}{18}{section.64}
+\contentsline {chapter}{\numberline {6}DDES Analysis}{19}{chapter.65}
+\contentsline {section}{\numberline {6.1}Main Section 1}{19}{section.66}
+\contentsline {subsection}{\numberline {6.1.1}Subsection 1}{19}{subsection.67}
+\contentsline {subsection}{\numberline {6.1.2}Subsection 2}{19}{subsection.68}
+\contentsline {section}{\numberline {6.2}Main Section 2}{20}{section.69}
+\contentsline {chapter}{\numberline {7}Results of flow field noise analysis}{21}{chapter.70}
+\contentsline {section}{\numberline {7.1}Main Section 1}{21}{section.71}
+\contentsline {subsection}{\numberline {7.1.1}Subsection 1}{21}{subsection.72}
+\contentsline {subsection}{\numberline {7.1.2}Subsection 2}{21}{subsection.73}
+\contentsline {section}{\numberline {7.2}Main Section 2}{22}{section.74}
+\contentsline {chapter}{\numberline {8}Conclusions \& Further work}{23}{chapter.75}
+\contentsline {section}{\numberline {8.1}Main Section 1}{23}{section.76}
+\contentsline {subsection}{\numberline {8.1.1}Subsection 1}{23}{subsection.77}
+\contentsline {subsection}{\numberline {8.1.2}Subsection 2}{23}{subsection.78}
+\contentsline {section}{\numberline {8.2}Main Section 2}{24}{section.79}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Code for direct formulation of noise analysis}{23}{appendix.73}
-\contentsline {chapter}{\numberline {B}Code for discrete Fourier analysis}{25}{appendix.74}
-\contentsline {chapter}{\numberline {C}Blade design surface coordinates}{27}{appendix.75}
+\contentsline {chapter}{\numberline {A}Code for direct formulation of noise analysis}{25}{appendix.80}
+\contentsline {chapter}{\numberline {B}Code for discrete Fourier analysis}{27}{appendix.81}
+\contentsline {chapter}{\numberline {C}Blade design surface coordinates}{29}{appendix.82}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{29}{dummy.76}
+\contentsline {chapter}{Bibliography}{31}{dummy.83}
