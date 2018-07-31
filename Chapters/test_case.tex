@@ -147,20 +147,67 @@ Figures \ref{mesh-ortho}, \ref{mesh-skew} and \ref{mesh-aspect} provide overview
 %----------------------------------------------------------------------------------------
 \section{Case preprocessing} \label{casepre}
 
-CFD analyses for generating raw pressure field data are performed in ANSYS Fluent 17.2 software on Prometheus HPC cluster located in Kraków. Access for this infrastructure was granted by PLGrid infrastructure.
+CFD analyses for generating raw pressure field data are performed in ANSYS Fluent 17.2 software on Prometheus HPC cluster located in Kraków. Access for this infrastructure was granted by PLGrid infrastructure. Calculations were run on 5 nodes of 24CPU cores and 128GB RAM each \citep{prometheus}, which resulted in decomposition to 120 cores, resulting in allocating around 110 thousand cells to a single HPC core.
 
-A number of analyses was performed solely to obtain the optimal number of cores for parallel computing. A general rule for parallel distributed computing is to assign from 50 to 200 thousand mesh cells for a single HPC core
+Following is the numerical setup for all of the performed analyses. The setup corresponds to "peak efficiency conditions" of the experimental compressor.
 
-%Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
+
+%-----------------------------------
+%	SUBSECTION
+%-----------------------------------
+\subsection{General settings and material properties} \label{casegen}
+
+Analysis was resolved using implicit density based solver. The theory behind the solver is described in chapter \ref{approach}. Material used in the anaysis resembles standard air modeled as ideal gas as in equation with following properties described in table \ref{tab:stdair} 
+
+\begin{table}[htb!]
+\centering
+\caption{Standard air properties} \label{tab:stdair}
+\begin{tabular}{ r r l }
+$C_p$ & 1006.43 & $\frac{J}{kg \cdot K}$ \\
+$\lambda$ & 0.0242 & $\frac{W}{m \cdot K}$ \\
+$\mu$ & 1.7894e-05 & $\frac{kg}{m \cdot s}$ \\
+$M$ & 28.966 & $\frac{kg}{kmol}$ \\
+\end{tabular}
+\end{table}
+
+\begin{equation} \label{eq:stadair}
+p V = n R T
+\end{equation}
+
+Analysis operating pressure is set to 0 Pascal, which is a standard practice in compressible flow CFD.
+
+Fluid zone is set as "frozen rotor" - rotating reference frame. Although no mesh motion is implied, the effect of Coriolis accelerations and centrifugal acceleration will be taken into account by adding respective acceleration components to momentum equations as described in chapter \ref{approach}. The rotational velocity is set to 1680 rad/s.
 
 %-----------------------------------
 %	SUBSECTION
 %-----------------------------------
 \subsection{Boundary conditions} \label{casebc}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+Following boundary conditions were applied to the mesh boundaries. Following setup is again typical for compressible flow CFD.
+
+\begin{table}[htb!]
+\centering
+\caption{Test case boundary conditions} \label{tab:testbcs}
+\begin{tabular}{ l | l | l | r }
+\textbf{boundary} & \textbf{condition type} & \textbf{value} & \\ \hline
+Inlet & Pressure Inlet & 101350  & Pa\\ \hline
+Outlet & Pressure Outlet & 10200 & Pa \\ \hline
+Hub & Movig wall & 1680 & rad/s\\ \hline
+Blade & Moving wall & 1680 & rad/s \\ \hline
+Casing & Stationary wall & - & - \\ \hline
+Internal profiles & Internal & - \\ \hline
+Periodic boundaries & Interface & - \\ \hline 
+\end{tabular}
+\end{table}
+
+Moving wall boundaries represent the rotational velocity of the compressor blade and are necessary for stationary reference frame formulation. Boundary condition setup has no differences to usual setups of analyses of such kind.
 
 %-----------------------------------
 %	SUBSECTION
 %-----------------------------------
 \subsection{Numerical scheme}
 Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+\section{Data acquisition} \label{casedata}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -41,6 +41,11 @@ J.~Mosiezny.
 \newblock Github repository for nasa r67 input data and noise analysis.
 \newblock 2018.
 \newblock URL \url{https://github.com/JedrzejMosiezny/R67-data-analysis}.
+
+\bibitem[pro(2018)]{prometheus}
+Prometheus computation resources.
+\newblock 2018.
+\newblock URL \url{https://kdm.cyfronet.pl/portal/Prometheus}.
 
 \bibitem[Lighthill(1952)]{Light1}
 M.~J. Lighthill.

@@ -6,4 +6,6 @@ Warning--there's a number but no volume in r67performance
 Warning--there's a number but no volume in r67laser
 Warning--there's a number but no volume in bladecompose
 Warning--empty journal in github
-(There were 5 warnings)
+Warning--empty author in prometheus
+Warning--empty journal in prometheus
+(There were 7 warnings)

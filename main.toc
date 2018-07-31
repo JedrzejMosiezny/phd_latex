@@ -15,7 +15,7 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.19}
 \contentsline {section}{\numberline {1.1}Main Section 1}{1}{section.20}
 \contentsline {subsection}{\numberline {1.1.1}Subsection 1}{1}{subsection.21}
-\contentsline {subsection}{\numberline {1.1.2}Subsection 2}{2}{subsection.22}
+\contentsline {subsection}{\numberline {1.1.2}Subsection 2}{1}{subsection.22}
 \contentsline {section}{\numberline {1.2}Main Section 2}{2}{section.23}
 \contentsline {chapter}{\numberline {2}Current research on Computational Aeroacoustics}{3}{chapter.24}
 \contentsline {section}{\numberline {2.1}Main Section 1}{3}{section.25}
@@ -26,7 +26,7 @@
 \contentsline {section}{\numberline {3.1}Basic conservation equations in CFD}{5}{section.30}
 \contentsline {subsection}{\numberline {3.1.1}Momentum equations}{5}{subsection.31}
 \contentsline {subsection}{\numberline {3.1.2}Continuity Equations}{5}{subsection.32}
-\contentsline {subsection}{\numberline {3.1.3}Energy equation}{6}{subsection.33}
+\contentsline {subsection}{\numberline {3.1.3}Energy equation}{5}{subsection.33}
 \contentsline {section}{\numberline {3.2}Resolving turbulence}{6}{section.34}
 \contentsline {subsection}{\numberline {3.2.1}RANS formulation of turbulent flow}{6}{subsection.35}
 \contentsline {subsection}{\numberline {3.2.2}DDES Formulation of turbulence}{6}{subsection.36}
@@ -40,31 +40,33 @@
 \contentsline {section}{\numberline {4.2}3D geometry preparation}{10}{section.44}
 \contentsline {section}{\numberline {4.3}Meshing approach}{12}{section.47}
 \contentsline {section}{\numberline {4.4}Case preprocessing}{15}{section.57}
-\contentsline {subsection}{\numberline {4.4.1}Boundary conditions}{16}{subsection.58}
-\contentsline {subsection}{\numberline {4.4.2}Numerical scheme}{16}{subsection.59}
-\contentsline {chapter}{\numberline {5}RANS Analysis}{17}{chapter.60}
-\contentsline {section}{\numberline {5.1}Main Section 1}{17}{section.61}
-\contentsline {subsection}{\numberline {5.1.1}Subsection 1}{17}{subsection.62}
-\contentsline {subsection}{\numberline {5.1.2}Subsection 2}{17}{subsection.63}
-\contentsline {section}{\numberline {5.2}Main Section 2}{18}{section.64}
-\contentsline {chapter}{\numberline {6}DDES Analysis}{19}{chapter.65}
-\contentsline {section}{\numberline {6.1}Main Section 1}{19}{section.66}
-\contentsline {subsection}{\numberline {6.1.1}Subsection 1}{19}{subsection.67}
-\contentsline {subsection}{\numberline {6.1.2}Subsection 2}{19}{subsection.68}
-\contentsline {section}{\numberline {6.2}Main Section 2}{20}{section.69}
-\contentsline {chapter}{\numberline {7}Results of flow field noise analysis}{21}{chapter.70}
-\contentsline {section}{\numberline {7.1}Main Section 1}{21}{section.71}
-\contentsline {subsection}{\numberline {7.1.1}Subsection 1}{21}{subsection.72}
-\contentsline {subsection}{\numberline {7.1.2}Subsection 2}{21}{subsection.73}
-\contentsline {section}{\numberline {7.2}Main Section 2}{22}{section.74}
-\contentsline {chapter}{\numberline {8}Conclusions \& Further work}{23}{chapter.75}
-\contentsline {section}{\numberline {8.1}Main Section 1}{23}{section.76}
-\contentsline {subsection}{\numberline {8.1.1}Subsection 1}{23}{subsection.77}
-\contentsline {subsection}{\numberline {8.1.2}Subsection 2}{23}{subsection.78}
-\contentsline {section}{\numberline {8.2}Main Section 2}{24}{section.79}
+\contentsline {subsection}{\numberline {4.4.1}General settings and material properties}{16}{subsection.58}
+\contentsline {subsection}{\numberline {4.4.2}Boundary conditions}{16}{subsection.61}
+\contentsline {subsection}{\numberline {4.4.3}Numerical scheme}{17}{subsection.63}
+\contentsline {section}{\numberline {4.5}Data acquisition}{17}{section.64}
+\contentsline {chapter}{\numberline {5}RANS Analysis}{19}{chapter.65}
+\contentsline {section}{\numberline {5.1}Main Section 1}{19}{section.66}
+\contentsline {subsection}{\numberline {5.1.1}Subsection 1}{19}{subsection.67}
+\contentsline {subsection}{\numberline {5.1.2}Subsection 2}{19}{subsection.68}
+\contentsline {section}{\numberline {5.2}Main Section 2}{20}{section.69}
+\contentsline {chapter}{\numberline {6}DDES Analysis}{21}{chapter.70}
+\contentsline {section}{\numberline {6.1}Main Section 1}{21}{section.71}
+\contentsline {subsection}{\numberline {6.1.1}Subsection 1}{21}{subsection.72}
+\contentsline {subsection}{\numberline {6.1.2}Subsection 2}{21}{subsection.73}
+\contentsline {section}{\numberline {6.2}Main Section 2}{22}{section.74}
+\contentsline {chapter}{\numberline {7}Results of flow field noise analysis}{23}{chapter.75}
+\contentsline {section}{\numberline {7.1}Main Section 1}{23}{section.76}
+\contentsline {subsection}{\numberline {7.1.1}Subsection 1}{23}{subsection.77}
+\contentsline {subsection}{\numberline {7.1.2}Subsection 2}{23}{subsection.78}
+\contentsline {section}{\numberline {7.2}Main Section 2}{24}{section.79}
+\contentsline {chapter}{\numberline {8}Conclusions \& Further work}{25}{chapter.80}
+\contentsline {section}{\numberline {8.1}Main Section 1}{25}{section.81}
+\contentsline {subsection}{\numberline {8.1.1}Subsection 1}{25}{subsection.82}
+\contentsline {subsection}{\numberline {8.1.2}Subsection 2}{25}{subsection.83}
+\contentsline {section}{\numberline {8.2}Main Section 2}{26}{section.84}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Code for direct formulation of noise analysis}{25}{appendix.80}
-\contentsline {chapter}{\numberline {B}Code for discrete Fourier analysis}{27}{appendix.81}
-\contentsline {chapter}{\numberline {C}Blade design surface coordinates}{29}{appendix.82}
+\contentsline {chapter}{\numberline {A}Code for direct formulation of noise analysis}{27}{appendix.85}
+\contentsline {chapter}{\numberline {B}Code for discrete Fourier analysis}{29}{appendix.86}
+\contentsline {chapter}{\numberline {C}Blade design surface coordinates}{31}{appendix.87}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{31}{dummy.83}
+\contentsline {chapter}{Bibliography}{33}{dummy.88}

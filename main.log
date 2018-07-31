@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.3.25)  29 JUL 2018 14:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.3.25)  31 JUL 2018 22:33
 entering extended mode
 **./main.tex
 (main.tex
@@ -1058,7 +1058,25 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
  *** Patch file not loaded.
 ***
 
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\courier.sty"
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\bezier.sty")
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
+\epsfxsize=\dimen193
+\epsfysize=\dimen194
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\latexsym.sty"
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
@@ -1101,7 +1119,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen193
+\@linkdim=\dimen195
 \Hy@linkcounter=\count276
 \Hy@pagecounter=\count277
 
@@ -1143,10 +1161,10 @@ Package hyperref Info: Bookmarks ON on input line 4751.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5104.
-\XeTeXLinkMargin=\dimen194
+\XeTeXLinkMargin=\dimen196
 \Fld@menulength=\count280
-\Field@Width=\dimen195
-\Fld@charsize=\dimen196
+\Field@Width=\dimen197
+\Fld@charsize=\dimen198
 Package hyperref Info: Hyper figures OFF on input line 6358.
 Package hyperref Info: Link nesting OFF on input line 6363.
 Package hyperref Info: Hyper index ON on input line 6366.
@@ -1184,7 +1202,7 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTpre=\skip74
 \LTpost=\skip75
 \LTchunksize=\count287
-\LTcapwidth=\dimen197
+\LTcapwidth=\dimen199
 \LT@head=\box49
 \LT@firsthead=\box50
 \LT@foot=\box51
@@ -1203,50 +1221,32 @@ LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count292
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 33.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\courier.sty"
-Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\bezier.sty")
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
-Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
-\epsfxsize=\dimen198
-\epsfysize=\dimen199
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\latexsym.sty"
-Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
-\symlasy=\mathgroup6
-LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
-(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
-Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
-) (main.aux)
+ (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 58.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -1274,15 +1274,15 @@ Package caption Info: End \AtBeginDocument code.
 )
 \symgns@font=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 54.
-Package gensymb Info: Math companion symbols declared on input line 54.
-LaTeX Info: Redefining \degree on input line 54.
-LaTeX Info: Redefining \celsius on input line 54.
+(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 58.
+Package gensymb Info: Math companion symbols declared on input line 58.
+LaTeX Info: Redefining \degree on input line 58.
+LaTeX Info: Redefining \celsius on input line 58.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 54.
-LaTeX Info: Redefining \ohm on input line 54.
-Package gensymb Info: Using \textohm for \ohm on input line 54.
-Package gensymb Info: Using \textmu for \micro on input line 54.
+erthousand on input line 58.
+LaTeX Info: Redefining \ohm on input line 58.
+Package gensymb Info: Using \textohm for \ohm on input line 58.
+Package gensymb Info: Using \textmu for \micro on input line 58.
 \c@lstlisting=\count299
 \AtBeginShipoutBox=\box54
  ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
@@ -1294,7 +1294,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-Package hyperref Info: Link coloring ON on input line 54.
+Package hyperref Info: Link coloring ON on input line 58.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1304,28 +1304,28 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count300
 )
-LaTeX Info: Redefining \ref on input line 54.
-LaTeX Info: Redefining \pageref on input line 54.
-LaTeX Info: Redefining \nameref on input line 54.
+LaTeX Info: Redefining \ref on input line 58.
+LaTeX Info: Redefining \pageref on input line 58.
+LaTeX Info: Redefining \nameref on input line 58.
 
 (main.out) (main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-<Pictures/pp_logo2.jpg, id=255, 142.3719pt x 142.3719pt>
+<Pictures/pp_logo2.jpg, id=263, 142.3719pt x 142.3719pt>
 File: Pictures/pp_logo2.jpg Graphic file (type jpg)
 <use Pictures/pp_logo2.jpg>
-Package pdftex.def Info: Pictures/pp_logo2.jpg  used on input line 83.
+Package pdftex.def Info: Pictures/pp_logo2.jpg  used on input line 87.
 (pdftex.def)             Requested size: 71.18576pt x 71.18576pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 102.
+LaTeX Font Info:    Try loading font information for U+msa on input line 106.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 102.
+LaTeX Font Info:    Try loading font information for U+msb on input line 106.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 102.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 106.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -1339,7 +1339,7 @@ res/pp_logo2.jpg>]
  Declaration of Authorship
 ------------------------------------------------------------------------------
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--159
+Underfull \hbox (badness 10000) in paragraph at lines 163--163
 
  []
 
@@ -1455,7 +1455,7 @@ Chapter 4.
  4 Test case
 ------------------------------------------------------------------------------
 [9]
-<Pictures/kitten-placeholder.jpg, id=507, 1284.8pt x 722.7pt>
+<Pictures/kitten-placeholder.jpg, id=521, 1284.8pt x 722.7pt>
 File: Pictures/kitten-placeholder.jpg Graphic file (type jpg)
 <use Pictures/kitten-placeholder.jpg>
 Package pdftex.def Info: Pictures/kitten-placeholder.jpg  used on input line 42
@@ -1470,81 +1470,81 @@ Package pdftex.def Info: Pictures/kitten-placeholder.jpg  used on input line 61
  [11 <./Pictures/kitten-placeholder.jpg>] [12]
 File: Pictures/kitten-placeholder.jpg Graphic file (type jpg)
 <use Pictures/kitten-placeholder.jpg>
-Package pdftex.def Info: Pictures/kitten-placeholder.jpg  used on input line 98
+Package pdftex.def Info: Pictures/kitten-placeholder.jpg  used on input line 99
 .
 (pdftex.def)             Requested size: 354.85464pt x 199.59773pt.
 File: Pictures/kitten-placeholder.jpg Graphic file (type jpg)
 <use Pictures/kitten-placeholder.jpg>
 Package pdftex.def Info: Pictures/kitten-placeholder.jpg  used on input line 10
-7.
+8.
 (pdftex.def)             Requested size: 354.85464pt x 199.59773pt.
  [13]
 File: Pictures/kitten-placeholder.jpg Graphic file (type jpg)
 <use Pictures/kitten-placeholder.jpg>
 Package pdftex.def Info: Pictures/kitten-placeholder.jpg  used on input line 12
-4.
+5.
 (pdftex.def)             Requested size: 354.85464pt x 199.59773pt.
 File: Pictures/kitten-placeholder.jpg Graphic file (type jpg)
 <use Pictures/kitten-placeholder.jpg>
 Package pdftex.def Info: Pictures/kitten-placeholder.jpg  used on input line 13
-1.
+2.
 (pdftex.def)             Requested size: 354.85464pt x 199.59773pt.
 File: Pictures/kitten-placeholder.jpg Graphic file (type jpg)
 <use Pictures/kitten-placeholder.jpg>
 Package pdftex.def Info: Pictures/kitten-placeholder.jpg  used on input line 13
-8.
+9.
 (pdftex.def)             Requested size: 354.85464pt x 199.59773pt.
- [14] [15])
-(Chapters/rans_cfd.tex [16]
+ [14] [15] [16])
+(Chapters/rans_cfd.tex [17] [18
+
+]
 Chapter 5.
 ------------------------------------------------------------------------------
  5 RANS Analysis
 ------------------------------------------------------------------------------
-[17
-
-]) (Chapters/ddes_cfd.tex [18]
+) (Chapters/ddes_cfd.tex [19] [20]
 Chapter 6.
 ------------------------------------------------------------------------------
  6 DDES Analysis
 ------------------------------------------------------------------------------
-[19
+) (Chapters/results.tex [21
 
-]) (Chapters/results.tex [20]
+] [22]
 Chapter 7.
 ------------------------------------------------------------------------------
  7 Results of flow field noise analysis
 ------------------------------------------------------------------------------
-[21
+) (Chapters/conclusions.tex [23
 
-]) (Chapters/conclusions.tex [22]
+] [24]
 Chapter 8.
 ------------------------------------------------------------------------------
  8 Conclusions \& Further work
 ------------------------------------------------------------------------------
-[23
+) [25
 
-]) (Appendices/AppendixA.tex [24]
+] (Appendices/AppendixA.tex [26]
 Appendix A.
 ------------------------------------------------------------------------------
  A Code for direct formulation of noise analysis
 ------------------------------------------------------------------------------
-) (Appendices/AppendixB.tex [25
+) (Appendices/AppendixB.tex [27
 
-] [26
+] [28
 
 ]
 Appendix B.
 ------------------------------------------------------------------------------
  B Code for discrete Fourier analysis
 ------------------------------------------------------------------------------
-) (Appendices/AppendixC.tex [27] [28
+) (Appendices/AppendixC.tex [29] [30
 
 ]
 Appendix C.
 ------------------------------------------------------------------------------
  C Blade design surface coordinates
 ------------------------------------------------------------------------------
-) [29] [30
+) [31] [32
 
 ]
 ------------------------------------------------------------------------------
@@ -1554,33 +1554,33 @@ Appendix C.
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 14.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-Underfull \hbox (badness 2393) in paragraph at lines 64--71
+) [33
+
+]
+Underfull \hbox (badness 1810) in paragraph at lines 69--76
 \T1/cmr/m/it/10.95 ceed-ings of the Royal So-ci-ety. Se-ries A, Math-e-mat-i-ca
 l, Phys-i-cal and En-gi-
  []
 
-[31
-
-])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 353.
- [32]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 353.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 357.
+ [34]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 357.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 353.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 353.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 357.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 357.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: AE8581D0CD172B8F101E7D543369AA7A;11012.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 353.
+(rerunfilecheck)             Checksum: 45DFB260ED046774571BB1BE50604C08;11478.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 357.
  ) 
 Here is how much of TeX's memory you used:
- 23411 strings out of 493308
- 389874 string characters out of 3138756
- 544495 words of memory out of 3000000
- 26461 multiletter control sequences out of 15000+200000
+ 23431 strings out of 493308
+ 390138 string characters out of 3138756
+ 544872 words of memory out of 3000000
+ 26473 multiletter control sequences out of 15000+200000
  553492 words of font info for 74 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,12n,45p,10380b,541s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,12n,45p,10380b,530s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C:/Program Files/Mi
 KTeX 2.9/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{C:/Program Files/MiKTeX 2.9
 /fonts/enc/dvips/cm-super/cm-super-t1.enc}<C:/Program Files/MiKTeX 2.9/fonts/ty
@@ -1607,9 +1607,9 @@ per/sfrm1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfsl1
 C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1200.pfb><C:/Progra
 m Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfti2074.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on main.pdf (52 pages, 742283 bytes).
+Output written on main.pdf (54 pages, 754958 bytes).
 PDF statistics:
- 782 PDF objects out of 1000 (max. 8388607)
- 146 named destinations out of 1000 (max. 500000)
- 515 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 814 PDF objects out of 1000 (max. 8388607)
+ 154 named destinations out of 1000 (max. 500000)
+ 531 words of extra memory for PDF output out of 10000 (max. 10000000)
 
