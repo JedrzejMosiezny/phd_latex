@@ -37,7 +37,7 @@ The R67 blade coordinates for rotor and stator on both stages is given in refere
 
 Geometry alignment is presented on figure \ref{geom_gcs}. The coordinate system is a standard right-hand Cartesian CS. Rotation axis is set to Z-axis with flow in positive Z direction. The compressor rotation is set as in right-hand rule, the compressor rotates in clockwise direction when facing the blade leading edge. $Z = 0$ coordinate is defined by point number 1 on 1st blade design surface (see Appendix \ref{r67_coords_data} for details). 
 
-\begin{figure}
+\begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
 \includegraphics[width=0.85\textwidth]{Pictures/kitten-placeholder.jpg}
 \caption{Global coordinate system for geometry}
@@ -56,10 +56,10 @@ Physical experiment test compressor has a 1.78 mm fillet at airfoil-hub juncture
 
 Such approach allowed for creating a geometry for single blade passage with centered blade of 1st stage rotor of the test compressor (Fig \ref{geom_final}).
 
-\begin{figure}
+\begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.85\textwidth]{Pictures/kitten-placeholder.jpg}
-\caption{Final single passage geometry}
+\includegraphics[width=0.85\textwidth]{Pictures/r67_geom.jpg}
+\caption{Final single passage geometry. Some features hidden for clarity}
 \label{geom_final}
 \end{figure}
 
@@ -78,34 +78,34 @@ Following requisites are posed to the mesh for the discussed case:
 
 
 \begin{equation} \label{eq:ortho}
-\dot{B} = \dot{m}(c_p\:(T-T_0)-T_0\:(c_p\:\frac{T}{T_0} - R\:ln\frac{p}{p_0}))
+Orthogonality = \frac{\vec{A_i} \cdot \vec{f_i}}{|\vec{A_i}| \cdot |\vec{f_i}|}
 \end{equation}
 
 
 \begin{equation} \label{eq:skew}
-6^2 - 5 = 36-5 = 31
+Skewness = \frac{Optimal Cell Size - Cell Size}{Optimal Cell Size}
 \end{equation}
 
 \begin{equation} \label{eq:aspect}
-6^2 - 5 = 36-5 = 31
+Aspect Ratio = \frac{MinimumElementEdge}{MaximumElementEdge}
 \end{equation}
 
 One of the initial mesh concepts was an unstructured mesh with triangular surface mesh extruded to prism boundary layer and mostly isotropic tetrahedra in the volume. This approach was quickly rejected for bad quality elements near the airfoil/hub junction and tip gap, as well as element count in range of 4.5 million cells for sizing relevant for RANS analysis. This approach was quickly dropped.
 
 A non-trivial topology with fully conforming periodic boundaries was introduced (fig \ref{cj_topo}). This topology fulfills all the prerequisites stated apart from possibility to mesh a structural tip gap. Such approach makes it impossible from topological standpoint to place a structural mesh in this area. A RANS sufficient mesh without tip gap area (blade was extended to the casing surface) was created. The cell count for this mesh is below 0.5 million cells with better skewness and orthogonal quality. This mesh was utilized for numerical setup and data acquisition testing as it was faster to converge.
 
-\begin{figure}
+\begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.85\textwidth]{Pictures/kitten-placeholder.jpg}
+\includegraphics[width=0.85\textwidth]{Pictures/r67_cj.jpg}
 \caption{Mesh topology with conforming periodic boundaries}
 \label{cj_topo}
 \end{figure}
 
 Final topology was a standard h-grid topology for airfoil \ref{h_topo}. Although it is impossible to create a conforming periodic interface with such mesh topology, a fully structural tip gap was implemented. Omitting the blade-hub juncture fillet simplified the mesh.  Such topology eradicates the necessity of placing 5-way topology points.
 
-\begin{figure}
+\begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.85\textwidth]{Pictures/kitten-placeholder.jpg}
+\includegraphics[width=0.85\textwidth]{Pictures/r67_htopo.jpg}
 \caption{Mesh h-topology}
 \label{h_topo}
 \end{figure}
@@ -117,30 +117,35 @@ Element sizing in volume and in tangent direction to the blade is limited to 3 m
 \begin{equation} \label{eq:yplus}
 6^2 - 5 = 36-5 = 31
 \end{equation}
+Figures \ref{mesh-ortho}, \ref{mesh-skew} and \ref{mesh-aspect} provide overview of mesh quality defined by figures \ref{eq:ortho}, \ref{eq:skew} and \ref{eq:aspect} respectively. Created mesh is of high quality and is sufficient for both RANS (chapter \ref{rans}) and DDES (chapter \ref{ddes}) analyses. Final mesh reached roughly 11 million cell count. Final mesh is presented in figure \ref{meshfinal} 
 
-Figures \ref{mesh-ortho}, \ref{mesh-skew} and \ref{mesh-aspect} provide overview of mesh quality defined by figures \ref{eq:ortho}, \ref{eq:skew} and \ref{eq:aspect} respectively. Created mesh is of high quality and is sufficient for both RANS (chapter \ref{rans}) and DDES (chapter \ref{ddes}) analyses. Final mesh reached roughly 11 million cell count.
-
-\begin{figure}
+\begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
 \includegraphics[width=0.85\textwidth]{Pictures/kitten-placeholder.jpg}
 \caption{Mesh non-orthogonality histogram}
 \label{mesh-ortho}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
 \includegraphics[width=0.85\textwidth]{Pictures/kitten-placeholder.jpg}
 \caption{Mesh skew histogram}
 \label{mesh-skew}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
 \includegraphics[width=0.85\textwidth]{Pictures/kitten-placeholder.jpg}
 \caption{Mesh aspect ratio histogram}
 \label{mesh-aspect}
 \end{figure}
 
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/r67_ransmesh.jpg}
+\caption{Completed Mesh}
+\label{meshfinal}
+\end{figure}
 
 %----------------------------------------------------------------------------------------
 %	SECTION
