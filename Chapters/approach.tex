@@ -7,9 +7,35 @@
 \lhead{\emph{Approach and direct formulation of noise analysis}} % Change X to a consecutive number; this is for the header on each page - perhaps a shortened title
 
 %----------------------------------------------------------------------------------------
-%	SECTION 1
+%	SECTION
 %----------------------------------------------------------------------------------------
+\section{Direct formulation of noise analysis} \label{direct_approach}
+The intention behind this study is to perform a flow field noise analysis in CFD without implementation of acoustical analogies to the CFD code itself. Moreover, very limited information on direct formulation of noise analysis was found during the research, with even less information on acoustical near field of transonic compressors.
 
+The process for the direct formulation noise analysis is following:
+\begin{enumerate}
+\item Obtain raw flow field data of density and/or static pressure from CFD analysis.
+\item Perform averaging over time of pressure/density for each point or cell in the flow field.
+\item Obtain offset from mean static pressure or density for every timestep for every point/cell in the saved flow field.		
+\end{enumerate}
+
+For incompressible flows or flows with low pressure gradients or without shock waves such approach is exaggerated. Should the flow be in majority in ambient conditions, the offset from the ambient pressure may be computed "on-the-fly".
+
+Dataset obtained in described manner now contains information on the acoustic pressure of the flow field as gathered by imaginary pressure sensors in every mesh node throughout the computational time. Although computationally expensive, such approach is required in flows with very high pressure gradients, as it is impossible to establish one reference pressure for whole flow field.
+
+Such information may be now post processed for average Root Mean Square pressure, noise intensity and respective noise values, as well as Fourier transforms of the desired kind.
+
+
+
+%-----------------------------------
+%	SECTION
+%-----------------------------------
+\section{Mesh size requirements}
+Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
 \section{Basic conservation equations in CFD}
 %-----------------------------------
 %	SUBSECTION
@@ -47,16 +73,4 @@ Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar p
 %	SUBSECTION
 %-----------------------------------
 \subsection{DDES Formulation of turbulence}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
-
-%----------------------------------------------------------------------------------------
-%	SECTION 2
-%----------------------------------------------------------------------------------------
-\section{Direct formulation of noise signal} \label{direct_approach}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
-
-%-----------------------------------
-%	SUBSECTION
-%-----------------------------------
-\subsection{Mesh size requirements}
 Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2018.7.23)  1 AUG 2018 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.3.25)  2 AUG 2018 00:14
 entering extended mode
 **./main.tex
 (main.tex
 LaTeX2e <2017-04-15>
-Babel <3.14> and hyphenation patterns for 76 language(s) loaded.
+Babel <3.15> and hyphenation patterns for 76 language(s) loaded.
 (Thesis.cls
 Document Class: Thesis 2007/22/02 v1.0 LaTeX document class
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\book.cls"
@@ -479,10 +479,10 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \c@ContinuedFloat=\count102
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
-Package: babel 2017/10/04 3.14 The Babel package
+Package: babel 2017/11/03 3.15 The Babel package
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def"
-File: switch.def 2017/10/04 3.14 Babel switching mechanism
+File: switch.def 2017/11/03 3.15 Babel switching mechanism
 )
 *************************************
 * Local config file bblopts.cfg used
@@ -495,10 +495,10 @@ File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
 Language: polish 2005/03/31 v1.2l Polish support from the babel system
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
-File: babel.def 2017/10/04 3.14 Babel common definitions
+File: babel.def 2017/11/03 3.15 Babel common definitions
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def"
-File: switch.def 2017/10/04 3.14 Babel switching mechanism
+File: switch.def 2017/11/03 3.15 Babel switching mechanism
 )
 \babel@savecnt=\count103
 \U@D=\dimen124
@@ -566,7 +566,7 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
-File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
+File: pdftex.def 2017/12/07 v1.0i Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen137
 \Gin@req@width=\dimen138
@@ -576,10 +576,10 @@ Package: gensymb 2003/07/02 v1.0 (WaS)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xfrac\xfrac.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty"
-Package: expl3 2017/09/18 L3 programming layer (loader) 
+Package: expl3 2017/12/16 L3 programming layer (loader) 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex"
-Package: expl3 2017/09/18 L3 programming layer (code)
+Package: expl3 2017/12/16 L3 programming layer (code)
 \c_max_int=\count106
 \l_tmpa_int=\count107
 \l_tmpb_int=\count108
@@ -728,7 +728,7 @@ File: l3pdfmode.def 2017/03/18 v L3 Experimental driver: PDF mode
 \l__driver_tmp_box=\box43
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\l3keys2e\l3keys2e.sty"
-Package: l3keys2e 2017/09/18 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2017/12/16 LaTeX2e option processing using LaTeX3 keys
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\textcomp.sty"
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
@@ -887,7 +887,7 @@ Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty"
-Package: xparse 2017/09/18 L3 Experimental document command parser
+Package: xparse 2017/12/16 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count190
 \g__xparse_grabber_int=\count191
 \l__xparse_m_args_int=\count192
@@ -895,13 +895,13 @@ Package: xparse 2017/09/18 L3 Experimental document command parser
 \l__xparse_v_nesting_int=\count194
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xtemplate\xtemplate.sty"
-Package: xtemplate 2017/09/18 L3 Experimental prototype document functions
+Package: xtemplate 2017/12/16 L3 Experimental prototype document functions
 \l__xtemplate_tmp_dim=\dimen170
 \l__xtemplate_tmp_int=\count195
 \l__xtemplate_tmp_muskip=\muskip17
 \l__xtemplate_tmp_skip=\skip68
 )
-Package: xfrac 2017/09/18 L3 Experimental split-level fractions
+Package: xfrac 2017/12/16 L3 Experimental split-level fractions
 \l__xfrac_slash_box=\box44
 \l__xfrac_tmp_box=\box45
 \l__xfrac_denominator_bot_sep_dim=\dimen171
@@ -919,7 +919,7 @@ Package: xfrac 2017/09/18 L3 Experimental split-level fractions
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \sfrac with sig. 'omom' on line 419.
+. Defining command \sfrac with sig. 'omom' on line 420.
 .................................................
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\enumerate.sty"
@@ -1312,13 +1312,11 @@ LaTeX Info: Redefining \nameref on input line 58.
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-<Pictures/pp_logo2.jpg, id=263, 142.3719pt x 142.3719pt>
+<Pictures/pp_logo2.jpg, id=251, 142.3719pt x 142.3719pt>
 File: Pictures/pp_logo2.jpg Graphic file (type jpg)
 <use Pictures/pp_logo2.jpg>
-Package pdftex.def Info: Pictures/pp_logo2.jpg  used on input line 87. on input
- line 87.
-Package pdftex.def Info: Requested size: 71.18576pt x 71.18576pt on input line 
-87.
+Package pdftex.def Info: Pictures/pp_logo2.jpg  used on input line 87.
+(pdftex.def)             Requested size: 71.18576pt x 71.18576pt.
 LaTeX Font Info:    Try loading font information for U+msa on input line 106.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1364,13 +1362,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--163
 (main.toc [5
 
 
-] [6])
+])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [7] [8
-
-]
+ [6]
 ------------------------------------------------------------------------------
  List of Figures
 ------------------------------------------------------------------------------
@@ -1378,9 +1374,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--163
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
- [9
+ [7
 
-] [10
+
+] [8
 
 ]
 ------------------------------------------------------------------------------
@@ -1390,13 +1387,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--163
 \tf@lot=\write6
 \openout6 = `main.lot'.
 
- [11
+ [9
+
+] [10
+
+]
+------------------------------------------------------------------------------
+ Abbreviations
+------------------------------------------------------------------------------
+[11
+
 
 ] [12
 
 ]
 ------------------------------------------------------------------------------
- Abbreviations
+ Physical Constants
 ------------------------------------------------------------------------------
 [13
 
@@ -1405,7 +1411,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--163
 
 ]
 ------------------------------------------------------------------------------
- Physical Constants
+ Symbols
 ------------------------------------------------------------------------------
 [15
 
@@ -1414,18 +1420,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--163
 
 ]
 ------------------------------------------------------------------------------
- Symbols
-------------------------------------------------------------------------------
-[17
-
-
-] [18
-
-]
-------------------------------------------------------------------------------
  Dedicatory
 ------------------------------------------------------------------------------
-[19] [20
+[17] [18
 
 ] (Chapters/introduction.tex
 Chapter 1.
@@ -1456,91 +1453,57 @@ Chapter 4.
 ------------------------------------------------------------------------------
  4 Test case
 ------------------------------------------------------------------------------
-[9]
-<Pictures/kitten-placeholder.jpg, id=523, 1284.8pt x 722.7pt>
-File: Pictures/kitten-placeholder.jpg Graphic file (type jpg)
-<use Pictures/kitten-placeholder.jpg>
-Package pdftex.def Info: Pictures/kitten-placeholder.jpg  used on input line 42
-. on input line 42.
-Package pdftex.def Info: Requested size: 354.85464pt x 199.59773pt on input lin
-e 42.
-
+<Pictures/r67_over.png, id=484, 505.13719pt x 299.61937pt>
+File: Pictures/r67_over.png Graphic file (type png)
+<use Pictures/r67_over.png>
+Package pdftex.def Info: Pictures/r67_over.png  used on input line 20.
+(pdftex.def)             Requested size: 354.85464pt x 210.4819pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[10]
-<Pictures/r67_geom.jpg, id=534, 1484.54625pt x 731.73375pt>
+[9] [10 <./Pictures/r67_over.png>]
+<Pictures/r67_geom.jpg, id=513, 1484.54625pt x 731.73375pt>
 File: Pictures/r67_geom.jpg Graphic file (type jpg)
 <use Pictures/r67_geom.jpg>
-Package pdftex.def Info: Pictures/r67_geom.jpg  used on input line 61. on input
- line 61.
-Package pdftex.def Info: Requested size: 354.85464pt x 174.9051pt on input line
- 61.
+Package pdftex.def Info: Pictures/r67_geom.jpg  used on input line 71.
+(pdftex.def)             Requested size: 354.85464pt x 174.9051pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11 <./Pictures/kitten-placeholder.jpg>] [12 <./Pictures/r67_geom.jpg>]
-<Pictures/r67_cj.jpg, id=556, 1484.54625pt x 731.73375pt>
+[11]
+<Pictures/r67_cj.jpg, id=524, 1484.54625pt x 731.73375pt>
 File: Pictures/r67_cj.jpg Graphic file (type jpg)
 <use Pictures/r67_cj.jpg>
-Package pdftex.def Info: Pictures/r67_cj.jpg  used on input line 99. on input l
-ine 99.
-Package pdftex.def Info: Requested size: 354.85464pt x 174.9051pt on input line
- 99.
-<Pictures/r67_htopo.jpg, id=558, 1484.54625pt x 731.73375pt>
+Package pdftex.def Info: Pictures/r67_cj.jpg  used on input line 109.
+(pdftex.def)             Requested size: 354.85464pt x 174.9051pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12 <./Pictures/r67_geom.jpg>]
+<Pictures/r67_htopo.jpg, id=533, 1484.54625pt x 731.73375pt>
 File: Pictures/r67_htopo.jpg Graphic file (type jpg)
 <use Pictures/r67_htopo.jpg>
-Package pdftex.def Info: Pictures/r67_htopo.jpg  used on input line 108. on inp
-ut line 108.
-Package pdftex.def Info: Requested size: 354.85464pt x 174.9051pt on input line
- 108.
-
-[13 <./Pictures/r67_cj.jpg> <./Pictures/r67_htopo.jpg>]
-File: Pictures/kitten-placeholder.jpg Graphic file (type jpg)
-<use Pictures/kitten-placeholder.jpg>
-Package pdftex.def Info: Pictures/kitten-placeholder.jpg  used on input line 12
-4. on input line 124.
-Package pdftex.def Info: Requested size: 354.85464pt x 199.59773pt on input lin
-e 124.
-File: Pictures/kitten-placeholder.jpg Graphic file (type jpg)
-<use Pictures/kitten-placeholder.jpg>
-Package pdftex.def Info: Pictures/kitten-placeholder.jpg  used on input line 13
-1. on input line 131.
-Package pdftex.def Info: Requested size: 354.85464pt x 199.59773pt on input lin
-e 131.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-File: Pictures/kitten-placeholder.jpg Graphic file (type jpg)
-<use Pictures/kitten-placeholder.jpg>
-Package pdftex.def Info: Pictures/kitten-placeholder.jpg  used on input line 13
-8. on input line 138.
-Package pdftex.def Info: Requested size: 354.85464pt x 199.59773pt on input lin
-e 138.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<Pictures/r67_ransmesh.jpg, id=575, 1484.54625pt x 731.73375pt>
+Package pdftex.def Info: Pictures/r67_htopo.jpg  used on input line 118.
+(pdftex.def)             Requested size: 354.85464pt x 174.9051pt.
+ [13 <./Pictures/r67_cj.jpg> <./Pictures/r67_htopo.jpg>]
+<Pictures/mesh_ortho.png, id=547, 1000.73875pt x 567.11874pt>
+File: Pictures/mesh_ortho.png Graphic file (type png)
+<use Pictures/mesh_ortho.png>
+Package pdftex.def Info: Pictures/mesh_ortho.png  used on input line 150.
+(pdftex.def)             Requested size: 354.85464pt x 201.09924pt.
+<Pictures/r67_ransmesh.jpg, id=548, 1484.54625pt x 731.73375pt>
 File: Pictures/r67_ransmesh.jpg Graphic file (type jpg)
 <use Pictures/r67_ransmesh.jpg>
-Package pdftex.def Info: Pictures/r67_ransmesh.jpg  used on input line 145. on 
-input line 145.
-Package pdftex.def Info: Requested size: 354.85464pt x 174.9051pt on input line
- 145.
+Package pdftex.def Info: Pictures/r67_ransmesh.jpg  used on input line 157.
+(pdftex.def)             Requested size: 354.85464pt x 174.9051pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14]
-
-LaTeX Warning: Text page 15 contains only floats.
-
-
-Overfull \vbox (2.12749pt too high) has occurred while \output is active []
-
-
-[15 <./Pictures/r67_ransmesh.jpg>] [16]) (Chapters/rans_cfd.tex [17] [18
+[14 <./Pictures/mesh_ortho.png>] [15 <./Pictures/r67_ransmesh.jpg>])
+(Chapters/rans_cfd.tex [16] [17] [18
 
 ]
 Chapter 5.
@@ -1615,46 +1578,47 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 357.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 357.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 357.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FA78EF32DFCFDC23329FCEF7FD3F7F8A;11478.
+(rerunfilecheck)             Checksum: E0CBD63E5C2BA4CC7CE315D346C524CE;10907.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 357.
  ) 
 Here is how much of TeX's memory you used:
- 23310 strings out of 493314
- 386189 string characters out of 3138855
- 542431 words of memory out of 3000000
- 26345 multiletter control sequences out of 15000+200000
+ 23450 strings out of 493308
+ 390585 string characters out of 3138756
+ 544797 words of memory out of 3000000
+ 26488 multiletter control sequences out of 15000+200000
  553492 words of font info for 74 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,12n,45p,10380b,530s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,11n,45p,10380b,530s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C:/Program Files/Mi
 KTeX 2.9/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{C:/Program Files/MiKTeX 2.9
 /fonts/enc/dvips/cm-super/cm-super-t1.enc}<C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1095.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/cm-super/sfbx1440.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/cm-super/sfbx2074.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-
-super/sfbx2488.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfc
-c1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfcc1095.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfcc1200.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfcc1440.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/cm-super/sfcc1728.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/cm-super/sfrm0800.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/cm-super/sfrm1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/cm-super/sfrm1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-su
-per/sfrm1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfsl1
-440.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1095.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1200.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfti2074.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on main.pdf (54 pages, 2782309 bytes).
+pe1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/cm-super/sfbx1095.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/cm-super/sfbx1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/cm-super/sfbx1440.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm
+-super/sfbx2074.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sf
+bx2488.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfcc1000.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfcc1095.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfcc1200.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/cm-super/sfcc1440.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/cm-super/sfcc1728.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/cm-super/sfrm0800.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/cm-super/sfrm1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-s
+uper/sfrm1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm
+1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfsl1440.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1095.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1200.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/cm-super/sfti2074.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on main.pdf (52 pages, 2958593 bytes).
 PDF statistics:
- 821 PDF objects out of 1000 (max. 8388607)
- 155 named destinations out of 1000 (max. 500000)
- 551 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 802 PDF objects out of 1000 (max. 8388607)
+ 153 named destinations out of 1000 (max. 500000)
+ 532 words of extra memory for PDF output out of 10000 (max. 10000000)
 
