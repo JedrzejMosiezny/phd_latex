@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{11}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -12,6 +12,38 @@ D.~L.~Hawkings J.~E. Ffowcs~Williams.
   Series A, Mathematical and Physical Sciences}, 264\penalty0 (1151):\penalty0
   321--342, May 1969.
 \newblock URL \url{http://www.jstor.org/stable/73790}.
+
+\bibitem[Lighthill(1952)]{Light1}
+M.~J. Lighthill.
+\newblock On sound generated aerodynamically i. general theory.
+\newblock \emph{Proceedings of the Royal Society. Series A, Mathematical,
+  Physical and Engineering Sciences}, 211\penalty0 (1107):\penalty0 564--587,
+  March 1952.
+\newblock URL
+  \url{http://rspa.royalsocietypublishing.org/content/211/1107/564}.
+
+\bibitem[Lighthill(1954)]{Light2}
+M.~J. Lighthill.
+\newblock On sound generated aerodynamically ii. turbulence as a source of
+  sound.
+\newblock \emph{Proceedings of the Royal Society. Series A, Mathematical,
+  Physical and Engineering Sciences}, 222\penalty0 (1148):\penalty0 1--32,
+  March 1954.
+\newblock URL \url{http://rspa.royalsocietypublishing.org/content/222/1148/1}.
+
+\bibitem[Curle(1955)]{curle}
+N.~Curle.
+\newblock The influence of solid boundaries upon aerodynamic sound.
+\newblock \emph{Proceedings of the Royal Society. Series A, Mathematical,
+  Physical and Engineering Sciences}, 231\penalty0 (1187):\penalty0 505--514,
+  September 1955.
+\newblock URL
+  \url{http://rspa.royalsocietypublishing.org/content/231/1187/505}.
+
+\bibitem[J.~D.~Durrant(1984)]{hearing}
+J.~H.~Lovrinic J.~D.~Durrant.
+\newblock Bases of hearing sciences. second edition.
+\newblock 1984.
 
 \bibitem[W.~S.~Cunnan and Urasek(1978)]{r67design}
 W.~Stevans W.~S.~Cunnan and D.~C. Urasek.
@@ -46,32 +78,5 @@ J.~Mosiezny.
 Prometheus computation resources.
 \newblock 2018.
 \newblock URL \url{https://kdm.cyfronet.pl/portal/Prometheus}.
-
-\bibitem[Lighthill(1952)]{Light1}
-M.~J. Lighthill.
-\newblock On sound generated aerodynamically i. general theory.
-\newblock \emph{Proceedings of the Royal Society. Series A, Mathematical,
-  Physical and Engineering Sciences}, 211\penalty0 (1107):\penalty0 564--587,
-  March 1952.
-\newblock URL
-  \url{http://rspa.royalsocietypublishing.org/content/211/1107/564}.
-
-\bibitem[Lighthill(1954)]{Light2}
-M.~J. Lighthill.
-\newblock On sound generated aerodynamically ii. turbulence as a source of
-  sound.
-\newblock \emph{Proceedings of the Royal Society. Series A, Mathematical,
-  Physical and Engineering Sciences}, 222\penalty0 (1148):\penalty0 1--32,
-  March 1954.
-\newblock URL \url{http://rspa.royalsocietypublishing.org/content/222/1148/1}.
-
-\bibitem[Curle(1955)]{curle}
-N.~Curle.
-\newblock The influence of solid boundaries upon aerodynamic sound.
-\newblock \emph{Proceedings of the Royal Society. Series A, Mathematical,
-  Physical and Engineering Sciences}, 231\penalty0 (1187):\penalty0 505--514,
-  September 1955.
-\newblock URL
-  \url{http://rspa.royalsocietypublishing.org/content/231/1187/505}.
 
 \end{thebibliography}

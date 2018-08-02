@@ -10,7 +10,7 @@
 %	SECTION
 %----------------------------------------------------------------------------------------
 \section{Direct formulation of noise analysis} \label{direct_approach}
-The intention behind this study is to perform a flow field noise analysis in CFD without implementation of acoustical analogies to the CFD code itself. Moreover, very limited information on direct formulation of noise analysis was found during the research, with even less information on acoustical near field of transonic compressors.
+The intention behind this study is to perform a flow field noise analysis in CFD without implementation of acoustical analogies to the CFD code itself. Moreover, very limited information on direct formulation of noise analysis was found during the research, with even fewer research on acoustical near field of transonic axial compressors or axial fans of twin spool jet engines.
 
 The process for the direct formulation noise analysis is following:
 \begin{enumerate}
@@ -19,58 +19,77 @@ The process for the direct formulation noise analysis is following:
 \item Obtain offset from mean static pressure or density for every timestep for every point/cell in the saved flow field.		
 \end{enumerate}
 
-For incompressible flows or flows with low pressure gradients or without shock waves such approach is exaggerated. Should the flow be in majority in ambient conditions, the offset from the ambient pressure may be computed "on-the-fly".
+The process purposely omits transformation of pressure to complex form and forces the analysis on direct signal as measured by a pressure sensor.
+
+For incompressible flows or flows with low pressure gradients or without shock waves such approach is exaggerated. Should the flow occur in majority in ambient conditions (i.e. low velocity jet in free stream), the offset from the ambient pressure may be computed "on-the-fly".
 
 Dataset obtained in described manner now contains information on the acoustic pressure of the flow field as gathered by imaginary pressure sensors in every mesh node throughout the computational time. Although computationally expensive, such approach is required in flows with very high pressure gradients, as it is impossible to establish one reference pressure for whole flow field.
 
-Such information may be now post processed for average Root Mean Square pressure, noise intensity and respective noise values, as well as Fourier transforms of the desired kind.
+Such information may be now post processed for average Root Mean Square of acoustic pressure \& noise intensity and other appropriate figures used in noise analysis including Fourier analysis.
 
+Proposed method and code developed for this purpose will work on any transient CFD analysis returning pressure flow field as a result. Therefore it is required to perform a CFD analysis that will contain pressure flow field to be interpreted as sound. To accomplish that, there are some requirements towards mesh sizing, time stepping information and obtaining the flow field solution. 
+
+References \citep{Light1}, \citep{Light2}, \citep{FWH} and \citep{curle} provide a theoretical insight on generating sound in fluid flow due to shear mixing of flows or by implementing a solid boundary in the flow. General remark is, any source of turbulence that result in pressure fluctuation will result in generating sound. Therefore the main requirement for used CFD code for direct noise analysis is the capability of generating such fluctuations. 
+
+%-----------------------------------
+%	SECTION
+%-----------------------------------
+\section{CFD analysis requirements}
+In general every CFD code based on 
+
+Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
 
 
 %-----------------------------------
 %	SECTION
 %-----------------------------------
-\section{Mesh size requirements}
+\section{Mesh and time stepping requirements}
+Let's assume a sinusoidal pressure fluctuation $f(x)$ moving through ambient medium of ordinary frequency of 1000Hz and amplitude larger than $20 \mu Pa$, long enough to be considered as sound. Values provided are considered as threshold to human hearing \citep{hearing}.
+
+Considering the numerical mechanisms for solving flow field described in above section, such fluctuation must be captured in sufficient number of cells and in sufficient time to be post processed.
+
 Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+
+
 
 %----------------------------------------------------------------------------------------
 %	SECTION
 %----------------------------------------------------------------------------------------
-\section{Basic conservation equations in CFD}
+%\section{Basic conservation equations in CFD}
 %-----------------------------------
 %	SUBSECTION
 %-----------------------------------
-\subsection{Momentum equations}
-Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
+%\subsection{Momentum equations}
+%Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
 
 %-----------------------------------
 %	SUBSECTION
 %-----------------------------------
-\subsection{Continuity Equations}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+%\subsection{Continuity Equations}
+%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
 
-\subsection{Energy equation}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+%\subsection{Energy equation}
+%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
-\section{Resolving turbulence}
+%\section{Resolving turbulence}
 
 %-----------------------------------
 %	SUBSECTION
 %-----------------------------------
-\subsection{RANS formulation of turbulent flow}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+%\subsection{RANS formulation of turbulent flow}
+%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
 
 %-----------------------------------
 %	SUBSECTION
 %-----------------------------------
-\subsection{DDES Formulation of turbulence}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+%\subsection{DDES Formulation of turbulence}
+%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
 
 %-----------------------------------
 %	SUBSECTION
 %-----------------------------------
-\subsection{DDES Formulation of turbulence}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+%\subsection{DDES Formulation of turbulence}
+%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
