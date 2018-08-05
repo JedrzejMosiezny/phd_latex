@@ -181,14 +181,22 @@ Equation \ref{eq:mintime} shows that time step for the analysis is dependent fro
 \end{figure}
 %\end{itemize}
 
-Based on these possibilities, the edge sizing of the finite volume cell should be at least four times smaller than the shortest wavelength expected in the flow field.
+In order to capture frequencies on the low end of the spectrum, the analysis must be performed long enough to capture at least a single, with optimum 5 or more periods, of the desired low frequency. Assuming lower end of the audible frequency spectrum, the 20Hz frequency, the simulation time must resemble at least 0.05s of flow time with optimum 0.25s of flow time at given timestep.
+
 
 %----------------------------------------------------------------------------------------
 %	SECTION
 %----------------------------------------------------------------------------------------
 \section{Limiting factors of the direct approach} \label{limits}
+Provided approach is solely a post processing approach relying on data provided by a CFD analysis. In order to obtain reasonable results down the process, the analysis itself mus be capable of delivering pressure fluctuations that can be considered as acoustic in source.
 
-The range of results of the direct approach is limited by the mesh sizing as limiting factor for resolution in high frequencies. 
+Utilizing a numerical model that averages flow field in terms of numerical methods, treatment of turbulent motions or mesh of insufficient quality, will return a pressure flow field that all acoustic kind fluctuations filtered out. 
+
+Pressure signal used by this approach is given by a list of real scalar values for each node or cell centroid for each timestep. Therefore obtaining phase shift of the ordinary sinuses components of pressure signal may be challenging, if at all possible, and relies solely on further postprocessing of generated data. 
+
+The range of frequencies captured by this method depends on the mesh sizing and timestep sizing. Therefore, if the range of expected frequencies is known or at least estimated, the mesh sizing and timestep size can be adjusted for the given case.
+ 
+Direct formulation acoustic analysis requires storing pressure and velocity information from all timesteps and then performing averaging over all timesteps. For analysis within audible range 4000 timesteps is required for one 20Hz period. Considering the mesh sizing requirements, the mesh cell count will rise up to tens of millions, which makes storing and managing the data somewhat difficult. Averaging the timestep data, obtaining sound pressure levels, sound intensity levels and respective decibel levels. 
 
 %Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
 
