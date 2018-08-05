@@ -35,20 +35,162 @@ References \citep{Light1}, \citep{Light2}, \citep{FWH} and \citep{curle} provide
 %	SECTION
 %-----------------------------------
 \section{CFD analysis requirements}
-In general every CFD code based on 
+This approach requires using a finite volume method (fvm) CFD analysis.
 
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
 
 
 %-----------------------------------
 %	SECTION
 %-----------------------------------
-\section{Mesh and time stepping requirements}
-Let's assume a sinusoidal pressure fluctuation $f(x)$ moving through ambient medium of ordinary frequency of 1000Hz and amplitude larger than $20 \mu Pa$, long enough to be considered as sound. Values provided are considered as threshold to human hearing \citep{hearing}.
+\section{Mesh sizing requirements} \label{meshsize}
+Let's assume a sinusoidal pressure fluctuation $y(t)$ (equation \ref{eq:sine} of ordinary frequency of $f$ and amplitude $A$ moving through ambient medium, for more than 5 cycles at speed of sound \ref{eq:sos}. The mathematical and numerical methods for solving flow field described in section above are capable of computing such pressure fluctuation in a fine resolution mesh. 
 
-Considering the numerical mechanisms for solving flow field described in above section, such fluctuation must be captured in sufficient number of cells and in sufficient time to be post processed.
+\begin{equation} \label{eq:sine}
+y(t) = A sin(2 \pi f t + \phi)
+\end{equation}
 
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+\begin{equation} \label{eq:sos}
+a = \sqrt{\kappa R T}
+\end{equation}
+
+Both cell size and time step size are limited by the wave length, and therefore frequency of the discussed pressure fluctuation. The wavelength is calculated by formula \ref{eq:wl}.
+
+\begin{equation} \label{eq:wl}
+\lambda = \frac{v}{f}
+\end{equation}
+
+Considered fluctuation travels through the finite volumes in the stationary CFD mesh. Pressure value is measured at the cell center for each timestep. At this stage, it is assumed that timestep is "good enough" for the analysis. Four possibilities are to be discussed 
+
+%\begin{itemize}
+\textbf{Scenario 1:} wavelength is smaller than the edge length of the cell in the direction of propagation. In this condition, the pressure fluctuation performs a number of cycles within one cell (Fig. \ref{scen1}). Due to the numerical approach, such fluctuation will not be computed and recorded by data acquisition at the cell centroid or at node coordinates.
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+\caption{Scenario 1. Wavelength smaller than cell edge length}
+\label{scen1}
+\end{figure}
+
+\textbf{Scenario 2:} wavelength and cell edge length in the direction of propagation are equal. In this condition, the pressure fluctuation performs one cycle within one cell in the direction of the fluctuation propagation (Fig. \ref{scen2}). Such pressure change will be also filtered out by the numerical scheme.
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+\caption{Scenario 2. Wavelength equal to cell edge length}
+\label{scen2}
+\end{figure}
+
+\textbf{Scenario 3:} wavelength is equal to 4 minimum cell lengths in the direction of propagation. This is the minimum cell size condition for discussed approach. In this condition, the pressure fluctuation performs one cycle within four cells in the direction of the fluctuation propagation (Fig. \ref{scen3}). FVM method is now capable of computing the pressure resulting from sound wave propagation.
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+\caption{Scenario 3. Wavelength equal four minimum edge lengths}
+\label{scen3}
+\end{figure}
+
+\textbf{Scenario 4:} wavelength is larger than 4 minimum cell edge lengths. In this condition, the pressure fluctuation performs one cycle within multiple cells in the direction of the fluctuation propagation (Fig. \ref{scen4}). FVM method computes pressure from the sound wave propagation across multiple cells.
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+\caption{Scenario 4. Wavelength larger than four minimum edge lengths}
+\label{scen4}
+\end{figure}
+%\end{itemize}
+
+Based on these possibilities, the edge sizing of the finite volume cell should be at least four times smaller than the shortest wavelength expected in the flow field.
+
+As there is no information on the pressure fluctuations in the flow field, the range of the further analyses will be limited to audible range of 20Hz to 20 000Hz. The wavelengths are calculated by formula \ref{eq:wl} and divided by four to obtain the required cell sizing. The velocity of sound obtained by equation \ref{eq:sos} with reference temperature $T = 300K$. The results for outermost sound frequencies of the audible range are presented in table \ref{tab:meshsize}
+
+\begin{table}[htb!]
+\centering
+\caption{Test case boundary conditions} \label{tab:meshsize}
+\begin{tabular}{ | r | l | l | } \hline
+Frequency [Hz] & Wave length [m] & Cell size [m] \\ \hline \hline
+20 & 17.390 & 4.347  \\ \hline
+20 000 & 0.01739 & 0.004347 \\ \hline
+\end{tabular}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+\section{Timestep requirements} \label{timestepsize}
+There are two limiting factors for timestep requirements. The high frequency signal is limited by the timestep size, whereas the low frequencies are limited to the total number of timesteps and physical flow time calculated. The timestep size is calculated first.
+
+Once sizing of the mesh is established, time at which the fluctuation passes the cell is established by simple formula \ref{eq:vel2}. Distance $s$ is the cell edge sizing, obtained as in section \ref{meshsize} and the relation between cell size and wave length is presented in equation \ref{eq:dist}.
+
+\begin{equation} \label{eq:vel2}
+a = \frac{s}{t}
+\end{equation}
+
+Where
+
+\begin{equation} \label{eq:time}
+t = \frac{1}{f}
+\end{equation}
+
+\begin{equation} \label{eq:dist}
+s = \frac{\lambda}{4}
+\end{equation}
+
+By rearranging the equation \ref{eq:vel2} to solve for $t$ and substituting $\lambda$ by \ref{eq:wl} we obtain:
+
+\begin{equation} \label{eq:mintime}
+t = \frac{s}{a} = \frac{\lambda}{4a} = \frac{a}{f} \cdot \frac{1}{4a} = \frac{1}{4f}
+\end{equation}
+
+Equation \ref{eq:mintime} shows that time step for the analysis is dependent from the expected value of high frequency fluctuations. Four scenarios can be discussed.
+
+\textbf{Scenario 1:} timestep is smaller than 1/4 of the fluctuation period (Fig. \ref{time1}).
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+\caption{Scenario 1. Timestep smaller than 1/4 of fluctuation period}
+\label{time1}
+\end{figure}
+
+\textbf{Scenario 2:} timestep is equal to the  1/4 of the fluctuation period (Fig. \ref{time2}).
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+\caption{Scenario 2. Timestep equal to 1/4 of fluctuation period}
+\label{time2}
+\end{figure}
+
+\textbf{Scenario 3:} timestep is equal to fluctuation period (Fig. \ref{time3}).
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+\caption{Scenario 3. Timestep equal to fluctuation period}
+\label{time3}
+\end{figure}
+
+\textbf{Scenario 4:} timestep is larger that fluctuation period (Fig. \ref{time4}).
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+\caption{Scenario 4. Timestep is larger than fluctuation period}
+\label{time4}
+\end{figure}
+%\end{itemize}
+
+Based on these possibilities, the edge sizing of the finite volume cell should be at least four times smaller than the shortest wavelength expected in the flow field.
+
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+\section{Limiting factors of the direct approach} \label{limits}
+
+The range of results of the direct approach is limited by the mesh sizing as limiting factor for resolution in high frequencies. 
+
+%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
 
 
 
