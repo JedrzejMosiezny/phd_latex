@@ -14,27 +14,48 @@ The intention behind this study is to perform a flow field noise analysis in CFD
 
 The process for the direct formulation noise analysis is following:
 \begin{enumerate}
-\item Obtain raw flow field data of density and/or static pressure from CFD analysis.
-\item Perform averaging over time of pressure/density for each point or cell in the flow field.
-\item Obtain offset from mean static pressure or density for every timestep for every point/cell in the saved flow field.		
+\item Obtain raw flow field data of static pressure, velocity magnitude from CFD analysis.
+\item Perform averaging over time of pressure and velocity magnitude for each point or cell in the flow field (equation \ref{eq:avg}).
+\item Obtain offset from mean static pressure and velocity magnitude for every timestep for every point/cell in the saved flow field (equation \ref{eq:off}).		
 \end{enumerate}
 
-The process purposely omits transformation of pressure to complex form and forces the analysis on direct signal as measured by a pressure sensor.
+%The process purposely omits transformation of pressure to complex form and forces the analysis on direct signal as measured by a pressure sensor.
 
-For incompressible flows or flows with low pressure gradients or without shock waves such approach is exaggerated. Should the flow occur in majority in ambient conditions (i.e. low velocity jet in free stream), the offset from the ambient pressure may be computed "on-the-fly".
+\begin{equation} \label{eq:avg}
+\bar{p} = \frac{1}{n} \sum_{i=1}^{n} p_i \qquad and \qquad \bar{u} = \frac{1}{n} \sum_{i=1}^{n} u_i
+\end{equation}
 
-Dataset obtained in described manner now contains information on the acoustic pressure of the flow field as gathered by imaginary pressure sensors in every mesh node throughout the computational time. Although computationally expensive, such approach is required in flows with very high pressure gradients, as it is impossible to establish one reference pressure for whole flow field.
+\begin{equation} \label{eq:off}
+p_{i \; sound} = p_i - \bar{p} \qquad and \qquad u_{particle} = u_i - \bar{u}
+\end{equation}
 
-Such information may be now post processed for average Root Mean Square of acoustic pressure \& noise intensity and other appropriate figures used in noise analysis including Fourier analysis.
+Sound pressure signal and flow velocity offset is obtained for every node or cell centroid throughout the simulation flowtime. This dataset can be now post processed 
+Dataset obtained in described manner now contains sound pressure of the flow field in every mesh node or cell centroid throughout the computational time. The dataset is now post processed to obtain quantity information of the acoustic nearfield. 
 
-Proposed method and code developed for this purpose will work on any transient CFD analysis returning pressure flow field as a result. Therefore it is required to perform a CFD analysis that will contain pressure flow field to be interpreted as sound. To accomplish that, there are some requirements towards mesh sizing, time stepping information and obtaining the flow field solution. 
+RMS sound pressure level can be obtained from the sound pressure data with use of the formula \ref{eq:RMSp}.
 
-References \citep{Light1}, \citep{Light2}, \citep{FWH} and \citep{curle} provide a theoretical insight on generating sound in fluid flow due to shear mixing of flows or by implementing a solid boundary in the flow. General remark is, any source of turbulence that result in pressure fluctuation will result in generating sound. Therefore the main requirement for used CFD code for direct noise analysis is the capability of generating such fluctuations. 
+\begin{equation} \label{eq:RMSp}
+p_{rms} = \sqrt{\frac{\sum_{i=1}^{n} p_{i \; sound}^{2}}{n}}
+\end{equation}
+
+Sound pressure decibel level (SPLdB) is compuded using formula \ref{eq:SPLdB} with standard reference pressure $p_{ref} = 0.00002 Pa$.
+
+\begin{equation} \label{eq:SPLdB}
+SPLdB = 20 \cdot \log_{10}\left(\frac{|p_{i \; sound}|}{p_{ref}}\right)
+\end{equation}
+
+
+
+%Such information may be now post processed for average Root Mean Square of acoustic pressure \& noise intensity and other appropriate figures used in noise analysis including Fourier analysis.
+
+%Proposed method and code developed for this purpose will work on compressible transient CFD analysis returning pressure flow field as a result. Therefore it is required to perform a CFD analysis that will contain pressure flow field to be interpreted as sound. To accomplish that, there are some requirements towards mesh sizing, time stepping information and obtaining the flow field solution.
 
 %-----------------------------------
 %	SECTION
 %-----------------------------------
-\section{CFD analysis requirements}
+\section{CFD analysis requirements} \label{cfdreq}
+References \citep{Light1}, \citep{Light2}, \citep{FWH} and \citep{curle} provide a theoretical insight on generating sound in fluid flow due to shear mixing of flows or by implementing a solid boundary in the flow. General remark is: any source of turbulence that result in pressure fluctuation will result in generating sound. Therefore the main requirement for used CFD code for direct noise analysis is the capability of resolving turbulent flow and corresponding fluctuations of the pressure and density.
+
 This approach requires using a finite volume method (fvm) CFD analysis.
 
 %Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
@@ -188,7 +209,7 @@ In order to capture frequencies on the low end of the spectrum, the analysis mus
 %	SECTION
 %----------------------------------------------------------------------------------------
 \section{Limiting factors of the direct approach} \label{limits}
-Provided approach is solely a post processing approach relying on data provided by a CFD analysis. In order to obtain reasonable results down the process, the analysis itself mus be capable of delivering pressure fluctuations that can be considered as acoustic in source.
+Provided approach is solely a post processing approach relying on data provided by a CFD analysis. In order to obtain reasonable results down the process, the analysis itself mus be capable of delivering pressure fluctuations that can be considered as acoustic in source. 
 
 Utilizing a numerical model that averages flow field in terms of numerical methods, treatment of turbulent motions or mesh of insufficient quality, will return a pressure flow field that all acoustic kind fluctuations filtered out. 
 
@@ -197,6 +218,10 @@ Pressure signal used by this approach is given by a list of real scalar values f
 The range of frequencies captured by this method depends on the mesh sizing and timestep sizing. Therefore, if the range of expected frequencies is known or at least estimated, the mesh sizing and timestep size can be adjusted for the given case.
  
 Direct formulation acoustic analysis requires storing pressure and velocity information from all timesteps and then performing averaging over all timesteps. For analysis within audible range 4000 timesteps is required for one 20Hz period. Considering the mesh sizing requirements, the mesh cell count will rise up to tens of millions, which makes storing and managing the data somewhat difficult. Averaging the timestep data, obtaining sound pressure levels, sound intensity levels and respective decibel levels. 
+
+For incompressible flows or flows with low pressure gradients or without shock waves such approach is exaggerated. Should the flow occur in majority in ambient conditions (i.e. low velocity jet in free stream), the offset from the ambient pressure may be computed "on-the-fly".
+
+Although computationally expensive, such approach is required in flows with very high pressure gradients, as it is impossible to establish one reference pressure for whole flow field.
 
 %Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
 
