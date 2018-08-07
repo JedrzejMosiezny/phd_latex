@@ -1,7 +1,6 @@
 % Chapter Template
 
 \chapter{Approach and direct formulation of noise analysis} % Main chapter title
-
 \label{approach} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
 \lhead{\emph{Approach and direct formulation of noise analysis}} % Change X to a consecutive number; this is for the header on each page - perhaps a shortened title
@@ -26,25 +25,32 @@ The process for the direct formulation noise analysis is following:
 \end{equation}
 
 \begin{equation} \label{eq:off}
-p_{i \; sound} = p_i - \bar{p} \qquad and \qquad u_{particle} = u_i - \bar{u}
+p_{i \; sound} = p_i - \bar{p} \qquad and \qquad u_{i \; particle} = u_i - \bar{u}
 \end{equation}
 
-Sound pressure signal and flow velocity offset is obtained for every node or cell centroid throughout the simulation flowtime. This dataset can be now post processed 
-Dataset obtained in described manner now contains sound pressure of the flow field in every mesh node or cell centroid throughout the computational time. The dataset is now post processed to obtain quantity information of the acoustic nearfield. 
+Sound pressure signal and flow velocity offset is obtained for every node or cell centroid throughout the simulation flowtime. This dataset can be now post processed. Dataset obtained in described manner now contains sound pressure of the flow field in every mesh node or cell centroid throughout the computational time. The dataset is now post processed to obtain quantity information of the acoustic nearfield. 
 
-RMS sound pressure level can be obtained from the sound pressure data with use of the formula \ref{eq:RMSp}.
+Sound intensity for cells/nodes in fluid volume is calculated using formula \ref{eq:sil}. 
 
-\begin{equation} \label{eq:RMSp}
-p_{rms} = \sqrt{\frac{\sum_{i=1}^{n} p_{i \; sound}^{2}}{n}}
+\begin{equation} \label{eq:sil}
+I_{i} = p_{i \; sound} \cdot u_{i \; particle}
 \end{equation}
 
-Sound pressure decibel level (SPLdB) is compuded using formula \ref{eq:SPLdB} with standard reference pressure $p_{ref} = 0.00002 Pa$.
+RMS sound pressure level and intensity level can be obtained from the respective data with use of the formula \ref{eq:RMS}.
+
+\begin{equation} \label{eq:RMS}
+p_{rms} = \sqrt{\frac{\sum_{i=1}^{n} p_{i \; sound}^{2}}{n}} \qquad I_{rms} = \sqrt{\frac{\sum_{i=1}^{n} u_{i \; particle}^{2}}{n}}
+\end{equation}
+
+Sound pressure decibel level (SPLdB) for time specific $p_{i \; sound}$ values and and RMS values $p_{rms}$ is computed using formula \ref{eq:SPLdB} with standard reference pressure $p_{ref} = 20 \mu Pa$, whereas for sound intensity with formula \ref{eq:SILdB} and with reference intensity $I_{ref} = 1 pW/m^{2}$.
 
 \begin{equation} \label{eq:SPLdB}
 SPLdB = 20 \cdot \log_{10}\left(\frac{|p_{i \; sound}|}{p_{ref}}\right)
 \end{equation}
 
-
+\begin{equation} \label{eq:SILdB}
+SILdB = 10 \cdot \log_{10}\left(\frac{|I_{i}|}{I_{ref}}\right)
+\end{equation}
 
 %Such information may be now post processed for average Root Mean Square of acoustic pressure \& noise intensity and other appropriate figures used in noise analysis including Fourier analysis.
 
