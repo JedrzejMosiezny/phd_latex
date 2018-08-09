@@ -2,21 +2,22 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Scenario 1. Wavelength smaller than cell edge length\relax }}{7}{figure.caption.45}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Scenario 2. Wavelength equal to cell edge length\relax }}{8}{figure.caption.46}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Scenario 3. Wavelength equal four minimum edge lengths\relax }}{8}{figure.caption.47}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Scenario 4. Wavelength larger than four minimum edge lengths\relax }}{8}{figure.caption.48}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Scenario 1. Timestep smaller than 1/4 of fluctuation period\relax }}{10}{figure.caption.55}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Scenario 2. Timestep equal to 1/4 of fluctuation period\relax }}{10}{figure.caption.56}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Scenario 3. Timestep equal to fluctuation period\relax }}{10}{figure.caption.57}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Scenario 4. Timestep is larger than fluctuation period\relax }}{11}{figure.caption.58}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Resolving eddies in different kinds of CFD analyses\relax }}{8}{figure.caption.50}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Scenario 1. Wavelength smaller than cell edge length\relax }}{13}{figure.caption.78}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Scenario 2. Wavelength equal to cell edge length\relax }}{13}{figure.caption.79}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Scenario 3. Wavelength equal four minimum edge lengths\relax }}{13}{figure.caption.80}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Scenario 4. Wavelength larger than four minimum edge lengths\relax }}{13}{figure.caption.81}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Scenario 1. Timestep smaller than 1/4 of fluctuation period\relax }}{14}{figure.caption.88}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Scenario 2. Timestep equal to 1/4 of fluctuation period\relax }}{15}{figure.caption.89}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Scenario 3. Timestep equal to fluctuation period\relax }}{15}{figure.caption.90}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Scenario 4. Timestep is larger than fluctuation period\relax }}{15}{figure.caption.91}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Geometry of NASA R67\relax }}{13}{figure.caption.62}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Final single passage geometry. Some features hidden for clarity\relax }}{16}{figure.caption.64}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Mesh topology with conforming periodic boundaries\relax }}{17}{figure.caption.68}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Mesh h-topology\relax }}{17}{figure.caption.69}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Mesh non-orthogonality histogram\relax }}{18}{figure.caption.74}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Completed Mesh\relax }}{19}{figure.caption.75}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Geometry of NASA R67\relax }}{17}{figure.caption.95}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Final single passage geometry. Some features hidden for clarity\relax }}{20}{figure.caption.97}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Mesh topology with conforming periodic boundaries\relax }}{21}{figure.caption.101}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Mesh h-topology\relax }}{21}{figure.caption.102}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Mesh non-orthogonality histogram\relax }}{22}{figure.caption.107}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Completed Mesh\relax }}{23}{figure.caption.108}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

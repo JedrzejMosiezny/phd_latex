@@ -21,11 +21,11 @@ The process for the direct formulation noise analysis is following:
 %The process purposely omits transformation of pressure to complex form and forces the analysis on direct signal as measured by a pressure sensor.
 
 \begin{equation} \label{eq:avg}
-\bar{p} = \frac{1}{n} \sum_{i=1}^{n} p_i \qquad and \qquad \bar{u} = \frac{1}{n} \sum_{i=1}^{n} u_i
+\bar{p} = \frac{1}{n} \sum_{n=1}^{N} p_k \qquad and \qquad \bar{u} = \frac{1}{N} \sum_{n=1}^{N} u_k
 \end{equation}
 
 \begin{equation} \label{eq:off}
-p_{i \; sound} = p_i - \bar{p} \qquad and \qquad u_{i \; particle} = u_i - \bar{u}
+p_{n \; sound} = p_n - \bar{p} \qquad and \qquad u_{n \; particle} = u_n - \bar{u}
 \end{equation}
 
 Sound pressure signal and flow velocity offset is obtained for every node or cell centroid throughout the simulation flowtime. This dataset can be now post processed. Dataset obtained in described manner now contains sound pressure of the flow field in every mesh node or cell centroid throughout the computational time. The dataset is now post processed to obtain quantity information of the acoustic nearfield. 
@@ -33,45 +33,266 @@ Sound pressure signal and flow velocity offset is obtained for every node or cel
 Sound intensity for cells/nodes in fluid volume is calculated using formula \ref{eq:sil}. 
 
 \begin{equation} \label{eq:sil}
-I_{i} = p_{i \; sound} \cdot u_{i \; particle}
+I_{n} = p_{n \; sound} \cdot u_{n \; particle}
 \end{equation}
 
 RMS sound pressure level and intensity level can be obtained from the respective data with use of the formula \ref{eq:RMS}.
 
 \begin{equation} \label{eq:RMS}
-p_{rms} = \sqrt{\frac{\sum_{i=1}^{n} p_{i \; sound}^{2}}{n}} \qquad I_{rms} = \sqrt{\frac{\sum_{i=1}^{n} u_{i \; particle}^{2}}{n}}
+p_{rms} = \sqrt{\frac{\sum_{n=1}^{N} p_{n \; sound}^{2}}{N}} \qquad I_{rms} = \sqrt{\frac{\sum_{n=1}^{N} u_{n \; particle}^{2}}{N}}
 \end{equation}
 
-Sound pressure decibel level (SPLdB) for time specific $p_{i \; sound}$ values and and RMS values $p_{rms}$ is computed using formula \ref{eq:SPLdB} with standard reference pressure $p_{ref} = 20 \mu Pa$, whereas for sound intensity with formula \ref{eq:SILdB} and with reference intensity $I_{ref} = 1 pW/m^{2}$.
+Sound pressure decibel level (SPLdB) for time specific $p_{k \; sound}$ values and and RMS values $p_{rms}$ is computed using formula \ref{eq:SPLdB} with standard reference pressure $p_{ref} = 20 \mu Pa$, whereas for sound intensity with formula \ref{eq:SILdB} and with reference intensity $I_{ref} = 1 pW/m^{2}$.
 
 \begin{equation} \label{eq:SPLdB}
-SPLdB = 20 \cdot \log_{10}\left(\frac{|p_{i \; sound}|}{p_{ref}}\right)
+SPLdB = 20 \cdot \log_{10}\left(\frac{|p_{n \; sound}|}{p_{ref}}\right)
 \end{equation}
 
 \begin{equation} \label{eq:SILdB}
-SILdB = 10 \cdot \log_{10}\left(\frac{|I_{i}|}{I_{ref}}\right)
+SILdB = 10 \cdot \log_{10}\left(\frac{|I_{n}|}{I_{ref}}\right)
 \end{equation}
 
-%Such information may be now post processed for average Root Mean Square of acoustic pressure \& noise intensity and other appropriate figures used in noise analysis including Fourier analysis.
+The signal obtained by direct approach is stored in discrete time samples, therefore using a continuous Fourier Transform would require approximation of the sampled signal to a continuous function, which for large datasets is unjustified. In order to obtain ordinary sinuses of the acoustic signal a Discrete Fourier Transform is performed (eq. \ref{eq:dft}).
 
-%Proposed method and code developed for this purpose will work on compressible transient CFD analysis returning pressure flow field as a result. Therefore it is required to perform a CFD analysis that will contain pressure flow field to be interpreted as sound. To accomplish that, there are some requirements towards mesh sizing, time stepping information and obtaining the flow field solution.
+\begin{equation} \label{eq:dft}
+X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-\frac{j2 \pi kn}{N}}
+\end{equation}
+
+Let's assume that:
+
+\begin{equation} \label{eq:bn}
+b_n = \frac{2 \pi k n}{N}
+\end{equation}
+
+Therefore, the equation \ref{eq:dft} can be written as:
+\begin{equation} \label{eq:dft2}
+X_k = x_{0} e^{-j b_{0}} + x_{1} e^{-j b_{1}} x_{2} e^{-j b_{2}} + \ldots + x_{n} e^{-j b_{N-1}}
+\end{equation}
+
+Using Euler's identity the exponent is decomposed (eq. \ref{eq:euler}) to a complex sum:
+
+\begin{equation} \label{eq:euler}
+e^{jx} = \cos(x) + j \cdot \sin(x)
+\end{equation}
+
+Therefore the equation \ref{eq:dft} can be written as:
+
+\begin{equation} \label{eq:dft3}
+X_k = x_0 [\cos(-b_{0}) + j \sin(-b_{0})] +  \ldots + x_n [\cos(-b_{N-1}) + j \sin(-b_{N-1})]
+\end{equation}
+
+Rearranging the equation \ref{eq:dft3} and summing up the real and imaginary components will return a complex vector $X_k$ for "k-th" frequency bin.
+
+\begin{equation} \label{eq:complex}
+X_k = A_k + j B_{k}
+\end{equation}
+ 
+The frequency resolution of the DFT depends on the sampling frequency and number of samples, and is calculated by formula \ref{eq:samples}. 
+
+\begin{equation} \label{eq:samples}
+f_{bin} = \frac{f_{sample}}{N}
+\end{equation}
+
+Fourier coefficients are then used to compute the magnitude (eq. \ref{eq:dftmag}) and phase shift (eq. \ref{eq:dftphase}) for the "k-th" frequency bin ordinary sinus.
+
+\begin{equation} \label{eq:dftmag}
+Mag_k = 2 \cdot \sqrt{A_{k}^{2} + B_{k}^{2}} \cdot \frac{1}{N}
+\end{equation}
+
+\begin{equation} \label{eq:dftphase}
+\theta_k = \arctan \frac{B_k}{A_k}
+\end{equation}
+
 
 %-----------------------------------
 %	SECTION
 %-----------------------------------
 \section{CFD analysis requirements} \label{cfdreq}
-References \citep{Light1}, \citep{Light2}, \citep{FWH} and \citep{curle} provide a theoretical insight on generating sound in fluid flow due to shear mixing of flows or by implementing a solid boundary in the flow. General remark is: any source of turbulence that result in pressure fluctuation will result in generating sound. Therefore the main requirement for used CFD code for direct noise analysis is the capability of resolving turbulent flow and corresponding fluctuations of the pressure and density.
+References \citep{Light1}, \citep{Light2}, \citep{FWH} and \citep{curle} provide a theoretical insight on generating sound in fluid flow due to shear mixing of flows or by implementing a solid boundary in the flow. General remark is: any source of turbulence that result in pressure fluctuation will result in generating sound. Therefore the main requirement for used CFD code for direct noise analysis is the capability of resolving turbulent flow and corresponding fluctuations of the pressure.
 
-This approach requires using a finite volume method (fvm) CFD analysis.
+Let's consider the effect of injection of energy to the fluid resulting in creation of eddies (Fig. \ref{CFDTypes})
 
-%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/CFD_Types.png}
+\caption{Resolving eddies in different kinds of CFD analyses}
+\label{CFDTypes}
+\end{figure}
+
+\subsection{Direct Numerical Simulation} \label{DNS}
+Considering the direct formulation of noise, the Direct Numerical Simulation is seemingly the best tool of choice. The DNS formulation of flow solves directly the discrete form of Navier-Stokes Equation without any turbulence models. Size limit of the resolved eddies is the Kolmogorov limit (eq. \ref{eq:kolm}). In order to properly resolve the DNS simulation op to this scale, the mesh sizing must be at least as small as the expected Kolmogorov limit at given Reynolds number.
+
+\begin{equation} \label{eq:kolm}
+\eta \approx \frac{l}{Re^{3/4}}
+\end{equation}
+
+Reference \citep{LES_size} provides information on calculating the mesh grid node count for DNS calculations (eq. \ref{eq:dnscount}) for flat plate airfoil of aspect ratio $L_z / L_x$. The computational box for this case is of size $L_x \times \delta \times L_z$ in streamwise, normal to plate and spanwise direction respectively, where $\delta$ is the boundary layer thickness.
+
+\begin{equation} \label{eq:dnscount}
+N_{DNS} = 0.000153 \frac{L_z}{L_x} Re_{L_x}^{37/14} \left[ 1 - \left( \frac{Re_{x_0}}{Re_{L_x}} \right)^{23/14} \right]
+\end{equation}
+
+Point $x_0$ is the location where formulas \ref{eq:delta} and \ref{eq:cf} are valid for Reynolds number range ($10^6 \leq Re_x \leq 10^9$).
+
+\begin{equation} \label{eq:delta}
+\delta = x \cdot  0.16 Re_x^{(-1/7)}
+\end{equation}
+
+\begin{equation} \label{eq:cf}
+c_f = 0.027 Re_x^{(-1/7)}
+\end{equation}
+
+For aspect ratio $L_z / L_x = 4$ and $Re_{x_0} = 5 \cdot 10^5$ the node count for streamwise $Re = 10^6$ is roughly $2.99 \cdot 10^{12}$ nodes and for $Re = 10^7$ is roughly $1.92 \cdot 10^{15}$ nodes.
+
+Such node and cell counts are impossible to solve within practical walltime, therefore usage of DNS for sound analysis is limited to small Reynolds numbers.
+
+%Figure \ref{kolmscale} shows the Kolmogorov limit and hence the volume mesh sizing required for the analysis. For Reynolds numbers above 1 million the limit is below $3.1 \cdot 10^{-5}$ meters, for $Re > 10^{7}$ the limit goes below $5.6 \cdot 10^{-6}$ meters. Use of such fine mesh elements generates mesh cell count in order of magnitude of billions for objects like a single passage of the compressor rotor, and hence is plainly impractical to use with high Reynolds numbers.
+
+%\begin{figure}[h!]
+%\centering % bo \centering nie wstawia dodatkowego odstępu
+%\includegraphics[width=0.85\textwidth]{Pictures/kolm_scale.png}
+%\caption{Kolmogorov limit for given Reynolds number}
+%\label{kolmscale}
+%\end{figure}
+
+
+\subsection{Large Eddy Simulation} \label{LES}
+Large eddy simulation (LES) is a mathematical model for turbulence used in computational fluid dynamics. It was initially proposed in 1963 by Joseph Smagorinsky to simulate atmospheric air currents \citep{LES1}.
+
+The principal idea behind LES is to reduce the computational cost by ignoring the smallest length scales, which are the most computationally expensive to resolve, via low-pass filtering of the Navier–Stokes equations. Such a low-pass filtering, which can be viewed as a time- and spatial-averaging, effectively removes small-scale information from the numerical solution. This information is not irrelevant, however, and its effect on the flow field must be modeled, a task which is an active area of research for problems in which small-scales can play an important role such as acoustics \citep{LES2}.
+
+Using LES approach is viable for resolving directly formulated noise, yet the computational cost of such calculations is still relatively large due to mesh sizing requirements. As stated by \citep{LES_size} the required node count for the analysis can be described by formulas \ref{eq:leswm} and \ref{eq:leswr} for modeled and resolved boundary layers.
+
+\begin{equation} \label{eq:leswm}
+N_{wm} = 54.7 \frac{L_z}{L_x} n_x n_y n_z Re^{2/7}_{L_x} \left[ \left( \frac{Re_{L_x}}{Re_{x_0}} \right)^{(5/7)} - 1\right]
+\end{equation}
+
+\begin{equation} \label{eq:leswr}
+N_{wr} = 0.021 \frac{n_y}{\Delta x_w^{+} \Delta z_w^{+}} \frac{L_z}{L_x} Re^{13/7}_{L_x} \left[ 1 - \left( \frac{Re_{L_x}}{Re_{x_0}} \right)^{(6/7)} \right]
+\end{equation}
+
+The computational box for this case is of size $L_x \times \delta \times L_z$ in streamwise, normal to plate and spanwise direction respectively, where $\delta$ is the boundary layer thickness.
+
+For $L_z / L_x = 4$ and $Re_{x_0} = 5 \cdot 10^5$ the node count for streamwise $Re = 10^6$ and $Re = 10^7$ is computed. The $n_x n_y n_z$ product is the number of grid points to resolve the cubic computational volume $\delta^3$ exterior to the viscous wall region. Suggested value of $n_x n_y n_z = 2500$, where $n_x = 10 \; n_y = 25 \; n_z = 10$ was used for the computation of node count with equation \ref{eq:leswm}. Suggested $\Delta x_w^{+} \approx 100$, $\Delta z_w^{+} \approx 20$ and $n_y \approx 10$ was used for computation of node count with equation \ref{eq:leswr}.
+
+Node count for $Re = 10^6$ is roughly $1.82 \cdot 10^{7}$ nodes for modelled and $2.61 \cdot 10^{7}$ nodes for resolved wall flow. For $Re = 10^7$ the figures are $4.10 \cdot 10^{8}$ and $3.88 \cdot 10^{9}$ nodes respectively \citep{LES_size}.
+
+It must be noted that provided cell count is solely for a flow box of boundary layer width. Respective mesh sizing should be propagated towards volume of the computational domain thus enlarging the mesh even further.
+
+LES analyses are commonly used in research and engineering and the method used is feasible for the direct noise formulation. However the computational expense of running such cases is high, but manageable. Second limiting factor for LES is the amount of data generated during the process. As the direct approach requires storing at least every second time step for further processing, terabytes of data are predicted.
+
+\subsection{Reynolds Averaged Navier Stokes} \label{RANS}
+The most computationally efficient method for resolving turbulent flows is using Reynolsds Averaged Navier Stokes equation. Consider a conservation variable $\phi$ of fluid described by spatial and temporal variables. The quantity may be decomposed to a sum of time averaged value in given spatial coordinates and time dependent fluctuations (eq. \ref{eq:rdecomp}).
+
+%\begin{equation} \label{eq:NS}
+%\rho \left(\frac{\partial u_i}{\partial t} + u_j \frac{\partial u_i}{x_j} \right) = - \frac{\partial p}{\partial x_j} + \mu \frac{\partial^2 u_i}{\partial x_j \partial x_j} + \frac{\mu}{3} \frac{\partial^2 u_j}{\partial x_i \partial x_j} + \rho g_i
+%\end{equation}
+
+\begin{equation} \label{eq:rdecomp}
+\phi (x, y, z, t) = \overline{\phi (x, y, z, t)} + \phi ' (x, y, z, t)
+\end{equation}
+
+Consider at first the continuity equation \ref{eq:cont}
+
+\begin{equation} \label{eq:cont}
+\nabla U = 0
+\end{equation}
+
+By switching to Einstein summation convention and applying Reynolds decomposition we obtain equation:
+
+\begin{equation} \label{eq:cont_rans1}
+\frac{\partial \overline{u_i}}{\partial x_i} + \frac{\partial u'_i}{\partial x_i} = 0
+\end{equation}
+
+By averaging the both sides of the equation  \ref{eq:cont_rans1} and applying averaging rules to its components we obtain:
+
+\begin{equation} \label{eq:cont_rans2}
+\frac{\partial \overline{\overline{u_i}}}{\partial x_i} + \frac{\partial \overline{u'_i}}{\partial x_i} = 0
+\end{equation}
+
+Because the average of an average is equal average, and  the average of the fluctuation component is equal 0 we obtain equation \ref{eq:cont_rans3}, the Reynolds averaged continuity equation.
+
+\begin{equation} \label{eq:cont_rans3}
+\frac{\partial \overline{u_i}}{\partial x_i} = 0
+\end{equation}
+
+By taking the momentum equation \ref{eq:momentum}, switching to the index notation and applying the Reynolds decomposition we obtain the equation \ref{eq:mom_decomp1}
+
+\begin{equation} \label{eq:momentum}
+\frac{dU}{dt} = - \frac{1}{\rho} \nabla p + \nu \nabla^{2} U
+\end{equation}
+
+\begin{equation} \label{eq:mom_decomp1}
+\underbrace{\frac{\partial \left( \overline{u_i} + u'_i \right)}{\partial t}}_\text{1} 
++ \underbrace{\left( \overline{u_j} + u'_j \right) \frac{\partial \left( \overline{u_j} + u'_j \right)}{\partial x_j}}_\text{2} 
+=
+- \underbrace{\frac{1}{\rho} \frac{\partial \left( \overline{p} + p' \right)}{\partial x_i}}_\text{3} 
++ \underbrace{\nu \frac{\partial^2 \left( \overline{u_i} + u'_i \right)}{\partial x_j^2}}_\text{4} 
+\end{equation}
+
+Components 1, 3 and 4 of the above equation are treated in the same manner as the continuity equation and thus we obtain:
+
+\begin{equation} \label{eq:mom_components}
+\underbrace{\frac{\partial \overline{u_i}}{\partial t}}_\text{1}
+\qquad
+\underbrace{\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_i}}_\text{3}
+\qquad
+\underbrace{\nu \frac{\partial^2 \overline{u_i}}{\partial x_j^2}}_\text{4}
+\end{equation}
+
+The decomposition of component 2 from the equation \ref{eq:mom_decomp1} requires multiplication of the components within the braces and performing Reynolds averaging on each of the products: 
+
+\begin{equation} \label{eq:mom_comp2_avg}
+\underbrace{\overline {\left( \left( \overline{u_j} + u'_j \right) + \frac{\partial \left( \overline{u_i} + u'_i \right)}{\partial x_j} \right)}}_\text{2}
+= \underbrace{\overline{\left( \overline{u_j} \frac{\partial \overline{u_i}}{\partial x_j} \right)}}_\text{M $\cdot$ M $\neq$ 0}
++ \underbrace{\overline{\left( \overline{u_j} \frac{\partial u'_i}{\partial x_j} \right)}}_\text{M $\cdot$ F = 0}
++ \underbrace{\overline{\left( u'_j \frac{\partial \overline{u_i}}{\partial x_j} \right)}}_\text{F $\cdot$ M = 0}
++ \underbrace{\overline{\left( u'_j \frac{\partial u'_i}{\partial x_j} \right)}}_\text{F $\cdot$ F $\neq$ 0}
+\end{equation}
+
+The F $\cdot$ F $\neq$ 0 product can be further simplified by equation:
+
+\begin{equation} \label{eq:ff}
+\frac{\partial u'_j u'_i}{\partial x_j}
+= \underbrace{u'_j \frac{\partial u'_j}{\partial x_j}}_\text{= 0}
++ \underbrace{u'_j \frac{\partial u'_i}{\partial x_j}}_\text{F $\cdot$ F $\neq$ 0}
+\end{equation}
+
+By inserting the components 1 through 4 from equations \ref{eq:mom_components} and \ref{eq:mom_comp2_avg} modified by equation \ref{eq:ff} to the equation \ref{eq:mom_decomp1} we obtain the Reynolds averaged momentum equation:
+
+\begin{equation} \label{eq:RANSmomentum}
+\frac{d \overline{U}}{dt}
+=
+- \frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_i}
++ \frac{\partial}{\partial x_j} \left[ \nu \frac{\partial \overline{u_j}}{\partial x_j} - \overline{u'_i u'_j}\right]
+\end{equation}
+
+By representing the viscous terms as a stress tensor (eq. \ref{eq:viscous}) we obtain the momentum equation with turbulent stress (eq \ref{eq:RANSmomentum2})
+
+\begin{equation} \label{eq:viscous}
+\nu \frac{\partial^2 \overline{u_i}}{\partial x_j^2}
+=
+\frac{1}{\rho} \frac{\partial}{\partial x_j} \tau_{ij}
+\end{equation}
+
+\begin{equation} \label{eq:RANSmomentum2}
+\frac{d \overline{U}}{dt}
+=
+- \frac{1}{\rho} \nabla \overline{p}
++ \frac{1}{\rho} \frac{\partial}{\partial x_j} \left[ \tau_{ij} - \rho \overline{u'_i u'_j} \right]
+\end{equation}
+
+As seen in equation \ref{eq:RANSmomentum2} the RANS approach takes in flow field values averaged over time, and models turbulent motion by implementing a range of turbulence models based on the Bousinessque theory. As the average of fluctuation over time is 0, therefore RANS and Unsteady RANS, is incapable of capturing pressure fluctuations that can be recognized as sound.
+
+\subsection{Hybrid RANS/LES Methods}
+
 
 
 %-----------------------------------
 %	SECTION
 %-----------------------------------
 \section{Mesh sizing requirements} \label{meshsize}
-Let's assume a sinusoidal pressure fluctuation $y(t)$ (equation \ref{eq:sine} of ordinary frequency of $f$ and amplitude $A$ moving through ambient medium, for more than 5 cycles at speed of sound \ref{eq:sos}. The mathematical and numerical methods for solving flow field described in section above are capable of computing such pressure fluctuation in a fine resolution mesh. 
+Let's assume a sinusoidal pressure fluctuation $y(t)$ (equation \ref{eq:sine}) of ordinary frequency of $f$ and amplitude $A$ moving through ambient medium, for more than 5 cycles at speed of sound \ref{eq:sos}. The mathematical and numerical methods for solving flow field described in section above are capable of computing such pressure fluctuation in a fine resolution mesh. 
 
 \begin{equation} \label{eq:sine}
 y(t) = A sin(2 \pi f t + \phi)
@@ -94,7 +315,7 @@ Considered fluctuation travels through the finite volumes in the stationary CFD 
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+%\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
 \caption{Scenario 1. Wavelength smaller than cell edge length}
 \label{scen1}
 \end{figure}
@@ -103,7 +324,7 @@ Considered fluctuation travels through the finite volumes in the stationary CFD 
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+%\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
 \caption{Scenario 2. Wavelength equal to cell edge length}
 \label{scen2}
 \end{figure}
@@ -112,7 +333,7 @@ Considered fluctuation travels through the finite volumes in the stationary CFD 
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+%\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
 \caption{Scenario 3. Wavelength equal four minimum edge lengths}
 \label{scen3}
 \end{figure}
@@ -121,7 +342,7 @@ Considered fluctuation travels through the finite volumes in the stationary CFD 
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+%\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
 \caption{Scenario 4. Wavelength larger than four minimum edge lengths}
 \label{scen4}
 \end{figure}
@@ -169,13 +390,15 @@ By rearranging the equation \ref{eq:vel2} to solve for $t$ and substituting $\la
 t = \frac{s}{a} = \frac{\lambda}{4a} = \frac{a}{f} \cdot \frac{1}{4a} = \frac{1}{4f}
 \end{equation}
 
+Time step $t$ becomes also a sampling frequency for the pressure signal therefore it must be compared with the requirements stated by Shannon-Nyquist-Whitaker theorem: \textit{If a function x(t) contains no frequencies higher than B hertz, it is completely determined by giving its ordinates at a series of points spaced 1/(2B) seconds apart.} Presented time stepping approach fulfills that theorem.
+
 Equation \ref{eq:mintime} shows that time step for the analysis is dependent from the expected value of high frequency fluctuations. Four scenarios can be discussed.
 
 \textbf{Scenario 1:} timestep is smaller than 1/4 of the fluctuation period (Fig. \ref{time1}).
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+%\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
 \caption{Scenario 1. Timestep smaller than 1/4 of fluctuation period}
 \label{time1}
 \end{figure}
@@ -184,7 +407,7 @@ Equation \ref{eq:mintime} shows that time step for the analysis is dependent fro
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+%\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
 \caption{Scenario 2. Timestep equal to 1/4 of fluctuation period}
 \label{time2}
 \end{figure}
@@ -193,7 +416,7 @@ Equation \ref{eq:mintime} shows that time step for the analysis is dependent fro
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+%\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
 \caption{Scenario 3. Timestep equal to fluctuation period}
 \label{time3}
 \end{figure}
@@ -202,7 +425,7 @@ Equation \ref{eq:mintime} shows that time step for the analysis is dependent fro
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+%\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
 \caption{Scenario 4. Timestep is larger than fluctuation period}
 \label{time4}
 \end{figure}
@@ -215,9 +438,9 @@ In order to capture frequencies on the low end of the spectrum, the analysis mus
 %	SECTION
 %----------------------------------------------------------------------------------------
 \section{Limiting factors of the direct approach} \label{limits}
-Provided approach is solely a post processing approach relying on data provided by a CFD analysis. In order to obtain reasonable results down the process, the analysis itself mus be capable of delivering pressure fluctuations that can be considered as acoustic in source. 
+Described direct formulation noise analysis is solely a post processing approach relying on data generated on CFD analysis. In order to obtain reasonable results down the process, the analysis itself mus be capable of delivering pressure fluctuations that can be considered as acoustic in source. 
 
-Utilizing a numerical model that averages flow field in terms of numerical methods, treatment of turbulent motions or mesh of insufficient quality, will return a pressure flow field that all acoustic kind fluctuations filtered out. 
+It is advised to used a turbulence model that is capable of resolving small scale turbulence on a mesh that will allow such resolution. Utilizing LES formulation or at least hybrid RANS/LES turbulence model such as DDES. Utilizing a numerical model that averages the flow field such as pure RANS model even with  
 
 Pressure signal used by this approach is given by a list of real scalar values for each node or cell centroid for each timestep. Therefore obtaining phase shift of the ordinary sinuses components of pressure signal may be challenging, if at all possible, and relies solely on further postprocessing of generated data. 
 

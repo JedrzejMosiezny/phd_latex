@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{13}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -39,6 +39,23 @@ N.~Curle.
   September 1955.
 \newblock URL
   \url{http://rspa.royalsocietypublishing.org/content/231/1187/505}.
+
+\bibitem[C.~Choi(2012)]{LES_size}
+P.~Moin C.~Choi.
+\newblock Grid-point requirements for large eddy simulation: Chapman’s
+  estimates revisited.
+\newblock \emph{Physics of Fluids}, 24(1), January 2012.
+\newblock URL \url{https://aip.scitation.org/doi/full/10.1063/1.3676783}.
+
+\bibitem[Smagorinsky(1963)]{LES1}
+J.~Smagorinsky.
+\newblock General circulation experiments with the primitive equations.
+\newblock \emph{Monthly Weather Review}, 91(3), 1963.
+
+\bibitem[C.~Wagner(2007)]{LES2}
+P.~Sagaut C.~Wagner, T.~Hüttl.
+\newblock Large-eddy simulation for acoustics.
+\newblock \emph{Cambridge University Press}, 2007.
 
 \bibitem[W.~S.~Cunnan and Urasek(1978)]{r67design}
 W.~Stevans W.~S.~Cunnan and D.~C. Urasek.
