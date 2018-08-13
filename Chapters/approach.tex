@@ -119,6 +119,18 @@ Let's consider the effect of injection of energy to the fluid resulting in creat
 \label{CFDTypes}
 \end{figure}
 
+\subsection{Govering equations} \label{goveq}
+
+Continuity equation:
+\begin{equation} \label{eq:cont}
+\frac{\partial \rho}{\partial t} + \nabla (\rho U) = 0
+\end{equation}
+
+Momentum equation:
+\begin{equation} \label{eq:momentum}
+\frac{dU}{dt} = - \frac{1}{\rho} \nabla p + \nu \nabla^{2} U
+\end{equation}
+
 \subsection{Direct Numerical Simulation} \label{DNS}
 Considering the direct formulation of noise, the Direct Numerical Simulation is seemingly the best tool of choice. The DNS formulation of flow solves directly the discrete form of Navier-Stokes Equation without any turbulence models. Size limit of the resolved eddies is the Kolmogorov limit (eq. \ref{eq:kolm}). In order to properly resolve the DNS simulation op to this scale, the mesh sizing must be at least as small as the expected Kolmogorov limit at given Reynolds number.
 
@@ -161,6 +173,87 @@ Large eddy simulation (LES) is a mathematical model for turbulence used in compu
 
 The principal idea behind LES is to reduce the computational cost by ignoring the smallest length scales, which are the most computationally expensive to resolve, via low-pass filtering of the Navier–Stokes equations. Such a low-pass filtering, which can be viewed as a time- and spatial-averaging, effectively removes small-scale information from the numerical solution. This information is not irrelevant, however, and its effect on the flow field must be modeled, a task which is an active area of research for problems in which small-scales can play an important role such as acoustics \citep{LES2}.
 
+The governing equations employed for LES are obtained by filtering the time dependent Navier-Stokes equations in either Fourier (wave-number) space or configuration (physical) space. The filtering process effectively filters out the eddies whose scales are smaller than the filter width or grid spacing used in the computations. The resulting equations therefore govern the dynamics of large eddies \citep{fluenttheory}.
+
+A filtered variable is defined by:
+\begin{equation} \label{eq:lesfilter}
+\overline{\phi}(x) = \int\displaylimits_{D} \phi \left( x' \right) G \left( x, x' \right) dx'
+\end{equation}
+
+\noindent where $D$ is the fluid domain, and $G$ is the filter function that determines the scale of the resolved eddies. The finite volume discretization itself implicitly provides the filtering operation:
+
+\begin{equation} \label{eq:lesfilter2}
+\overline{\phi}(x) = \frac{1}{V} \int\displaylimits_{\nu} \phi \left( x' \right) dx', \; x' \in \nu
+\end{equation}
+
+\noindent where $V$ is the volume of a computational cell. The filter function, $G(x, x')$ implied here is then:
+
+\begin{equation} \label{eq:lesfilter3}
+G(x, x') = 
+\begin{cases}
+	\frac{1}{V}, & \text{if } x'\in \nu \\
+	0, & \text{otherwise}
+\end{cases}
+\end{equation}
+
+For compressible flows, it is convenient to introduce the density-weighted (or Favre) filtering operator:
+\begin{equation} \label{eq:favre}
+\tilde{\phi} = \frac{\overline{\rho \phi}}{\overline{\phi}}
+\end{equation}
+
+Filtering the continuity \ref{eq:cont} and momentum \ref{eq:momentum} equations following form is obtained:
+
+\begin{equation} \label{eq:lescont}
+\frac{\partial \rho}{\partial t} = \frac{\partial}{\partial x_i} \left( \rho \overline{u_i} \right) = 0
+\end{equation}
+
+\begin{equation} \label{eq:lesmom}
+\frac{\partial}{\partial t}
++ \frac{\partial}{\partial x_j} \left( \rho \overline{u_i} \overline{u_j} \right)
+= \frac{\partial}{\partial x_j} \left( \sigma_{ij} \right)
+- \frac{\partial \overline{p}}{\partial x_i}
+- \frac{\partial \tau_{ij}}{\partial x_j}
+\end{equation}
+
+\noindent where $\sigma_{ij}$ is the stress tensor due to molecular viscosity defined by:
+
+\begin{equation} \label{eq:lesstress}
+\sigma_{ij}
+\equiv
+\left[ \mu \left( \frac{\partial \overline{u_i}}{\partial x_{j}} + \frac{\partial \overline{u_j}}{\partial x_{i}} \right) \right]
+- \frac{2}{3} \mu \frac{\partial \overline{u_l}}{\partial x_l} \delta_{ij}
+\end{equation}
+
+\noindent and $\tau_{ij}$ is the subgrid-scale stress defined by:
+
+\begin{equation} \label{eq:lessubstress}
+\tau_{ij} \equiv \rho \overline{u_i u_j} - \rho \overline{u_i} \; \overline{u_j}
+\end{equation}
+
+The Favre Filtered Navier-Stokes equation takes the same form as equation \ref{eq:lesmom}. The compressible form of the subgrid stress tensor is defined as:
+
+\begin{equation} \label{eq:lescompsub}
+\tau_{ij} = \overline{\rho} \tilde{u_i u_j} - \overline{\rho} \tilde{u_i} \; \tilde{u_j}
+\end{equation}
+
+The subgrid-scale stresses resulting from the filtering operation are unknown, and require modeling. The subgrid-scale turbulence models employ the Boussinesq hypothesis \citep{bousinesque} in the RANS models, computing subgrid-scale turbulent stresses from:
+
+\begin{equation} \label{eq:lesturbstress}
+\tau_{ij} - \frac{1}{3} \tau_{kk} \delta_{ij} = -2 \mu_{t} \overline{S_{ij}}
+\end{equation}
+
+\noindent where $\mu_t$ is the subgrid-scale turbulent viscosity. The isotropic part of the subgrid-scale stresses $\tau_{kk}$ is not modeled, but added to the filtered static pressure term. $S_{ij}$ is the rate-of-strain tensor for the resolved scale defined by:
+
+\begin{equation} \label{eq:lesstrain}
+\overline{S_{ij}} \equiv \frac{1}{2} \left( \frac{\partial \overline{u_i}}{\partial x_j} + \frac{\partial \overline{u_j}}{\partial x_i} \right)
+\end{equation}
+
+Equation \ref{eq:lescompsub} is split into its isotropic and deviatoric parts:
+
+\begin{equation} \label{eq:lesdeviatoric}
+\tau_{ij} - \frac{1}{3} \tau_{kk} \delta_{ij} = -2 \mu_{t} \left( S_{ij} - \frac{1}{3} S_{kk} \delta_{ij} \right)
+\end{equation}
+
 Using LES approach is viable for resolving directly formulated noise, yet the computational cost of such calculations is still relatively large due to mesh sizing requirements. As stated by \citep{LES_size} the required node count for the analysis can be described by formulas \ref{eq:leswm} and \ref{eq:leswr} for modeled and resolved boundary layers.
 
 \begin{equation} \label{eq:leswm}
@@ -192,35 +285,25 @@ The most computationally efficient method for resolving turbulent flows is using
 \phi (x, y, z, t) = \overline{\phi (x, y, z, t)} + \phi ' (x, y, z, t)
 \end{equation}
 
-Consider at first the continuity equation \ref{eq:cont}
-
-\begin{equation} \label{eq:cont}
-\nabla U = 0
-\end{equation}
-
-By switching to Einstein summation convention and applying Reynolds decomposition we obtain equation:
+Consider at first the continuity equation \ref{eq:cont}. By applying Reynolds decomposition to velocity vector we obtain:
 
 \begin{equation} \label{eq:cont_rans1}
-\frac{\partial \overline{u_i}}{\partial x_i} + \frac{\partial u'_i}{\partial x_i} = 0
+\frac{\partial \rho}{\partial t} + \frac{\partial \overline{\rho u_i}}{\partial x_i} + \frac{\partial \rho u'_i}{\partial x_i} = 0
 \end{equation}
 
 By averaging the both sides of the equation  \ref{eq:cont_rans1} and applying averaging rules to its components we obtain:
 
 \begin{equation} \label{eq:cont_rans2}
-\frac{\partial \overline{\overline{u_i}}}{\partial x_i} + \frac{\partial \overline{u'_i}}{\partial x_i} = 0
+\frac{\partial \rho}{\partial t} + \frac{\partial \overline{\overline{\rho u_i}}}{\partial x_i} + \frac{\partial \overline{\rho u'_i}}{\partial x_i} = 0
 \end{equation}
 
 Because the average of an average is equal average, and  the average of the fluctuation component is equal 0 we obtain equation \ref{eq:cont_rans3}, the Reynolds averaged continuity equation.
 
 \begin{equation} \label{eq:cont_rans3}
-\frac{\partial \overline{u_i}}{\partial x_i} = 0
+\frac{\partial \rho}{\partial t} + \frac{\partial \overline{\rho u_i}}{\partial x_i} = 0
 \end{equation}
 
 By taking the momentum equation \ref{eq:momentum}, switching to the index notation and applying the Reynolds decomposition we obtain the equation \ref{eq:mom_decomp1}
-
-\begin{equation} \label{eq:momentum}
-\frac{dU}{dt} = - \frac{1}{\rho} \nabla p + \nu \nabla^{2} U
-\end{equation}
 
 \begin{equation} \label{eq:mom_decomp1}
 \underbrace{\frac{\partial \left( \overline{u_i} + u'_i \right)}{\partial t}}_\text{1} 
@@ -282,11 +365,100 @@ By representing the viscous terms as a stress tensor (eq. \ref{eq:viscous}) we o
 + \frac{1}{\rho} \frac{\partial}{\partial x_j} \left[ \tau_{ij} - \rho \overline{u'_i u'_j} \right]
 \end{equation}
 
-As seen in equation \ref{eq:RANSmomentum2} the RANS approach takes in flow field values averaged over time, and models turbulent motion by implementing a range of turbulence models based on the Bousinessque theory. As the average of fluctuation over time is 0, therefore RANS and Unsteady RANS, is incapable of capturing pressure fluctuations that can be recognized as sound.
+The $\rho \overline{u'_i u'_j}$ term can be further transformed to Reynolds stress tensor linked to shear stress. The remaining fluctuating component is then modeled rather than resolved, by one of many turbulence model based on Bousinessque theory.
 
 \subsection{Hybrid RANS/LES Methods}
+At first, the concepts of Reynolds Averaging and Spatial Filtering seem incompatible, as they result in different additional terms in the momentum equations (Reynolds Stresses and sub-grid stresses). This would preclude hybrid models like Scale-Adaptive Simulation (SAS), Detached Eddy Simulation (DES), Shielded DES (SDES), or Stress-Blended Eddy Simulation (SBES), which are based on one set of momentum equations throughout the RANS and LES portions of the domain. However, it is important to note that once a turbulence model is introduced into the momentum equations, they no longer carry any information concerning their derivation (averaging). Case in point is that the most popular models, both in RANS and LES, are eddy viscosity models that are used to substitute either the Reynolds- or the sub-grid stress tensor. After the introduction of an eddy viscosity (turbulent viscosity), both the RANS and LES momentum equations are formally identical. The difference lies exclusively in the size of the eddy-viscosity provided by the underlying turbulence model. This allows the formulation of turbulence models that can switch from RANS to LES mode, by lowering the eddy viscosity in the LES zone appropriately, without any formal change to the momentum equations \citep{fluenttheory}.
 
+For further calculations, Delayed Detached Eddy Simulation with $SST k-\omega$ model was chosen. In the DES approach, the unsteady RANS models are employed in the boundary layer, while the LES treatment is applied to the separated regions. The LES region is normally associated with the core turbulent region where large unsteady turbulence scales play a dominant role. In this region, the DES models recover LES-like subgrid models. In the near-wall region, the respective RANS models are recovered \citep{fluenttheory}.
 
+Formulation of DES is the development of the Spalart-Allmaras turbulence model for RANS formulation \citep{desspalart}, therefore the theoretical formulations are derived from the S-A model.
+
+The S-A model uses modified turbulent viscosity $\tilde{\nu}$ in place of the turbulent kinematic viscosity.
+
+\begin{equation} \label{eq:nutilde}
+\frac{\partial}{\partial t} \left( \rho \tilde{\nu} \right)
++ \frac{\partial}{\partial x_i} \left( \rho \tilde{\nu} u_i \right)
+= G_{\nu} + \frac{1}{\sigma_{\tilde{\nu}}}
+\left[
+\frac{\partial}{\partial t} \left\lbrace \left( \mu + \rho \tilde{\nu} \right) \frac{\partial \tilde{\nu}}{\partial x_j} \right\rbrace
++ C_{b2} \rho \left( \frac{\partial \tilde{\nu}}{\partial x_{j}}\right)^{2}
+\right]
+- Y_{\nu} + S_{\tilde{\nu}}
+\end{equation}
+
+Turbulence production $G_{\nu}$ and destruction $Y_{\nu}$ terms are modeled as:
+
+\begin{equation} \label{eq:SAGnu}
+G_{\nu} = C_{b1} \rho \tilde{S} \tilde{\nu}
+\end{equation}
+
+\begin{equation} \label{eq:SAYnu}
+Y_{\nu} = C_{wq} \rho f_{w} \left(\frac{\tilde{\nu}}{d} \right)^2
+\end{equation}
+
+Where $d$ is the length scale calculated as the distance to the closest wall and $\tilde{S}$ being the measure of deformation tensor:
+
+\begin{equation} \label{eq:SAdeform}
+\tilde{S} \equiv S + \frac{\tilde{\nu}}{\kappa^2 d^2} f_{v2}
+\end{equation}
+
+\noindent where:
+
+\begin{equation} \label{eq:SAdeform2}
+S \equiv \lvert \Omega_{ij} \rvert + C_{prod} \text{min} \left(0, \lvert S_{ij} \rvert - \lvert \Omega_{ij} \rvert \right)
+\end{equation}
+
+\noindent where:
+
+\begin{equation} \label{eq:SAdeform3}
+C_{prod} = 2.0, \;
+\lvert \Omega_{ij} \rvert \equiv \sqrt{2 \Omega_{ij} \Omega_{ij}}, \;
+\lvert S_{ij} \rvert \equiv \sqrt{2 \S_{ij} \S_{ij}}
+\end{equation}
+
+\noindent with the mean strain rate defined as:
+
+\begin{equation} \label{eq:SAdeform4}
+S_{ij} = \frac{1}{2} \left( \frac{\partial u_j}{\partial x_i} + \frac{\partial u_i}{\partial u_j}\right)
+\end{equation}
+
+The equation \ref{eq:SAYnu} shows that $\tilde{\nu}$ is proportional to the local deformation rate and wall distance: $\tilde{\nu} \propto Sd^2$. Smagorinsky model for "Sub-Grid-Scale" (SGS) scales the turbulent viscosity with local deformation and grid spacing: $\tilde{\nu} \propto S \Delta^2$.
+
+By replacing the $d$ in the S-A destruction term (eq. \ref{eq:SAYnu}) with $\tilde{d}$:
+\begin{equation} \label{eq:tilded}
+\tilde{d} \equiv \text{min} \left(d, C_{DES} \Delta \right)
+\end{equation}
+
+\noindent a single model is obtained, acting as RANS with S-A turbulence modeling in regions where $d \ll \Delta$ and with LES behavior where $d \gg \Delta$. Grid spacing $\Delta$ is defined as the largest dimension of the computational cell $\Delta \equiv \text{max}\left( \Delta x, \Delta y, \Delta z\right)$.  In case of an ambiguous grid definition, where $\Delta < \delta$ the DES limiter can activate the LES mode inside the boundary layer, where the grid is not fine enough to sustain resolved turbulence. Therefore, a new formulation \citep{ddesspalart} of DES is available to preserve the RANS mode throughout the boundary layer. This is known as the delayed option or DDES for delayed DES \citep{fluenttheory}.
+
+DES and DDES methods can be used with other RANS turbulence models. Further analyses presented in this thesis use a $k-\omega SST$ model. For hybrid model the dissipation of turbulent kinetic energy is modified:
+
+\begin{equation} \label{eq:deskoYk}
+Y_k = \rho \beta^{*} k \omega F_{DES}
+\end{equation}
+
+\noindent where:
+
+\begin{equation} \label{eq:deskoFdes}
+F_{DES} = \text{max}\left( \frac{L_t}{C_{DES} \Delta_{max}}\left( 1-F_{SST} \right), 1 \right)
+\end{equation}
+
+\noindent where $C_{DES}$ is a calibration constant used in the DES model and has a value of 0.61, with $F_{SST} = 0, F_1, F_2$ where $F_1$ and $F_2$ are the blending functions of  the Baseline and $SST k-\omega$ model. The turbulent length scale is the parameter that defines this RANS model:
+
+\begin{equation} \label{eq:deskoFdes2}
+F_{DES} = \text{max}\left( \frac{L_t}{C_{DES} \Delta_{max}}, 1 \right)
+\end{equation}
+
+The $F_{DDES}$ blending function is given by equation \ref{eq:deskoFdes2} with model constants $C_{d1} = 20$, $C_{d2} = 3$ and $r_d$ as defined by eq. \ref{eq:deskord}:
+
+\begin{equation} \label{eq:deskoFddes}
+F_{DDES} = \tanh \left[ \left( C_{d1} r_{d1} \right)^{C_{d2}} \right]
+\end{equation}
+
+\begin{equation} \label{eq:deskord}
+r_d = \frac{\nu_t + \nu}{\kappa^2 y^2 \sqrt{0.5 \left( S^2 + \Omega^2 \right)}}
+\end{equation}
 
 %-----------------------------------
 %	SECTION
@@ -295,7 +467,7 @@ As seen in equation \ref{eq:RANSmomentum2} the RANS approach takes in flow field
 Let's assume a sinusoidal pressure fluctuation $y(t)$ (equation \ref{eq:sine}) of ordinary frequency of $f$ and amplitude $A$ moving through ambient medium, for more than 5 cycles at speed of sound \ref{eq:sos}. The mathematical and numerical methods for solving flow field described in section above are capable of computing such pressure fluctuation in a fine resolution mesh. 
 
 \begin{equation} \label{eq:sine}
-y(t) = A sin(2 \pi f t + \phi)
+y(t) = A \sin(2 \pi f t + \phi)
 \end{equation}
 
 \begin{equation} \label{eq:sos}
@@ -392,43 +564,43 @@ t = \frac{s}{a} = \frac{\lambda}{4a} = \frac{a}{f} \cdot \frac{1}{4a} = \frac{1}
 
 Time step $t$ becomes also a sampling frequency for the pressure signal therefore it must be compared with the requirements stated by Shannon-Nyquist-Whitaker theorem: \textit{If a function x(t) contains no frequencies higher than B hertz, it is completely determined by giving its ordinates at a series of points spaced 1/(2B) seconds apart.} Presented time stepping approach fulfills that theorem.
 
-Equation \ref{eq:mintime} shows that time step for the analysis is dependent from the expected value of high frequency fluctuations. Four scenarios can be discussed.
+Equation \ref{eq:mintime} shows that time step for the analysis is dependent from the expected value of high frequency fluctuations. %Four scenarios can be discussed.
 
-\textbf{Scenario 1:} timestep is smaller than 1/4 of the fluctuation period (Fig. \ref{time1}).
+%\textbf{Scenario 1:} timestep is smaller than 1/4 of the fluctuation period (Fig. \ref{time1}).
 
-\begin{figure}[h!]
-\centering % bo \centering nie wstawia dodatkowego odstępu
+%\begin{figure}[h!]
+%\centering % bo \centering nie wstawia dodatkowego odstępu
 %\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
-\caption{Scenario 1. Timestep smaller than 1/4 of fluctuation period}
-\label{time1}
-\end{figure}
+%\caption{Scenario 1. Timestep smaller than 1/4 of fluctuation period}
+%\label{time1}
+%\end{figure}
 
-\textbf{Scenario 2:} timestep is equal to the  1/4 of the fluctuation period (Fig. \ref{time2}).
+%\textbf{Scenario 2:} timestep is equal to the  1/4 of the fluctuation period (Fig. \ref{time2}).
 
-\begin{figure}[h!]
-\centering % bo \centering nie wstawia dodatkowego odstępu
+%\begin{figure}[h!]
+%\centering % bo \centering nie wstawia dodatkowego odstępu
+%%\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
+%\caption{Scenario 2. Timestep equal to 1/4 of fluctuation period}
+%\label{time2}
+%\end{figure}
+
+%\textbf{Scenario 3:} timestep is equal to fluctuation period (Fig. \ref{time3}).
+
+%\begin{figure}[h!]
+%\centering % bo \centering nie wstawia dodatkowego odstępu
 %\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
-\caption{Scenario 2. Timestep equal to 1/4 of fluctuation period}
-\label{time2}
-\end{figure}
+%\caption{Scenario 3. Timestep equal to fluctuation period}
+%\label{time3}
+%\end{figure}
 
-\textbf{Scenario 3:} timestep is equal to fluctuation period (Fig. \ref{time3}).
+%\textbf{Scenario 4:} timestep is larger that fluctuation period (Fig. \ref{time4}).
 
-\begin{figure}[h!]
-\centering % bo \centering nie wstawia dodatkowego odstępu
+%\begin{figure}[h!]
+%\centering % bo \centering nie wstawia dodatkowego odstępu
 %\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
-\caption{Scenario 3. Timestep equal to fluctuation period}
-\label{time3}
-\end{figure}
-
-\textbf{Scenario 4:} timestep is larger that fluctuation period (Fig. \ref{time4}).
-
-\begin{figure}[h!]
-\centering % bo \centering nie wstawia dodatkowego odstępu
-%\includegraphics[width=0.5\textwidth]{Pictures/kitten-placeholder.jpg}
-\caption{Scenario 4. Timestep is larger than fluctuation period}
-\label{time4}
-\end{figure}
+%\caption{Scenario 4. Timestep is larger than fluctuation period}
+%\label{time4}
+%\end{figure}
 %\end{itemize}
 
 In order to capture frequencies on the low end of the spectrum, the analysis must be performed long enough to capture at least a single, with optimum 5 or more periods, of the desired low frequency. Assuming lower end of the audible frequency spectrum, the 20Hz frequency, the simulation time must resemble at least 0.05s of flow time with optimum 0.25s of flow time at given timestep.
@@ -440,60 +612,12 @@ In order to capture frequencies on the low end of the spectrum, the analysis mus
 \section{Limiting factors of the direct approach} \label{limits}
 Described direct formulation noise analysis is solely a post processing approach relying on data generated on CFD analysis. In order to obtain reasonable results down the process, the analysis itself mus be capable of delivering pressure fluctuations that can be considered as acoustic in source. 
 
-It is advised to used a turbulence model that is capable of resolving small scale turbulence on a mesh that will allow such resolution. Utilizing LES formulation or at least hybrid RANS/LES turbulence model such as DDES. Utilizing a numerical model that averages the flow field such as pure RANS model even with  
+It is advised to used a turbulence model that is capable of resolving small scale turbulence on a mesh that will allow such resolution. Utilizing LES formulation or at least hybrid RANS/LES turbulence model such as DDES. Using an averaging formulation such as RANS will cut off all of the fluctuations and is not suitable for this approach.
 
-Pressure signal used by this approach is given by a list of real scalar values for each node or cell centroid for each timestep. Therefore obtaining phase shift of the ordinary sinuses components of pressure signal may be challenging, if at all possible, and relies solely on further postprocessing of generated data. 
+%Pressure signal used by this approach is given by a list of real scalar values for each node or cell centroid for each timestep. Therefore obtaining phase shift of the ordinary sinuses components of pressure signal may be challenging, if at all possible, and relies solely on further postprocessing of generated data. 
 
-The range of frequencies captured by this method depends on the mesh sizing and timestep sizing. Therefore, if the range of expected frequencies is known or at least estimated, the mesh sizing and timestep size can be adjusted for the given case.
+The range of frequencies captured by this method depends on the mesh sizing and timestep sizing. Therefore, if the range of expected frequencies is known or at least estimated, the mesh sizing and timestep size can be adjusted for the given case. For analysis within audible range, 4000 timesteps are required for one 20Hz period. Considering the mesh sizing requirements, the mesh cell count will rise up to tens of millions for a single passage axial compressor blade. This makes the case files and storing data for each timestep relatively challenging and requires securing adequate storage beforehand.
  
-Direct formulation acoustic analysis requires storing pressure and velocity information from all timesteps and then performing averaging over all timesteps. For analysis within audible range 4000 timesteps is required for one 20Hz period. Considering the mesh sizing requirements, the mesh cell count will rise up to tens of millions, which makes storing and managing the data somewhat difficult. Averaging the timestep data, obtaining sound pressure levels, sound intensity levels and respective decibel levels. 
+A major limiting factor is the implementation of the direct noise formulation post-processing. For this thesis, the method was implemented in python v.3.5 high level programming language. Python code is written in C/C++ and provides a vast array of additional libraries for handling files, tabular data and performing mathematical operations. The code is presented in appendices to this dissertation. Although easy to implement, python code is known to be inefficient and slow while managing large amounts of data. Tools and algorithms used in implementing the averaging, obtaining sound pressure and particle velocity as well as DFT are build in tools from specific libraries. As convenient for the implementation, the post-processing code requires some amount of operational memory and disk space for generating the results.
 
-For incompressible flows or flows with low pressure gradients or without shock waves such approach is exaggerated. Should the flow occur in majority in ambient conditions (i.e. low velocity jet in free stream), the offset from the ambient pressure may be computed "on-the-fly".
-
-Although computationally expensive, such approach is required in flows with very high pressure gradients, as it is impossible to establish one reference pressure for whole flow field.
-
-%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
-
-
-
-%----------------------------------------------------------------------------------------
-%	SECTION
-%----------------------------------------------------------------------------------------
-%\section{Basic conservation equations in CFD}
-%-----------------------------------
-%	SUBSECTION
-%-----------------------------------
-%\subsection{Momentum equations}
-%Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
-
-%-----------------------------------
-%	SUBSECTION
-%-----------------------------------
-%\subsection{Continuity Equations}
-%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
-
-%\subsection{Energy equation}
-%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
-
-%----------------------------------------------------------------------------------------
-%	SECTION 2
-%----------------------------------------------------------------------------------------
-%\section{Resolving turbulence}
-
-%-----------------------------------
-%	SUBSECTION
-%-----------------------------------
-%\subsection{RANS formulation of turbulent flow}
-%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
-
-%-----------------------------------
-%	SUBSECTION
-%-----------------------------------
-%\subsection{DDES Formulation of turbulence}
-%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
-
-%-----------------------------------
-%	SUBSECTION
-%-----------------------------------
-%\subsection{DDES Formulation of turbulence}
-%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+The programming language used for the post-processing of data must be capable of generating 2D and 3D plots for visualization purposes. Ideally the processed and visualized data should resemble the mesh from which the initial data was gathered.

@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -56,6 +56,29 @@ J.~Smagorinsky.
 P.~Sagaut C.~Wagner, T.~Hüttl.
 \newblock Large-eddy simulation for acoustics.
 \newblock \emph{Cambridge University Press}, 2007.
+
+\bibitem[flu(2015)]{fluenttheory}
+Ansys documentation. fluent theoru guide.
+\newblock \emph{SAS IP Inc.}, Release 17.2, 2015.
+
+\bibitem[Hinze(1975)]{bousinesque}
+J.~O. Hinze.
+\newblock Turbulence.
+\newblock \emph{McGraw-Hill Publishing Co.}, 1975.
+
+\bibitem[P.~R.~Spalart and Allmaras(1997)]{desspalart}
+M.~Strelets P.~R.~Spalart, W. H.~Jou and S.~R. Allmaras.
+\newblock Comments of feasibility of les for wings, and on a hybrid rans/les
+  approach.
+\newblock \emph{First International conference: Advances in DNS LES: Direct
+  numerical simulation and large eddy simulation}, pages 137--148, 1997.
+
+\bibitem[P.~R.~Spalart(2006)]{ddesspalart}
+et.~al. P.~R.~Spalart.
+\newblock A new version of detached-eddy simulation, resistant to ambiguous
+  grid densities.
+\newblock \emph{Theoretical and Computational Fluid Dynamics}, 20:\penalty0
+  181–195, 2006.
 
 \bibitem[W.~S.~Cunnan and Urasek(1978)]{r67design}
 W.~Stevans W.~S.~Cunnan and D.~C. Urasek.

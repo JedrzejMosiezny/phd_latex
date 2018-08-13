@@ -25,45 +25,46 @@
 \contentsline {chapter}{\numberline {3}Approach and direct formulation of noise analysis}{5}{chapter.29}
 \contentsline {section}{\numberline {3.1}Direct formulation of noise analysis}{5}{section.30}
 \contentsline {section}{\numberline {3.2}CFD analysis requirements}{7}{section.49}
-\contentsline {subsection}{\numberline {3.2.1}Direct Numerical Simulation}{8}{subsection.51}
-\contentsline {subsection}{\numberline {3.2.2}Large Eddy Simulation}{9}{subsection.56}
-\contentsline {subsection}{\numberline {3.2.3}Reynolds Averaged Navier Stokes}{10}{subsection.59}
-\contentsline {subsection}{\numberline {3.2.4}Hybrid RANS/LES Methods}{12}{subsection.73}
-\contentsline {section}{\numberline {3.3}Mesh sizing requirements}{12}{section.74}
-\contentsline {section}{\numberline {3.4}Timestep requirements}{14}{section.83}
-\contentsline {section}{\numberline {3.5}Limiting factors of the direct approach}{15}{section.92}
-\contentsline {chapter}{\numberline {4}Test case}{17}{chapter.93}
-\contentsline {section}{\numberline {4.1}NASA Rotor 67 transonic axial compressor}{17}{section.94}
-\contentsline {section}{\numberline {4.2}3D geometry preparation}{18}{section.96}
-\contentsline {section}{\numberline {4.3}Meshing approach}{19}{section.98}
-\contentsline {section}{\numberline {4.4}Case preprocessing}{22}{section.109}
-\contentsline {subsection}{\numberline {4.4.1}General settings and material properties}{23}{subsection.110}
-\contentsline {subsection}{\numberline {4.4.2}Boundary conditions}{24}{subsection.113}
-\contentsline {section}{\numberline {4.5}Data acquisition}{24}{section.115}
-\contentsline {chapter}{\numberline {5}RANS Analysis}{25}{chapter.116}
-\contentsline {section}{\numberline {5.1}Main Section 1}{25}{section.117}
-\contentsline {subsection}{\numberline {5.1.1}Subsection 1}{25}{subsection.118}
-\contentsline {subsection}{\numberline {5.1.2}Subsection 2}{25}{subsection.119}
-\contentsline {section}{\numberline {5.2}Main Section 2}{26}{section.120}
-\contentsline {chapter}{\numberline {6}DDES Analysis}{27}{chapter.121}
-\contentsline {section}{\numberline {6.1}Main Section 1}{27}{section.122}
-\contentsline {subsection}{\numberline {6.1.1}Subsection 1}{27}{subsection.123}
-\contentsline {subsection}{\numberline {6.1.2}Subsection 2}{27}{subsection.124}
-\contentsline {section}{\numberline {6.2}Main Section 2}{28}{section.125}
-\contentsline {chapter}{\numberline {7}Results of flow field noise analysis}{29}{chapter.126}
-\contentsline {section}{\numberline {7.1}Main Section 1}{29}{section.127}
-\contentsline {subsection}{\numberline {7.1.1}Subsection 1}{29}{subsection.128}
-\contentsline {subsection}{\numberline {7.1.2}Subsection 2}{29}{subsection.129}
-\contentsline {section}{\numberline {7.2}Main Section 2}{30}{section.130}
-\contentsline {chapter}{\numberline {8}Conclusions \& Further work}{31}{chapter.131}
-\contentsline {section}{\numberline {8.1}Main Section 1}{31}{section.132}
-\contentsline {subsection}{\numberline {8.1.1}Subsection 1}{31}{subsection.133}
-\contentsline {subsection}{\numberline {8.1.2}Subsection 2}{31}{subsection.134}
-\contentsline {section}{\numberline {8.2}Main Section 2}{32}{section.135}
+\contentsline {subsection}{\numberline {3.2.1}Govering equations}{8}{subsection.51}
+\contentsline {subsection}{\numberline {3.2.2}Direct Numerical Simulation}{8}{subsection.54}
+\contentsline {subsection}{\numberline {3.2.3}Large Eddy Simulation}{9}{subsection.59}
+\contentsline {subsection}{\numberline {3.2.4}Reynolds Averaged Navier Stokes}{12}{subsection.74}
+\contentsline {subsection}{\numberline {3.2.5}Hybrid RANS/LES Methods}{14}{subsection.86}
+\contentsline {section}{\numberline {3.3}Mesh sizing requirements}{16}{section.100}
+\contentsline {section}{\numberline {3.4}Timestep requirements}{18}{section.109}
+\contentsline {section}{\numberline {3.5}Limiting factors of the direct approach}{19}{section.114}
+\contentsline {chapter}{\numberline {4}Test case}{21}{chapter.115}
+\contentsline {section}{\numberline {4.1}NASA Rotor 67 transonic axial compressor}{21}{section.116}
+\contentsline {section}{\numberline {4.2}3D geometry preparation}{22}{section.118}
+\contentsline {section}{\numberline {4.3}Meshing approach}{23}{section.120}
+\contentsline {section}{\numberline {4.4}Case preprocessing}{26}{section.131}
+\contentsline {subsection}{\numberline {4.4.1}General settings and material properties}{27}{subsection.132}
+\contentsline {subsection}{\numberline {4.4.2}Boundary conditions}{28}{subsection.135}
+\contentsline {section}{\numberline {4.5}Data acquisition}{28}{section.137}
+\contentsline {chapter}{\numberline {5}RANS Analysis}{29}{chapter.138}
+\contentsline {section}{\numberline {5.1}Main Section 1}{29}{section.139}
+\contentsline {subsection}{\numberline {5.1.1}Subsection 1}{29}{subsection.140}
+\contentsline {subsection}{\numberline {5.1.2}Subsection 2}{29}{subsection.141}
+\contentsline {section}{\numberline {5.2}Main Section 2}{30}{section.142}
+\contentsline {chapter}{\numberline {6}DDES Analysis}{31}{chapter.143}
+\contentsline {section}{\numberline {6.1}Main Section 1}{31}{section.144}
+\contentsline {subsection}{\numberline {6.1.1}Subsection 1}{31}{subsection.145}
+\contentsline {subsection}{\numberline {6.1.2}Subsection 2}{31}{subsection.146}
+\contentsline {section}{\numberline {6.2}Main Section 2}{32}{section.147}
+\contentsline {chapter}{\numberline {7}Results of flow field noise analysis}{33}{chapter.148}
+\contentsline {section}{\numberline {7.1}Main Section 1}{33}{section.149}
+\contentsline {subsection}{\numberline {7.1.1}Subsection 1}{33}{subsection.150}
+\contentsline {subsection}{\numberline {7.1.2}Subsection 2}{33}{subsection.151}
+\contentsline {section}{\numberline {7.2}Main Section 2}{34}{section.152}
+\contentsline {chapter}{\numberline {8}Conclusions \& Further work}{35}{chapter.153}
+\contentsline {section}{\numberline {8.1}Main Section 1}{35}{section.154}
+\contentsline {subsection}{\numberline {8.1.1}Subsection 1}{35}{subsection.155}
+\contentsline {subsection}{\numberline {8.1.2}Subsection 2}{35}{subsection.156}
+\contentsline {section}{\numberline {8.2}Main Section 2}{36}{section.157}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Code for direct formulation of noise analysis}{33}{appendix.136}
-\contentsline {chapter}{\numberline {B}Code for discrete Fourier analysis}{35}{appendix.212}
-\contentsline {chapter}{\numberline {C}Code for RMS computation}{37}{appendix.250}
-\contentsline {chapter}{\numberline {D}Blade design surface coordinates}{39}{appendix.288}
+\contentsline {chapter}{\numberline {A}Code for direct formulation of noise analysis}{37}{appendix.158}
+\contentsline {chapter}{\numberline {B}Code for discrete Fourier analysis}{39}{appendix.234}
+\contentsline {chapter}{\numberline {C}Code for RMS computation}{41}{appendix.272}
+\contentsline {chapter}{\numberline {D}Blade design surface coordinates}{43}{appendix.310}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{41}{dummy.289}
+\contentsline {chapter}{Bibliography}{45}{dummy.311}
