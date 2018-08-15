@@ -21,7 +21,7 @@ The process for the direct formulation noise analysis is following:
 %The process purposely omits transformation of pressure to complex form and forces the analysis on direct signal as measured by a pressure sensor.
 
 \begin{equation} \label{eq:avg}
-\bar{p} = \frac{1}{n} \sum_{n=1}^{N} p_k \qquad and \qquad \bar{u} = \frac{1}{N} \sum_{n=1}^{N} u_k
+\bar{p} = \frac{1}{n} \sum_{n=1}^{N} p_k \qquad and \qquad \bar{u} = \frac{1}{n} \sum_{n=1}^{N} u_k
 \end{equation}
 
 \begin{equation} \label{eq:off}
@@ -66,7 +66,7 @@ b_n = \frac{2 \pi k n}{N}
 
 Therefore, the equation \ref{eq:dft} can be written as:
 \begin{equation} \label{eq:dft2}
-X_k = x_{0} e^{-j b_{0}} + x_{1} e^{-j b_{1}} x_{2} e^{-j b_{2}} + \ldots + x_{n} e^{-j b_{N-1}}
+X_k = x_{0} e^{-j b_{0}} + x_{1} e^{-j b_{1}} + x_{2} e^{-j b_{2}} + \ldots + x_{n} e^{-j b_{N-1}}
 \end{equation}
 
 Using Euler's identity the exponent is decomposed (eq. \ref{eq:euler}) to a complex sum:
@@ -208,7 +208,7 @@ Filtering the continuity \ref{eq:cont} and momentum \ref{eq:momentum} equations 
 \end{equation}
 
 \begin{equation} \label{eq:lesmom}
-\frac{\partial}{\partial t}
+\frac{\partial}{\partial t} \rho \overline{u_i}
 + \frac{\partial}{\partial x_j} \left( \rho \overline{u_i} \overline{u_j} \right)
 = \frac{\partial}{\partial x_j} \left( \sigma_{ij} \right)
 - \frac{\partial \overline{p}}{\partial x_i}
@@ -414,7 +414,7 @@ S \equiv \lvert \Omega_{ij} \rvert + C_{prod} \text{min} \left(0, \lvert S_{ij} 
 \begin{equation} \label{eq:SAdeform3}
 C_{prod} = 2.0, \;
 \lvert \Omega_{ij} \rvert \equiv \sqrt{2 \Omega_{ij} \Omega_{ij}}, \;
-\lvert S_{ij} \rvert \equiv \sqrt{2 \S_{ij} \S_{ij}}
+\lvert S_{ij} \rvert \equiv \sqrt{2 S_{ij} S_{ij}}
 \end{equation}
 
 \noindent with the mean strain rate defined as:

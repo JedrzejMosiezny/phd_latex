@@ -5,14 +5,6 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[J.~E. Ffowcs~Williams(1969)]{FWH}
-D.~L.~Hawkings J.~E. Ffowcs~Williams.
-\newblock Sound generation by turbulence and surfaces in arbitrary motion.
-\newblock \emph{Philosophical Transactions of the Royal Society of London.
-  Series A, Mathematical and Physical Sciences}, 264\penalty0 (1151):\penalty0
-  321--342, May 1969.
-\newblock URL \url{http://www.jstor.org/stable/73790}.
-
 \bibitem[Lighthill(1952)]{Light1}
 M.~J. Lighthill.
 \newblock On sound generated aerodynamically i. general theory.
@@ -39,6 +31,14 @@ N.~Curle.
   September 1955.
 \newblock URL
   \url{http://rspa.royalsocietypublishing.org/content/231/1187/505}.
+
+\bibitem[J.~E. Ffowcs~Williams(1969)]{FWH}
+D.~L.~Hawkings J.~E. Ffowcs~Williams.
+\newblock Sound generation by turbulence and surfaces in arbitrary motion.
+\newblock \emph{Philosophical Transactions of the Royal Society of London.
+  Series A, Mathematical and Physical Sciences}, 264\penalty0 (1151):\penalty0
+  321--342, May 1969.
+\newblock URL \url{http://www.jstor.org/stable/73790}.
 
 \bibitem[C.~Choi(2012)]{LES_size}
 P.~Moin C.~Choi.
