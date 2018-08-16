@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -40,6 +40,16 @@ D.~L.~Hawkings J.~E. Ffowcs~Williams.
   321--342, May 1969.
 \newblock URL \url{http://www.jstor.org/stable/73790}.
 
+\bibitem[flu(2015)]{fluenttheory}
+Ansys documentation. fluent theoru guide.
+\newblock \emph{SAS IP Inc.}, Release 17.2, 2015.
+
+\bibitem[Brentner and Farassat(1998)]{fwhaiaa}
+K.~S. Brentner and F.~Farassat.
+\newblock An analytical comparison of the acoustic analogy and kirchhoff
+  formulations for moving surfaces.
+\newblock \emph{AIAA Journal}, 36(8):\penalty0 1379--1386, 1998.
+
 \bibitem[C.~Choi(2012)]{LES_size}
 P.~Moin C.~Choi.
 \newblock Grid-point requirements for large eddy simulation: Chapman’s
@@ -56,10 +66,6 @@ J.~Smagorinsky.
 P.~Sagaut C.~Wagner, T.~Hüttl.
 \newblock Large-eddy simulation for acoustics.
 \newblock \emph{Cambridge University Press}, 2007.
-
-\bibitem[flu(2015)]{fluenttheory}
-Ansys documentation. fluent theoru guide.
-\newblock \emph{SAS IP Inc.}, Release 17.2, 2015.
 
 \bibitem[Hinze(1975)]{bousinesque}
 J.~O. Hinze.

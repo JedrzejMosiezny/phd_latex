@@ -2,18 +2,18 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Resolving eddies in different kinds of CFD analyses\relax }}{12}{figure.caption.75}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Scenario 1. Wavelength smaller than cell edge length\relax }}{21}{figure.caption.129}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Scenario 2. Wavelength equal to cell edge length\relax }}{21}{figure.caption.130}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Scenario 3. Wavelength equal four minimum edge lengths\relax }}{21}{figure.caption.131}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Scenario 4. Wavelength larger than four minimum edge lengths\relax }}{21}{figure.caption.132}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Resolving eddies in different kinds of CFD analyses\relax }}{14}{figure.caption.79}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Scenario 1. Wavelength smaller than cell edge length\relax }}{23}{figure.caption.133}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Scenario 2. Wavelength equal to cell edge length\relax }}{23}{figure.caption.134}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Scenario 3. Wavelength equal four minimum edge lengths\relax }}{23}{figure.caption.135}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Scenario 4. Wavelength larger than four minimum edge lengths\relax }}{23}{figure.caption.136}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Geometry of NASA R67\relax }}{25}{figure.caption.142}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Final single passage geometry. Some features hidden for clarity\relax }}{28}{figure.caption.144}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Mesh topology with conforming periodic boundaries\relax }}{29}{figure.caption.148}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Mesh h-topology\relax }}{29}{figure.caption.149}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Mesh non-orthogonality histogram\relax }}{30}{figure.caption.154}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Completed Mesh\relax }}{31}{figure.caption.155}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Geometry of NASA R67\relax }}{27}{figure.caption.146}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Final single passage geometry. Some features hidden for clarity\relax }}{30}{figure.caption.148}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Mesh topology with conforming periodic boundaries\relax }}{31}{figure.caption.152}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Mesh h-topology\relax }}{31}{figure.caption.153}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Mesh non-orthogonality histogram\relax }}{32}{figure.caption.158}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Completed Mesh\relax }}{33}{figure.caption.159}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

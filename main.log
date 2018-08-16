@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.3.25)  15 AUG 2018 21:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.3.25)  16 AUG 2018 22:22
 entering extended mode
 **./main.tex
 (main.tex
@@ -1769,7 +1769,7 @@ LaTeX Info: Redefining \nameref on input line 58.
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
-<Pictures/pp_logo2.jpg, id=258, 142.3719pt x 142.3719pt>
+<Pictures/pp_logo2.jpg, id=254, 142.3719pt x 142.3719pt>
 File: Pictures/pp_logo2.jpg Graphic file (type jpg)
 <use Pictures/pp_logo2.jpg>
 Package pdftex.def Info: Pictures/pp_logo2.jpg  used on input line 87.
@@ -1792,38 +1792,42 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 {C:/Users/JMosiezny/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Pictu
 res/pp_logo2.jpg>]
+[2
+
+]
 ------------------------------------------------------------------------------
  Declaration of Authorship
 ------------------------------------------------------------------------------
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--163
+Underfull \hbox (badness 10000) in paragraph at lines 165--165
 
  []
 
-[2]
+[3] [4
+
+]
 ------------------------------------------------------------------------------
  Abstract Page
 ------------------------------------------------------------------------------
-[3
+[5] [6
 
 ]
 ------------------------------------------------------------------------------
  Acknowledgements
 ------------------------------------------------------------------------------
-[4
+[7] [8
 
 ]
 ------------------------------------------------------------------------------
  Table of Contents
 ------------------------------------------------------------------------------
-(main.toc [5
+(main.toc [9
 
-
-] [6])
+] [10])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- [7] [8
+ [11] [12
 
 ]
 ------------------------------------------------------------------------------
@@ -1833,9 +1837,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--163
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [9
+ [13
 
-] [10
+] [14
 
 ]
 ------------------------------------------------------------------------------
@@ -1845,31 +1849,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--163
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [11
-
-] [12
-
-]
-------------------------------------------------------------------------------
- Abbreviations
-------------------------------------------------------------------------------
-[13
-
-
-] [14
-
-]
-------------------------------------------------------------------------------
- Physical Constants
-------------------------------------------------------------------------------
-[15
-
+ [15
 
 ] [16
 
 ]
 ------------------------------------------------------------------------------
- Symbols
+ Abbreviations
 ------------------------------------------------------------------------------
 [17
 
@@ -1878,9 +1864,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--163
 
 ]
 ------------------------------------------------------------------------------
+ Symbols
+------------------------------------------------------------------------------
+[19
+
+
+] [20
+
+]
+------------------------------------------------------------------------------
  Dedicatory
 ------------------------------------------------------------------------------
-[19] [20
+[21] [22
 
 ] (Chapters/introduction.tex
 Chapter 1.
@@ -1897,15 +1892,15 @@ Chapter 2.
 ------------------------------------------------------------------------------
 [3
 
-] [4] [5] [6]) (Chapters/approach.tex [7] [8
+] [4] [5] [6] [7] [8]) (Chapters/approach.tex [9] [10
 
 ]
 Chapter 3.
 ------------------------------------------------------------------------------
  3 Approach and direct formulation of noise analysis
 ------------------------------------------------------------------------------
-[9] [10]
-<Pictures/CFD_Types.png, id=595, 551.1792pt x 344.0052pt>
+[11] [12]
+<Pictures/CFD_Types.png, id=632, 551.1792pt x 344.0052pt>
 File: Pictures/CFD_Types.png Graphic file (type png)
 <use Pictures/CFD_Types.png>
 Package pdftex.def Info: Pictures/CFD_Types.png  used on input line 117.
@@ -1914,21 +1909,21 @@ Package pdftex.def Info: Pictures/CFD_Types.png  used on input line 117.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11] [12 <./Pictures/CFD_Types.png>] [13] [14] [15] [16] [17] [18] [19]
-[20] [21] [22]) (Chapters/test_case.tex [23] [24]
+[13] [14 <./Pictures/CFD_Types.png>] [15] [16] [17] [18] [19] [20] [21]
+[22] [23] [24]) (Chapters/test_case.tex [25] [26]
 Chapter 4.
 ------------------------------------------------------------------------------
  4 Test case
 ------------------------------------------------------------------------------
-<Pictures/r67_over.png, id=783, 505.13719pt x 299.61937pt>
+<Pictures/r67_over.png, id=818, 505.13719pt x 299.61937pt>
 File: Pictures/r67_over.png Graphic file (type png)
 <use Pictures/r67_over.png>
 Package pdftex.def Info: Pictures/r67_over.png  used on input line 18.
 (pdftex.def)             Requested size: 354.85464pt x 210.4819pt.
-[25
+[27
 
- <./Pictures/r67_over.png>] [26]
-<Pictures/r67_geom.jpg, id=813, 1484.54625pt x 731.73375pt>
+ <./Pictures/r67_over.png>] [28]
+<Pictures/r67_geom.jpg, id=849, 1484.54625pt x 731.73375pt>
 File: Pictures/r67_geom.jpg Graphic file (type jpg)
 <use Pictures/r67_geom.jpg>
 Package pdftex.def Info: Pictures/r67_geom.jpg  used on input line 70.
@@ -1937,8 +1932,8 @@ Package pdftex.def Info: Pictures/r67_geom.jpg  used on input line 70.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[27]
-<Pictures/r67_cj.jpg, id=824, 1484.54625pt x 731.73375pt>
+[29]
+<Pictures/r67_cj.jpg, id=860, 1484.54625pt x 731.73375pt>
 File: Pictures/r67_cj.jpg Graphic file (type jpg)
 <use Pictures/r67_cj.jpg>
 Package pdftex.def Info: Pictures/r67_cj.jpg  used on input line 108.
@@ -1947,7 +1942,7 @@ Package pdftex.def Info: Pictures/r67_cj.jpg  used on input line 108.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Pictures/r67_htopo.jpg, id=826, 1484.54625pt x 731.73375pt>
+<Pictures/r67_htopo.jpg, id=862, 1484.54625pt x 731.73375pt>
 File: Pictures/r67_htopo.jpg Graphic file (type jpg)
 <use Pictures/r67_htopo.jpg>
 Package pdftex.def Info: Pictures/r67_htopo.jpg  used on input line 117.
@@ -1955,14 +1950,14 @@ Package pdftex.def Info: Pictures/r67_htopo.jpg  used on input line 117.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[28 <./Pictures/r67_geom.jpg>] [29 <./Pictures/r67_cj.jpg> <./Pictures/r67_htop
+[30 <./Pictures/r67_geom.jpg>] [31 <./Pictures/r67_cj.jpg> <./Pictures/r67_htop
 o.jpg>]
-<Pictures/mesh_ortho.png, id=847, 1000.73875pt x 567.11874pt>
+<Pictures/mesh_ortho.png, id=882, 1000.73875pt x 567.11874pt>
 File: Pictures/mesh_ortho.png Graphic file (type png)
 <use Pictures/mesh_ortho.png>
 Package pdftex.def Info: Pictures/mesh_ortho.png  used on input line 149.
 (pdftex.def)             Requested size: 354.85464pt x 201.09924pt.
-<Pictures/r67_ransmesh.jpg, id=848, 1484.54625pt x 731.73375pt>
+<Pictures/r67_ransmesh.jpg, id=883, 1484.54625pt x 731.73375pt>
 File: Pictures/r67_ransmesh.jpg Graphic file (type jpg)
 <use Pictures/r67_ransmesh.jpg>
 Package pdftex.def Info: Pictures/r67_ransmesh.jpg  used on input line 156.
@@ -1971,36 +1966,36 @@ Package pdftex.def Info: Pictures/r67_ransmesh.jpg  used on input line 156.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[30 <./Pictures/mesh_ortho.png>] [31 <./Pictures/r67_ransmesh.jpg>])
-(Chapters/rans_cfd.tex [32]
+[32 <./Pictures/mesh_ortho.png>] [33 <./Pictures/r67_ransmesh.jpg>])
+(Chapters/rans_cfd.tex [34]
 Chapter 5.
 ------------------------------------------------------------------------------
  5 RANS Analysis
 ------------------------------------------------------------------------------
-) (Chapters/ddes_cfd.tex [33
+) (Chapters/ddes_cfd.tex [35
 
-] [34]
+] [36]
 Chapter 6.
 ------------------------------------------------------------------------------
  6 DDES Analysis
 ------------------------------------------------------------------------------
-) (Chapters/results.tex [35
+) (Chapters/results.tex [37
 
-] [36]
+] [38]
 Chapter 7.
 ------------------------------------------------------------------------------
  7 Results of flow field noise analysis
 ------------------------------------------------------------------------------
-) (Chapters/conclusions.tex [37
+) (Chapters/conclusions.tex [39
 
-] [38]
+] [40]
 Chapter 8.
 ------------------------------------------------------------------------------
  8 Conclusions \& Further work
 ------------------------------------------------------------------------------
-) [39
+) [41
 
-] (Appendices/AppendixA.tex [40]
+] (Appendices/AppendixA.tex [42]
 Appendix A.
 ------------------------------------------------------------------------------
  A Code for direct formulation of noise analysis
@@ -2017,31 +2012,31 @@ LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 8.
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <8> not available
 (Font)              Font shape `T1/pcr/b/n' tried instead on input line 9.
- [41
+ [43
 
 ])
-(Appendices/AppendixB.tex [42]
+(Appendices/AppendixB.tex [44]
 Appendix B.
 ------------------------------------------------------------------------------
  B Code for discrete Fourier analysis
 ------------------------------------------------------------------------------
-) (Appendices/AppendixC.tex [43
+) (Appendices/AppendixC.tex [45
 
-] [44
+] [46
 
 ]
 Appendix C.
 ------------------------------------------------------------------------------
  C Code for RMS computation
 ------------------------------------------------------------------------------
-) (Appendices/AppendixE.tex [45] [46
+) (Appendices/AppendixE.tex [47] [48
 
 ]
 Appendix D.
 ------------------------------------------------------------------------------
  D Blade design surface coordinates
 ------------------------------------------------------------------------------
-) [47] [48
+) [49] [50
 
 ]
 ------------------------------------------------------------------------------
@@ -2053,25 +2048,25 @@ Underfull \hbox (badness 1810) in paragraph at lines 27--34
 l, Phys-i-cal and En-gi-
  []
 
-[49
+[51
 
-]) [50]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 357.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 357.
+]) [52]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 359.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 359.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 357.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 357.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 359.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 359.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2F237CDEABF93CBA1BC5C3644025EBC6;11482.
+(rerunfilecheck)             Checksum: 60598257FA90470B8695CA90B41D29F4;11346.
  ) 
 Here is how much of TeX's memory you used:
- 44075 strings out of 493308
- 897881 string characters out of 3138756
- 1092471 words of memory out of 3000000
- 46543 multiletter control sequences out of 15000+200000
+ 44092 strings out of 493308
+ 898117 string characters out of 3138756
+ 1092980 words of memory out of 3000000
+ 46551 multiletter control sequences out of 15000+200000
  556235 words of font info for 81 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,12n,71p,10380b,2035s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 68i,20n,71p,10380b,2035s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C:/Program Files/Mi
 KTeX 2.9/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{C:/Program Files/MiKTeX 2.9
 /fonts/enc/dvips/cm-super/cm-super-t1.enc}<C:/Program Files/MiKTeX 2.9/fonts/ty
@@ -2103,9 +2098,9 @@ pe1/public/cm-super/sfti1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/cm-super/sfti2074.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/uc
 rb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrro8a.pfb>
-Output written on main.pdf (70 pages, 3282743 bytes).
+Output written on main.pdf (74 pages, 3295852 bytes).
 PDF statistics:
- 1312 PDF objects out of 1440 (max. 8388607)
- 425 named destinations out of 1000 (max. 500000)
- 557 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1353 PDF objects out of 1440 (max. 8388607)
+ 434 named destinations out of 1000 (max. 500000)
+ 549 words of extra memory for PDF output out of 10000 (max. 10000000)
 
