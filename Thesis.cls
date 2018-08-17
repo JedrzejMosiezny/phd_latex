@@ -135,6 +135,7 @@
 \setcounter{dbltopnumber}{9}
 \usepackage[polish,english]{babel}
 \usepackage[T1]{fontenc}
+%\usepackage[draft,nosingleletter]{impnattypo}
 %\usepackage[utf8]{inputenc}
 \usepackage{alltt}
 \usepackage{tabularx}
