@@ -6,10 +6,10 @@
 \contentsline {chapter}{Acknowledgements}{vii}{dummy.3}
 \vspace {1em}
 \contentsline {chapter}{Contents}{ix}{dummy.4}
-\contentsline {chapter}{List of Figures}{xiii}{dummy.6}
-\contentsline {chapter}{List of Tables}{xv}{dummy.8}
-\contentsline {chapter}{Abbreviations}{xvii}{dummy.10}
-\contentsline {chapter}{Symbols}{xix}{dummy.13}
+\contentsline {chapter}{List of Figures}{xi}{dummy.6}
+\contentsline {chapter}{List of Tables}{xiii}{dummy.8}
+\contentsline {chapter}{Abbreviations}{xv}{dummy.10}
+\contentsline {chapter}{Symbols}{xvii}{dummy.13}
 \vspace {2em}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.16}
 \contentsline {section}{\numberline {1.1}Main Section 1}{1}{section.17}
@@ -51,19 +51,17 @@
 \contentsline {subsection}{\numberline {6.1.2}Subsection 2}{37}{subsection.175}
 \contentsline {section}{\numberline {6.2}Main Section 2}{38}{section.176}
 \contentsline {chapter}{\numberline {7}Results of flow field noise analysis}{39}{chapter.177}
-\contentsline {section}{\numberline {7.1}Main Section 1}{39}{section.178}
-\contentsline {subsection}{\numberline {7.1.1}Subsection 1}{39}{subsection.179}
-\contentsline {subsection}{\numberline {7.1.2}Subsection 2}{39}{subsection.180}
-\contentsline {section}{\numberline {7.2}Main Section 2}{40}{section.181}
-\contentsline {chapter}{\numberline {8}Conclusions \& Further work}{41}{chapter.182}
-\contentsline {section}{\numberline {8.1}Main Section 1}{41}{section.183}
-\contentsline {subsection}{\numberline {8.1.1}Subsection 1}{41}{subsection.184}
-\contentsline {subsection}{\numberline {8.1.2}Subsection 2}{41}{subsection.185}
-\contentsline {section}{\numberline {8.2}Main Section 2}{42}{section.186}
+\contentsline {section}{\numberline {7.1}Transition from flow-field to sound signal data}{39}{section.178}
+\contentsline {section}{\numberline {7.2}RMS results}{39}{section.179}
+\contentsline {section}{\numberline {7.3}Initial conclusions}{40}{section.180}
+\contentsline {chapter}{\numberline {8}Conclusions \& Further work}{41}{chapter.181}
+\contentsline {section}{\numberline {8.1}Main Section 1}{41}{section.182}
+\contentsline {subsection}{\numberline {8.1.1}Subsection 2}{41}{subsection.183}
+\contentsline {section}{\numberline {8.2}Main Section 2}{42}{section.184}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Code for direct formulation of noise analysis}{43}{appendix.187}
-\contentsline {chapter}{\numberline {B}Code for discrete Fourier analysis}{45}{appendix.263}
-\contentsline {chapter}{\numberline {C}Code for RMS computation}{47}{appendix.301}
-\contentsline {chapter}{\numberline {D}Blade design surface coordinates}{49}{appendix.339}
+\contentsline {chapter}{\numberline {A}Code for direct formulation of noise analysis}{43}{appendix.185}
+\contentsline {chapter}{\numberline {B}Code for discrete Fourier analysis}{45}{appendix.261}
+\contentsline {chapter}{\numberline {C}Code for RMS computation}{47}{appendix.299}
+\contentsline {chapter}{\numberline {D}Blade design surface coordinates}{49}{appendix.337}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{51}{dummy.340}
+\contentsline {chapter}{Bibliography}{51}{dummy.338}

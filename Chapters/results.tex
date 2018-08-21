@@ -7,31 +7,35 @@
 \lhead{\emph{Results of flow field noise analysis}} % Change X to a consecutive number; this is for the header on each page - perhaps a shortened title
 
 %----------------------------------------------------------------------------------------
-%	SECTION 1
+%	SECTION
 %----------------------------------------------------------------------------------------
 
-\section{Main Section 1}
+\section{Transition from flow-field to sound signal data}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.
+The performed DDES analysis delivered a set of files for further postprocessing. Values of static pressure, velocity magnitude, vorticity magnitude, static density and static temperature were gathered from designated boundaries and internal surfaces representing the design streamline cones. The dataset consists of 50150 files for each of the 13 internal surfaces and 5 blade boundaries, resulting in over 5.5 TB of data.
 
-%-----------------------------------
-%	SUBSECTION 1
-%-----------------------------------
-\subsection{Subsection 1}
-
-Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
+This set was postprocessed to obtain the sound pressure, sound intensity and their respective decibel values for each time step. The mathematical formulas for obtaining these values are provided in chapter /ref{approach} and the \texttt{Python 3.5x} implementation of which is presented in appendix \ref{codedirect}. The postprocessing of flow field data to sound data was performed on the same HPC infrastructure as the DDES analysis, due to the file accessibility. Postprocessed dataset was saved in a folder structure resembling the source files. The dataset consists of 902 700 files and another 5.5TB of data in form of comma separated values.
 
 %-----------------------------------
-%	SUBSECTION 2
+%	SECTION
+%-----------------------------------
+\section{RMS results} \label{rmsresults}
+The sound values were then further processed to obtain the Root Mean Square values of sound pressure and sound intensity from internal markers and blade surfaces. Scatter/contour plots of the given values are provided the figures \ref{int-01-rms-spl} thru \ref{int-tip-rms-sildb} below. Providing data for both pressure and intensity values and their decibel levels is redundant, yet shown for clarity and direct comparison of given values. 
+
+Internal boundary plots provide information on maximum and minimum values of SPL and SPLdB presented on the plot. As the minimum sound intensity (SIL) is equal 0 and the SILdB values for corresponding points approach negative infinity. Such values were overridden to show 0 SILdB on the plot.    For this reason minimum value coordinates are omitted in the plot description 
+
+Blade surface plot is composed by plotting five datasets on one canvas and manipulating the sign of the canvas x-axis to mimic various view projections. Tool used to generate the scatter plots for blade surface overlaps the datapoints that share the same canvas x and canvas y coordinates, therefore the plotting order is always "back-to-front", so that the surface closest to the viewer is plotted atop the canvas.
+
+Sound pressure and intensity plots are scaled with a normalised logarithmic colorbar with common scale across all of the internal surface and blade surface plots. For sound pressure, the maximum obtained value is $13917.395 [Pa]$, so the maximum value of the colorbar is liberally rounded up to $15000 [Pa]$. Minimum value for SPL is in range of $10 [Pa]$, so the lower bar limit is set to zero. As for the Decibel values the lowest obtained value is around $116 dB$, largest - around $177 dB$. The colorbar scale is therefore set to 100 - 180 dB range with linear scale. The same approach was used for maximum values of sound intensity. For sound intensity itself, the colorbar was limited from $0 W/m^2$ to $1.2 \cdot 10^6 [W/m^2]$ and normalized to logarithmic scale. For SILdB plot, the bar range is limited to $0 dB$ to $180 dB$ range with linear scale. More details on RMS values are presented in section \ref{quantresults}. 
+
+Plots are created by projecting points from 3D surface onto a 2D plane of the plot, therefore some shape aberrations may occur. Color of the point is normalized as described above. The axes names correspond to the global coordinate system axes. 
+
+PLOTS GO HERE
+
+%-----------------------------------
+%	SECTION
 %-----------------------------------
 
-\subsection{Subsection 2}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
-
-%----------------------------------------------------------------------------------------
-%	SECTION 2
-%----------------------------------------------------------------------------------------
-
-\section{Main Section 2}
-
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
+\section{Initial conclusions} \label{quantresults}
+The qualitative analysis of the internal surfaces shows, that the main source of pressure fluctuations is the turbulence resulting from the separation of flow. Such separations can be induced by the typical airfoil flow phenomena of backflow in the boundary layer, or by shockwave--boundary layer interactions. 
+%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
