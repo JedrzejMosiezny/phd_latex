@@ -1,0 +1,43 @@
+\chapter{Code for RMS computation} % Main appendix title
+
+\label{rms_code} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{\emph{Code for RMS computation}} % This is for the header on each page - perhaps a shortened title
+\begin{lstlisting}[language=Python]
+#rms.py
+print("Loading Libraries...")
+import os
+import csv
+import platform
+import numpy as np
+from scipy.fftpack import fft
+import pandas as pd
+import dask.dataframe as dd
+import math
+import matplotlib.pyplot as plt
+print("Loaded Libraries...")
+
+#PLGRID
+print("Loading directories..")
+path_acu = './noise-data/<folder_name>/acu'
+path_rms = './results/rms'
+print("Loaded directories...")
+
+print("Loading batch data...")
+os.chdir(path_acu)
+batch_data = dd.read_csv('*1.dat',
+			delimiter=",",
+			decimal='.',
+			usecols=["nodenumber", "sound-pressure", "sound-intensity"])
+batch_data = batch_data.set_index("nodenumber")
+print("Batch data done...")
+
+print("Calculating rms...")
+rms = pd.DataFrame(batch_data.groupby('nodenumber').std().compute())
+rms['rms_spldb'] = rms['sound-pressure'].apply(lambda x: 20*np.log10(x/0.00002))
+rms['rms_sildb'] = rms['sound-intensity'].apply(lambda x: 10*np.log10(x/1e-12))
+
+print("Saving...")
+os.chdir(path_rms)
+rms.to_csv(str('<filename>'), sep=",")
+\end{lstlisting}

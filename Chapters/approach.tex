@@ -90,13 +90,13 @@ X_k = A_k + j B_{k}
 The frequency resolution of the DFT depends on the sampling frequency and number of samples, and is calculated by formula \ref{eq:samples}. 
 
 \begin{equation} \label{eq:samples}
-f_{bin} = \frac{f_{sample}}{N}
+f_{bin} = \frac{f_{s}}{N}
 \end{equation}
 
-Fourier coefficients are then used to compute the magnitude (eq. \ref{eq:dftmag}) and phase shift (eq. \ref{eq:dftphase}) for the "k-th" frequency bin ordinary sinus.
+Fourier coefficients are then used to compute the amplitude (eq. \ref{eq:dftmag}) and phase shift (eq. \ref{eq:dftphase}) for the "k-th" frequency bin ordinary sinus.
 
 \begin{equation} \label{eq:dftmag}
-Mag_k = 2 \cdot \sqrt{A_{k}^{2} + B_{k}^{2}} \cdot \frac{1}{N}
+\text{Amp}_k = 2 \cdot \sqrt{A_{k}^{2} + B_{k}^{2}} \cdot \frac{1}{N}
 \end{equation}
 
 \begin{equation} \label{eq:dftphase}

@@ -1,0 +1,44 @@
+\chapter{Code for discrete Fourier analysis} % Main appendix title
+
+\label{codefft} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{\emph{Code for discrete Fourier analysis}} % This is for the header on each page - perhaps a shortened title
+
+\begin{lstlisting}[language=Python]
+#fft.py
+print("Loading Libraries...")
+import os
+import csv
+import platform
+import numpy as np
+from scipy.fftpack import fft
+import pandas as pd
+import dask.dataframe as dd
+import math
+print("Loaded Libraries...")
+print("Starting code...")
+print("Loading directories..")
+path_acu = './noise-data/<folder_name>/acu'
+path_fft = './results/fft'
+print("Loaded directories...")
+print("Loading batch data...")
+os.chdir(path_acu)
+batch_pressure = dd.read_csv('*.dat',
+				delimiter=",",
+				decimal='.',
+				usecols=["nodenumber", "sound-pressure"])
+batch_pressure = batch_pressure.set_index("nodenumber")
+print("Batch data done...")
+print("Calculating FFT...") 
+batch_fft = batch_pressure.groupby('nodenumber').apply(
+				lambda x: fft(x),
+				meta=('node-fourier-series', 'f8')
+				).compute()
+print("FFT Done..") 
+print("Saving FFT to dataframe...")
+#node_fft_max.set_index('nodenumber')
+os.chdir(path_fft)
+batch_fft.to_csv(str('<file_name_fft>.dat'), sep=",")
+print("Dataframe saved...")
+print("Script completed...")
+\end{lstlisting}

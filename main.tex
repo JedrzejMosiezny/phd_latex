@@ -144,7 +144,7 @@
 
 \Declaration{
 
-\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+%\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
 
 I, \authornames, declare that this thesis titled, '\ttitle' and the work presented in it are my own. I confirm that:
 
@@ -207,7 +207,7 @@ Information on generation of sound phenomena occurring in the blade passage are 
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 
-\setstretch{1.3} % Reset the line-spacing to 1.3 for body text (if it has changed)
+\setstretch{1.0} % Reset the line-spacing to 1.3 for body text (if it has changed)
 
 \acknowledgements{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
 
@@ -301,7 +301,7 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 
 \dedicatory{To my wife. For limitless patience\ldots} % Dedication text
 
-\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+%\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
@@ -327,20 +327,22 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 %	THESIS CONTENT - APPENDICES
 %----------------------------------------------------------------------------------------
 
-\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+%\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 
 \appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
 
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
 
-\input{Appendices/AppendixA}
-\input{Appendices/AppendixB}
-\input{Appendices/AppendixC}
-%\input{Appendices/AppendixD}
-\input{Appendices/AppendixE}
+\input{Appendices/Appendix_rmsresults}
+\input{Appendices/Appendix_fftresults}
+\input{Appendices/Appendix_direct}
+%\input{Appendices/Appendix_folders}
+\input{Appendices/Appendix_rms}
+\input{Appendices/Appendix_fft}
+\input{Appendices/Appendix_coords}
 
-\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+%\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 
 \backmatter
 

@@ -14,28 +14,89 @@
 
 The performed DDES analysis delivered a set of files for further postprocessing. Values of static pressure, velocity magnitude, vorticity magnitude, static density and static temperature were gathered from designated boundaries and internal surfaces representing the design streamline cones. The dataset consists of 50150 files for each of the 13 internal surfaces and 5 blade boundaries, resulting in over 5.5 TB of data.
 
-This set was postprocessed to obtain the sound pressure, sound intensity and their respective decibel values for each time step. The mathematical formulas for obtaining these values are provided in chapter /ref{approach} and the \texttt{Python 3.5x} implementation of which is presented in appendix \ref{codedirect}. The postprocessing of flow field data to sound data was performed on the same HPC infrastructure as the DDES analysis, due to the file accessibility. Postprocessed dataset was saved in a folder structure resembling the source files. The dataset consists of 902 700 files and another 5.5TB of data in form of comma separated values.
+This set was postprocessed to obtain the sound pressure, sound intensity and their respective decibel values for each time step. The mathematical formulas for obtaining these values are provided in chapter \ref{approach} and the \texttt{Python 3.5x} implementation of which is presented in appendix \ref{codedirect}. The postprocessing of flow field data to sound data was performed on the same HPC infrastructure as the DDES analysis, due to the file accessibility. Postprocessed dataset was saved in a folder structure resembling the source files. The dataset consists of 902 700 files and another 5.5TB of data in form of comma separated values.
 
 %-----------------------------------
 %	SECTION
 %-----------------------------------
-\section{RMS results} \label{rmsresults}
-The sound values were then further processed to obtain the Root Mean Square values of sound pressure and sound intensity from internal markers and blade surfaces. Scatter/contour plots of the given values are provided the figures \ref{int-01-rms-spl} thru \ref{int-tip-rms-sildb} below. Providing data for both pressure and intensity values and their decibel levels is redundant, yet shown for clarity and direct comparison of given values. 
+\section{RMS results} \label{rms}
+
+%-----------------------------------
+%	SUBSECTION
+%-----------------------------------
+\subsection{Results postprocessing} \label{rms_res_prep}
+The sound values were then further processed to obtain the Root Mean Square values of sound pressure and sound intensity from internal markers and blade surfaces. Due to large number of figures, scatter/contour plots of the aforementioned values are provided in the Appendix \ref{rms_results}n in figures \ref{blade-zy-rms-spl} thru \ref{int-tip-rms-sildb}. Providing data for both pressure and intensity values and their decibel levels is redundant, yet both plots are shown for clarity and direct comparison of given values. 
 
 Internal boundary plots provide information on maximum and minimum values of SPL and SPLdB presented on the plot. As the minimum sound intensity (SIL) is equal 0 and the SILdB values for corresponding points approach negative infinity. Such values were overridden to show 0 SILdB on the plot.    For this reason minimum value coordinates are omitted in the plot description 
 
 Blade surface plot is composed by plotting five datasets on one canvas and manipulating the sign of the canvas x-axis to mimic various view projections. Tool used to generate the scatter plots for blade surface overlaps the datapoints that share the same canvas x and canvas y coordinates, therefore the plotting order is always "back-to-front", so that the surface closest to the viewer is plotted atop the canvas.
 
-Sound pressure and intensity plots are scaled with a normalised logarithmic colorbar with common scale across all of the internal surface and blade surface plots. For sound pressure, the maximum obtained value is $13917.395 [Pa]$, so the maximum value of the colorbar is liberally rounded up to $15000 [Pa]$. Minimum value for SPL is in range of $10 [Pa]$, so the lower bar limit is set to zero. As for the Decibel values the lowest obtained value is around $116 dB$, largest - around $177 dB$. The colorbar scale is therefore set to 100 - 180 dB range with linear scale. The same approach was used for maximum values of sound intensity. For sound intensity itself, the colorbar was limited from $0 W/m^2$ to $1.2 \cdot 10^6 [W/m^2]$ and normalized to logarithmic scale. For SILdB plot, the bar range is limited to $0 dB$ to $180 dB$ range with linear scale. More details on RMS values are presented in section \ref{quantresults}. 
+Sound pressure and intensity plots are scaled with a normalized logarithmic colorbar with common scale across all of the internal surface and blade surface plots. For sound pressure, the maximum obtained value is $13917.395 [Pa]$, so the maximum value of the colorbar is liberally rounded up to $15000 [Pa]$. Minimum value for SPL is in range of $10 [Pa]$, so the lower bar limit is set to zero. As for the Decibel values the lowest obtained value is around $116 dB$, largest - around $177 dB$. The colorbar scale is therefore set to 100 - 180 dB range with linear scale. The same approach was used for maximum values of sound intensity. For sound intensity itself, the colorbar was limited from $0 W/m^2$ to $1.2 \cdot 10^6 [W/m^2]$ and normalized to logarithmic scale. For SILdB plot, the bar range is limited to $0 dB$ to $180 dB$ range with linear scale. %More details on RMS values are presented in section \ref{numbers}. 
 
-Plots are created by projecting points from 3D surface onto a 2D plane of the plot, therefore some shape aberrations may occur. Color of the point is normalized as described above. The axes names correspond to the global coordinate system axes. 
+Plots are created by projecting points from 3D surface onto a 2D plane of the plot, therefore some shape aberrations may occur. Color of the point is normalized as described above. The axes names correspond to the global coordinate system axes. Length unit for all plots is meter.
 
-PLOTS GO HERE
+%-----------------------------------
+%	SUBSECTION
+%-----------------------------------
+\subsection{Qualitative analysis} \label{rms_res_qual}
+Averaged sound pressure and sound intensity plots provide some information on the character of the acoustic phenomena modelled in a stationary reference frame for given test compressor.
+
+The sound pressure fluctuations that translate to high SPLdB values occur in regions where flow is turbulent. For internal controll surfaces, where flow is globally subsonic (int-01, int-02, int-03 -- figures \ref{int-01-rms-sil} thru \ref{int-03-rms-sildb}), the sources of the aerodynamically induced noise correspond to the regions on flow separation on the suction (upper on the plots). This is especially visible in the wake of the blade. Figures \ref{blade-negzy-rms-spl} and \ref{blade-negzy-rms-spldb} provide the meridional view of the blade's suction surface. A separation of the flow at leading-edge-to-hub transition leading to a very characteristic secondary flow and corner stall separation (separated flow on the suction surface near the trailing-edge-to-hub transition). The largest pressure fluctuations were noted on the trailing edge and trailing-edge-to-tip transition, which is visible on both blade surface plots and internal surfaces plots.
+
+Internal surface contour plots show, that the source of sound pressure is the supersonic-to-subsonic transition occurring on the shockwave. The effect of shock induced flow separation is becoming visible on internal surface plots for surfaces int-04 and int-05 (figures \ref{int-04-rms-spl} thru \ref{int-05-rms-sildb}), with full visibility of described phenomena on surfaces int-06 thru int-12 (figures \ref{int-06-rms-spl} thru \ref{int-12-rms-sildb}). Plot for surface adjacent to the blade tip (surface int-tip, figures \ref{int-tip-rms-spl} thru \ref{int-tip-rms-sildb}) show the effect of "tip-leakage" phenomena when high pressure flow at the pressure side of the compressor creeps to the low pressure suction side thru the tip gap (Fig. \ref{tip_stream}). 
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/tip_stream.jpg}
+\caption{Tip gap streamlines. Velocity in [m/s]}
+\label{tip_stream}
+\end{figure}
+
+Presented contour plots show a rather significant noise level in the supersonic (relative to the blade) region along with patterns resembling sound waves. SPLdB noise level in lower range of 120 decibles corresponds to pressure fluctuations in range of 20 Pa in medium where average static pressure is in range of $10^5$ Pa, which may result from typical for transient calculations pressure fluctuations. 
+
+Sound wave like patterns on blade suction surface in the supersonic region require further investigation. Wave like pattern presented on the RMS plot is likely to show a sort of standing wave pattern evolving towards the leading edge of the blade. Region of flow for containing this phenomena is supersonic relatively to the blade, however both axial and radial components of the flow are subsonic. Moreover, the boundary layer flow for this case is subsonic even in the relative supersonic region, therefore sound propagation is possible near the blade surface.
+
+%-----------------------------------
+%	SUBSECTION
+%-----------------------------------
+%\subsection{Quantitative analysis} \label{rms_res_quant}
+%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus 1venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
 
 %-----------------------------------
 %	SECTION
 %-----------------------------------
 
-\section{Initial conclusions} \label{quantresults}
-The qualitative analysis of the internal surfaces shows, that the main source of pressure fluctuations is the turbulence resulting from the separation of flow. Such separations can be induced by the typical airfoil flow phenomena of backflow in the boundary layer, or by shockwave--boundary layer interactions. 
-%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+\section{FFT results} \label{fft}
+
+%-----------------------------------
+%	SUBSECTION
+%-----------------------------------
+\subsection{Results postprocessing} \label{fft_res_prep}
+Time step results were processed by a Python script presented in Appendix \ref{codefft}. As described in chapter \ref{ddes}, the timestep for the analysis was order of magnitude smaller than required by the direct method. The presented algorithm samples every 10th timestep to an intermittent tabular data frame and performs a Discrete Fourier Transform as per formula \ref{eq:dft}. This outputs a complex vector \ref{eq:complex} of 5015 Fourier coefficients, for every data point on an analyzed surface.
+
+Sampling of every 10th time step was a result of limitation in allocated RAM memory on a computational node. Processing full dataset was attempted by "chunking" the data. This process is automatically controlled by Python interpreter and is basically dividing the dataset into memory manageable "chunks" on which mathematical operations are performed. Although convenient, such approach delivered ill data. Utilizing the formula \ref{eq:dft3} was more suitable for "chunking" however obtaining the results was time consuming and as such impractical. FFT series data for internal surfaces blade surfaces is saved to a set of csv files for further post processing. 
+
+Obtaining amplitudes and phase shift of ordinary frequencies is rather straightforward. Formulas \ref{eq:dftmag} \& \ref{eq:dftphase} are used element-wise on a complex vector of Fourier coefficients for each node of given control surface. Results are saved to separate csv files with $\text{Amp}_k(f_{bin})$ and $\theta_k(f_{bin})$ data respectively.
+
+A rather challenging is to graphically present the results of the analysis. At this stage, all nodes on a 3D control surface, having $(x, y, z)$ coordinates are now linked to a 2D spectrum plot, therefore a dataset is now five dimensional. Considering that 3D surface can be projected to a 2d scatter plot, reduces the problem to 4 dimensions. For first assessment of spectrum plots a "spectrum heatmap" is proposed. A heatmap kind plot with x-axis being the frequency bins, y-axis -- the node number, and cell color is the magnitude of given frequency bin of given node. Exemplary heatmap is presented in fig. \ref{fft_heat}.
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/fft_heat.png}
+\caption{Exemplary FFT heatmap of magnitude. Random data.}
+\label{fft_heat}
+\end{figure}
+
+Considering that a structural mesh was used and the numbering of nodes applied by the CFD software that exported the data, initial visual assessment of the resulting fft heat map is not problematic.
+
+%-----------------------------------
+%	SUBSECTION
+%-----------------------------------
+\subsection{Qualitative analysis} \label{fft_res_qual}
+Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus 1venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+
+%-----------------------------------
+%	SUBSECTION
+%-----------------------------------
+%\subsection{Quantitative analysis} \label{fft_res_quant}
+%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus 1venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
