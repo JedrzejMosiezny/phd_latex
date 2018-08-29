@@ -25,7 +25,7 @@ This set was postprocessed to obtain the sound pressure, sound intensity and the
 %	SUBSECTION
 %-----------------------------------
 \subsection{Results postprocessing} \label{rms_res_prep}
-The sound values were then further processed to obtain the Root Mean Square values of sound pressure and sound intensity from internal markers and blade surfaces. Due to large number of figures, scatter/contour plots of the aforementioned values are provided in the Appendix \ref{rms_results}n in figures \ref{blade-zy-rms-spl} thru \ref{int-tip-rms-sildb}. Providing data for both pressure and intensity values and their decibel levels is redundant, yet both plots are shown for clarity and direct comparison of given values. 
+The time specific sound pressure values were further processed to obtain the Root Mean Square values of sound pressure and sound intensity from internal markers and blade surfaces. Due to large number of figures, the scatter plots of the aforementioned values are provided in the Appendix \ref{rms_results}n in figures \ref{blade-zy-rms-spl} thru \ref{int-tip-rms-sildb}. Providing data for both pressure and intensity values and their decibel levels is redundant, yet both plots are shown for clarity and direct comparison of given values. 
 
 Internal boundary plots provide information on maximum and minimum values of SPL and SPLdB presented on the plot. As the minimum sound intensity (SIL) is equal 0 and the SILdB values for corresponding points approach negative infinity. Such values were overridden to show 0 SILdB on the plot.    For this reason minimum value coordinates are omitted in the plot description 
 
@@ -72,13 +72,13 @@ Sound wave like patterns on blade suction surface in the supersonic region requi
 %	SUBSECTION
 %-----------------------------------
 \subsection{Results postprocessing} \label{fft_res_prep}
-Time step results were processed by a Python script presented in Appendix \ref{codefft}. As described in chapter \ref{ddes}, the timestep for the analysis was order of magnitude smaller than required by the direct method. The presented algorithm samples every 10th timestep to an intermittent tabular data frame and performs a Discrete Fourier Transform as per formula \ref{eq:dft}. This outputs a complex vector \ref{eq:complex} of 5015 Fourier coefficients, for every data point on an analyzed surface.
+The time specific sound pressure values were further processed by a Python script presented in Appendix \ref{codefft}. As described in chapter \ref{ddes}, the timestep for the analysis was order of magnitude smaller than required by the direct method. The presented algorithm samples every 10th timestep to an intermittent tabular data frame and performs a Discrete Fourier Transform as per formula \ref{eq:dft}. This outputs a complex vector \ref{eq:complex} of 5015 Fourier coefficients, for every data point on an analyzed surface. Due to large number of figures, the scatter plots of the aforementioned values are provided in the Appendix \ref{fft_results}n in figures \ref{dupa} thru \ref{dupa}.
 
-Sampling of every 10th time step was a result of limitation in allocated RAM memory on a computational node. Processing full dataset was attempted by "chunking" the data. This process is automatically controlled by Python interpreter and is basically dividing the dataset into memory manageable "chunks" on which mathematical operations are performed. Although convenient, such approach delivered ill data. Utilizing the formula \ref{eq:dft3} was more suitable for "chunking" however obtaining the results was time consuming and as such impractical. FFT series data for internal surfaces blade surfaces is saved to a set of csv files for further post processing. 
+%Sampling of every 10th time step was a result of limitation in allocated RAM memory on a computational node. Processing full dataset was attempted by "chunking" the data. This process is automatically controlled by Python interpreter and is basically dividing the dataset into memory manageable "chunks" on which mathematical operations are performed. Although convenient, such approach delivered ill data. Utilizing the formula \ref{eq:dft3} was more suitable for "chunking" however obtaining the results was time consuming and as such impractical. FFT series data for internal surfaces blade surfaces is saved to a set of csv files for further post processing. 
 
 Obtaining amplitudes and phase shift of ordinary frequencies is rather straightforward. Formulas \ref{eq:dftmag} \& \ref{eq:dftphase} are used element-wise on a complex vector of Fourier coefficients for each node of given control surface. Results are saved to separate csv files with $\text{Amp}_k(f_{bin})$ and $\theta_k(f_{bin})$ data respectively.
 
-A rather challenging is to graphically present the results of the analysis. At this stage, all nodes on a 3D control surface, having $(x, y, z)$ coordinates are now linked to a 2D spectrum plot, therefore a dataset is now five dimensional. Considering that 3D surface can be projected to a 2d scatter plot, reduces the problem to 4 dimensions. For first assessment of spectrum plots a "spectrum heatmap" is proposed. A heatmap kind plot with x-axis being the frequency bins, y-axis -- the node number, and cell color is the magnitude of given frequency bin of given node. Exemplary heatmap is presented in fig. \ref{fft_heat}.
+A rather challenging is to graphically present the results of the analysis. At this stage, all nodes on a 3D control surface, having $(x, y, z)$ coordinates are now linked to a 2D spectrum plot, therefore a dataset is now five dimensional. Considering that 3D surface can be projected to a 2d scatter plot, reduces the problem to 4 dimensions. For first assessment of spectrum plots a "spectrum heatmap" is proposed. A heatmap kind plot with x-axis being the frequency bins, y-axis -- the node number, and cell color is the magnitude of given frequency bin of given node. Exemplary heatmap is presented in fig. \ref{fft_heat}. Such approach provides some basic qualitative insight to the frequency distribution.
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
@@ -87,7 +87,22 @@ A rather challenging is to graphically present the results of the analysis. At t
 \label{fft_heat}
 \end{figure}
 
-Considering that a structural mesh was used and the numbering of nodes applied by the CFD software that exported the data, initial visual assessment of the resulting fft heat map is not problematic.
+Spectrum plot amplitude range as well as maximum FFT amplitude range are normalized and presented on a logarithmic scale as per formula \ref{eq:FFTnorm}. 
+
+\begin{equation} \label{eq:FFTnorm}
+\text{Amp}_{kn} = 20 \cdot \log_{10} \left( \frac{\text{Amp}_{k}}{\text{Amp}_{max}} \right)
+\end{equation}
+
+\noindent where $\text{Amp}_{max}$ is the global maximum amplitude of all datasets.
+
+This operation has been performed separately on spectrum plots and peak amplitude plots. For spectrum plots the lower [dB] range is calculated by applying the formula \ref{eq:FFTnorm} to global minimum and global maximum amplitudes, resulting in lower end of the scale of -226.41 dB, rounded down to -230dB. For surface plots, where only peak amplitudes are taken into account, the lower end of the plotting range is set as follows: obtain list of maximum amplitudes from all control surfaces, next take the minimum value from the obtained list and apply the aforementioned formula. The lower limit of the surface amplitude plots is calculated to -62.94 dB, rounded down to -65dB. This ensures that color range on is consistent throughout the spectrum plots and surface plots, with maximum value of 0 on every amplitude plot, corresponding to the maximum amplitude value.
+
+Frequency of maximum amplitude for each node is obtained from the dataset. Moreover an amplitude weighted average frequency is calculated (eq. \ref{eq:AWAF}) to show the dominating frequency range on the given control surfaces. Frequency range presented on these plots is limited slightly above the maximum frequency possible to resolve by the presented approach and the limits are 0Hz and 25000Hz.
+
+\begin{equation} \label{eq:AWAF}
+\bar{f} = \frac{\sum_{k=1}^{N} f_{bin_k} \cdot \text{Amp}_k}{\sum_{k=1}^{N} \text{Amp}_{k}}
+\end{equation}
+
 
 %-----------------------------------
 %	SUBSECTION

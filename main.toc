@@ -6,9 +6,9 @@
 \vspace {1em}
 \contentsline {chapter}{Contents}{ix}{dummy.4}
 \contentsline {chapter}{List of Figures}{xi}{dummy.6}
-\contentsline {chapter}{List of Tables}{xiii}{dummy.8}
-\contentsline {chapter}{Abbreviations}{xv}{dummy.10}
-\contentsline {chapter}{Symbols}{xvii}{dummy.13}
+\contentsline {chapter}{List of Tables}{xv}{dummy.8}
+\contentsline {chapter}{Abbreviations}{xvii}{dummy.10}
+\contentsline {chapter}{Symbols}{xix}{dummy.13}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.16}
 \contentsline {section}{\numberline {1.1}Main Section 1}{1}{section.17}
 \contentsline {subsection}{\numberline {1.1.1}Subsection 1}{1}{subsection.18}
@@ -55,15 +55,15 @@
 \contentsline {subsection}{\numberline {7.2.2}Qualitative analysis}{40}{subsection.181}
 \contentsline {section}{\numberline {7.3}FFT results}{42}{section.183}
 \contentsline {subsection}{\numberline {7.3.1}Results postprocessing}{42}{subsection.184}
-\contentsline {subsection}{\numberline {7.3.2}Qualitative analysis}{42}{subsection.186}
-\contentsline {chapter}{\numberline {8}Conclusions \& Further work}{45}{chapter.187}
-\contentsline {section}{\numberline {8.1}Results discussion}{45}{section.188}
-\contentsline {section}{\numberline {8.2}Improvements to the method}{46}{section.189}
-\contentsline {section}{\numberline {8.3}Further work}{46}{section.190}
-\contentsline {chapter}{\numberline {A}RMS values plots}{47}{appendix.191}
-\contentsline {chapter}{\numberline {B}FFT plots}{81}{appendix.226}
-\contentsline {chapter}{\numberline {C}Code for direct formulation of noise analysis}{83}{appendix.227}
-\contentsline {chapter}{\numberline {D}Code for RMS computation}{85}{appendix.303}
-\contentsline {chapter}{\numberline {E}Code for discrete Fourier analysis}{87}{appendix.341}
-\contentsline {chapter}{\numberline {F}Blade design surface coordinates}{89}{appendix.379}
-\contentsline {chapter}{Bibliography}{91}{dummy.380}
+\contentsline {subsection}{\numberline {7.3.2}Qualitative analysis}{43}{subsection.188}
+\contentsline {chapter}{\numberline {8}Conclusions \& Further work}{45}{chapter.189}
+\contentsline {section}{\numberline {8.1}Results discussion}{45}{section.190}
+\contentsline {section}{\numberline {8.2}Improvements to the method}{46}{section.191}
+\contentsline {section}{\numberline {8.3}Further work}{46}{section.192}
+\contentsline {chapter}{\numberline {A}RMS values plots}{47}{appendix.193}
+\contentsline {chapter}{\numberline {B}FFT plots}{81}{appendix.228}
+\contentsline {chapter}{\numberline {C}Code for direct formulation of noise analysis}{121}{appendix.269}
+\contentsline {chapter}{\numberline {D}Code for RMS computation}{123}{appendix.345}
+\contentsline {chapter}{\numberline {E}Code for discrete Fourier analysis}{125}{appendix.383}
+\contentsline {chapter}{\numberline {F}Blade design surface coordinates}{127}{appendix.421}
+\contentsline {chapter}{Bibliography}{129}{dummy.422}
