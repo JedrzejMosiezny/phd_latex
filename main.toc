@@ -5,10 +5,10 @@
 \contentsline {chapter}{Acknowledgements}{vii}{dummy.3}
 \vspace {1em}
 \contentsline {chapter}{Contents}{ix}{dummy.4}
-\contentsline {chapter}{List of Figures}{xi}{dummy.6}
-\contentsline {chapter}{List of Tables}{xv}{dummy.8}
-\contentsline {chapter}{Abbreviations}{xvii}{dummy.10}
-\contentsline {chapter}{Symbols}{xix}{dummy.13}
+\contentsline {chapter}{List of Figures}{xiii}{dummy.6}
+\contentsline {chapter}{List of Tables}{xvii}{dummy.8}
+\contentsline {chapter}{Abbreviations}{xix}{dummy.10}
+\contentsline {chapter}{Symbols}{xxi}{dummy.13}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.16}
 \contentsline {section}{\numberline {1.1}Main Section 1}{1}{section.17}
 \contentsline {subsection}{\numberline {1.1.1}Subsection 1}{1}{subsection.18}
@@ -59,11 +59,12 @@
 \contentsline {chapter}{\numberline {8}Conclusions \& Further work}{45}{chapter.189}
 \contentsline {section}{\numberline {8.1}Results discussion}{45}{section.190}
 \contentsline {section}{\numberline {8.2}Improvements to the method}{46}{section.191}
-\contentsline {section}{\numberline {8.3}Further work}{46}{section.192}
-\contentsline {chapter}{\numberline {A}RMS values plots}{47}{appendix.193}
-\contentsline {chapter}{\numberline {B}FFT plots}{81}{appendix.228}
-\contentsline {chapter}{\numberline {C}Code for direct formulation of noise analysis}{121}{appendix.269}
-\contentsline {chapter}{\numberline {D}Code for RMS computation}{123}{appendix.345}
-\contentsline {chapter}{\numberline {E}Code for discrete Fourier analysis}{125}{appendix.383}
-\contentsline {chapter}{\numberline {F}Blade design surface coordinates}{127}{appendix.421}
-\contentsline {chapter}{Bibliography}{129}{dummy.422}
+\contentsline {section}{\numberline {8.3}Further work}{47}{section.192}
+\contentsline {section}{\numberline {8.4}Closing remarks}{47}{section.193}
+\contentsline {chapter}{\numberline {A}RMS values plots}{49}{appendix.194}
+\contentsline {chapter}{\numberline {B}FFT plots}{77}{appendix.223}
+\contentsline {chapter}{\numberline {C}Code for direct formulation of noise analysis}{107}{appendix.253}
+\contentsline {chapter}{\numberline {D}Code for RMS computation}{109}{appendix.329}
+\contentsline {chapter}{\numberline {E}Code for discrete Fourier analysis}{111}{appendix.367}
+\contentsline {chapter}{\numberline {F}Blade design surface coordinates}{113}{appendix.405}
+\contentsline {chapter}{Bibliography}{115}{dummy.406}
