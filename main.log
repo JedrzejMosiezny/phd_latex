@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.3.25)  30 AUG 2018 19:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.3.25)  4 SEP 2018 18:41
 entering extended mode
 **./main.tex
 (main.tex
@@ -1769,7 +1769,7 @@ LaTeX Info: Redefining \nameref on input line 58.
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
-<Pictures/pp_logo2.jpg, id=274, 142.3719pt x 142.3719pt>
+<Pictures/pp_logo2.jpg, id=250, 142.3719pt x 142.3719pt>
 File: Pictures/pp_logo2.jpg Graphic file (type jpg)
 <use Pictures/pp_logo2.jpg>
 Package pdftex.def Info: Pictures/pp_logo2.jpg  used on input line 87.
@@ -1823,23 +1823,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 165--165
 ------------------------------------------------------------------------------
 (main.toc [9
 
-] [10])
+])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- [11] [12
-
-]
+ [10]
 ------------------------------------------------------------------------------
  List of Figures
 ------------------------------------------------------------------------------
-(main.lof [13
+(main.lof [11
 
-] [14])
+
+] [12])
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [15] [16
+ [13] [14
 
 ]
 ------------------------------------------------------------------------------
@@ -1849,13 +1848,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 165--165
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [17
+ [15
+
+] [16
+
+]
+------------------------------------------------------------------------------
+ Abbreviations
+------------------------------------------------------------------------------
+[17
+
 
 ] [18
 
 ]
 ------------------------------------------------------------------------------
- Abbreviations
+ Symbols
 ------------------------------------------------------------------------------
 [19
 
@@ -1864,18 +1872,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 165--165
 
 ]
 ------------------------------------------------------------------------------
- Symbols
-------------------------------------------------------------------------------
-[21
-
-
-] [22
-
-]
-------------------------------------------------------------------------------
  Dedicatory
 ------------------------------------------------------------------------------
-[23] [24
+[21] [22
 
 ] (Chapters/introduction.tex
 Chapter 1.
@@ -1900,7 +1899,7 @@ Chapter 3.
  3 Approach and direct formulation of noise analysis
 ------------------------------------------------------------------------------
 [11] [12]
-<Pictures/CFD_Types.png, id=835, 551.1792pt x 344.0052pt>
+<Pictures/CFD_Types.png, id=799, 551.1792pt x 344.0052pt>
 File: Pictures/CFD_Types.png Graphic file (type png)
 <use Pictures/CFD_Types.png>
 Package pdftex.def Info: Pictures/CFD_Types.png  used on input line 117.
@@ -1915,7 +1914,7 @@ Chapter 4.
 ------------------------------------------------------------------------------
  4 Test case
 ------------------------------------------------------------------------------
-<Pictures/r67_over.png, id=1022, 505.13719pt x 299.61937pt>
+<Pictures/r67_over.png, id=985, 505.13719pt x 299.61937pt>
 File: Pictures/r67_over.png Graphic file (type png)
 <use Pictures/r67_over.png>
 Package pdftex.def Info: Pictures/r67_over.png  used on input line 18.
@@ -1923,17 +1922,13 @@ Package pdftex.def Info: Pictures/r67_over.png  used on input line 18.
 [27
 
  <./Pictures/r67_over.png>] [28]
-<Pictures/r67_geom.jpg, id=1052, 1484.54625pt x 731.73375pt>
+<Pictures/r67_geom.jpg, id=1016, 1484.54625pt x 731.73375pt>
 File: Pictures/r67_geom.jpg Graphic file (type jpg)
 <use Pictures/r67_geom.jpg>
 Package pdftex.def Info: Pictures/r67_geom.jpg  used on input line 70.
 (pdftex.def)             Requested size: 354.85464pt x 174.9051pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[29]
-<Pictures/r67_cj.jpg, id=1063, 1484.54625pt x 731.73375pt>
+ [29]
+<Pictures/r67_cj.jpg, id=1027, 1484.54625pt x 731.73375pt>
 File: Pictures/r67_cj.jpg Graphic file (type jpg)
 <use Pictures/r67_cj.jpg>
 Package pdftex.def Info: Pictures/r67_cj.jpg  used on input line 108.
@@ -1942,7 +1937,7 @@ Package pdftex.def Info: Pictures/r67_cj.jpg  used on input line 108.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Pictures/r67_htopo.jpg, id=1065, 1484.54625pt x 731.73375pt>
+<Pictures/r67_htopo.jpg, id=1029, 1484.54625pt x 731.73375pt>
 File: Pictures/r67_htopo.jpg Graphic file (type jpg)
 <use Pictures/r67_htopo.jpg>
 Package pdftex.def Info: Pictures/r67_htopo.jpg  used on input line 117.
@@ -1952,58 +1947,52 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [30 <./Pictures/r67_geom.jpg>] [31 <./Pictures/r67_cj.jpg> <./Pictures/r67_htop
 o.jpg>]
-<Pictures/mesh_ortho.png, id=1086, 1000.73875pt x 567.11874pt>
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 145.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+<Pictures/mesh_ortho.png, id=1048, 1000.73875pt x 567.11874pt>
 File: Pictures/mesh_ortho.png Graphic file (type png)
 <use Pictures/mesh_ortho.png>
-Package pdftex.def Info: Pictures/mesh_ortho.png  used on input line 149.
+Package pdftex.def Info: Pictures/mesh_ortho.png  used on input line 162.
 (pdftex.def)             Requested size: 354.85464pt x 201.09924pt.
-<Pictures/r67_ransmesh.jpg, id=1087, 1484.54625pt x 731.73375pt>
+<Pictures/r67_ransmesh.jpg, id=1049, 1484.54625pt x 731.73375pt>
 File: Pictures/r67_ransmesh.jpg Graphic file (type jpg)
 <use Pictures/r67_ransmesh.jpg>
-Package pdftex.def Info: Pictures/r67_ransmesh.jpg  used on input line 156.
+Package pdftex.def Info: Pictures/r67_ransmesh.jpg  used on input line 169.
 (pdftex.def)             Requested size: 354.85464pt x 174.9051pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [32 <./Pictures/mesh_ortho.png>] [33 <./Pictures/r67_ransmesh.jpg>])
-(Chapters/rans_cfd.tex [34]
+(Chapters/cfd.tex [34]
 Chapter 5.
 ------------------------------------------------------------------------------
- 5 RANS Analysis
+ 5 CFD Analysis
 ------------------------------------------------------------------------------
-) (Chapters/ddes_cfd.tex [35
+) (Chapters/results.tex [35
 
 ] [36]
 Chapter 6.
 ------------------------------------------------------------------------------
- 6 DDES Analysis
+ 6 Results of flow field noise analysis
 ------------------------------------------------------------------------------
-) (Chapters/results.tex [37
+[37
 
 ] [38]
-Chapter 7.
-------------------------------------------------------------------------------
- 7 Results of flow field noise analysis
-------------------------------------------------------------------------------
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 17.
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [39
-
-] [40]
 Overfull \hbox (3.7351pt too wide) in paragraph at lines 46--47
 []\T1/cmr/m/n/10.95 Internal sur-face con-tour plots show, that the source of s
 ound pres-sure is the supersonic-
  []
 
-<Pictures/tip_stream.jpg, id=1152, 963.6pt x 542.025pt>
+<Pictures/tip_stream.jpg, id=1106, 963.6pt x 542.025pt>
 File: Pictures/tip_stream.jpg Graphic file (type jpg)
 <use Pictures/tip_stream.jpg>
 Package pdftex.def Info: Pictures/tip_stream.jpg  used on input line 50.
 (pdftex.def)             Requested size: 354.85464pt x 199.60326pt.
-[41 <./Pictures/tip_stream.jpg>]
-<Pictures/fft_heat.png, id=1168, 573.5829pt x 590.205pt>
+[39 <./Pictures/tip_stream.jpg>]
+<Pictures/fft_heat.png, id=1123, 573.5829pt x 590.205pt>
 File: Pictures/fft_heat.png Graphic file (type png)
 <use Pictures/fft_heat.png>
 Package pdftex.def Info: Pictures/fft_heat.png  used on input line 85.
@@ -2012,630 +2001,630 @@ Package pdftex.def Info: Pictures/fft_heat.png  used on input line 85.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[42] [43 <./Pictures/fft_heat.png>]
+[40] [41 <./Pictures/fft_heat.png>]
 Overfull \hbox (4.85565pt too wide) in paragraph at lines 113--114
 []\T1/cmr/m/n/10.95 Amplitude weighted av-er-age fre-quency plots re-duces the 
 high di-men-sional FFT dataset
  []
 
-) (Chapters/conclusions.tex [44]
-Chapter 8.
+) (Chapters/conclusions.tex [42]
+Chapter 7.
 ------------------------------------------------------------------------------
- 8 Conclusions \& Further work
+ 7 Conclusions \& Further work
 ------------------------------------------------------------------------------
-[45
+[43
 
-] [46]) (Appendices/Appendix_rmsresults.tex [47] [48
-
-]
+] [44] [45]) (Appendices/Appendix_rmsresults.tex [46]
 Appendix A.
 ------------------------------------------------------------------------------
  A RMS values plots
 ------------------------------------------------------------------------------
-<Figures/blade-rms-spl.png, id=1208, 546.3612pt x 594.0594pt>
+<Figures/blade-rms-spl.png, id=1165, 546.3612pt x 594.0594pt>
 File: Figures/blade-rms-spl.png Graphic file (type png)
 <use Figures/blade-rms-spl.png>
 Package pdftex.def Info: Figures/blade-rms-spl.png  used on input line 10.
 (pdftex.def)             Requested size: 375.7232pt x 408.53267pt.
-<Figures/blade-rms-spldb.png, id=1209, 547.3248pt x 594.0594pt>
+<Figures/blade-rms-spldb.png, id=1166, 547.3248pt x 594.0594pt>
 File: Figures/blade-rms-spldb.png Graphic file (type png)
 <use Figures/blade-rms-spldb.png>
 Package pdftex.def Info: Figures/blade-rms-spldb.png  used on input line 16.
 (pdftex.def)             Requested size: 375.7232pt x 407.80751pt.
-<Figures/int-01-rms-spl.png, id=1210, 398.6895pt x 354.123pt>
+<Figures/int-01-rms-spl.png, id=1167, 398.6895pt x 354.123pt>
 File: Figures/int-01-rms-spl.png Graphic file (type png)
 <use Figures/int-01-rms-spl.png>
 Package pdftex.def Info: Figures/int-01-rms-spl.png  used on input line 23.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-01-rms-spldb.png, id=1211, 400.3758pt x 357.0138pt>
+<Figures/int-01-rms-spldb.png, id=1168, 400.3758pt x 357.0138pt>
 File: Figures/int-01-rms-spldb.png Graphic file (type png)
 <use Figures/int-01-rms-spldb.png>
 Package pdftex.def Info: Figures/int-01-rms-spldb.png  used on input line 28.
 (pdftex.def)             Requested size: 313.1048pt x 279.21594pt.
-<Figures/int-01-rms-sil.png, id=1212, 398.6895pt x 354.123pt>
+<Figures/int-01-rms-sil.png, id=1169, 398.6895pt x 354.123pt>
 File: Figures/int-01-rms-sil.png Graphic file (type png)
 <use Figures/int-01-rms-sil.png>
 Package pdftex.def Info: Figures/int-01-rms-sil.png  used on input line 34.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-01-rms-sildb.png, id=1213, 400.3758pt x 354.123pt>
+<Figures/int-01-rms-sildb.png, id=1170, 400.3758pt x 354.123pt>
 File: Figures/int-01-rms-sildb.png Graphic file (type png)
 <use Figures/int-01-rms-sildb.png>
 Package pdftex.def Info: Figures/int-01-rms-sildb.png  used on input line 39.
 (pdftex.def)             Requested size: 313.1048pt x 276.9551pt.
-<Figures/int-02-rms-spl.png, id=1214, 398.6895pt x 354.123pt>
+<Figures/int-02-rms-spl.png, id=1171, 398.6895pt x 354.123pt>
 File: Figures/int-02-rms-spl.png Graphic file (type png)
 <use Figures/int-02-rms-spl.png>
 Package pdftex.def Info: Figures/int-02-rms-spl.png  used on input line 46.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-02-rms-spldb.png, id=1215, 400.3758pt x 357.0138pt>
+<Figures/int-02-rms-spldb.png, id=1172, 400.3758pt x 357.0138pt>
 File: Figures/int-02-rms-spldb.png Graphic file (type png)
 <use Figures/int-02-rms-spldb.png>
 Package pdftex.def Info: Figures/int-02-rms-spldb.png  used on input line 51.
 (pdftex.def)             Requested size: 313.1048pt x 279.21594pt.
-<Figures/int-02-rms-sil.png, id=1216, 398.6895pt x 354.123pt>
+<Figures/int-02-rms-sil.png, id=1173, 398.6895pt x 354.123pt>
 File: Figures/int-02-rms-sil.png Graphic file (type png)
 <use Figures/int-02-rms-sil.png>
 Package pdftex.def Info: Figures/int-02-rms-sil.png  used on input line 57.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-02-rms-sildb.png, id=1217, 400.3758pt x 354.123pt>
+<Figures/int-02-rms-sildb.png, id=1174, 400.3758pt x 354.123pt>
 File: Figures/int-02-rms-sildb.png Graphic file (type png)
 <use Figures/int-02-rms-sildb.png>
 Package pdftex.def Info: Figures/int-02-rms-sildb.png  used on input line 62.
 (pdftex.def)             Requested size: 313.1048pt x 276.9551pt.
-<Figures/int-03-rms-spl.png, id=1218, 398.6895pt x 354.123pt>
+<Figures/int-03-rms-spl.png, id=1175, 398.6895pt x 354.123pt>
 File: Figures/int-03-rms-spl.png Graphic file (type png)
 <use Figures/int-03-rms-spl.png>
 Package pdftex.def Info: Figures/int-03-rms-spl.png  used on input line 69.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-03-rms-spldb.png, id=1219, 400.3758pt x 357.0138pt>
+<Figures/int-03-rms-spldb.png, id=1176, 400.3758pt x 357.0138pt>
 File: Figures/int-03-rms-spldb.png Graphic file (type png)
 <use Figures/int-03-rms-spldb.png>
 Package pdftex.def Info: Figures/int-03-rms-spldb.png  used on input line 74.
 (pdftex.def)             Requested size: 313.1048pt x 279.21594pt.
-<Figures/int-03-rms-sil.png, id=1220, 398.6895pt x 354.123pt>
+<Figures/int-03-rms-sil.png, id=1177, 398.6895pt x 354.123pt>
 File: Figures/int-03-rms-sil.png Graphic file (type png)
 <use Figures/int-03-rms-sil.png>
 Package pdftex.def Info: Figures/int-03-rms-sil.png  used on input line 80.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-03-rms-sildb.png, id=1221, 400.3758pt x 354.123pt>
+<Figures/int-03-rms-sildb.png, id=1178, 400.3758pt x 354.123pt>
 File: Figures/int-03-rms-sildb.png Graphic file (type png)
 <use Figures/int-03-rms-sildb.png>
 Package pdftex.def Info: Figures/int-03-rms-sildb.png  used on input line 85.
 (pdftex.def)             Requested size: 313.1048pt x 276.9551pt.
-<Figures/int-04-rms-spl.png, id=1222, 398.6895pt x 354.123pt>
+<Figures/int-04-rms-spl.png, id=1179, 398.6895pt x 354.123pt>
 File: Figures/int-04-rms-spl.png Graphic file (type png)
 <use Figures/int-04-rms-spl.png>
 Package pdftex.def Info: Figures/int-04-rms-spl.png  used on input line 92.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-04-rms-spldb.png, id=1223, 400.3758pt x 357.0138pt>
+<Figures/int-04-rms-spldb.png, id=1180, 400.3758pt x 357.0138pt>
 File: Figures/int-04-rms-spldb.png Graphic file (type png)
 <use Figures/int-04-rms-spldb.png>
 Package pdftex.def Info: Figures/int-04-rms-spldb.png  used on input line 97.
 (pdftex.def)             Requested size: 313.1048pt x 279.21594pt.
-<Figures/int-04-rms-sil.png, id=1224, 398.6895pt x 354.123pt>
+<Figures/int-04-rms-sil.png, id=1181, 398.6895pt x 354.123pt>
 File: Figures/int-04-rms-sil.png Graphic file (type png)
 <use Figures/int-04-rms-sil.png>
 Package pdftex.def Info: Figures/int-04-rms-sil.png  used on input line 103.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-04-rms-sildb.png, id=1225, 400.3758pt x 354.123pt>
+<Figures/int-04-rms-sildb.png, id=1182, 400.3758pt x 354.123pt>
 File: Figures/int-04-rms-sildb.png Graphic file (type png)
 <use Figures/int-04-rms-sildb.png>
 Package pdftex.def Info: Figures/int-04-rms-sildb.png  used on input line 108.
 (pdftex.def)             Requested size: 313.1048pt x 276.9551pt.
-<Figures/int-05-rms-spl.png, id=1226, 398.6895pt x 354.123pt>
+<Figures/int-05-rms-spl.png, id=1183, 398.6895pt x 354.123pt>
 File: Figures/int-05-rms-spl.png Graphic file (type png)
 <use Figures/int-05-rms-spl.png>
 Package pdftex.def Info: Figures/int-05-rms-spl.png  used on input line 115.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-05-rms-spldb.png, id=1227, 400.3758pt x 357.0138pt>
+<Figures/int-05-rms-spldb.png, id=1184, 400.3758pt x 357.0138pt>
 File: Figures/int-05-rms-spldb.png Graphic file (type png)
 <use Figures/int-05-rms-spldb.png>
 Package pdftex.def Info: Figures/int-05-rms-spldb.png  used on input line 120.
 (pdftex.def)             Requested size: 313.1048pt x 279.21594pt.
-<Figures/int-05-rms-sil.png, id=1228, 398.6895pt x 354.123pt>
+<Figures/int-05-rms-sil.png, id=1185, 398.6895pt x 354.123pt>
 File: Figures/int-05-rms-sil.png Graphic file (type png)
 <use Figures/int-05-rms-sil.png>
 Package pdftex.def Info: Figures/int-05-rms-sil.png  used on input line 126.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-05-rms-sildb.png, id=1229, 400.3758pt x 354.123pt>
+<Figures/int-05-rms-sildb.png, id=1186, 400.3758pt x 354.123pt>
 File: Figures/int-05-rms-sildb.png Graphic file (type png)
 <use Figures/int-05-rms-sildb.png>
 Package pdftex.def Info: Figures/int-05-rms-sildb.png  used on input line 131.
 (pdftex.def)             Requested size: 313.1048pt x 276.9551pt.
-<Figures/int-06-rms-spl.png, id=1230, 398.6895pt x 354.123pt>
+<Figures/int-06-rms-spl.png, id=1187, 398.6895pt x 354.123pt>
 File: Figures/int-06-rms-spl.png Graphic file (type png)
 <use Figures/int-06-rms-spl.png>
 Package pdftex.def Info: Figures/int-06-rms-spl.png  used on input line 139.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-06-rms-spldb.png, id=1231, 400.3758pt x 357.0138pt>
+<Figures/int-06-rms-spldb.png, id=1188, 400.3758pt x 357.0138pt>
 File: Figures/int-06-rms-spldb.png Graphic file (type png)
 <use Figures/int-06-rms-spldb.png>
 Package pdftex.def Info: Figures/int-06-rms-spldb.png  used on input line 144.
 (pdftex.def)             Requested size: 313.1048pt x 279.21594pt.
-<Figures/int-06-rms-sil.png, id=1232, 398.6895pt x 354.123pt>
+<Figures/int-06-rms-sil.png, id=1189, 398.6895pt x 354.123pt>
 File: Figures/int-06-rms-sil.png Graphic file (type png)
 <use Figures/int-06-rms-sil.png>
 Package pdftex.def Info: Figures/int-06-rms-sil.png  used on input line 150.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-06-rms-sildb.png, id=1233, 400.3758pt x 354.123pt>
+<Figures/int-06-rms-sildb.png, id=1190, 400.3758pt x 354.123pt>
 File: Figures/int-06-rms-sildb.png Graphic file (type png)
 <use Figures/int-06-rms-sildb.png>
 Package pdftex.def Info: Figures/int-06-rms-sildb.png  used on input line 155.
 (pdftex.def)             Requested size: 313.1048pt x 276.9551pt.
-<Figures/int-07-rms-spl.png, id=1234, 398.6895pt x 354.123pt>
+<Figures/int-07-rms-spl.png, id=1191, 398.6895pt x 354.123pt>
 File: Figures/int-07-rms-spl.png Graphic file (type png)
 <use Figures/int-07-rms-spl.png>
 Package pdftex.def Info: Figures/int-07-rms-spl.png  used on input line 163.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-07-rms-spldb.png, id=1235, 400.3758pt x 357.0138pt>
+<Figures/int-07-rms-spldb.png, id=1192, 400.3758pt x 357.0138pt>
 File: Figures/int-07-rms-spldb.png Graphic file (type png)
 <use Figures/int-07-rms-spldb.png>
 Package pdftex.def Info: Figures/int-07-rms-spldb.png  used on input line 168.
 (pdftex.def)             Requested size: 313.1048pt x 279.21594pt.
-<Figures/int-07-rms-sil.png, id=1236, 398.6895pt x 354.123pt>
+<Figures/int-07-rms-sil.png, id=1193, 398.6895pt x 354.123pt>
 File: Figures/int-07-rms-sil.png Graphic file (type png)
 <use Figures/int-07-rms-sil.png>
 Package pdftex.def Info: Figures/int-07-rms-sil.png  used on input line 174.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-07-rms-sildb.png, id=1237, 400.3758pt x 354.123pt>
+<Figures/int-07-rms-sildb.png, id=1194, 400.3758pt x 354.123pt>
 File: Figures/int-07-rms-sildb.png Graphic file (type png)
 <use Figures/int-07-rms-sildb.png>
 Package pdftex.def Info: Figures/int-07-rms-sildb.png  used on input line 179.
 (pdftex.def)             Requested size: 313.1048pt x 276.9551pt.
-<Figures/int-08-rms-spl.png, id=1238, 398.6895pt x 354.123pt>
+<Figures/int-08-rms-spl.png, id=1195, 398.6895pt x 354.123pt>
 File: Figures/int-08-rms-spl.png Graphic file (type png)
 <use Figures/int-08-rms-spl.png>
 Package pdftex.def Info: Figures/int-08-rms-spl.png  used on input line 187.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-08-rms-spldb.png, id=1239, 400.3758pt x 357.0138pt>
+<Figures/int-08-rms-spldb.png, id=1196, 400.3758pt x 357.0138pt>
 File: Figures/int-08-rms-spldb.png Graphic file (type png)
 <use Figures/int-08-rms-spldb.png>
 Package pdftex.def Info: Figures/int-08-rms-spldb.png  used on input line 192.
 (pdftex.def)             Requested size: 313.1048pt x 279.21594pt.
-<Figures/int-08-rms-sil.png, id=1240, 398.6895pt x 354.123pt>
+<Figures/int-08-rms-sil.png, id=1197, 398.6895pt x 354.123pt>
 File: Figures/int-08-rms-sil.png Graphic file (type png)
 <use Figures/int-08-rms-sil.png>
 Package pdftex.def Info: Figures/int-08-rms-sil.png  used on input line 198.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-08-rms-sildb.png, id=1241, 400.3758pt x 354.123pt>
+<Figures/int-08-rms-sildb.png, id=1198, 400.3758pt x 354.123pt>
 File: Figures/int-08-rms-sildb.png Graphic file (type png)
 <use Figures/int-08-rms-sildb.png>
 Package pdftex.def Info: Figures/int-08-rms-sildb.png  used on input line 203.
 (pdftex.def)             Requested size: 313.1048pt x 276.9551pt.
-<Figures/int-09-rms-spl.png, id=1242, 398.6895pt x 354.123pt>
+<Figures/int-09-rms-spl.png, id=1199, 398.6895pt x 354.123pt>
 File: Figures/int-09-rms-spl.png Graphic file (type png)
 <use Figures/int-09-rms-spl.png>
 Package pdftex.def Info: Figures/int-09-rms-spl.png  used on input line 211.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-09-rms-spldb.png, id=1243, 400.3758pt x 357.0138pt>
+<Figures/int-09-rms-spldb.png, id=1200, 400.3758pt x 357.0138pt>
 File: Figures/int-09-rms-spldb.png Graphic file (type png)
 <use Figures/int-09-rms-spldb.png>
 Package pdftex.def Info: Figures/int-09-rms-spldb.png  used on input line 216.
 (pdftex.def)             Requested size: 313.1048pt x 279.21594pt.
-<Figures/int-09-rms-sil.png, id=1244, 398.6895pt x 354.123pt>
+<Figures/int-09-rms-sil.png, id=1201, 398.6895pt x 354.123pt>
 File: Figures/int-09-rms-sil.png Graphic file (type png)
 <use Figures/int-09-rms-sil.png>
 Package pdftex.def Info: Figures/int-09-rms-sil.png  used on input line 222.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-09-rms-sildb.png, id=1245, 400.3758pt x 354.123pt>
+<Figures/int-09-rms-sildb.png, id=1202, 400.3758pt x 354.123pt>
 File: Figures/int-09-rms-sildb.png Graphic file (type png)
 <use Figures/int-09-rms-sildb.png>
 Package pdftex.def Info: Figures/int-09-rms-sildb.png  used on input line 227.
 (pdftex.def)             Requested size: 313.1048pt x 276.9551pt.
-<Figures/int-10-rms-spl.png, id=1246, 398.6895pt x 354.123pt>
+<Figures/int-10-rms-spl.png, id=1203, 398.6895pt x 354.123pt>
 File: Figures/int-10-rms-spl.png Graphic file (type png)
 <use Figures/int-10-rms-spl.png>
 Package pdftex.def Info: Figures/int-10-rms-spl.png  used on input line 235.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-10-rms-spldb.png, id=1247, 400.3758pt x 357.0138pt>
+<Figures/int-10-rms-spldb.png, id=1204, 400.3758pt x 357.0138pt>
 File: Figures/int-10-rms-spldb.png Graphic file (type png)
 <use Figures/int-10-rms-spldb.png>
 Package pdftex.def Info: Figures/int-10-rms-spldb.png  used on input line 240.
 (pdftex.def)             Requested size: 313.1048pt x 279.21594pt.
-<Figures/int-10-rms-sil.png, id=1248, 398.6895pt x 354.123pt>
+<Figures/int-10-rms-sil.png, id=1205, 398.6895pt x 354.123pt>
 File: Figures/int-10-rms-sil.png Graphic file (type png)
 <use Figures/int-10-rms-sil.png>
 Package pdftex.def Info: Figures/int-10-rms-sil.png  used on input line 246.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-10-rms-sildb.png, id=1249, 400.3758pt x 354.123pt>
+<Figures/int-10-rms-sildb.png, id=1206, 400.3758pt x 354.123pt>
 File: Figures/int-10-rms-sildb.png Graphic file (type png)
 <use Figures/int-10-rms-sildb.png>
 Package pdftex.def Info: Figures/int-10-rms-sildb.png  used on input line 251.
 (pdftex.def)             Requested size: 313.1048pt x 276.9551pt.
-<Figures/int-11-rms-spl.png, id=1250, 398.6895pt x 354.123pt>
+<Figures/int-11-rms-spl.png, id=1207, 398.6895pt x 354.123pt>
 File: Figures/int-11-rms-spl.png Graphic file (type png)
 <use Figures/int-11-rms-spl.png>
 Package pdftex.def Info: Figures/int-11-rms-spl.png  used on input line 259.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-11-rms-spldb.png, id=1251, 400.3758pt x 357.0138pt>
+<Figures/int-11-rms-spldb.png, id=1208, 400.3758pt x 357.0138pt>
 File: Figures/int-11-rms-spldb.png Graphic file (type png)
 <use Figures/int-11-rms-spldb.png>
 Package pdftex.def Info: Figures/int-11-rms-spldb.png  used on input line 264.
 (pdftex.def)             Requested size: 313.1048pt x 279.21594pt.
-<Figures/int-11-rms-sil.png, id=1252, 398.6895pt x 354.123pt>
+<Figures/int-11-rms-sil.png, id=1209, 398.6895pt x 354.123pt>
 File: Figures/int-11-rms-sil.png Graphic file (type png)
 <use Figures/int-11-rms-sil.png>
 Package pdftex.def Info: Figures/int-11-rms-sil.png  used on input line 270.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-11-rms-sildb.png, id=1253, 400.3758pt x 354.123pt>
+<Figures/int-11-rms-sildb.png, id=1210, 400.3758pt x 354.123pt>
 File: Figures/int-11-rms-sildb.png Graphic file (type png)
 <use Figures/int-11-rms-sildb.png>
 Package pdftex.def Info: Figures/int-11-rms-sildb.png  used on input line 275.
 (pdftex.def)             Requested size: 313.1048pt x 276.9551pt.
-<Figures/int-12-rms-spl.png, id=1254, 398.6895pt x 354.123pt>
+<Figures/int-12-rms-spl.png, id=1211, 398.6895pt x 354.123pt>
 File: Figures/int-12-rms-spl.png Graphic file (type png)
 <use Figures/int-12-rms-spl.png>
 Package pdftex.def Info: Figures/int-12-rms-spl.png  used on input line 283.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-12-rms-spldb.png, id=1255, 400.3758pt x 357.0138pt>
+<Figures/int-12-rms-spldb.png, id=1212, 400.3758pt x 357.0138pt>
 File: Figures/int-12-rms-spldb.png Graphic file (type png)
 <use Figures/int-12-rms-spldb.png>
 Package pdftex.def Info: Figures/int-12-rms-spldb.png  used on input line 288.
 (pdftex.def)             Requested size: 313.1048pt x 279.21594pt.
-<Figures/int-12-rms-sil.png, id=1256, 398.6895pt x 354.123pt>
+<Figures/int-12-rms-sil.png, id=1213, 398.6895pt x 354.123pt>
 File: Figures/int-12-rms-sil.png Graphic file (type png)
 <use Figures/int-12-rms-sil.png>
 Package pdftex.def Info: Figures/int-12-rms-sil.png  used on input line 294.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-12-rms-sildb.png, id=1257, 400.3758pt x 354.123pt>
+<Figures/int-12-rms-sildb.png, id=1214, 400.3758pt x 354.123pt>
 File: Figures/int-12-rms-sildb.png Graphic file (type png)
 <use Figures/int-12-rms-sildb.png>
 Package pdftex.def Info: Figures/int-12-rms-sildb.png  used on input line 299.
 (pdftex.def)             Requested size: 313.1048pt x 276.9551pt.
-<Figures/int-tip-rms-spl.png, id=1258, 398.6895pt x 354.123pt>
+<Figures/int-tip-rms-spl.png, id=1215, 398.6895pt x 354.123pt>
 File: Figures/int-tip-rms-spl.png Graphic file (type png)
 <use Figures/int-tip-rms-spl.png>
 Package pdftex.def Info: Figures/int-tip-rms-spl.png  used on input line 307.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-tip-rms-spldb.png, id=1259, 400.3758pt x 357.0138pt>
+<Figures/int-tip-rms-spldb.png, id=1216, 400.3758pt x 357.0138pt>
 File: Figures/int-tip-rms-spldb.png Graphic file (type png)
 <use Figures/int-tip-rms-spldb.png>
 Package pdftex.def Info: Figures/int-tip-rms-spldb.png  used on input line 312.
 
 (pdftex.def)             Requested size: 313.1048pt x 279.21594pt.
-<Figures/int-tip-rms-sil.png, id=1260, 398.6895pt x 354.123pt>
+<Figures/int-tip-rms-sil.png, id=1217, 398.6895pt x 354.123pt>
 File: Figures/int-tip-rms-sil.png Graphic file (type png)
 <use Figures/int-tip-rms-sil.png>
 Package pdftex.def Info: Figures/int-tip-rms-sil.png  used on input line 318.
 (pdftex.def)             Requested size: 313.1048pt x 278.10062pt.
-<Figures/int-tip-rms-sildb.png, id=1261, 400.3758pt x 354.123pt>
+<Figures/int-tip-rms-sildb.png, id=1218, 400.3758pt x 354.123pt>
 File: Figures/int-tip-rms-sildb.png Graphic file (type png)
 <use Figures/int-tip-rms-sildb.png>
 Package pdftex.def Info: Figures/int-tip-rms-sildb.png  used on input line 323.
 
 (pdftex.def)             Requested size: 313.1048pt x 276.9551pt.
-) (Appendices/Appendix_fftresults.tex [49 <./Figures/blade-rms-spl.png>]
-[50 <./Figures/blade-rms-spldb.png>] [51 <./Figures/int-01-rms-spl.png> <./Figu
-res/int-01-rms-spldb.png>] [52 <./Figures/int-01-rms-sil.png> <./Figures/int-01
--rms-sildb.png>] [53 <./Figures/int-02-rms-spl.png> <./Figures/int-02-rms-spldb
-.png>] [54 <./Figures/int-02-rms-sil.png> <./Figures/int-02-rms-sildb.png>]
-[55 <./Figures/int-03-rms-spl.png> <./Figures/int-03-rms-spldb.png>] [56 <./Fig
-ures/int-03-rms-sil.png> <./Figures/int-03-rms-sildb.png>] [57 <./Figures/int-0
-4-rms-spl.png> <./Figures/int-04-rms-spldb.png>] [58 <./Figures/int-04-rms-sil.
-png> <./Figures/int-04-rms-sildb.png>] [59 <./Figures/int-05-rms-spl.png> <./Fi
-gures/int-05-rms-spldb.png>] [60 <./Figures/int-05-rms-sil.png> <./Figures/int-
-05-rms-sildb.png>] [61 <./Figures/int-06-rms-spl.png> <./Figures/int-06-rms-spl
-db.png>] [62 <./Figures/int-06-rms-sil.png> <./Figures/int-06-rms-sildb.png>]
-[63 <./Figures/int-07-rms-spl.png> <./Figures/int-07-rms-spldb.png>] [64 <./Fig
-ures/int-07-rms-sil.png> <./Figures/int-07-rms-sildb.png>] [65 <./Figures/int-0
-8-rms-spl.png> <./Figures/int-08-rms-spldb.png>] [66 <./Figures/int-08-rms-sil.
-png> <./Figures/int-08-rms-sildb.png>] [67 <./Figures/int-09-rms-spl.png> <./Fi
-gures/int-09-rms-spldb.png>] [68 <./Figures/int-09-rms-sil.png> <./Figures/int-
-09-rms-sildb.png>] [69 <./Figures/int-10-rms-spl.png> <./Figures/int-10-rms-spl
-db.png>] [70 <./Figures/int-10-rms-sil.png> <./Figures/int-10-rms-sildb.png>]
-[71 <./Figures/int-11-rms-spl.png> <./Figures/int-11-rms-spldb.png>] [72 <./Fig
-ures/int-11-rms-sil.png> <./Figures/int-11-rms-sildb.png>] [73 <./Figures/int-1
-2-rms-spl.png> <./Figures/int-12-rms-spldb.png>] [74 <./Figures/int-12-rms-sil.
-png> <./Figures/int-12-rms-sildb.png>] [75 <./Figures/int-tip-rms-spl.png> <./F
-igures/int-tip-rms-spldb.png>] [76 <./Figures/int-tip-rms-sil.png> <./Figures/i
+) (Appendices/Appendix_fftresults.tex [47
+
+ <./Figures/blade-rms-spl.png>]
+[48 <./Figures/blade-rms-spldb.png>] [49 <./Figures/int-01-rms-spl.png> <./Figu
+res/int-01-rms-spldb.png>] [50 <./Figures/int-01-rms-sil.png> <./Figures/int-01
+-rms-sildb.png>] [51 <./Figures/int-02-rms-spl.png> <./Figures/int-02-rms-spldb
+.png>] [52 <./Figures/int-02-rms-sil.png> <./Figures/int-02-rms-sildb.png>]
+[53 <./Figures/int-03-rms-spl.png> <./Figures/int-03-rms-spldb.png>] [54 <./Fig
+ures/int-03-rms-sil.png> <./Figures/int-03-rms-sildb.png>] [55 <./Figures/int-0
+4-rms-spl.png> <./Figures/int-04-rms-spldb.png>] [56 <./Figures/int-04-rms-sil.
+png> <./Figures/int-04-rms-sildb.png>] [57 <./Figures/int-05-rms-spl.png> <./Fi
+gures/int-05-rms-spldb.png>] [58 <./Figures/int-05-rms-sil.png> <./Figures/int-
+05-rms-sildb.png>] [59 <./Figures/int-06-rms-spl.png> <./Figures/int-06-rms-spl
+db.png>] [60 <./Figures/int-06-rms-sil.png> <./Figures/int-06-rms-sildb.png>]
+[61 <./Figures/int-07-rms-spl.png> <./Figures/int-07-rms-spldb.png>] [62 <./Fig
+ures/int-07-rms-sil.png> <./Figures/int-07-rms-sildb.png>] [63 <./Figures/int-0
+8-rms-spl.png> <./Figures/int-08-rms-spldb.png>] [64 <./Figures/int-08-rms-sil.
+png> <./Figures/int-08-rms-sildb.png>] [65 <./Figures/int-09-rms-spl.png> <./Fi
+gures/int-09-rms-spldb.png>] [66 <./Figures/int-09-rms-sil.png> <./Figures/int-
+09-rms-sildb.png>] [67 <./Figures/int-10-rms-spl.png> <./Figures/int-10-rms-spl
+db.png>] [68 <./Figures/int-10-rms-sil.png> <./Figures/int-10-rms-sildb.png>]
+[69 <./Figures/int-11-rms-spl.png> <./Figures/int-11-rms-spldb.png>] [70 <./Fig
+ures/int-11-rms-sil.png> <./Figures/int-11-rms-sildb.png>] [71 <./Figures/int-1
+2-rms-spl.png> <./Figures/int-12-rms-spldb.png>] [72 <./Figures/int-12-rms-sil.
+png> <./Figures/int-12-rms-sildb.png>] [73 <./Figures/int-tip-rms-spl.png> <./F
+igures/int-tip-rms-spldb.png>] [74 <./Figures/int-tip-rms-sil.png> <./Figures/i
 nt-tip-rms-sildb.png>]
 Appendix B.
 ------------------------------------------------------------------------------
  B FFT plots
 ------------------------------------------------------------------------------
-<Figures/blade-awf.png, id=1433, 560.3334pt x 594.0594pt>
+<Figures/blade-awf.png, id=1389, 560.3334pt x 594.0594pt>
 File: Figures/blade-awf.png Graphic file (type png)
 <use Figures/blade-awf.png>
 Package pdftex.def Info: Figures/blade-awf.png  used on input line 11.
 (pdftex.def)             Requested size: 375.7232pt x 398.34406pt.
-<Figures/blade-peak-freq.png, id=1434, 560.3334pt x 594.0594pt>
+<Figures/blade-peak-freq.png, id=1390, 560.3334pt x 594.0594pt>
 File: Figures/blade-peak-freq.png Graphic file (type png)
 <use Figures/blade-peak-freq.png>
 Package pdftex.def Info: Figures/blade-peak-freq.png  used on input line 17.
 (pdftex.def)             Requested size: 375.7232pt x 398.34406pt.
-<Figures/blade-peak-mag.png, id=1435, 549.7338pt x 594.0594pt>
+<Figures/blade-peak-mag.png, id=1391, 549.7338pt x 594.0594pt>
 File: Figures/blade-peak-mag.png Graphic file (type png)
 <use Figures/blade-peak-mag.png>
 Package pdftex.def Info: Figures/blade-peak-mag.png  used on input line 23.
 (pdftex.def)             Requested size: 375.7232pt x 406.02177pt.
-<Figures/int-01_spectrum.png, id=1436, 403.2666pt x 358.4592pt>
+<Figures/int-01_spectrum.png, id=1392, 403.2666pt x 358.4592pt>
 File: Figures/int-01_spectrum.png Graphic file (type png)
 <use Figures/int-01_spectrum.png>
 Package pdftex.def Info: Figures/int-01_spectrum.png  used on input line 30.
 (pdftex.def)             Requested size: 313.1048pt x 278.32262pt.
-<Figures/int-01-awaf.png, id=1437, 413.1435pt x 357.0138pt>
+<Figures/int-01-awaf.png, id=1393, 413.1435pt x 357.0138pt>
 File: Figures/int-01-awaf.png Graphic file (type png)
 <use Figures/int-01-awaf.png>
 Package pdftex.def Info: Figures/int-01-awaf.png  used on input line 35.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-01-peak-freq.png, id=1438, 413.1435pt x 357.0138pt>
+<Figures/int-01-peak-freq.png, id=1394, 413.1435pt x 357.0138pt>
 File: Figures/int-01-peak-freq.png Graphic file (type png)
 <use Figures/int-01-peak-freq.png>
 Package pdftex.def Info: Figures/int-01-peak-freq.png  used on input line 41.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-01-peak-mag.png, id=1439, 402.303pt x 357.0138pt>
+<Figures/int-01-peak-mag.png, id=1395, 402.303pt x 357.0138pt>
 File: Figures/int-01-peak-mag.png Graphic file (type png)
 <use Figures/int-01-peak-mag.png>
 Package pdftex.def Info: Figures/int-01-peak-mag.png  used on input line 46.
 (pdftex.def)             Requested size: 313.1048pt x 277.87039pt.
-<Figures/int-02_spectrum.png, id=1440, 403.2666pt x 358.4592pt>
+<Figures/int-02_spectrum.png, id=1396, 403.2666pt x 358.4592pt>
 File: Figures/int-02_spectrum.png Graphic file (type png)
 <use Figures/int-02_spectrum.png>
 Package pdftex.def Info: Figures/int-02_spectrum.png  used on input line 53.
 (pdftex.def)             Requested size: 313.1048pt x 278.32262pt.
-<Figures/int-02-awaf.png, id=1441, 413.1435pt x 357.0138pt>
+<Figures/int-02-awaf.png, id=1397, 413.1435pt x 357.0138pt>
 File: Figures/int-02-awaf.png Graphic file (type png)
 <use Figures/int-02-awaf.png>
 Package pdftex.def Info: Figures/int-02-awaf.png  used on input line 58.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-02-peak-freq.png, id=1442, 413.1435pt x 357.0138pt>
+<Figures/int-02-peak-freq.png, id=1398, 413.1435pt x 357.0138pt>
 File: Figures/int-02-peak-freq.png Graphic file (type png)
 <use Figures/int-02-peak-freq.png>
 Package pdftex.def Info: Figures/int-02-peak-freq.png  used on input line 64.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-02-peak-mag.png, id=1443, 402.303pt x 357.0138pt>
+<Figures/int-02-peak-mag.png, id=1399, 402.303pt x 357.0138pt>
 File: Figures/int-02-peak-mag.png Graphic file (type png)
 <use Figures/int-02-peak-mag.png>
 Package pdftex.def Info: Figures/int-02-peak-mag.png  used on input line 69.
 (pdftex.def)             Requested size: 313.1048pt x 277.87039pt.
-<Figures/int-03_spectrum.png, id=1444, 403.2666pt x 358.4592pt>
+<Figures/int-03_spectrum.png, id=1400, 403.2666pt x 358.4592pt>
 File: Figures/int-03_spectrum.png Graphic file (type png)
 <use Figures/int-03_spectrum.png>
 Package pdftex.def Info: Figures/int-03_spectrum.png  used on input line 76.
 (pdftex.def)             Requested size: 313.1048pt x 278.32262pt.
-<Figures/int-03-awaf.png, id=1445, 413.1435pt x 357.0138pt>
+<Figures/int-03-awaf.png, id=1401, 413.1435pt x 357.0138pt>
 File: Figures/int-03-awaf.png Graphic file (type png)
 <use Figures/int-03-awaf.png>
 Package pdftex.def Info: Figures/int-03-awaf.png  used on input line 81.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-03-peak-freq.png, id=1446, 413.1435pt x 357.0138pt>
+<Figures/int-03-peak-freq.png, id=1402, 413.1435pt x 357.0138pt>
 File: Figures/int-03-peak-freq.png Graphic file (type png)
 <use Figures/int-03-peak-freq.png>
 Package pdftex.def Info: Figures/int-03-peak-freq.png  used on input line 87.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-03-peak-mag.png, id=1447, 402.303pt x 357.0138pt>
+<Figures/int-03-peak-mag.png, id=1403, 402.303pt x 357.0138pt>
 File: Figures/int-03-peak-mag.png Graphic file (type png)
 <use Figures/int-03-peak-mag.png>
 Package pdftex.def Info: Figures/int-03-peak-mag.png  used on input line 92.
 (pdftex.def)             Requested size: 313.1048pt x 277.87039pt.
-<Figures/int-04_spectrum.png, id=1448, 403.2666pt x 358.4592pt>
+<Figures/int-04_spectrum.png, id=1404, 403.2666pt x 358.4592pt>
 File: Figures/int-04_spectrum.png Graphic file (type png)
 <use Figures/int-04_spectrum.png>
 Package pdftex.def Info: Figures/int-04_spectrum.png  used on input line 99.
 (pdftex.def)             Requested size: 313.1048pt x 278.32262pt.
-<Figures/int-04-awaf.png, id=1449, 413.1435pt x 357.0138pt>
+<Figures/int-04-awaf.png, id=1405, 413.1435pt x 357.0138pt>
 File: Figures/int-04-awaf.png Graphic file (type png)
 <use Figures/int-04-awaf.png>
 Package pdftex.def Info: Figures/int-04-awaf.png  used on input line 104.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-04-peak-freq.png, id=1450, 413.1435pt x 357.0138pt>
+<Figures/int-04-peak-freq.png, id=1406, 413.1435pt x 357.0138pt>
 File: Figures/int-04-peak-freq.png Graphic file (type png)
 <use Figures/int-04-peak-freq.png>
 Package pdftex.def Info: Figures/int-04-peak-freq.png  used on input line 110.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-04-peak-mag.png, id=1451, 402.303pt x 357.0138pt>
+<Figures/int-04-peak-mag.png, id=1407, 402.303pt x 357.0138pt>
 File: Figures/int-04-peak-mag.png Graphic file (type png)
 <use Figures/int-04-peak-mag.png>
 Package pdftex.def Info: Figures/int-04-peak-mag.png  used on input line 115.
 (pdftex.def)             Requested size: 313.1048pt x 277.87039pt.
-<Figures/int-05_spectrum.png, id=1452, 403.2666pt x 358.4592pt>
+<Figures/int-05_spectrum.png, id=1408, 403.2666pt x 358.4592pt>
 File: Figures/int-05_spectrum.png Graphic file (type png)
 <use Figures/int-05_spectrum.png>
 Package pdftex.def Info: Figures/int-05_spectrum.png  used on input line 122.
 (pdftex.def)             Requested size: 313.1048pt x 278.32262pt.
-<Figures/int-05-awaf.png, id=1453, 413.1435pt x 357.0138pt>
+<Figures/int-05-awaf.png, id=1409, 413.1435pt x 357.0138pt>
 File: Figures/int-05-awaf.png Graphic file (type png)
 <use Figures/int-05-awaf.png>
 Package pdftex.def Info: Figures/int-05-awaf.png  used on input line 127.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-05-peak-freq.png, id=1454, 413.1435pt x 357.0138pt>
+<Figures/int-05-peak-freq.png, id=1410, 413.1435pt x 357.0138pt>
 File: Figures/int-05-peak-freq.png Graphic file (type png)
 <use Figures/int-05-peak-freq.png>
 Package pdftex.def Info: Figures/int-05-peak-freq.png  used on input line 133.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-05-peak-mag.png, id=1455, 402.303pt x 357.0138pt>
+<Figures/int-05-peak-mag.png, id=1411, 402.303pt x 357.0138pt>
 File: Figures/int-05-peak-mag.png Graphic file (type png)
 <use Figures/int-05-peak-mag.png>
 Package pdftex.def Info: Figures/int-05-peak-mag.png  used on input line 138.
 (pdftex.def)             Requested size: 313.1048pt x 277.87039pt.
-<Figures/int-06_spectrum.png, id=1456, 403.2666pt x 358.4592pt>
+<Figures/int-06_spectrum.png, id=1412, 403.2666pt x 358.4592pt>
 File: Figures/int-06_spectrum.png Graphic file (type png)
 <use Figures/int-06_spectrum.png>
 Package pdftex.def Info: Figures/int-06_spectrum.png  used on input line 145.
 (pdftex.def)             Requested size: 313.1048pt x 278.32262pt.
-<Figures/int-06-awaf.png, id=1457, 413.1435pt x 357.0138pt>
+<Figures/int-06-awaf.png, id=1413, 413.1435pt x 357.0138pt>
 File: Figures/int-06-awaf.png Graphic file (type png)
 <use Figures/int-06-awaf.png>
 Package pdftex.def Info: Figures/int-06-awaf.png  used on input line 150.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-06-peak-freq.png, id=1458, 413.1435pt x 357.0138pt>
+<Figures/int-06-peak-freq.png, id=1414, 413.1435pt x 357.0138pt>
 File: Figures/int-06-peak-freq.png Graphic file (type png)
 <use Figures/int-06-peak-freq.png>
 Package pdftex.def Info: Figures/int-06-peak-freq.png  used on input line 156.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-06-peak-mag.png, id=1459, 402.303pt x 357.0138pt>
+<Figures/int-06-peak-mag.png, id=1415, 402.303pt x 357.0138pt>
 File: Figures/int-06-peak-mag.png Graphic file (type png)
 <use Figures/int-06-peak-mag.png>
 Package pdftex.def Info: Figures/int-06-peak-mag.png  used on input line 161.
 (pdftex.def)             Requested size: 313.1048pt x 277.87039pt.
-<Figures/int-07_spectrum.png, id=1460, 403.2666pt x 358.4592pt>
+<Figures/int-07_spectrum.png, id=1416, 403.2666pt x 358.4592pt>
 File: Figures/int-07_spectrum.png Graphic file (type png)
 <use Figures/int-07_spectrum.png>
 Package pdftex.def Info: Figures/int-07_spectrum.png  used on input line 168.
 (pdftex.def)             Requested size: 313.1048pt x 278.32262pt.
-<Figures/int-07-awaf.png, id=1461, 413.1435pt x 357.0138pt>
+<Figures/int-07-awaf.png, id=1417, 413.1435pt x 357.0138pt>
 File: Figures/int-07-awaf.png Graphic file (type png)
 <use Figures/int-07-awaf.png>
 Package pdftex.def Info: Figures/int-07-awaf.png  used on input line 173.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-07-peak-freq.png, id=1462, 413.1435pt x 357.0138pt>
+<Figures/int-07-peak-freq.png, id=1418, 413.1435pt x 357.0138pt>
 File: Figures/int-07-peak-freq.png Graphic file (type png)
 <use Figures/int-07-peak-freq.png>
 Package pdftex.def Info: Figures/int-07-peak-freq.png  used on input line 179.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-07-peak-mag.png, id=1463, 402.303pt x 357.0138pt>
+<Figures/int-07-peak-mag.png, id=1419, 402.303pt x 357.0138pt>
 File: Figures/int-07-peak-mag.png Graphic file (type png)
 <use Figures/int-07-peak-mag.png>
 Package pdftex.def Info: Figures/int-07-peak-mag.png  used on input line 184.
 (pdftex.def)             Requested size: 313.1048pt x 277.87039pt.
-<Figures/int-08_spectrum.png, id=1464, 403.2666pt x 358.4592pt>
+<Figures/int-08_spectrum.png, id=1420, 403.2666pt x 358.4592pt>
 File: Figures/int-08_spectrum.png Graphic file (type png)
 <use Figures/int-08_spectrum.png>
 Package pdftex.def Info: Figures/int-08_spectrum.png  used on input line 191.
 (pdftex.def)             Requested size: 313.1048pt x 278.32262pt.
-<Figures/int-08-awaf.png, id=1465, 413.1435pt x 357.0138pt>
+<Figures/int-08-awaf.png, id=1421, 413.1435pt x 357.0138pt>
 File: Figures/int-08-awaf.png Graphic file (type png)
 <use Figures/int-08-awaf.png>
 Package pdftex.def Info: Figures/int-08-awaf.png  used on input line 196.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-08-peak-freq.png, id=1466, 413.1435pt x 357.0138pt>
+<Figures/int-08-peak-freq.png, id=1422, 413.1435pt x 357.0138pt>
 File: Figures/int-08-peak-freq.png Graphic file (type png)
 <use Figures/int-08-peak-freq.png>
 Package pdftex.def Info: Figures/int-08-peak-freq.png  used on input line 202.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-08-peak-mag.png, id=1467, 402.303pt x 357.0138pt>
+<Figures/int-08-peak-mag.png, id=1423, 402.303pt x 357.0138pt>
 File: Figures/int-08-peak-mag.png Graphic file (type png)
 <use Figures/int-08-peak-mag.png>
 Package pdftex.def Info: Figures/int-08-peak-mag.png  used on input line 207.
 (pdftex.def)             Requested size: 313.1048pt x 277.87039pt.
-<Figures/int-09_spectrum.png, id=1468, 403.2666pt x 358.4592pt>
+<Figures/int-09_spectrum.png, id=1424, 403.2666pt x 358.4592pt>
 File: Figures/int-09_spectrum.png Graphic file (type png)
 <use Figures/int-09_spectrum.png>
 Package pdftex.def Info: Figures/int-09_spectrum.png  used on input line 214.
 (pdftex.def)             Requested size: 313.1048pt x 278.32262pt.
-<Figures/int-09-awaf.png, id=1469, 413.1435pt x 357.0138pt>
+<Figures/int-09-awaf.png, id=1425, 413.1435pt x 357.0138pt>
 File: Figures/int-09-awaf.png Graphic file (type png)
 <use Figures/int-09-awaf.png>
 Package pdftex.def Info: Figures/int-09-awaf.png  used on input line 219.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-09-peak-freq.png, id=1470, 413.1435pt x 357.0138pt>
+<Figures/int-09-peak-freq.png, id=1426, 413.1435pt x 357.0138pt>
 File: Figures/int-09-peak-freq.png Graphic file (type png)
 <use Figures/int-09-peak-freq.png>
 Package pdftex.def Info: Figures/int-09-peak-freq.png  used on input line 225.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-09-peak-mag.png, id=1471, 402.303pt x 357.0138pt>
+<Figures/int-09-peak-mag.png, id=1427, 402.303pt x 357.0138pt>
 File: Figures/int-09-peak-mag.png Graphic file (type png)
 <use Figures/int-09-peak-mag.png>
 Package pdftex.def Info: Figures/int-09-peak-mag.png  used on input line 230.
 (pdftex.def)             Requested size: 313.1048pt x 277.87039pt.
-<Figures/int-10_spectrum.png, id=1472, 403.2666pt x 358.4592pt>
+<Figures/int-10_spectrum.png, id=1428, 403.2666pt x 358.4592pt>
 File: Figures/int-10_spectrum.png Graphic file (type png)
 <use Figures/int-10_spectrum.png>
 Package pdftex.def Info: Figures/int-10_spectrum.png  used on input line 237.
 (pdftex.def)             Requested size: 313.1048pt x 278.32262pt.
-<Figures/int-10-awaf.png, id=1473, 413.1435pt x 357.0138pt>
+<Figures/int-10-awaf.png, id=1429, 413.1435pt x 357.0138pt>
 File: Figures/int-10-awaf.png Graphic file (type png)
 <use Figures/int-10-awaf.png>
 Package pdftex.def Info: Figures/int-10-awaf.png  used on input line 242.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-10-peak-freq.png, id=1474, 413.1435pt x 357.0138pt>
+<Figures/int-10-peak-freq.png, id=1430, 413.1435pt x 357.0138pt>
 File: Figures/int-10-peak-freq.png Graphic file (type png)
 <use Figures/int-10-peak-freq.png>
 Package pdftex.def Info: Figures/int-10-peak-freq.png  used on input line 248.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-10-peak-mag.png, id=1475, 402.303pt x 357.0138pt>
+<Figures/int-10-peak-mag.png, id=1431, 402.303pt x 357.0138pt>
 File: Figures/int-10-peak-mag.png Graphic file (type png)
 <use Figures/int-10-peak-mag.png>
 Package pdftex.def Info: Figures/int-10-peak-mag.png  used on input line 253.
 (pdftex.def)             Requested size: 313.1048pt x 277.87039pt.
-<Figures/int-11_spectrum.png, id=1476, 403.2666pt x 358.4592pt>
+<Figures/int-11_spectrum.png, id=1432, 403.2666pt x 358.4592pt>
 File: Figures/int-11_spectrum.png Graphic file (type png)
 <use Figures/int-11_spectrum.png>
 Package pdftex.def Info: Figures/int-11_spectrum.png  used on input line 260.
 (pdftex.def)             Requested size: 313.1048pt x 278.32262pt.
-<Figures/int-11-awaf.png, id=1477, 413.1435pt x 357.0138pt>
+<Figures/int-11-awaf.png, id=1433, 413.1435pt x 357.0138pt>
 File: Figures/int-11-awaf.png Graphic file (type png)
 <use Figures/int-11-awaf.png>
 Package pdftex.def Info: Figures/int-11-awaf.png  used on input line 265.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-11-peak-freq.png, id=1478, 413.1435pt x 357.0138pt>
+<Figures/int-11-peak-freq.png, id=1434, 413.1435pt x 357.0138pt>
 File: Figures/int-11-peak-freq.png Graphic file (type png)
 <use Figures/int-11-peak-freq.png>
 Package pdftex.def Info: Figures/int-11-peak-freq.png  used on input line 271.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-11-peak-mag.png, id=1479, 402.303pt x 357.0138pt>
+<Figures/int-11-peak-mag.png, id=1435, 402.303pt x 357.0138pt>
 File: Figures/int-11-peak-mag.png Graphic file (type png)
 <use Figures/int-11-peak-mag.png>
 Package pdftex.def Info: Figures/int-11-peak-mag.png  used on input line 276.
 (pdftex.def)             Requested size: 313.1048pt x 277.87039pt.
-<Figures/int-12_spectrum.png, id=1480, 403.2666pt x 358.4592pt>
+<Figures/int-12_spectrum.png, id=1436, 403.2666pt x 358.4592pt>
 File: Figures/int-12_spectrum.png Graphic file (type png)
 <use Figures/int-12_spectrum.png>
 Package pdftex.def Info: Figures/int-12_spectrum.png  used on input line 283.
 (pdftex.def)             Requested size: 313.1048pt x 278.32262pt.
-<Figures/int-12-awaf.png, id=1481, 413.1435pt x 357.0138pt>
+<Figures/int-12-awaf.png, id=1437, 413.1435pt x 357.0138pt>
 File: Figures/int-12-awaf.png Graphic file (type png)
 <use Figures/int-12-awaf.png>
 Package pdftex.def Info: Figures/int-12-awaf.png  used on input line 288.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-12-peak-freq.png, id=1482, 413.1435pt x 357.0138pt>
+<Figures/int-12-peak-freq.png, id=1438, 413.1435pt x 357.0138pt>
 File: Figures/int-12-peak-freq.png Graphic file (type png)
 <use Figures/int-12-peak-freq.png>
 Package pdftex.def Info: Figures/int-12-peak-freq.png  used on input line 294.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-12-peak-mag.png, id=1483, 402.303pt x 357.0138pt>
+<Figures/int-12-peak-mag.png, id=1439, 402.303pt x 357.0138pt>
 File: Figures/int-12-peak-mag.png Graphic file (type png)
 <use Figures/int-12-peak-mag.png>
 Package pdftex.def Info: Figures/int-12-peak-mag.png  used on input line 299.
 (pdftex.def)             Requested size: 313.1048pt x 277.87039pt.
-<Figures/int-tip_spectrum.png, id=1484, 403.2666pt x 358.4592pt>
+<Figures/int-tip_spectrum.png, id=1440, 403.2666pt x 358.4592pt>
 File: Figures/int-tip_spectrum.png Graphic file (type png)
 <use Figures/int-tip_spectrum.png>
 Package pdftex.def Info: Figures/int-tip_spectrum.png  used on input line 306.
 (pdftex.def)             Requested size: 313.1048pt x 278.32262pt.
-<Figures/int-tip-awaf.png, id=1485, 413.1435pt x 357.0138pt>
+<Figures/int-tip-awaf.png, id=1441, 413.1435pt x 357.0138pt>
 File: Figures/int-tip-awaf.png Graphic file (type png)
 <use Figures/int-tip-awaf.png>
 Package pdftex.def Info: Figures/int-tip-awaf.png  used on input line 311.
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-tip-peak-freq.png, id=1486, 413.1435pt x 357.0138pt>
+<Figures/int-tip-peak-freq.png, id=1442, 413.1435pt x 357.0138pt>
 File: Figures/int-tip-peak-freq.png Graphic file (type png)
 <use Figures/int-tip-peak-freq.png>
 Package pdftex.def Info: Figures/int-tip-peak-freq.png  used on input line 317.
 
 (pdftex.def)             Requested size: 313.1048pt x 270.57608pt.
-<Figures/int-tip-peak-mag.png, id=1487, 402.303pt x 357.0138pt>
+<Figures/int-tip-peak-mag.png, id=1443, 402.303pt x 357.0138pt>
 File: Figures/int-tip-peak-mag.png Graphic file (type png)
 <use Figures/int-tip-peak-mag.png>
 Package pdftex.def Info: Figures/int-tip-peak-mag.png  used on input line 322.
 (pdftex.def)             Requested size: 313.1048pt x 277.87039pt.
-) (Appendices/Appendix_direct.tex [77
+) (Appendices/Appendix_direct.tex [75
 
- <./Figures/blade-awf.png>] [78 <./Figures/blade-peak-freq.png>] [79 <./Figures
-/blade-peak-mag.png>] [80 <./Figures/int-01_spectrum.png> <./Figures/int-01-awa
-f.png>] [81 <./Figures/int-01-peak-freq.png> <./Figures/int-01-peak-mag.png>] [
-82 <./Figures/int-02_spectrum.png> <./Figures/int-02-awaf.png>] [83 <./Figures/
-int-02-peak-freq.png> <./Figures/int-02-peak-mag.png>] [84 <./Figures/int-03_sp
+ <./Figures/blade-awf.png>] [76 <./Figures/blade-peak-freq.png>] [77 <./Figures
+/blade-peak-mag.png>] [78 <./Figures/int-01_spectrum.png> <./Figures/int-01-awa
+f.png>] [79 <./Figures/int-01-peak-freq.png> <./Figures/int-01-peak-mag.png>] [
+80 <./Figures/int-02_spectrum.png> <./Figures/int-02-awaf.png>] [81 <./Figures/
+int-02-peak-freq.png> <./Figures/int-02-peak-mag.png>] [82 <./Figures/int-03_sp
 ectrum.png> <./Figures/int-03-awaf.png>]
-[85 <./Figures/int-03-peak-freq.png> <./Figures/int-03-peak-mag.png>] [86 <./Fi
-gures/int-04_spectrum.png> <./Figures/int-04-awaf.png>] [87 <./Figures/int-04-p
-eak-freq.png> <./Figures/int-04-peak-mag.png>] [88 <./Figures/int-05_spectrum.p
-ng> <./Figures/int-05-awaf.png>] [89 <./Figures/int-05-peak-freq.png> <./Figure
-s/int-05-peak-mag.png>] [90 <./Figures/int-06_spectrum.png> <./Figures/int-06-a
-waf.png>] [91 <./Figures/int-06-peak-freq.png> <./Figures/int-06-peak-mag.png>]
-[92 <./Figures/int-07_spectrum.png> <./Figures/int-07-awaf.png>] [93 <./Figures
-/int-07-peak-freq.png> <./Figures/int-07-peak-mag.png>] [94 <./Figures/int-08_s
-pectrum.png> <./Figures/int-08-awaf.png>] [95 <./Figures/int-08-peak-freq.png> 
-<./Figures/int-08-peak-mag.png>] [96 <./Figures/int-09_spectrum.png> <./Figures
-/int-09-awaf.png>] [97 <./Figures/int-09-peak-freq.png> <./Figures/int-09-peak-
-mag.png>] [98 <./Figures/int-10_spectrum.png> <./Figures/int-10-awaf.png>]
-[99 <./Figures/int-10-peak-freq.png> <./Figures/int-10-peak-mag.png>] [100 <./F
-igures/int-11_spectrum.png> <./Figures/int-11-awaf.png>] [101 <./Figures/int-11
--peak-freq.png> <./Figures/int-11-peak-mag.png>] [102 <./Figures/int-12_spectru
-m.png> <./Figures/int-12-awaf.png>] [103 <./Figures/int-12-peak-freq.png> <./Fi
-gures/int-12-peak-mag.png>] [104 <./Figures/int-tip_spectrum.png> <./Figures/in
-t-tip-awaf.png>] [105 <./Figures/int-tip-peak-freq.png> <./Figures/int-tip-peak
--mag.png>] [106
+[83 <./Figures/int-03-peak-freq.png> <./Figures/int-03-peak-mag.png>] [84 <./Fi
+gures/int-04_spectrum.png> <./Figures/int-04-awaf.png>] [85 <./Figures/int-04-p
+eak-freq.png> <./Figures/int-04-peak-mag.png>] [86 <./Figures/int-05_spectrum.p
+ng> <./Figures/int-05-awaf.png>] [87 <./Figures/int-05-peak-freq.png> <./Figure
+s/int-05-peak-mag.png>] [88 <./Figures/int-06_spectrum.png> <./Figures/int-06-a
+waf.png>] [89 <./Figures/int-06-peak-freq.png> <./Figures/int-06-peak-mag.png>]
+[90 <./Figures/int-07_spectrum.png> <./Figures/int-07-awaf.png>] [91 <./Figures
+/int-07-peak-freq.png> <./Figures/int-07-peak-mag.png>] [92 <./Figures/int-08_s
+pectrum.png> <./Figures/int-08-awaf.png>] [93 <./Figures/int-08-peak-freq.png> 
+<./Figures/int-08-peak-mag.png>] [94 <./Figures/int-09_spectrum.png> <./Figures
+/int-09-awaf.png>] [95 <./Figures/int-09-peak-freq.png> <./Figures/int-09-peak-
+mag.png>] [96 <./Figures/int-10_spectrum.png> <./Figures/int-10-awaf.png>]
+[97 <./Figures/int-10-peak-freq.png> <./Figures/int-10-peak-mag.png>] [98 <./Fi
+gures/int-11_spectrum.png> <./Figures/int-11-awaf.png>] [99 <./Figures/int-11-p
+eak-freq.png> <./Figures/int-11-peak-mag.png>] [100 <./Figures/int-12_spectrum.
+png> <./Figures/int-12-awaf.png>] [101 <./Figures/int-12-peak-freq.png> <./Figu
+res/int-12-peak-mag.png>] [102 <./Figures/int-tip_spectrum.png> <./Figures/int-
+tip-awaf.png>] [103 <./Figures/int-tip-peak-freq.png> <./Figures/int-tip-peak-m
+ag.png>] [104
 
 ]
 Appendix C.
@@ -2649,29 +2638,29 @@ LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 8.
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <8> not available
 (Font)              Font shape `T1/pcr/b/n' tried instead on input line 9.
- [107])
-(Appendices/Appendix_rms.tex [108]
+ [105])
+(Appendices/Appendix_rms.tex [106]
 Appendix D.
 ------------------------------------------------------------------------------
  D Code for RMS computation
 ------------------------------------------------------------------------------
-) (Appendices/Appendix_fft.tex [109
+) (Appendices/Appendix_fft.tex [107
 
-] [110
+] [108
 
 ]
 Appendix E.
 ------------------------------------------------------------------------------
  E Code for discrete Fourier analysis
 ------------------------------------------------------------------------------
-) (Appendices/Appendix_coords.tex [111] [112
+) (Appendices/Appendix_coords.tex [109] [110
 
 ]
 Appendix F.
 ------------------------------------------------------------------------------
  F Blade design surface coordinates
 ------------------------------------------------------------------------------
-) [113] [114
+) [111] [112
 
 ]
 ------------------------------------------------------------------------------
@@ -2683,25 +2672,25 @@ Underfull \hbox (badness 1810) in paragraph at lines 27--34
 l, Phys-i-cal and En-gi-
  []
 
-[115
+[113
 
-]) [116]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 361.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 361.
+]) [114]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 362.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 362.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 361.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 361.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 362.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 362.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 497BEBDB3DC059CF53299266A264F877;12463.
+(rerunfilecheck)             Checksum: 1389FF52E8519059D8BBA5899B32D899;11538.
  ) 
 Here is how much of TeX's memory you used:
- 44912 strings out of 493308
- 918115 string characters out of 3138756
- 1108046 words of memory out of 3000000
- 47121 multiletter control sequences out of 15000+200000
+ 44887 strings out of 493308
+ 917719 string characters out of 3138756
+ 1108068 words of memory out of 3000000
+ 47112 multiletter control sequences out of 15000+200000
  556235 words of font info for 81 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,20n,71p,10380b,2035s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 68i,20n,71p,10380b,2037s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C:/Program Files/Mi
 KTeX 2.9/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{C:/Program Files/MiKTeX 2.9
 /fonts/enc/dvips/cm-super/cm-super-t1.enc}<C:/Program Files/MiKTeX 2.9/fonts/ty
@@ -2733,9 +2722,9 @@ pe1/public/cm-super/sfti1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/cm-super/sfti2074.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/uc
 rb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrro8a.pfb>
-Output written on main.pdf (140 pages, 43240178 bytes).
+Output written on main.pdf (136 pages, 43233201 bytes).
 PDF statistics:
- 2106 PDF objects out of 2487 (max. 8388607)
- 566 named destinations out of 1000 (max. 500000)
- 1144 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2056 PDF objects out of 2073 (max. 8388607)
+ 553 named destinations out of 1000 (max. 500000)
+ 1096 words of extra memory for PDF output out of 10000 (max. 10000000)
 

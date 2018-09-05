@@ -8,37 +8,33 @@
 #fft.py
 print("Loading Libraries...")
 import os
-import csv
-import platform
 import numpy as np
-from scipy.fftpack import fft
 import pandas as pd
-import dask.dataframe as dd
-import math
 print("Loaded Libraries...")
 print("Starting code...")
+
+#PLGRID
 print("Loading directories..")
-path_acu = './noise-data/<folder_name>/acu'
+path_acu = './noise-data/<folder-name>/acu'
 path_fft = './results/fft'
 print("Loaded directories...")
-print("Loading batch data...")
+
+print("Getting filelist...")
 os.chdir(path_acu)
-batch_pressure = dd.read_csv('*.dat',
-				delimiter=",",
-				decimal='.',
-				usecols=["nodenumber", "sound-pressure"])
-batch_pressure = batch_pressure.set_index("nodenumber")
-print("Batch data done...")
-print("Calculating FFT...") 
-batch_fft = batch_pressure.groupby('nodenumber').apply(
-				lambda x: fft(x),
-				meta=('node-fourier-series', 'f8')
-				).compute()
-print("FFT Done..") 
+filelist = sorted(os.listdir(path_acu))[0::10]
+
+print("Starting batch loop...")
+batch_data = pd.DataFrame()
+for file in filelist:
+    batch_data[file] = pd.read_csv(file).set_index('nodenumber')['sound-pressure']
+    print(str(file) + " done...")
+
+print("Calculating FFT...")
+fft_data = batch_data.apply(lambda x: np.fft.fft(x), axis=1)
+
 print("Saving FFT to dataframe...")
-#node_fft_max.set_index('nodenumber')
 os.chdir(path_fft)
-batch_fft.to_csv(str('<file_name_fft>.dat'), sep=",")
+fft_data.to_csv('<filename>', sep=',')
 print("Dataframe saved...")
 print("Script completed...")
 \end{lstlisting}

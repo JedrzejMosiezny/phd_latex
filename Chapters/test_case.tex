@@ -65,7 +65,7 @@ Physical experiment test compressor has a 1.78 mm fillet at airfoil-hub juncture
 
 Such approach allowed for creating a geometry for single blade passage with centered blade of 1st stage rotor of the test compressor (Fig \ref{geom_final}).
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
 \includegraphics[width=0.85\textwidth]{Pictures/r67_geom.jpg}
 \caption{Final single passage geometry. Some features hidden for clarity}
@@ -142,7 +142,20 @@ Where:
 C_f = \frac{0.026}{Re_{x}^{1/7}}
 \end{equation}
 
-Figure \ref{mesh-ortho}, provides overview of mesh quality defined by figure \ref{eq:ortho}. Created mesh is of high quality and is sufficient for both RANS (chapter \ref{rans}) and DDES (chapter \ref{ddes}) analyses. Final mesh reached roughly 11.5 million cell count. Final mesh is presented in figure \ref{meshfinal} 
+Internal volume of the mesh was stabilized by attaching the mesh blocks to the internal design surfaces. This ensures that mesh layers are mostly coincident with the primary compressor flow. The internal surface mesh is also used as an internal boundary marker for data acquisition purposes. The markers are named \texttt{hub}, \texttt{int-01} thru \texttt{int-12} and \texttt{int-tip} corresponding to following locations of the design surfaces.
+
+\begin{table}[htb!]
+\centering
+\caption{Location of compressor desing surfaces} \label{tab:surfs}
+\begin{tabular}{ | l | r | } \hline
+Boundary marker & Location \\ \hline \hline
+\texttt{hub} & 0\% span  \\ \hline
+\texttt{int-01} --- \texttt{int-12} & 7.7\% --- 92.3\% every 7.7\% span \\ \hline
+\texttt{int-tip} & 100\% span \\ \hline
+\end{tabular}
+\end{table}
+
+Figure \ref{mesh-ortho}, provides overview of mesh quality defined by figure \ref{eq:ortho}. Created mesh is of high quality and is sufficient for both RANS and DDES analyses (chapter \ref{cfd}). Final mesh reached roughly 11.5 million cell count. Final mesh is presented in figure \ref{meshfinal} 
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
@@ -216,27 +229,21 @@ Periodic boundaries & Interface & & \\ \hline
 
 Moving wall boundaries represent the rotational velocity of the compressor blade and are necessary for stationary reference frame formulation. Boundary condition setup is no different to usual setups of analyses of such kind.
 
-%-----------------------------------
-%	SUBSECTION
-%-----------------------------------
-%\subsection{Numerical scheme}
-%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
-
 %----------------------------------------------------------------------------------------
 %	SECTION
 %----------------------------------------------------------------------------------------
-\section{Data acquisition} \label{casedata}
-Mesh and case is set up for possibly efficient data acquisition of flow field pressure and velocity data. FLUENT data file from a single timestep takes around 2GB of disk space. Saving such dataset from every of 50150 timesteps requires about 97TB of storage, which was unavailable at the time. 
-
-Data was gathered from blade surface (5 boundary markers) and 13 internal markers. Following node data values were saved:
-
-\begin{itemize}
-\item Static pressure
-\item Velocity magnitude (only internal markers)
-\item Vorticity magnitude (only internal markers)
-\item Static density
-\item Static temperature
-\item Node coordinates
-\end{itemize}
-
-This approach generated 18 datasets of 50510 files each, resulting in taking up 5.5TB of HPC cluster storage. The number of data is still large but manageable with current software engineering tools. Data was saved to ASCII text files.
+%\section{Data acquisition} \label{casedata}
+%Mesh and case is set up for possibly efficient data acquisition of flow field pressure and velocity data. FLUENT data file from a single timestep takes around 2GB of disk space. Saving such dataset from every of 50150 timesteps requires about 97TB of storage, which was unavailable at the time. 
+%
+%Data was gathered from blade surface (5 boundary markers) and 13 internal markers. Following node data values were saved:
+%
+%\begin{itemize}
+%\item Static pressure
+%\item Velocity magnitude (only internal markers)
+%\item Vorticity magnitude (only internal markers)
+%\item Static density
+%\item Static temperature
+%\item Node coordinates
+%\end{itemize}
+%
+%This approach generated 18 datasets of 50510 files each, resulting in taking up 5.5TB of HPC cluster storage. The number of data is still large but manageable with current software engineering tools. Data was saved to ASCII text files.
