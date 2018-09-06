@@ -5,6 +5,11 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[A.~J.~Strazisar and Suder(1989)]{r67laser}
+M.~D.~Hathaway A.~J.~Strazisar, J. R.~Wood and Kenneth~L. Suder.
+\newblock Laser anemometer measurements in a transonic axial-flow fan rotor.
+\newblock \emph{NASA Technical Paper}, \penalty0 (TP-2897), November 1989.
+
 \bibitem[Lighthill(1952)]{Light1}
 M.~J. Lighthill.
 \newblock On sound generated aerodynamically i. general theory.
@@ -97,11 +102,6 @@ W.~T.~Gorrel D.~C.~Urasek and W.~S. Cunnan.
 \newblock Performance of a two-stage fan having a low-aspect-ratio, first-stage
   rotor blading.
 \newblock \emph{NASA Technical Paper}, \penalty0 (TP-1493), August 1979.
-
-\bibitem[A.~J.~Strazisar and Suder(1989)]{r67laser}
-M.~D.~Hathaway A.~J.~Strazisar, J. R.~Wood and Kenneth~L. Suder.
-\newblock Laser anemometer measurements in a transonic axial-flow fan rotor.
-\newblock \emph{NASA Technical Paper}, \penalty0 (TP-2897), November 1989.
 
 \bibitem[J.~E.~Crouse and Schwirian(1969)]{bladecompose}
 J.~S. David C.~Janetzke J.~E.~Crouse and R.~E. Schwirian.

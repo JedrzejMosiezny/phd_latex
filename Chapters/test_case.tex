@@ -174,64 +174,6 @@ Figure \ref{mesh-ortho}, provides overview of mesh quality defined by figure \re
 %----------------------------------------------------------------------------------------
 %	SECTION
 %----------------------------------------------------------------------------------------
-\section{Case preprocessing} \label{casepre}
-
-CFD analyses for generating raw pressure field data are performed in ANSYS Fluent 17.2 software on Prometheus HPC cluster located in Kraków. Access for this infrastructure was granted by PLGrid infrastructure. Calculations were run on 5 nodes of 24CPU cores and 128GB RAM each \citep{prometheus}, which resulted in decomposition to 120 cores, resulting in allocating around 110 thousand cells to a single HPC core.
-
-Following is the numerical setup for all of the performed analyses. The setup corresponds to "peak efficiency conditions" of the experimental compressor.
-
-%-----------------------------------
-%	SUBSECTION
-%-----------------------------------
-\subsection{General settings and material properties} \label{casegen}
-
-Analysis was resolved using implicit density based solver. The theory behind the solver is described in chapter \ref{approach}. Material used in the anaysis resembles standard air modeled as ideal gas as in equation with following properties described in table \ref{tab:stdair} 
-
-\begin{table}[htb!]
-\centering
-\caption{Standard air properties} \label{tab:stdair}
-\begin{tabular}{ r r l }
-$C_p$ & 1006.43 & $\frac{J}{kg \cdot K}$ \\
-$\lambda$ & 0.0242 & $\frac{W}{m \cdot K}$ \\
-$\mu$ & 1.7894e-05 & $\frac{kg}{m \cdot s}$ \\
-$M$ & 28.966 & $\frac{kg}{kmol}$ \\
-\end{tabular}
-\end{table}
-
-\begin{equation} \label{eq:stadair}
-p V = n R T
-\end{equation}
-
-Analysis operating pressure is set to 0 Pascal, which is a standard practice in compressible flow CFD.
-
-Fluid zone is set as "frozen rotor" - rotating reference frame. Although no mesh motion is implied, the effect of Coriolis accelerations and centrifugal acceleration will be taken into account by adding respective acceleration components to momentum equations as described in chapter \ref{approach}. The rotational velocity is set to 1680 rad/s.
-
-%-----------------------------------
-%	SUBSECTION
-%-----------------------------------
-\subsection{Boundary conditions} \label{casebc}
-Following boundary conditions were applied to the mesh boundaries. Following setup is again typical for compressible flow CFD.
-
-\begin{table}[htb!]
-\centering
-\caption{Test case boundary conditions} \label{tab:testbcs}
-\begin{tabular}{ | l | l | r l | } \hline
-Boundary marker & Boundary type & & \\ \hline \hline
-Inlet & Pressure Inlet & 101350  & Pa\\ \hline
-Outlet & Pressure Outlet & 102000 & Pa \\ \hline
-Hub & Movig wall & 1680 & rad/s \\ \hline
-Blade & Moving wall & 1680 & rad/s \\ \hline
-Casing & Stationary wall & &  \\ \hline
-Internal profiles & Internal & & \\ \hline
-Periodic boundaries & Interface & & \\ \hline 
-\end{tabular}
-\end{table}
-
-Moving wall boundaries represent the rotational velocity of the compressor blade and are necessary for stationary reference frame formulation. Boundary condition setup is no different to usual setups of analyses of such kind.
-
-%----------------------------------------------------------------------------------------
-%	SECTION
-%----------------------------------------------------------------------------------------
 %\section{Data acquisition} \label{casedata}
 %Mesh and case is set up for possibly efficient data acquisition of flow field pressure and velocity data. FLUENT data file from a single timestep takes around 2GB of disk space. Saving such dataset from every of 50150 timesteps requires about 97TB of storage, which was unavailable at the time. 
 %

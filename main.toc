@@ -34,31 +34,29 @@
 \contentsline {section}{\numberline {4.1}NASA Rotor 67 transonic axial compressor}{27}{section.145}
 \contentsline {section}{\numberline {4.2}3D geometry preparation}{28}{section.147}
 \contentsline {section}{\numberline {4.3}Meshing approach}{29}{section.149}
-\contentsline {section}{\numberline {4.4}Case preprocessing}{33}{section.161}
-\contentsline {subsection}{\numberline {4.4.1}General settings and material properties}{33}{subsection.162}
-\contentsline {subsection}{\numberline {4.4.2}Boundary conditions}{34}{subsection.165}
-\contentsline {chapter}{\numberline {5}CFD Analysis}{35}{chapter.167}
-\contentsline {section}{\numberline {5.1}Main Section 1}{35}{section.168}
-\contentsline {subsection}{\numberline {5.1.1}Subsection 1}{35}{subsection.169}
-\contentsline {subsection}{\numberline {5.1.2}Subsection 2}{35}{subsection.170}
-\contentsline {section}{\numberline {5.2}Main Section 2}{36}{section.171}
-\contentsline {chapter}{\numberline {6}Results of flow field noise analysis}{37}{chapter.172}
-\contentsline {section}{\numberline {6.1}Transition from flow-field to sound signal data}{37}{section.173}
-\contentsline {section}{\numberline {6.2}RMS results}{37}{section.174}
-\contentsline {subsection}{\numberline {6.2.1}Results postprocessing}{37}{subsection.175}
-\contentsline {subsection}{\numberline {6.2.2}Qualitative analysis}{38}{subsection.176}
-\contentsline {section}{\numberline {6.3}FFT results}{40}{section.178}
-\contentsline {subsection}{\numberline {6.3.1}Results postprocessing}{40}{subsection.179}
-\contentsline {subsection}{\numberline {6.3.2}Qualitative analysis}{41}{subsection.183}
-\contentsline {chapter}{\numberline {7}Conclusions \& Further work}{43}{chapter.184}
-\contentsline {section}{\numberline {7.1}Results discussion}{43}{section.185}
-\contentsline {section}{\numberline {7.2}Improvements to the method}{44}{section.186}
-\contentsline {section}{\numberline {7.3}Further work}{45}{section.187}
-\contentsline {section}{\numberline {7.4}Closing remarks}{46}{section.188}
-\contentsline {chapter}{\numberline {A}RMS values plots}{47}{appendix.189}
-\contentsline {chapter}{\numberline {B}FFT plots}{75}{appendix.218}
-\contentsline {chapter}{\numberline {C}Code for direct formulation of noise analysis}{105}{appendix.248}
-\contentsline {chapter}{\numberline {D}Code for RMS computation}{107}{appendix.324}
-\contentsline {chapter}{\numberline {E}Code for discrete Fourier analysis}{109}{appendix.362}
-\contentsline {chapter}{\numberline {F}Blade design surface coordinates}{111}{appendix.396}
-\contentsline {chapter}{Bibliography}{113}{dummy.397}
+\contentsline {chapter}{\numberline {5}CFD Analysis}{35}{chapter.161}
+\contentsline {section}{\numberline {5.1}Case preprocessing}{35}{section.162}
+\contentsline {section}{\numberline {5.2}Flowfield initialization \& RANS}{36}{section.166}
+\contentsline {section}{\numberline {5.3}DDES analysis}{36}{section.167}
+\contentsline {section}{\numberline {5.4}Validation of the results}{37}{section.168}
+\contentsline {chapter}{\numberline {6}Results of flow field noise analysis}{39}{chapter.170}
+\contentsline {section}{\numberline {6.1}Transition from flow-field to sound signal data}{39}{section.171}
+\contentsline {section}{\numberline {6.2}RMS results}{39}{section.172}
+\contentsline {subsection}{\numberline {6.2.1}Results postprocessing}{39}{subsection.173}
+\contentsline {subsection}{\numberline {6.2.2}Qualitative analysis}{40}{subsection.174}
+\contentsline {section}{\numberline {6.3}FFT results}{42}{section.176}
+\contentsline {subsection}{\numberline {6.3.1}Results postprocessing}{42}{subsection.177}
+\contentsline {subsection}{\numberline {6.3.2}Qualitative analysis}{43}{subsection.181}
+\contentsline {chapter}{\numberline {7}Conclusions \& Further work}{45}{chapter.182}
+\contentsline {section}{\numberline {7.1}Results discussion}{45}{section.183}
+\contentsline {section}{\numberline {7.2}Improvements to the method}{46}{section.184}
+\contentsline {section}{\numberline {7.3}Further work}{47}{section.185}
+\contentsline {section}{\numberline {7.4}Closing remarks}{48}{section.186}
+\contentsline {chapter}{\numberline {A}RMS values plots}{49}{appendix.187}
+\contentsline {chapter}{\numberline {B}FFT plots}{77}{appendix.216}
+\contentsline {chapter}{\numberline {C}CFD validation}{107}{appendix.246}
+\contentsline {chapter}{\numberline {D}Code for direct formulation of noise analysis}{109}{appendix.248}
+\contentsline {chapter}{\numberline {E}Code for RMS computation}{111}{appendix.324}
+\contentsline {chapter}{\numberline {F}Code for discrete Fourier analysis}{113}{appendix.362}
+\contentsline {chapter}{\numberline {G}Blade design surface coordinates}{115}{appendix.396}
+\contentsline {chapter}{Bibliography}{117}{dummy.397}
