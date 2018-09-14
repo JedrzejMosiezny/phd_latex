@@ -1,123 +1,109 @@
-\begin{thebibliography}{18}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+\begin{thebibliography}{10}
 
-\bibitem[A.~J.~Strazisar and Suder(1989)]{r67laser}
-M.~D.~Hathaway A.~J.~Strazisar, J. R.~Wood and Kenneth~L. Suder.
-\newblock Laser anemometer measurements in a transonic axial-flow fan rotor.
-\newblock \emph{NASA Technical Paper}, \penalty0 (TP-2897), November 1989.
+\bibitem{fluenttheory}
+{\em ANSYS Documentation. Fluent Theory Guide}, 2015.
 
-\bibitem[Lighthill(1952)]{Light1}
-M.~J. Lighthill.
-\newblock On sound generated aerodynamically i. general theory.
-\newblock \emph{Proceedings of the Royal Society. Series A, Mathematical,
-  Physical and Engineering Sciences}, 211\penalty0 (1107):\penalty0 564--587,
-  March 1952.
-\newblock URL
-  \url{http://rspa.royalsocietypublishing.org/content/211/1107/564}.
+\bibitem{prometheus}
+{\em Prometheus HPC maunual}, 2018.
+\newblock https://kdm.cyfronet.pl/portal/Prometheus.
 
-\bibitem[Lighthill(1954)]{Light2}
-M.~J. Lighthill.
-\newblock On sound generated aerodynamically ii. turbulence as a source of
-  sound.
-\newblock \emph{Proceedings of the Royal Society. Series A, Mathematical,
-  Physical and Engineering Sciences}, 222\penalty0 (1148):\penalty0 1--32,
-  March 1954.
-\newblock URL \url{http://rspa.royalsocietypublishing.org/content/222/1148/1}.
-
-\bibitem[Curle(1955)]{curle}
-N.~Curle.
-\newblock The influence of solid boundaries upon aerodynamic sound.
-\newblock \emph{Proceedings of the Royal Society. Series A, Mathematical,
-  Physical and Engineering Sciences}, 231\penalty0 (1187):\penalty0 505--514,
-  September 1955.
-\newblock URL
-  \url{http://rspa.royalsocietypublishing.org/content/231/1187/505}.
-
-\bibitem[J.~E. Ffowcs~Williams(1969)]{FWH}
-D.~L.~Hawkings J.~E. Ffowcs~Williams.
-\newblock Sound generation by turbulence and surfaces in arbitrary motion.
-\newblock \emph{Philosophical Transactions of the Royal Society of London.
-  Series A, Mathematical and Physical Sciences}, 264\penalty0 (1151):\penalty0
-  321--342, May 1969.
-\newblock URL \url{http://www.jstor.org/stable/73790}.
-
-\bibitem[flu(2015)]{fluenttheory}
-Ansys documentation. fluent theoru guide.
-\newblock \emph{SAS IP Inc.}, Release 17.2, 2015.
-
-\bibitem[Brentner and Farassat(1998)]{fwhaiaa}
+\bibitem{fwhaiaa}
 K.~S. Brentner and F.~Farassat.
 \newblock An analytical comparison of the acoustic analogy and kirchhoff
   formulations for moving surfaces.
-\newblock \emph{AIAA Journal}, 36(8):\penalty0 1379--1386, 1998.
+\newblock {\em AIAA Journal}, 36(8):1379--1386, 1998.
 
-\bibitem[C.~Choi(2012)]{LES_size}
-P.~Moin C.~Choi.
+\bibitem{LES_size}
+C.~Choi and P.~Moin.
 \newblock Grid-point requirements for large eddy simulation: Chapman’s
   estimates revisited.
-\newblock \emph{Physics of Fluids}, 24(1), January 2012.
-\newblock URL \url{https://aip.scitation.org/doi/full/10.1063/1.3676783}.
+\newblock {\em Physics of Fluids}, 24(1), January 2012.
+\newblock https://aip.scitation.org/doi/full/10.1063/1.3676783.
 
-\bibitem[Smagorinsky(1963)]{LES1}
-J.~Smagorinsky.
-\newblock General circulation experiments with the primitive equations.
-\newblock \emph{Monthly Weather Review}, 91(3), 1963.
+\bibitem{curle}
+N.~CNotee.
+\newblock The influence of solid boundaries upon aerodynamic sound.
+\newblock {\em Proceedings of the Royal Society. Series A, Mathematical,
+  Physical and Engineering Sciences}, 231(1187):505--514, September 1955.
+\newblock http://rspa.royalsocietypublishing.org/content/231/1187/505.
 
-\bibitem[C.~Wagner(2007)]{LES2}
-P.~Sagaut C.~Wagner, T.~Hüttl.
-\newblock Large-eddy simulation for acoustics.
-\newblock \emph{Cambridge University Press}, 2007.
-
-\bibitem[Hinze(1975)]{bousinesque}
-J.~O. Hinze.
-\newblock Turbulence.
-\newblock \emph{McGraw-Hill Publishing Co.}, 1975.
-
-\bibitem[P.~R.~Spalart and Allmaras(1997)]{desspalart}
-M.~Strelets P.~R.~Spalart, W. H.~Jou and S.~R. Allmaras.
-\newblock Comments of feasibility of les for wings, and on a hybrid rans/les
-  approach.
-\newblock \emph{First International conference: Advances in DNS LES: Direct
-  numerical simulation and large eddy simulation}, pages 137--148, 1997.
-
-\bibitem[P.~R.~Spalart(2006)]{ddesspalart}
-et.~al. P.~R.~Spalart.
-\newblock A new version of detached-eddy simulation, resistant to ambiguous
-  grid densities.
-\newblock \emph{Theoretical and Computational Fluid Dynamics}, 20:\penalty0
-  181–195, 2006.
-
-\bibitem[W.~S.~Cunnan and Urasek(1978)]{r67design}
-W.~Stevans W.~S.~Cunnan and D.~C. Urasek.
-\newblock Design and performance of a 427-meter-per-second-tip-speed two stage
-  fan having a 2.40 pressure ratio.
-\newblock \emph{NASA Technical Paper}, \penalty0 (TP-1314), October 1978.
-
-\bibitem[D.~C.~Urasek and Cunnan(1979)]{r67performance}
-W.~T.~Gorrel D.~C.~Urasek and W.~S. Cunnan.
-\newblock Performance of a two-stage fan having a low-aspect-ratio, first-stage
-  rotor blading.
-\newblock \emph{NASA Technical Paper}, \penalty0 (TP-1493), August 1979.
-
-\bibitem[J.~E.~Crouse and Schwirian(1969)]{bladecompose}
-J.~S. David C.~Janetzke J.~E.~Crouse and R.~E. Schwirian.
+\bibitem{bladecompose}
+J.~E. Crouse, J.~S. David, C.~Janetzke, and R.~E. Schwirian.
 \newblock A computer program for composing blading from simulated circular-arc
   elements on conical surfaces.
-\newblock \emph{NASA Technical Note}, \penalty0 (TN D-5437), September 1969.
+\newblock Technical Report TN D-5437, NASA Langley Research Center, 1969.
 
-\bibitem[Mosiezny(2018)]{github}
+\bibitem{r67design}
+W.~S. Cunnan, W.~Stevans, and D.~C. Urasek.
+\newblock Design and performance of a 427-meter-per-second-tip-speed two stage
+  fan having a 2.40 pressure ratio.
+\newblock Technical Report TP-1314, NASA Langley Research Center, 1978.
+
+\bibitem{bousinesque}
+J.~O. Hinze.
+\newblock {\em Turbulence}.
+\newblock McGraw-Hill Publishing Co., 1975.
+
+\bibitem{Light1}
+M.~J. Lighthill.
+\newblock On sound generated aerodynamically i. general theory.
+\newblock {\em Proceedings of the Royal Society. Series A, Mathematical,
+  Physical and Engineering Sciences}, 211(1107):564--587, March 1952.
+\newblock http://rspa.royalsocietypublishing.org/content/211/1107/564.
+
+\bibitem{Light2}
+M.~J. Lighthill.
+\newblock On sound generated aerodynamically ii. turbulence as a source of
+  sound.
+\newblock {\em Proceedings of the Royal Society. Series A, Mathematical,
+  Physical and Engineering Sciences}, 222(1148):1--32, March 1954.
+\newblock http://rspa.royalsocietypublishing.org/content/222/1148/1.
+
+\bibitem{github}
 J.~Mosiezny.
-\newblock Github repository for nasa r67 input data and noise analysis.
-\newblock 2018.
-\newblock URL \url{https://github.com/JedrzejMosiezny/R67-data-analysis}.
+\newblock Github repository for nasa r67 input data and noise analysis, 2018.
+\newblock https://github.com/JedrzejMosiezny/R67-data-analysis.
 
-\bibitem[pro(2018)]{prometheus}
-Prometheus computation resources.
-\newblock 2018.
-\newblock URL \url{https://kdm.cyfronet.pl/portal/Prometheus}.
+\bibitem{LES1}
+J.~Smagorinsky.
+\newblock General circulation experiments with the primitive equations.
+\newblock {\em Monthly Weather Review}, 91(3):99--164, 1963.
+
+\bibitem{ddesspalart}
+P.~R. Spalart et~al.
+\newblock A new version of detached-eddy simulation, resistant to ambiguous
+  grid densities.
+\newblock {\em Theoretical and Computational Fluid Dynamics}, 20:181–195,
+  2006.
+
+\bibitem{desspalart}
+P.~R. Spalart, W.~H. Jou, M.~Strelets, and S.~R. Allmaras.
+\newblock Comments of feasibility of les for wings, and on a hybrid rans/les
+  approach.
+\newblock In {\em First International conference: Advances in DNS LES: Direct
+  numerical simulation and large eddy simulation}, pages 137--148, 1997.
+
+\bibitem{r67laser}
+A.~J. Strazisar, J.~R. Wood, M.~D. Hathaway, and K.~L. Suder.
+\newblock Laser anemometer measurements in a transonic axial-flow fan rotor.
+\newblock Technical Report TP-2897, NASA Langley Research Center, 1989.
+
+\bibitem{r67performance}
+D.~C. Urasek, W.~T. Gorrel, and W.~S. Cunnan.
+\newblock Performance of a two-stage fan having a low-aspect-ratio, first-stage
+  rotor blading.
+\newblock Technical Report TP-1493, NASA Langley Research Center, 1979.
+
+\bibitem{LES2}
+C.~Wagner, T.~Hüttl, and P.~Sagaut.
+\newblock {\em Large-Eddy Simulation for Acoustics}.
+\newblock Cambridge University Press, 2007.
+
+\bibitem{FWH}
+J.~E.~F. Williams and D.~L. Hawkings.
+\newblock Sound generation by turbulence and surfaces in arbitrary motion.
+\newblock {\em Philosophical Transactions of the Royal Society of London.
+  Series A, Mathematical and Physical Sciences}, 264(1151):321--342, May 1969.
+\newblock http://www.jstor.org/stable/73790.
 
 \end{thebibliography}

@@ -1,12 +1,6 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
-The style file: unsrtnat.bst
+The style file: abbrv.bst
 Database file #1: Bibliography.bib
-Warning--there's a number but no volume in r67laser
-Warning--empty author in fluenttheory
-Warning--there's a number but no volume in r67design
-Warning--there's a number but no volume in r67performance
-Warning--there's a number but no volume in bladecompose
-Warning--empty journal in github
-Warning--empty author in prometheus
-Warning--empty journal in prometheus
-(There were 8 warnings)
+Warning--to sort, need author, organization, or key in fluenttheory
+Warning--to sort, need author, organization, or key in prometheus
+(There were 2 warnings)
