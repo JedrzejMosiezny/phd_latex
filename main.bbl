@@ -20,13 +20,6 @@ C.~Choi and P.~Moin.
 \newblock {\em Physics of Fluids}, 24(1), January 2012.
 \newblock https://aip.scitation.org/doi/full/10.1063/1.3676783.
 
-\bibitem{curle}
-N.~CNotee.
-\newblock The influence of solid boundaries upon aerodynamic sound.
-\newblock {\em Proceedings of the Royal Society. Series A, Mathematical,
-  Physical and Engineering Sciences}, 231(1187):505--514, September 1955.
-\newblock http://rspa.royalsocietypublishing.org/content/231/1187/505.
-
 \bibitem{bladecompose}
 J.~E. Crouse, J.~S. David, C.~Janetzke, and R.~E. Schwirian.
 \newblock A computer program for composing blading from simulated circular-arc
@@ -38,6 +31,13 @@ W.~S. Cunnan, W.~Stevans, and D.~C. Urasek.
 \newblock Design and performance of a 427-meter-per-second-tip-speed two stage
   fan having a 2.40 pressure ratio.
 \newblock Technical Report TP-1314, NASA Langley Research Center, 1978.
+
+\bibitem{curle}
+N.~Curle.
+\newblock The influence of solid boundaries upon aerodynamic sound.
+\newblock {\em Proceedings of the Royal Society. Series A, Mathematical,
+  Physical and Engineering Sciences}, 231(1187):505--514, September 1955.
+\newblock http://rspa.royalsocietypublishing.org/content/231/1187/505.
 
 \bibitem{bousinesque}
 J.~O. Hinze.

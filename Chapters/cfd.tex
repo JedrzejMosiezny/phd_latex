@@ -56,17 +56,109 @@ Periodic boundaries & Interface & & \\ \hline
 Moving wall boundaries represent the rotational velocity of the compressor blade and are necessary for stationary reference frame formulation. Boundary condition setup is no different to usual setups of analyses of such kind.
 
 \section{Flowfield initialization \& RANS}
-RANS analysis is not suitable for generating acoustic nearfield data as the method averages the fluctuations over time (chapter \ref{approach}). Yet, the method generates an initial flowfield at a relatively low computational cost. Furthermore the RANS analysis will provide initial validation results for the test case and solver settings.
+RANS analysis is not suitable for generating acoustic nearfield data as the method averages the fluctuations over time (chapter \ref{approach}). Yet, this approach is used to solve the initial flowfield at a relatively low computational cost. Furthermore the RANS analysis provides initial validation results for the test case and solver settings.
 
-The solver is set up to steady-state, density based solver with $k-\omega SST$ turbulence model. Such setup is a go-to setup for nearly all compressible aerodynamics CFD done in the author's institute.
+The solver is set up to steady-state, density based, coupled-implicit solver with $k-\omega SST$ turbulence model. Such setup is a go-to setup for nearly all compressible aerodynamics CFD done in the author's institute.
 
-Flowfield is initialized at first with constant values populated from the "inlet" boundary condition patch. Next a Fast-Multi-Grid initialization is performed to generate coarsened flowield. The analysis is then processed by first, second and third order discretisation schemes for all of the conservation values, up to a given residual value. It must be noted, that for second and third order scheme analyses, convergence criteria may not be reached. Should this case occur, the analysis is stopped once the residual plots reach a plateau and the resulting flowfield is considered acceptable. Once the third order scheme analysis is completed, data is acquired from inlet and outlet boundary conditions, and the constant pitch vs. span streamlines.
+The density-based solver in ANSYS Fluent solves the governing equations of continuity, momentum, and (where appropriate) energy and species transport simultaneously as a set, or vector, of equations. Governing equations for additional scalars will be solved sequentially (that is, segregated from one another and from the coupled set). Two algorithms are available for solving the coupled set of equations, the coupled-explicit formulation and the coupled-implicit formulation \citep{fluenttheory}.
+
+The system of governing equations for a single-component fluid, written to describe the mean flow properties, is cast in integral Cartesian form for an arbitrary control volume $V$ with differential surface area $dA$ as follows:
+
+\begin{equation} \label{eq:densitybased}
+\frac{\partial}{\partial t} \int_V WdV + \oint_V \left[ F-G \right] \cdot dA = \int_V HdV
+\end{equation}
+
+\noindent where:
+
+\begin{equation} \label{eq:desityvectors}
+\begin{aligned}
+	W &= \begin{bmatrix}
+		\rho \\
+		\rho u \\
+		\rho v \\
+		\rho w \\
+		\rho E
+	\end{bmatrix}
+\end{aligned} \quad
+\begin{aligned}
+	F &= \begin{bmatrix}
+		\rho v\\
+		\rho uv + pi\\
+		\rho vv + pj\\
+		\rho wv + pk\\
+		\rho vE + pv
+	\end{bmatrix}
+\end{aligned} \quad
+\begin{aligned}
+	G &= \begin{bmatrix}
+		0 \\
+		\tau_{xi} \\
+		\tau_{yi} \\
+		\tau_{zi} \\
+		\tau_{ij} v_j + q
+	\end{bmatrix}
+\end{aligned}
+\end{equation}
+
+\noindent and where the vector $H$ is the body forces and energy source vector.
+
+The $\rho, v, E, p$ are respectively the density, velocity, total energy per unit mass and pressure of the fluid. $\tau$ is the viscous stress tensor and $q$ is the heat flux.
+
+Total energy $E$ and total enthalpy $H$ are related by the formulas:
+
+\begin{equation} \label{eq:totalenergy}
+E = H - \frac{p}{\rho}
+\end{equation}
+
+\begin{equation} \label{eq:totalenthalpy}
+H = h + \frac{\lvert v \rvert^2}{2} 
+\end{equation}
+
+Equation \ref{eq:densitybased} is than preconditioned, convective fluxes are splitted with Roe Flux-Difference Scheme and the preconditioned equation is discreticized with Euler Implicit discretization and combined with Newton type linearization of fluxes. Obtained equation system is solved by the Incomplete Lower Upper (ILU) factorization in conjunction with the Algebraic-Multi-Grid. Details on the solver theory are available in source \citep{fluenttheory}
+
+Flowfield is initialized at first with constant values populated from the "inlet" boundary condition patch. Next a Full-Multi-Grid initialization is performed to generate coarsened flowield. The analysis is then processed by first, second and third order discretization schemes for all of the conservation values, up to a given residual value. It must be noted, that for second and third order scheme analyses, convergence criteria may not be reached. Should this case occur, the analysis is stopped once the residual plots reach a plateau and the resulting flowfield is considered acceptable. Once the third order scheme analysis is completed, data is acquired from inlet and outlet boundary conditions, and the constant pitch vs. span streamlines.
+
+The analysis is set to a moderately strict residual convergence criteria of $10^{-6}$, however is monitored during runtime. Once the convergence plot reaches plateau and the internal surfaces flow field is not changing throughout iterations the analysis is stopped and switched to a higher discretization scheme or stopped and saved.
 
 %----------------------------------------------------------------------------------------
 %	SECTION
 %----------------------------------------------------------------------------------------
 \section{DDES analysis}
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
+Once the RANS analysis is converged to a satisfactory level the setup is switched to DDES turbulence modeling.
+
+The setup is changed to a transient, pressure-based, PISO scheme solver with DDES turbulence model and $k-\omega SST$ RANS formulation for shielded regions and subgrid scale. Rationale for the DDES analysis is provided in chapter \ref{approach}. Use of the pressure based solvers is required by the DDES implementation in the used software. Utilization of the pressure based solvers for comprssible flows is known to be unstable during the calculations, especially for the adverse pressure gradient cases. However, once the initial flow field resembles the final flowfield, the pressure based calculations are rather stable even at high velocity adverse pressure gradients.
+
+TUTAJ AKAPIT O PRESSURE BASED + SIMPLE
+
+The DDES Analysis is set up for two runs. As the flowfield resulting from the DDES Analysis is averaged and has no distinguishable features of a turbulent flow the first run is set to create a flowfield with random flow features. This is also used for testing the convergence and data acquisition process.
+
+Although not required by the "frozen-rotor" configuration, the timestepping is based on the rotor Blade-Pass-Frequency number. The BPF parameter is obtained by formula \ref{eq:bpf}
+
+\begin{equation} \label{eq:bpf}
+BPF = \frac{n \cdot t}{60}
+\end{equation}
+
+\noindent where $t$ is the number of blades and $n$ is the rotational speed in rpm.
+
+For NASA R67 the base Blade Passing Frequency is equal to $5882.36 Hz$. By multiplying the BPF by four a frequency of $23529.44 Hz$ is obtained. This figure is above the human audible range and will be used to compute the timestep. As stated in chapter \ref{approach}, in order to capture a given frequency, the timestep must be at least 4 times smaller than the period of the oscillations (equation \ref{eq:mintime}). By this approach the maximum timestep of the DDES calculation is $1.06 \cdot 10^{-5}s$. The timestep is compared with the requirements of the Courant-Friedrichs-Levy condition defined by equation \ref{eq:CFL}
+
+\begin{equation} \label{eq:CFL}
+Co = \frac{u \cdot \Delta t}{\Delta x}
+\end{equation}
+
+Considering that $u_max = 426.72 m/s$ and $\Delta x = 0.25 \cdot \lambda = 0.003695 m$ for desired frequency of $23529.44 Hz$ and timestep of  $1.06 \cdot 10^{-5}s$ the Courant number obtained is equal to 1.22. By rearranging the equation to solve for $\Delta t$ an equation \ref{eq:CFL2} is obtained and a calculation timestep fulfilling requirements of the CFD analysis and the direct noise formulation is computed and is equal to $8.659 \cdot 10^{-6}$.
+
+\begin{equation} \label{eq:CFL2}
+\Delta t = \frac{Co \cdot \frac{\lambda}{4}}{u_{max}}
+\end{equation}
+
+Initial timestep for the DDES analysis is set up to $5.0 \cdot 10^{-6}s$ with data acquisition every 5 timesteps. First run was conducted for roughly 30 thousand timesteps, during which following factors were tested: calculation efficiency dependent on the CPU core count used, data output and data format, estimated storage requirements and the output from the embedded FW-H aeroacoustical models. First run concluded, that the assumed timestep does not meet the required convergence and produced inaccurate or even not physical results.
+
+The timestep was gradually decreased to a value of $1.0 \cdot 10^{-6}s$, the CPU core count was set to 120 CPU cores distributed over 5 HPC nodes and the FW-H analysis output was disabled as the obtained results significantly distinguished from the expected physical values and delivered SPLdB was in range of 380dB.
+
+Once the firs run produced a fully developed flowfield with turbulent features characteristic to the LES analysis, the case was saved and set up for a final run with full data acquisition. 
+
+It was desired to capture at least 0.05 seconds of the flow but with some relation to geometric and operational features of the rotor. Based on the blade count and rotational speed of the rotor a time of a single periodic passage is calculated to $1.70 \cdot 10^{-4}s$. Next the required computational time is divided by the passage time to obtain the number of blade passages. 294.118 passages will occur during the 0.05s, so the number is rounded up to 295 passages an multiplied again by the passage time. Total calculation time of 0.05015 seconds is obtained. Therefore 50150 timesteps is required for full calculation runtime, with one passage being calculated in 170 steps.
 
 %-----------------------------------
 %	SECTION
@@ -83,4 +175,34 @@ Reference \citep{r67laser} provides a very extensive set of validation data for 
 
 This approach produces a very large number of plots, that are unnecessary for this particular thesis. To validate the presented RANS analysis, the constant pitch surfaces for 20\%, 50\% and 80\% pitch are combined with 10\%, 50\% and 90\% span locations, thus producing 9 lines to gather, relative mach number and relative flow angle data. Relative Mach number plots are compared with the results provided by the experimental study \citep{r67laser}. The plot locations are 30\%, 60\% and 90\% span from the hub. For clarity, relative mach number plots and constant pitch plots are presented in appendix \ref{cfd_results}.
 
-The most simple method for validating the results is comparing the total and static pressure values on inlet and outlet boundary conditions of the domain with experimental data.
+The most simple method for validating the results is comparing the total and static pressure values on inlet and outlet boundary conditions of the domain with experimental data. Plots for static and total pressure at inlets and outlets of the domain are presented in figures \ref{pvalid_rans_in} thru \ref{pvalid_ddes_out}. 
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/placeholder.jpg}
+\caption{RANS analysis inlet pressure validation}
+\label{pvalid_rans_in}
+\end{figure}
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/placeholder.jpg}
+\caption{DDES analysis outlet pressure validation}
+\label{pvalid_rans_out}
+\end{figure}
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/placeholder.jpg}
+\caption{DDES analysis inlet pressure validation}
+\label{pvalid_ddes_in}
+\end{figure}
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/placeholder.jpg}
+\caption{DDES analysis outlet pressure validation}
+\label{pvalid_ddes_out}
+\end{figure}
+
+Both RANS and DDES analyses produce results that are confirmed by the experimental data. Static inlet pressure plot show the discrepancy between experimental and CFD data resulting from a minor shift between the data acquisition planes. The inlet boundary condition is moved closr towards the leading edge of the rotor, than the experimental pressure measurements array, therefore the static pressure is increased. The Mach number contour plots on the corresponding internal surfaces show the same character of the flow. Discrepancies between the 10\% and 90\% span plot and the int-01 and int-12 surfaces respectively, come from a slight offset between the surfaces as the mesh internal surfaces are located at 7.5\% and 92.5\% span respectively.
