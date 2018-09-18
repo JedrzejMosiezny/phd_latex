@@ -9,17 +9,16 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Scenario 4. Wavelength larger than four minimum edge lengths\relax }}{24}{figure.caption.136}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Geometry of NASA R67\relax }}{27}{figure.caption.146}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Final single passage geometry. Some features hidden for clarity\relax }}{30}{figure.caption.148}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Mesh topology with conforming periodic boundaries\relax }}{31}{figure.caption.152}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Mesh h-topology\relax }}{31}{figure.caption.153}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Mesh non-orthogonality histogram\relax }}{32}{figure.caption.159}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Completed Mesh\relax }}{33}{figure.caption.160}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Final single passage geometry. Some features hidden for clarity\relax }}{30}{figure.caption.149}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Mesh topology with conforming periodic boundaries\relax }}{31}{figure.caption.153}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Mesh h-topology\relax }}{31}{figure.caption.154}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Mesh non-orthogonality histogram\relax }}{33}{figure.caption.160}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Completed Mesh\relax }}{33}{figure.caption.161}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Schematic representation of constant pitch (left) and constant chord (right) to plot data \citep {r67laser}\relax }}{40}{figure.caption.176}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces RANS analysis inlet pressure validation\relax }}{41}{figure.caption.177}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces DDES analysis outlet pressure validation\relax }}{41}{figure.caption.178}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces DDES analysis inlet pressure validation\relax }}{42}{figure.caption.179}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces DDES analysis outlet pressure validation\relax }}{42}{figure.caption.180}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Flowchart of the PISO algorithm\relax }}{39}{figure.caption.173}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Schematic representation of constant pitch (left) and constant chord (right) to plot data \citep {r67laser}\relax }}{41}{figure.caption.178}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Inlet pressure validation\relax }}{41}{figure.caption.179}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Outlet pressure validation\relax }}{42}{figure.caption.180}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Tip gap streamlines. Velocity in [m/s]\relax }}{45}{figure.caption.186}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Exemplary FFT heatmap of magnitude. Random data.\relax }}{47}{figure.caption.189}
@@ -136,15 +135,31 @@
 \contentsline {figure}{\numberline {B.54}{\ignorespaces Peak amplitude frequency int-tip mark\relax }}{109}{figure.caption.256}
 \contentsline {figure}{\numberline {B.55}{\ignorespaces Peak magnitude at int-tip mark\relax }}{109}{figure.caption.256}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Mach number contour plot @10\% span \citep {r67laser}\relax }}{111}{figure.caption.258}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces RANS Mach number contour plot at int-01 mark\relax }}{111}{figure.caption.258}
-\contentsline {figure}{\numberline {C.3}{\ignorespaces DDES Mach number contour plot at int-01 mark\relax }}{111}{figure.caption.258}
-\contentsline {figure}{\numberline {C.4}{\ignorespaces Mach number contour plot @50\% span \citep {r67laser}\relax }}{112}{figure.caption.259}
-\contentsline {figure}{\numberline {C.5}{\ignorespaces RANS Mach number contour plot at int-07 mark\relax }}{112}{figure.caption.259}
-\contentsline {figure}{\numberline {C.6}{\ignorespaces DDES Mach number contour plot at int-07 mark\relax }}{112}{figure.caption.259}
-\contentsline {figure}{\numberline {C.7}{\ignorespaces Mach number contour plot @90\% span \citep {r67laser}\relax }}{113}{figure.caption.260}
-\contentsline {figure}{\numberline {C.8}{\ignorespaces RANS Mach number contour plot at int-12 mark\relax }}{113}{figure.caption.260}
-\contentsline {figure}{\numberline {C.9}{\ignorespaces DDES Mach number contour plot at int-12 mark\relax }}{113}{figure.caption.260}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Relative Mach number at S10P20 streamline\relax }}{111}{figure.caption.258}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Relative velocity angle at S10P20 streamline\relax }}{111}{figure.caption.258}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Relative Mach number at S10P50 streamline\relax }}{112}{figure.caption.259}
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Relative velocity angle at S10P50 streamline\relax }}{112}{figure.caption.259}
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Relative Mach number at S10P80 streamline\relax }}{113}{figure.caption.260}
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Relative velocity angle at S10P80 streamline\relax }}{113}{figure.caption.260}
+\contentsline {figure}{\numberline {C.7}{\ignorespaces Relative Mach number at S50P20 streamline\relax }}{114}{figure.caption.261}
+\contentsline {figure}{\numberline {C.8}{\ignorespaces Relative velocity angle at S50P20 streamline\relax }}{114}{figure.caption.261}
+\contentsline {figure}{\numberline {C.9}{\ignorespaces Relative Mach number at S50P50 streamline\relax }}{115}{figure.caption.262}
+\contentsline {figure}{\numberline {C.10}{\ignorespaces Relative velocity angle at S50P50 streamline\relax }}{115}{figure.caption.262}
+\contentsline {figure}{\numberline {C.11}{\ignorespaces Relative Mach number at S50P80 streamline\relax }}{116}{figure.caption.263}
+\contentsline {figure}{\numberline {C.12}{\ignorespaces Relative velocity angle at S50P80 streamline\relax }}{116}{figure.caption.263}
+\contentsline {figure}{\numberline {C.13}{\ignorespaces Relative Mach number at S90P20 streamline\relax }}{117}{figure.caption.264}
+\contentsline {figure}{\numberline {C.14}{\ignorespaces Relative velocity angle at S90P20 streamline\relax }}{117}{figure.caption.264}
+\contentsline {figure}{\numberline {C.15}{\ignorespaces Relative Mach number at S90P50 streamline\relax }}{118}{figure.caption.265}
+\contentsline {figure}{\numberline {C.16}{\ignorespaces Relative velocity angle at S90P50 streamline\relax }}{118}{figure.caption.265}
+\contentsline {figure}{\numberline {C.17}{\ignorespaces Relative Mach number at S90P80 streamline\relax }}{119}{figure.caption.266}
+\contentsline {figure}{\numberline {C.18}{\ignorespaces Relative velocity angle at S90P80 streamline\relax }}{119}{figure.caption.266}
+\contentsline {figure}{\numberline {C.19}{\ignorespaces RANS Mach number contour plot at int-01 mark\relax }}{120}{figure.caption.267}
+\contentsline {figure}{\numberline {C.20}{\ignorespaces DDES Mach number contour plot at int-01 mark\relax }}{120}{figure.caption.267}
+\contentsline {figure}{\numberline {C.21}{\ignorespaces RANS Mach number contour plot at int-07 mark\relax }}{121}{figure.caption.268}
+\contentsline {figure}{\numberline {C.22}{\ignorespaces DDES Mach number contour plot at int-07 mark\relax }}{121}{figure.caption.268}
+\contentsline {figure}{\numberline {C.23}{\ignorespaces RANS Mach number contour plot at int-12 mark\relax }}{122}{figure.caption.269}
+\contentsline {figure}{\numberline {C.24}{\ignorespaces DDES Mach number contour plot at int-12 mark\relax }}{122}{figure.caption.269}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

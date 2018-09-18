@@ -120,16 +120,17 @@ Let's consider the effect of injection of energy to the fluid resulting in creat
 \end{figure}
 
 \subsection{Govering equations} \label{goveq}
+Fluid flow as understood in CFD analyses is described by continuity (\ref{eq:cont}) and momentum (\ref{eq:momentum}) equations.
 
-Continuity equation:
 \begin{equation} \label{eq:cont}
 \frac{\partial \rho}{\partial t} + \nabla (\rho U) = 0
 \end{equation}
 
-Momentum equation:
 \begin{equation} \label{eq:momentum}
 \frac{dU}{dt} = - \frac{1}{\rho} \nabla p + \nu \nabla^{2} U
 \end{equation}
+
+A number of special treatments to these equations is performed in order to obtain a solved flowfield at the end of the CFD workflow.
 
 \subsection{Direct Numerical Simulation} \label{DNS}
 Considering the direct formulation of noise, the Direct Numerical Simulation is seemingly the best tool of choice. The DNS formulation of flow solves directly the discrete form of Navier-Stokes Equation without any turbulence models. Size limit of the resolved eddies is the Kolmogorov limit (eq. \ref{eq:kolm}). In order to properly resolve the DNS simulation op to this scale, the mesh sizing must be at least as small as the expected Kolmogorov limit at given Reynolds number.

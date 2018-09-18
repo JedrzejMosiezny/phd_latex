@@ -39,6 +39,11 @@ N.~Curle.
   Physical and Engineering Sciences}, 231(1187):505--514, September 1955.
 \newblock http://rspa.royalsocietypublishing.org/content/231/1187/505.
 
+\bibitem{hearing}
+J.~D. Durrant and J.~H. Lovrinic.
+\newblock {\em Bases of Hearing Sciences. Second Edition}.
+\newblock Lippincott Williams and Wilkins, 1984.
+
 \bibitem{bousinesque}
 J.~O. Hinze.
 \newblock {\em Turbulence}.
@@ -63,6 +68,11 @@ M.~J. Lighthill.
 J.~Mosiezny.
 \newblock Github repository for nasa r67 input data and noise analysis, 2018.
 \newblock https://github.com/JedrzejMosiezny/R67-data-analysis.
+
+\bibitem{latex2e}
+T.~Oetkier, H.~Partl, I.~Hyba, and E.~Schleg.
+\newblock {\em The Not So Short Introduction to LATEX 2e}, 2018.
+\newblock https://tobi.oetiker.ch/lshort/lshort.pdf.
 
 \bibitem{LES1}
 J.~Smagorinsky.

@@ -20,20 +20,22 @@ The test specimen for given analysis is a NASA Rotor 67 (R67) transonic axial co
 \label{r67over}
 \end{figure}
 
-Basic figures of the given rotor are, design pressure ratio of 1.63 at massflow of 33.25 kg/sec. The design rotational speed is 16 043 rpm, which yields a tip speed of 429 m/s and an inlet tip relative Mach number of 1.38. The rotor has 22 blades and an aspect ratio of 1.56 (based on average span/root axial chord). The inlet and exit tip diameters are 514 and 485 mm, respectively, and the inlet and exit hub/tip radius ratios are 0.375 and 0.478, respectively. A fillet radius of 1.78 mm is used at the airfoil-hub juncture. The square root of the mean square of the airfoil surface finish is 0.8 $\mu${}m or better, the airfoil surface tolerance is $\pm$ 0.04 mm, and the running tip clearance is approximately 1.0 mm \citep{r67laser}. Surface roughness and some of the geometrical features are omitted during the preparation of the geometry and CFD mesh for reasons described in sections \ref{3dgeom} and \ref{mesh}. General geometry of NASA R67 is presented on fig \ref{r67over}
+Basic figures of the given rotor are, design pressure ratio of 1.63 at massflow of 33.25 kg/sec. The design rotational speed is 16 043 rpm, which yields a tip speed of 429 m/s and an inlet tip relative Mach number of 1.38. The rotor has 22 blades and an aspect ratio of 1.56 (based on average span/root axial chord). The inlet and exit tip diameters are 514 and 485 mm, respectively, and the inlet and exit hub/tip radius ratios are 0.375 and 0.478, respectively. A fillet radius of 1.78 mm is used at the airfoil-hub juncture. The square root of the mean square of the airfoil surface finish is 0.8 $\mu${}m or better, the airfoil surface tolerance is $\pm$ 0.04 mm, and the running tip clearance is approximately 1.0 mm \citep{r67laser}. Surface roughness and some of the geometrical features are omitted during the preparation of the geometry and CFD mesh for reasons described in sections \ref{3dgeom} and \ref{mesh}. General geometry of NASA R67 is presented on fig \ref{r67over}. Basic parameters of the test subject are presented in table \ref{tab:data}
 
-
-%-----------------------------------
-%	SUBSECTION
-%-----------------------------------
-%\subsection{Efficiency figures}
-%Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et sollicitudin et, aliquam sit amet augue. In hac habitasse platea dictumst.
-
-%-----------------------------------
-%	SUBSECTION
-%-----------------------------------
-%\subsection{LDA Validation results}
-%Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+\begin{table}[ht!]
+\centering
+\caption{Basic R67 parameters} \label{tab:data}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Parameter   & Value & Unit \\ \midrule
+$\Pi$          & 1.67  & -    \\
+$\dot{m}$      & 33.25 & kg/s \\
+$\omega$       & 16043 & rpm  \\
+$v_t$          & 426   & m/s  \\
+$Ma_t$         & 1.26  & -    \\
+blade count    & 22    & -    \\ \bottomrule
+\end{tabular}
+\end{table}
 
 %----------------------------------------------------------------------------------------
 %	SECTION
@@ -147,11 +149,14 @@ Internal volume of the mesh was stabilized by attaching the mesh blocks to the i
 \begin{table}[htb!]
 \centering
 \caption{Location of compressor desing surfaces} \label{tab:surfs}
-\begin{tabular}{ | l | r | } \hline
-Boundary marker & Location \\ \hline \hline
-\texttt{hub} & 0\% span  \\ \hline
-\texttt{int-01} --- \texttt{int-12} & 7.7\% --- 92.3\% every 7.7\% span \\ \hline
-\texttt{int-tip} & 100\% span \\ \hline
+\ttfamily
+\begin{tabular}{@{}rl@{}}
+\toprule
+Boundary marker & Location \\ \midrule
+hub & 0\% span  \\
+int-01 --- int-12 & 7.7\% --- 92.3\% every 7.7\% span \\
+int-tip & 100\% span \\
+\bottomrule
 \end{tabular}
 \end{table}
 
@@ -164,7 +169,7 @@ Figure \ref{mesh-ortho}, provides overview of mesh quality defined by figure \re
 \label{mesh-ortho}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[t!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
 \includegraphics[width=0.85\textwidth]{Pictures/r67_ransmesh.jpg}
 \caption{Completed Mesh}

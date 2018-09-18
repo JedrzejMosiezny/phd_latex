@@ -1,9 +1,9 @@
 \select@language {english}
 \contentsline {chapter}{Declaration of Authorship}{iii}{dummy.1}
 \contentsline {chapter}{Abstract}{v}{dummy.2}
-\vspace {1em}
+\vspace {0em}
 \contentsline {chapter}{Acknowledgements}{vii}{dummy.3}
-\vspace {1em}
+\vspace {0em}
 \contentsline {chapter}{Contents}{ix}{dummy.4}
 \contentsline {chapter}{List of Figures}{xi}{dummy.6}
 \contentsline {chapter}{List of Tables}{xv}{dummy.8}
@@ -32,13 +32,13 @@
 \contentsline {section}{\numberline {3.5}Limiting factors of the direct approach}{26}{section.143}
 \contentsline {chapter}{\numberline {4}Test case}{27}{chapter.144}
 \contentsline {section}{\numberline {4.1}NASA Rotor 67 transonic axial compressor}{27}{section.145}
-\contentsline {section}{\numberline {4.2}3D geometry preparation}{28}{section.147}
-\contentsline {section}{\numberline {4.3}Meshing approach}{29}{section.149}
-\contentsline {chapter}{\numberline {5}CFD Analysis}{35}{chapter.161}
-\contentsline {section}{\numberline {5.1}Case preprocessing}{35}{section.162}
-\contentsline {section}{\numberline {5.2}Flowfield initialization \& RANS}{36}{section.166}
-\contentsline {section}{\numberline {5.3}DDES analysis}{38}{section.171}
-\contentsline {section}{\numberline {5.4}Validation of the results}{39}{section.175}
+\contentsline {section}{\numberline {4.2}3D geometry preparation}{28}{section.148}
+\contentsline {section}{\numberline {4.3}Meshing approach}{30}{section.150}
+\contentsline {chapter}{\numberline {5}CFD Analysis}{35}{chapter.162}
+\contentsline {section}{\numberline {5.1}Case preprocessing}{35}{section.163}
+\contentsline {section}{\numberline {5.2}Flowfield initialization \& RANS}{36}{section.167}
+\contentsline {section}{\numberline {5.3}DDES analysis}{38}{section.172}
+\contentsline {section}{\numberline {5.4}Validation of the results}{40}{section.177}
 \contentsline {chapter}{\numberline {6}Results of flow field noise analysis}{43}{chapter.181}
 \contentsline {section}{\numberline {6.1}Transition from flow-field to sound signal data}{43}{section.182}
 \contentsline {section}{\numberline {6.2}RMS results}{43}{section.183}
@@ -55,8 +55,9 @@
 \contentsline {chapter}{\numberline {A}RMS values plots}{53}{appendix.198}
 \contentsline {chapter}{\numberline {B}FFT plots}{81}{appendix.227}
 \contentsline {chapter}{\numberline {C}CFD validation}{111}{appendix.257}
-\contentsline {chapter}{\numberline {D}Code for direct formulation of noise analysis}{115}{appendix.261}
-\contentsline {chapter}{\numberline {E}Code for RMS computation}{117}{appendix.337}
-\contentsline {chapter}{\numberline {F}Code for discrete Fourier analysis}{119}{appendix.375}
-\contentsline {chapter}{\numberline {G}Blade design surface coordinates}{121}{appendix.409}
-\contentsline {chapter}{Bibliography}{123}{dummy.410}
+\contentsline {chapter}{\numberline {D}Code for direct formulation of noise analysis}{123}{appendix.270}
+\contentsline {chapter}{\numberline {E}Folder Structure}{125}{appendix.346}
+\contentsline {chapter}{\numberline {F}Code for RMS computation}{127}{appendix.347}
+\contentsline {chapter}{\numberline {G}Code for discrete Fourier analysis}{129}{appendix.385}
+\contentsline {chapter}{\numberline {H}Blade design surface coordinates}{131}{appendix.419}
+\contentsline {chapter}{Bibliography}{145}{dummy.434}

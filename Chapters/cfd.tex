@@ -17,10 +17,11 @@ Following, is the numerical setup applicable to all performed analyses. The setu
 
 Material used in the analysis resembles standard air modeled as ideal gas as in equation with following properties described in table \ref{tab:stdair} 
 
-\begin{table}[htb!]
+\begin{table}[ht!]
 \centering
 \caption{Standard air properties} \label{tab:stdair}
-\begin{tabular}{ r r l }
+\ttfamily
+\begin{tabular}{@{}l|rl@{}}
 $C_p$ & 1006.43 & $\frac{J}{kg \cdot K}$ \\
 $\lambda$ & 0.0242 & $\frac{W}{m \cdot K}$ \\
 $\mu$ & 1.7894e-05 & $\frac{kg}{m \cdot s}$ \\
@@ -41,15 +42,17 @@ Following boundary conditions were applied to the mesh boundaries. Following set
 \begin{table}[htb!]
 \centering
 \caption{Test case boundary conditions} \label{tab:testbcs}
-\begin{tabular}{ | l | l | r l | } \hline
-Boundary marker & Boundary type & & \\ \hline \hline
-Inlet & Pressure Inlet & 101350  & Pa\\ \hline
-Outlet & Pressure Outlet & 102000 & Pa \\ \hline
-Hub & Movig wall & 1680 & rad/s \\ \hline
-Blade & Moving wall & 1680 & rad/s \\ \hline
-Casing & Stationary wall & &  \\ \hline
-Internal profiles & Internal & & \\ \hline
-Periodic boundaries & Interface & & \\ \hline 
+\ttfamily
+\begin{tabular}{@{}llrl@{}}
+\toprule
+Boundary marker & Boundary type & & \\ \midrule
+Inlet & Pressure Inlet & 101350  & Pa\\
+Outlet & Pressure Outlet & 102000 & Pa \\
+Hub & Movig wall & 1680 & rad/s \\
+Blade & Moving wall & 1680 & rad/s \\
+Casing & Stationary wall & &  \\
+Internal profiles & Internal & & \\
+Periodic boundaries & Interface & & \\ \bottomrule
 \end{tabular}
 \end{table}
 
@@ -126,9 +129,90 @@ The analysis is set to a moderately strict residual convergence criteria of $10^
 \section{DDES analysis}
 Once the RANS analysis is converged to a satisfactory level the setup is switched to DDES turbulence modeling.
 
-The setup is changed to a transient, pressure-based, PISO scheme solver with DDES turbulence model and $k-\omega SST$ RANS formulation for shielded regions and subgrid scale. Rationale for the DDES analysis is provided in chapter \ref{approach}. Use of the pressure based solvers is required by the DDES implementation in the used software. Utilization of the pressure based solvers for comprssible flows is known to be unstable during the calculations, especially for the adverse pressure gradient cases. However, once the initial flow field resembles the final flowfield, the pressure based calculations are rather stable even at high velocity adverse pressure gradients.
+The setup is changed to a transient, pressure-based, PISO scheme solver with DDES turbulence model and $k-\omega SST$ RANS formulation for shielded regions and subgrid scale. Rationale for the DDES analysis is provided in chapter \ref{approach}. Pressure based solver is required by the DDES implementation in the used software. Utilization of the pressure based solvers for compressible flows is known to be unstable during the calculations, especially for the adverse pressure gradient cases. However, once the initial flow field resembles the final flowfield, the pressure based calculations are rather stable even at high velocity adverse pressure gradients.
 
-TUTAJ AKAPIT O PRESSURE BASED + SIMPLE
+Pressure based solver solves the discretized continuity equation with obtaining the velocity field from the momentum equations. The pressure field is obtained by solving and manipulating the continuity and momentum equations within a pressure velocity coupling scheme.
+
+%Special practices for treatment of the continuity (\ref{eq:cont}) and momentum (\ref{eq:momentum}) equations are described for mentioned equations is integral form (equations \ref{eq:cont_int} and \ref{eq:momentum_int} respectively).
+%
+%\begin{equation} \label{eq:cont_int}
+%\oint \rho \vec{v} \cdot d \vec{A} = 0
+%\end{equation}
+%
+%\begin{equation} \label{eq:momentum_int}
+%\oint \rho \vec{v} \vec{v} \cdot d \vec{A} = -\oint pI \cdot d \vec{A} + \oint \overline{\overline{\tau}} \cdot d \vec{A} + \int_V \vec{F}dV
+%\end{equation}
+
+Transformed and discretized equations are solved by a linear solver and the intermittent solutions are coupled using a pressure velocity coupling algorithm. For this specific case PISO scheme is chosen for the computation. The algorithm is suitable for calculating problems with larger (in comparison to density-based acoustical timescale) pseudo-timestep and with decreased computational expense. Figure \ref{piso} presents the flow of the PISO algorithm. 
+
+%\begin{figure}[h!]
+%\centering % bo \centering nie wstawia dodatkowego odstępu
+%\includegraphics[width=0.85\textwidth]{Pictures/PISO.png}
+%\caption{Flowchart of the PISO algorithm}
+%\label{piso}
+%\end{figure}
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\usetikzlibrary{positioning}
+\tikzstyle{decision} = [diamond, draw, text width=10em, text centered, node distance=1cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, text width=10em, text centered, node distance=1cm, rounded corners, minimum height=3em]
+\tikzstyle{line} = [draw, -latex]
+\tikzstyle{cloud} = [draw, ellipse, node distance=1cm, minimum height=3em]
+
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node [cloud] (start) {Start};
+    \node [block, below=1cm of start] (step_one) {1: Solve the discretized momentum equation};
+    \node [block, right=0.85cm of step_one] (step_two) {2: Solve the pressure correction equation};
+    \node [block, right=0.85cm of step_two] (step_three) {3: Correct pressure and velocities};
+    \node [block, below=1cm of step_three] (step_four) {4: Solve second pressure correction equation};
+    \node [block, left=0.85cm of step_four] (step_five) {5: Correct pressure and velocities};
+    \node [block, left=0.85cm of step_five] (step_six) {6: Solve all other transport equations};
+    \node [decision, below=1cm of step_six] (convergence) {Convergence?};
+    \node [cloud, below=1cm of convergence] (stop) {Stop};
+    % Draw edges
+    \path [line] (start) -- (step_one);
+    \path [line] (step_one) -- (step_two);
+    \path [line] (step_two) -- (step_three);
+    \path [line] (step_three) -- (step_four);
+    \path [line] (step_four) -- (step_five);
+    \path [line] (step_five) -- (step_six);
+    \path [line] (step_six) -- (convergence);
+    %\path [line] (convergence) -| [near start] node {no} (step_one);
+    \path [line] (convergence) -- node {yes} (stop);   
+\end{tikzpicture}
+\caption{Flowchart of the PISO algorithm}
+\label{piso}
+\end{figure}
+
+%\tikzstyle{decision} = [diamond, draw, text width=10em, text centered, node distance=4cm, inner sep=0pt]
+%\tikzstyle{block} = [rectangle, draw, text width=10em, text centered, node distance=4cm, rounded corners, minimum height=3em]
+%\tikzstyle{line} = [draw, -latex]
+%\tikzstyle{cloud} = [draw, ellipse, node distance=3cm, minimum height=3em]
+%
+%\begin{tikzpicture}[node distance = 2cm, auto]
+%    % Place nodes
+%    \node [cloud] (start) {Start};
+%    \node [block, below of=start] (step_one) {1: Solve the discretized momentum equation};
+%    \node [block, right of=step_one] (step_two) {2: Solve the pressure correction equation};
+%    \node [block, below of=step_two] (step_three) {3: Correct pressure and velocities};
+%    \node [block, left of=step_three] (step_four) {4: Solve second pressure correction equation};
+%    \node [block, below of=step_four] (step_five) {5: Correct pressure and velocities};
+%    \node [block, right of=step_five] (step_six) {6: Solve all other transport equations};
+%    \node [decision, below of=step_five] (convergence) {Convergence?};
+%    \node [cloud, below of=convergence] (stop) {Stop};
+%    % Draw edges
+%    \path [line] (start) -- (step_one);
+%    \path [line] (step_one) -- (step_two);
+%    \path [line] (step_two) -- (step_three);
+%    \path [line] (step_three) -- (step_four);
+%    \path [line] (step_four) -- (step_five);
+%    \path [line] (step_five) -- (step_six);
+%    \path [line] (step_six) |- (convergence);
+%    %\path [line] (convergence) -- [near start] node {no} (step_one);
+%    \path [line] (convergence) -- node {yes} (stop);   
+%\end{tikzpicture}
 
 The DDES Analysis is set up for two runs. As the flowfield resulting from the DDES Analysis is averaged and has no distinguishable features of a turbulent flow the first run is set to create a flowfield with random flow features. This is also used for testing the convergence and data acquisition process.
 
@@ -173,36 +257,36 @@ Reference \citep{r67laser} provides a very extensive set of validation data for 
 \label{fig_LA}
 \end{figure}
 
-This approach produces a very large number of plots, that are unnecessary for this particular thesis. To validate the presented RANS analysis, the constant pitch surfaces for 20\%, 50\% and 80\% pitch are combined with 10\%, 50\% and 90\% span locations, thus producing 9 lines to gather, relative mach number and relative flow angle data. Relative Mach number plots are compared with the results provided by the experimental study \citep{r67laser}. The plot locations are 30\%, 60\% and 90\% span from the hub. For clarity, relative mach number plots and constant pitch plots are presented in appendix \ref{cfd_results}.
+Full study consist of a very large number of plots, that are unnecessary for this particular thesis. To validate the CFD analysis, the constant pitch surfaces for 20\%, 50\% and 80\% pitch are combined with 10\%, 50\% and 90\% span locations, as measured from the blade tip, thus producing 9 lines to for relative Mach number and relative flow angle data. For clarity, relative mach number plots and constant pitch plots are presented in appendix \ref{cfd_results}. 
 
-The most simple method for validating the results is comparing the total and static pressure values on inlet and outlet boundary conditions of the domain with experimental data. Plots for static and total pressure at inlets and outlets of the domain are presented in figures \ref{pvalid_rans_in} thru \ref{pvalid_ddes_out}. 
+The most simple method for validating the results is comparing the total and static pressure values on inlet and outlet boundary conditions of the domain with experimental data. Plots for static and total pressure at inlets and outlets of the domain are presented in figures \ref{pvalid_in} and \ref{pvalid_out}. 
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.85\textwidth]{Pictures/placeholder.jpg}
-\caption{RANS analysis inlet pressure validation}
-\label{pvalid_rans_in}
+\includegraphics[width=0.85\textwidth]{Pictures/pvalid_in.png}
+\caption{Inlet pressure validation}
+\label{pvalid_in}
 \end{figure}
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.85\textwidth]{Pictures/placeholder.jpg}
-\caption{DDES analysis outlet pressure validation}
-\label{pvalid_rans_out}
+\includegraphics[width=0.85\textwidth]{Pictures/pvalid_out.png}
+\caption{Outlet pressure validation}
+\label{pvalid_out}
 \end{figure}
 
-\begin{figure}[h!]
-\centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.85\textwidth]{Pictures/placeholder.jpg}
-\caption{DDES analysis inlet pressure validation}
-\label{pvalid_ddes_in}
-\end{figure}
-
-\begin{figure}[h!]
-\centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.85\textwidth]{Pictures/placeholder.jpg}
-\caption{DDES analysis outlet pressure validation}
-\label{pvalid_ddes_out}
-\end{figure}
+%\begin{figure}[h!]
+%\centering % bo \centering nie wstawia dodatkowego odstępu
+%\includegraphics[width=0.85\textwidth]{Pictures/placeholder.jpg}
+%\caption{DDES analysis inlet pressure validation}
+%\label{pvalid_ddes_in}
+%\end{figure}
+%
+%\begin{figure}[h!]
+%\centering % bo \centering nie wstawia dodatkowego odstępu
+%\includegraphics[width=0.85\textwidth]{Pictures/placeholder.jpg}
+%\caption{DDES analysis outlet pressure validation}
+%\label{pvalid_ddes_out}
+%\end{figure}
 
 Both RANS and DDES analyses produce results that are confirmed by the experimental data. Static inlet pressure plot show the discrepancy between experimental and CFD data resulting from a minor shift between the data acquisition planes. The inlet boundary condition is moved closr towards the leading edge of the rotor, than the experimental pressure measurements array, therefore the static pressure is increased. The Mach number contour plots on the corresponding internal surfaces show the same character of the flow. Discrepancies between the 10\% and 90\% span plot and the int-01 and int-12 surfaces respectively, come from a slight offset between the surfaces as the mesh internal surfaces are located at 7.5\% and 92.5\% span respectively.

@@ -4,6 +4,8 @@
 
 \lhead{\emph{Folder Structure}} % This is for the header on each page - perhaps a shortened title
 
+\begin{minipage}{0.75\textwidth}
+\flushleft
 \begin{forest}
   for tree={
     font=\ttfamily,
@@ -25,11 +27,20 @@
     before computing xy={l=15pt},
   }
 [flow-data
-	[int-01 ... int-tip]
-	[lead, pside, sside, tip, trail]
+	[int-01 $\cdots$ int-tip
+		[ddes analysis output]	
+	]
+	[lead pside sside tip trail
+		[ddes analysis output]	
+	]
 ]
-\end{forest} \\
-\\
+\end{forest}
+\end{minipage}
+
+\vspace{1.0cm}
+
+\begin{minipage}{0.75\textwidth}
+\flushleft
 \begin{forest}
   for tree={
     font=\ttfamily,
@@ -51,16 +62,24 @@
     before computing xy={l=15pt},
   }
 [noise-data
-	[int-01-post ... int-tip-post
-		[acu]
-		[plots]
+	[int-01-post $\cdots$ int-tip-post
+		[acu
+			[sound-analysis-results]		
+		]
 	]
-	[lead, pside, sside, tip, trail
-		[...]	
+	[lead pside sside tip trail
+		[acu
+			[sound-analysis-results]		
+		]
 	]
 ]
-\end{forest} \\
-\\
+\end{forest}
+\end{minipage}
+
+\vspace{1.0cm}
+
+\begin{minipage}{0.75\textwidth}
+\flushleft
 \begin{forest}
   for tree={
     font=\ttfamily,
@@ -82,8 +101,18 @@
     before computing xy={l=15pt},
   }
 [results
-	[coords]
-	[fft]
-	[rms]
+	[coords
+		[surface nodes coordinate files]	
+	]
+	[fft
+		[fft analysis results]	
+	]
+	[rms
+		[rms analysis results]	
+	]
+	[plots
+		[output plots]	
+	]
 ]
 \end{forest}
+\end{minipage}
