@@ -9,26 +9,26 @@
 %	SECTION
 %----------------------------------------------------------------------------------------
 \section{Direct formulation of noise analysis} \label{direct_approach}
-The intention behind this study is to perform a flow field noise analysis in CFD without implementation of acoustical analogies to the CFD code itself. Moreover, very limited information on direct formulation of noise analysis was found during the research, with even fewer research on acoustical near field of transonic axial compressors or axial fans of twin spool jet engines.
+The intention behind this study is to perform a flow field noise analysis in CFD without implementation of acoustical analogies to the CFD code itself. Moreover, very limited information on direct formulation of noise analysis was found during the research, with even fewer research on acoustical nearfield of transonic axial compressors or axial fans of twin spool jet engines.
 
 The process for the direct formulation noise analysis is following:
 \begin{enumerate}
-\item Obtain raw flow field data of static pressure, velocity magnitude from CFD analysis.
-\item Perform averaging over time of pressure and velocity magnitude for each point or cell in the flow field (equation \ref{eq:avg}).
+\item Obtain raw flowfield data of static pressure, velocity magnitude from CFD analysis,
+\item Perform averaging over time of pressure and velocity magnitude for each point or cell in the flowfield (equation \ref{eq:avg}),
 \item Obtain offset from mean static pressure and velocity magnitude for every timestep for every point/cell in the saved flow field (equation \ref{eq:off}).		
 \end{enumerate}
 
 %The process purposely omits transformation of pressure to complex form and forces the analysis on direct signal as measured by a pressure sensor.
 
 \begin{equation} \label{eq:avg}
-\bar{p} = \frac{1}{n} \sum_{n=1}^{N} p_k \qquad and \qquad \bar{u} = \frac{1}{n} \sum_{n=1}^{N} u_k
+\bar{p} = \frac{1}{n} \sum_{n=1}^{N} p_k \qquad \text{and} \qquad \bar{u} = \frac{1}{n} \sum_{n=1}^{N} u_k
 \end{equation}
 
 \begin{equation} \label{eq:off}
-p_{n \; sound} = p_n - \bar{p} \qquad and \qquad u_{n \; particle} = u_n - \bar{u}
+p_{n \; sound} = p_n - \bar{p} \qquad \text{and} \qquad u_{n \; particle} = u_n - \bar{u}
 \end{equation}
 
-Sound pressure signal and flow velocity offset is obtained for every node or cell centroid throughout the simulation flowtime. This dataset can be now post processed. Dataset obtained in described manner now contains sound pressure of the flow field in every mesh node or cell centroid throughout the computational time. The dataset is now post processed to obtain quantity information of the acoustic nearfield. 
+Sound pressure signal and flow velocity offset is obtained for every node or cell centroid throughout the simulation flowtime. This dataset can be now post processed. Dataset obtained in described manner now contains sound pressure in the flowfield in every mesh node or cell centroid throughout the computational time. The dataset is now post processed to obtain quantity information of the acoustic nearfield. 
 
 Sound intensity for cells/nodes in fluid volume is calculated using formula \ref{eq:sil}. 
 
@@ -42,7 +42,7 @@ RMS sound pressure level and intensity level can be obtained from the respective
 p_{rms} = \sqrt{\frac{\sum_{n=1}^{N} p_{n \; sound}^{2}}{N}} \qquad I_{rms} = \sqrt{\frac{\sum_{n=1}^{N} u_{n \; particle}^{2}}{N}}
 \end{equation}
 
-Sound pressure decibel level (SPLdB) for time specific $p_{k \; sound}$ values and and RMS values $p_{rms}$ is computed using formula \ref{eq:SPLdB} with standard reference pressure $p_{ref} = 20 \mu Pa$, whereas for sound intensity with formula \ref{eq:SILdB} and with reference intensity $I_{ref} = 1 pW/m^{2}$.
+Sound pressure decibel level (SPLdB) for time specific $p_{k \; sound}$ values and RMS values $p_{rms}$ is computed using formula \ref{eq:SPLdB} with standard reference pressure $p_{ref} = 20 \mu Pa$, whereas for sound intensity with formula \ref{eq:SILdB} and with reference intensity $I_{ref} = 1 pW/m^{2}$.
 
 \begin{equation} \label{eq:SPLdB}
 SPLdB = 20 \cdot \log_{10}\left(\frac{|p_{n \; sound}|}{p_{ref}}\right)
@@ -52,7 +52,7 @@ SPLdB = 20 \cdot \log_{10}\left(\frac{|p_{n \; sound}|}{p_{ref}}\right)
 SILdB = 10 \cdot \log_{10}\left(\frac{|I_{n}|}{I_{ref}}\right)
 \end{equation}
 
-The signal obtained by direct approach is stored in discrete time samples, therefore using a continuous Fourier Transform would require approximation of the sampled signal to a continuous function, which for large datasets is unjustified. In order to obtain ordinary sinuses of the acoustic signal a Discrete Fourier Transform is performed (eq. \ref{eq:dft}).
+The signal obtained by direct approach is stored in discrete samples. Using a continuous Fourier Transform would require approximation of the sampled signal to a continuous function, which for large datasets is unjustified. In order to obtain ordinary sinuses of the acoustic signal a Discrete Fourier Transform is performed (eq. \ref{eq:dft}).
 
 \begin{equation} \label{eq:dft}
 X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-\frac{j2 \pi kn}{N}}
@@ -66,7 +66,7 @@ b_n = \frac{2 \pi k n}{N}
 
 Therefore, the equation \ref{eq:dft} can be written as:
 \begin{equation} \label{eq:dft2}
-X_k = x_{0} e^{-j b_{0}} + x_{1} e^{-j b_{1}} + x_{2} e^{-j b_{2}} + \ldots + x_{n} e^{-j b_{N-1}}
+X_k = x_{0} e^{-j b_{0}} + x_{1} e^{-j b_{1}} + x_{2} e^{-j b_{2}} + \ldots + x_{N-1} e^{-j b_{N-1}}
 \end{equation}
 
 Using Euler's identity the exponent is decomposed (eq. \ref{eq:euler}) to a complex sum:
@@ -78,7 +78,7 @@ e^{jx} = \cos(x) + j \cdot \sin(x)
 Therefore the equation \ref{eq:dft} can be written as:
 
 \begin{equation} \label{eq:dft3}
-X_k = x_0 [\cos(-b_{0}) + j \sin(-b_{0})] +  \ldots + x_n [\cos(-b_{N-1}) + j \sin(-b_{N-1})]
+X_k = x_0 [\cos(-b_{0}) + j \sin(-b_{0})] +  \ldots + x_{N-1} [\cos(-b_{N-1}) + j \sin(-b_{N-1})]
 \end{equation}
 
 Rearranging the equation \ref{eq:dft3} and summing up the real and imaginary components will return a complex vector $X_k$ for "k-th" frequency bin.
