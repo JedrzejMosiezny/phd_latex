@@ -108,9 +108,9 @@ Fourier coefficients are then used to compute the amplitude (eq. \ref{eq:dftmag}
 %	SECTION
 %-----------------------------------
 \section{CFD analysis requirements} \label{cfdreq}
-References \citep{Light1}, \citep{Light2}, \citep{FWH} and \citep{curle} provide a theoretical insight on generating sound in fluid flow due to shear mixing of flows or by implementing a solid boundary in the flow. General remark is: any source of turbulence that result in pressure fluctuation will result in generating sound. Therefore the main requirement for used CFD code for direct noise analysis is the capability of resolving turbulent flow and corresponding fluctuations of the pressure.
+References \citep{Light1}, \citep{Light2}, \citep{FWH} and \citep{curle} provide a theoretical insight on generating sound in fluid flow due to shear mixing of flows or by implementing a solid boundary in the flow. General remark is: any source of turbulence that result in pressure fluctuation will result in generating sound. Therefore the main requirement for CFD analysis used in direct approach noise analysis is the capability of resolving turbulent flow and corresponding fluctuations of pressure.
 
-Let's consider the effect of injection of energy to the fluid resulting in creation of eddies (Fig. \ref{CFDTypes})
+Let's consider the effect of injection of energy to the fluid resulting in creation of eddies (Fig. \ref{CFDTypes}). Once the energy is injected to the fluid, a large scale eddy is formed and due to the fluid viscosity the eddy dissipates along with the dissipation of energy up to the point where the particle movement is considered as heat. 
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
@@ -120,7 +120,7 @@ Let's consider the effect of injection of energy to the fluid resulting in creat
 \end{figure}
 
 \subsection{Govering equations} \label{goveq}
-Fluid flow as understood in CFD analyses is described by continuity (\ref{eq:cont}) and momentum (\ref{eq:momentum}) equations.
+Computational fluid dynamics is based upon two equations governing the motion and deformation of the fluid: the continuity (\ref{eq:cont}) and momentum (\ref{eq:momentum}) equations.
 
 \begin{equation} \label{eq:cont}
 \frac{\partial \rho}{\partial t} + \nabla (\rho U) = 0
@@ -130,10 +130,10 @@ Fluid flow as understood in CFD analyses is described by continuity (\ref{eq:con
 \frac{dU}{dt} = - \frac{1}{\rho} \nabla p + \nu \nabla^{2} U
 \end{equation}
 
-A number of special treatments to these equations is performed in order to obtain a solved flowfield at the end of the CFD workflow.
+In order to solve the governing equations in a computational grid, using a software system that is incapable of solving partial differential equations, a set of special treatments must be conducted to the equations. Problems regarding the formulation, discretization, preconditioning and solving the equations can be found in maly literature sources \citep{anderson_cfd}, \citep{versteeg_cfd}, \citep{fluenttheory}.
 
 \subsection{Direct Numerical Simulation} \label{DNS}
-Considering the direct formulation of noise, the Direct Numerical Simulation is seemingly the best tool of choice. The DNS formulation of flow solves directly the discrete form of Navier-Stokes Equation without any turbulence models. Size limit of the resolved eddies is the Kolmogorov limit (eq. \ref{eq:kolm}). In order to properly resolve the DNS simulation op to this scale, the mesh sizing must be at least as small as the expected Kolmogorov limit at given Reynolds number.
+Considering the direct formulation of noise, the Direct Numerical Simulation is seemingly the best tool of choice. The DNS formulation of flow solves directly the discrete form of Navier-Stokes Equation with direct resolving of turbulent flows. Size limit of the resolved eddies is the Kolmogorov limit (eq. \ref{eq:kolm}). In order to properly resolve the DNS simulation up to this scale, the mesh sizing must be at least as small as the expected Kolmogorov limit at given Reynolds number.
 
 \begin{equation} \label{eq:kolm}
 \eta \approx \frac{l}{Re^{3/4}}
@@ -157,7 +157,7 @@ c_f = 0.027 Re_x^{(-1/7)}
 
 For aspect ratio $L_z / L_x = 4$ and $Re_{x_0} = 5 \cdot 10^5$ the node count for streamwise $Re = 10^6$ is roughly $2.99 \cdot 10^{12}$ nodes and for $Re = 10^7$ is roughly $1.92 \cdot 10^{15}$ nodes.
 
-Such node and cell counts are impossible to solve within practical walltime, therefore usage of DNS for sound analysis is limited to small Reynolds numbers.
+Such node and cell counts are impossible to solve within practical walltime, therefore usage of DNS for sound analysis is limited to small ($10^3$)Reynolds numbers.
 
 %Figure \ref{kolmscale} shows the Kolmogorov limit and hence the volume mesh sizing required for the analysis. For Reynolds numbers above 1 million the limit is below $3.1 \cdot 10^{-5}$ meters, for $Re > 10^{7}$ the limit goes below $5.6 \cdot 10^{-6}$ meters. Use of such fine mesh elements generates mesh cell count in order of magnitude of billions for objects like a single passage of the compressor rotor, and hence is plainly impractical to use with high Reynolds numbers.
 
@@ -170,11 +170,11 @@ Such node and cell counts are impossible to solve within practical walltime, the
 
 
 \subsection{Large Eddy Simulation} \label{LES}
-Large eddy simulation (LES) is a mathematical model for turbulence used in computational fluid dynamics. It was initially proposed in 1963 by Joseph Smagorinsky to simulate atmospheric air currents \citep{LES1}.
+Large eddy simulation (LES) is a mathematical model for modeling turbulent flows used in computational fluid dynamics. It was initially proposed in 1963 by Joseph Smagorinsky to simulate atmospheric air currents \citep{LES1}.
 
-The principal idea behind LES is to reduce the computational cost by ignoring the smallest length scales, which are the most computationally expensive to resolve, via low-pass filtering of the Navier–Stokes equations. Such a low-pass filtering, which can be viewed as a time- and spatial-averaging, effectively removes small-scale information from the numerical solution. This information is not irrelevant, however, and its effect on the flow field must be modeled, a task which is an active area of research for problems in which small-scales can play an important role such as acoustics \citep{LES2}.
+The principal idea behind LES is to reduce the computational cost by ignoring the smallest length scales, which are the most computationally expensive to resolve, via low-pass filtering of the Navier–Stokes equations. Such a low-pass filtering, which can be viewed as a time- and spatial-averaging, effectively removes small-scale information from the numerical solution. This information is not irrelevant, however, and its effect on the flow field must be modeled, a task which is an active area of research for problems in which small-scales can play an important role, such as acoustics \citep{LES2}.
 
-The governing equations employed for LES are obtained by filtering the time dependent Navier-Stokes equations in either Fourier (wave-number) space or configuration (physical) space. The filtering process effectively filters out the eddies whose scales are smaller than the filter width or grid spacing used in the computations. The resulting equations therefore govern the dynamics of large eddies \citep{fluenttheory}.
+The governing equations employed for LES are obtained by filtering the time dependent Navier-Stokes equations in either Fourier (wave-number) space or configuration (physical) space. The filtering process effectively filters out the eddies whose scales are smaller than the filter width or grid spacing used in the computations. The resulting equations therefore governs the dynamics of large eddies \citep{fluenttheory}.
 
 A filtered variable is defined by:
 \begin{equation} \label{eq:lesfilter}
@@ -255,7 +255,7 @@ Equation \ref{eq:lescompsub} is split into its isotropic and deviatoric parts:
 \tau_{ij} - \frac{1}{3} \tau_{kk} \delta_{ij} = -2 \mu_{t} \left( S_{ij} - \frac{1}{3} S_{kk} \delta_{ij} \right)
 \end{equation}
 
-Using LES approach is viable for resolving directly formulated noise, yet the computational cost of such calculations is still relatively large due to mesh sizing requirements. As stated by \citep{LES_size} the required node count for the analysis can be described by formulas \ref{eq:leswm} and \ref{eq:leswr} for modeled and resolved boundary layers.
+Using LES approach is viable for resolving directly formulated noise, yet the computational cost of such calculations is still relatively large due to mesh sizing requirements. As stated by \citep{LES_size} the required node count for the analysis can be described by formulas \ref{eq:leswm} and \ref{eq:leswr} for modeled and resolved boundary layers respectively.
 
 \begin{equation} \label{eq:leswm}
 N_{wm} = 54.7 \frac{L_z}{L_x} n_x n_y n_z Re^{2/7}_{L_x} \left[ \left( \frac{Re_{L_x}}{Re_{x_0}} \right)^{(5/7)} - 1\right]
@@ -273,10 +273,12 @@ Node count for $Re = 10^6$ is roughly $1.82 \cdot 10^{7}$ nodes for modelled and
 
 It must be noted that provided cell count is solely for a flow box of boundary layer width. Respective mesh sizing should be propagated towards volume of the computational domain thus enlarging the mesh even further.
 
-LES analyses are commonly used in research and engineering and the method used is feasible for the direct noise formulation. However the computational expense of running such cases is high, but manageable. Second limiting factor for LES is the amount of data generated during the process. As the direct approach requires storing at least every second time step for further processing, terabytes of data are predicted.
+LES analyses are commonly used in research and engineering and the method used is feasible for the direct noise formulation. The computational expense of the LES analysis is high, although manageable. It must be noted, that at time of performing this study the resources to carry out the analysis of that king were unavailable to the author. Second limiting factor for LES is the amount of data generated during the process. As the direct approach requires storing at least every second time step for further processing, terabytes of data are predicted.
 
 \subsection{Reynolds Averaged Navier Stokes} \label{RANS}
-The most computationally efficient method for resolving turbulent flows is using Reynolsds Averaged Navier Stokes equation. Consider a conservation variable $\phi$ of fluid described by spatial and temporal variables. The quantity may be decomposed to a sum of time averaged value in given spatial coordinates and time dependent fluctuations (eq. \ref{eq:rdecomp}).
+The most computationally efficient method for resolving turbulent flows is using Reynolsds Averaged Navier Stokes equation.
+
+Consider a conservation variable $\phi$ of fluid described by spatial and temporal variables. The quantity may be decomposed to a sum of time averaged value in given spatial coordinates and time dependent fluctuations (eq. \ref{eq:rdecomp}).
 
 %\begin{equation} \label{eq:NS}
 %\rho \left(\frac{\partial u_i}{\partial t} + u_j \frac{\partial u_i}{x_j} \right) = - \frac{\partial p}{\partial x_j} + \mu \frac{\partial^2 u_i}{\partial x_j \partial x_j} + \frac{\mu}{3} \frac{\partial^2 u_j}{\partial x_i \partial x_j} + \rho g_i
@@ -327,7 +329,7 @@ Components 1, 3 and 4 of the above equation are treated in the same manner as th
 The decomposition of component 2 from the equation \ref{eq:mom_decomp1} requires multiplication of the components within the braces and performing Reynolds averaging on each of the products: 
 
 \begin{equation} \label{eq:mom_comp2_avg}
-\underbrace{\overline {\left( \left( \overline{u_j} + u'_j \right) + \frac{\partial \left( \overline{u_i} + u'_i \right)}{\partial x_j} \right)}}_\text{2}
+\underbrace{\overline {\left( \left( \overline{u_j} + u'_j \right) \cdot \frac{\partial \left( \overline{u_i} + u'_i \right)}{\partial x_j} \right)}}_\text{2}
 = \underbrace{\overline{\left( \overline{u_j} \frac{\partial \overline{u_i}}{\partial x_j} \right)}}_\text{M $\cdot$ M $\neq$ 0}
 + \underbrace{\overline{\left( \overline{u_j} \frac{\partial u'_i}{\partial x_j} \right)}}_\text{M $\cdot$ F = 0}
 + \underbrace{\overline{\left( u'_j \frac{\partial \overline{u_i}}{\partial x_j} \right)}}_\text{F $\cdot$ M = 0}
@@ -338,7 +340,7 @@ The F $\cdot$ F $\neq$ 0 product can be further simplified by equation:
 
 \begin{equation} \label{eq:ff}
 \frac{\partial u'_j u'_i}{\partial x_j}
-= \underbrace{u'_j \frac{\partial u'_j}{\partial x_j}}_\text{= 0}
+= \underbrace{u'_i \frac{\partial u'_j}{\partial x_j}}_\text{= 0}
 + \underbrace{u'_j \frac{\partial u'_i}{\partial x_j}}_\text{F $\cdot$ F $\neq$ 0}
 \end{equation}
 
@@ -366,12 +368,14 @@ By representing the viscous terms as a stress tensor (eq. \ref{eq:viscous}) we o
 + \frac{1}{\rho} \frac{\partial}{\partial x_j} \left[ \tau_{ij} - \rho \overline{u'_i u'_j} \right]
 \end{equation}
 
-The $\rho \overline{u'_i u'_j}$ term can be further transformed to Reynolds stress tensor linked to shear stress. The remaining fluctuating component is then modeled rather than resolved, by one of many turbulence model based on Bousinessque theory.
+The $\rho \overline{u'_i u'_j}$ term can be further transformed to Reynolds stress tensor linked to shear stress.
+
+The remaining fluctuating component is then modeled rather than resolved, by one of many turbulence model based on Bousinessque theory.
 
 \subsection{Hybrid RANS/LES Methods}
 At first, the concepts of Reynolds Averaging and Spatial Filtering seem incompatible, as they result in different additional terms in the momentum equations (Reynolds Stresses and sub-grid stresses). This would preclude hybrid models like Scale-Adaptive Simulation (SAS), Detached Eddy Simulation (DES), Shielded DES (SDES), or Stress-Blended Eddy Simulation (SBES), which are based on one set of momentum equations throughout the RANS and LES portions of the domain. However, it is important to note that once a turbulence model is introduced into the momentum equations, they no longer carry any information concerning their derivation (averaging). Case in point is that the most popular models, both in RANS and LES, are eddy viscosity models that are used to substitute either the Reynolds- or the sub-grid stress tensor. After the introduction of an eddy viscosity (turbulent viscosity), both the RANS and LES momentum equations are formally identical. The difference lies exclusively in the size of the eddy-viscosity provided by the underlying turbulence model. This allows the formulation of turbulence models that can switch from RANS to LES mode, by lowering the eddy viscosity in the LES zone appropriately, without any formal change to the momentum equations \citep{fluenttheory}.
 
-For further calculations, Delayed Detached Eddy Simulation with $SST k-\omega$ model was chosen. In the DES approach, the unsteady RANS models are employed in the boundary layer, while the LES treatment is applied to the separated regions. The LES region is normally associated with the core turbulent region where large unsteady turbulence scales play a dominant role. In this region, the DES models recover LES-like subgrid models. In the near-wall region, the respective RANS models are recovered \citep{fluenttheory}.
+For further calculations, Delayed Detached Eddy Simulation with $k-\omega \, SST$ model was chosen. In the DES approach, the unsteady RANS models are employed in the boundary layer, while the LES treatment is applied to the separated regions. The LES region is normally associated with the core turbulent region where large unsteady turbulence scales play a dominant role. In this region, the DES models recover LES-like subgrid models. In the near-wall region, the respective RANS models are recovered \citep{fluenttheory}.
 
 Formulation of DES is the development of the Spalart-Allmaras turbulence model for RANS formulation \citep{desspalart}, therefore the theoretical formulations are derived from the S-A model.
 
@@ -433,7 +437,7 @@ By replacing the $d$ in the S-A destruction term (eq. \ref{eq:SAYnu}) with $\til
 
 \noindent a single model is obtained, acting as RANS with S-A turbulence modeling in regions where $d \ll \Delta$ and with LES behavior where $d \gg \Delta$. Grid spacing $\Delta$ is defined as the largest dimension of the computational cell $\Delta \equiv \text{max}\left( \Delta x, \Delta y, \Delta z\right)$.  In case of an ambiguous grid definition, where $\Delta < \delta$ the DES limiter can activate the LES mode inside the boundary layer, where the grid is not fine enough to sustain resolved turbulence. Therefore, a new formulation \citep{ddesspalart} of DES is available to preserve the RANS mode throughout the boundary layer. This is known as the delayed option or DDES for delayed DES \citep{fluenttheory}.
 
-DES and DDES methods can be used with other RANS turbulence models. Further analyses presented in this thesis use a $k-\omega SST$ model. For hybrid model the dissipation of turbulent kinetic energy is modified:
+DES and DDES methods can be used with other RANS turbulence models. Further analyses presented in this thesis use a $k-\omega \, SST$ model. For hybrid model the dissipation of turbulent kinetic energy is modified:
 
 \begin{equation} \label{eq:deskoYk}
 Y_k = \rho \beta^{*} k \omega F_{DES}
@@ -445,13 +449,13 @@ Y_k = \rho \beta^{*} k \omega F_{DES}
 F_{DES} = \text{max}\left( \frac{L_t}{C_{DES} \Delta_{max}}\left( 1-F_{SST} \right), 1 \right)
 \end{equation}
 
-\noindent where $C_{DES}$ is a calibration constant used in the DES model and has a value of 0.61, with $F_{SST} = 0, F_1, F_2$ where $F_1$ and $F_2$ are the blending functions of  the Baseline and $SST k-\omega$ model. The turbulent length scale is the parameter that defines this RANS model:
+\noindent where $C_{DES}$ is a calibration constant used in the DES model and has a value of 0.61, with $F_{SST} = 0, F_1, F_2$ where $F_1$ and $F_2$ are the blending functions of  the Baseline and $k-\omega \, SST$ model. The turbulent length scale is the parameter that defines this RANS model:
 
 \begin{equation} \label{eq:deskoFdes2}
 F_{DES} = \text{max}\left( \frac{L_t}{C_{DES} \Delta_{max}}, 1 \right)
 \end{equation}
 
-The $F_{DDES}$ blending function is given by equation \ref{eq:deskoFdes2} with model constants $C_{d1} = 20$, $C_{d2} = 3$ and $r_d$ as defined by eq. \ref{eq:deskord}:
+The $F_{DDES}$ blending function is given by equation \ref{eq:deskoFdes2} with model constants \mbox{$C_{d1} = 20$}, \mbox{$C_{d2} = 3$} and $r_d$ as defined by eq. \ref{eq:deskord}:
 
 \begin{equation} \label{eq:deskoFddes}
 F_{DDES} = \tanh \left[ \left( C_{d1} r_{d1} \right)^{C_{d2}} \right]
@@ -465,7 +469,7 @@ r_d = \frac{\nu_t + \nu}{\kappa^2 y^2 \sqrt{0.5 \left( S^2 + \Omega^2 \right)}}
 %	SECTION
 %-----------------------------------
 \section{Mesh sizing requirements} \label{meshsize}
-Let's assume a sinusoidal pressure fluctuation $y(t)$ (equation \ref{eq:sine}) of ordinary frequency of $f$ and amplitude $A$ moving through ambient medium, for more than 5 cycles at speed of sound \ref{eq:sos}. The mathematical and numerical methods for solving flow field described in section above are capable of computing such pressure fluctuation in a fine resolution mesh. 
+Let's assume a sinusoidal pressure fluctuation $y(t)$ (eq. \ref{eq:sine}) of ordinary frequency of $f$ and amplitude $A$, moving through ambient medium for more than 5 cycles at speed of sound (eq. \ref{eq:sos}). The mathematical and numerical methods for solving flow field described in section above are capable of computing such pressure fluctuation in a computational mesh of relevant resolution. 
 
 \begin{equation} \label{eq:sine}
 y(t) = A \sin(2 \pi f t + \phi)
@@ -475,16 +479,16 @@ y(t) = A \sin(2 \pi f t + \phi)
 a = \sqrt{\kappa R T}
 \end{equation}
 
-Both cell size and time step size are limited by the wave length, and therefore frequency of the discussed pressure fluctuation. The wavelength is calculated by formula \ref{eq:wl}.
+Cell size and time step size are limited by the wave length, and therefore frequency of the discussed pressure fluctuation. The wavelength is calculated by formula \ref{eq:wl}.
 
 \begin{equation} \label{eq:wl}
 \lambda = \frac{v}{f}
 \end{equation}
 
-Considered fluctuation travels through the finite volumes in the stationary CFD mesh. Pressure value is measured at the cell center for each timestep. At this stage, it is assumed that timestep is "good enough" for the analysis. Four possibilities are to be discussed 
+Considered fluctuation travels through the finite volumes (that is: CFD mesh cells) in the stationary CFD mesh. Pressure value is measured at the cell centroid for each timestep. At this stage, it is assumed that timestep is of relevant resolution for the analysis, the mesh is isotropic in $x$, $y$ and $z$ directions and that the propagation has only one directional component. Four possibilities are considered.
 
 %\begin{itemize}
-\textbf{Scenario 1:} wavelength is smaller than the edge length of the cell in the direction of propagation. In this condition, the pressure fluctuation performs a number of cycles within one cell (Fig. \ref{scen1}). Due to the numerical approach, such fluctuation will not be computed and recorded by data acquisition at the cell centroid or at node coordinates.
+\textbf{Scenario 1:} wavelength is smaller than the edge length of the cell in the direction of propagation. In this condition, the pressure fluctuation performs a number of cycles within one cell (Fig. \ref{scen1}). Due to the numerical approach, such fluctuation will be filtered out.
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
@@ -502,7 +506,7 @@ Considered fluctuation travels through the finite volumes in the stationary CFD 
 \label{scen2}
 \end{figure}
 
-\textbf{Scenario 3:} wavelength is equal to 4 minimum cell lengths in the direction of propagation. This is the minimum cell size condition for discussed approach. In this condition, the pressure fluctuation performs one cycle within four cells in the direction of the fluctuation propagation (Fig. \ref{scen3}). FVM method is now capable of computing the pressure resulting from sound wave propagation.
+\textbf{Scenario 3:} wavelength is equal to 4 cell edge lengths. This is the minimum cell size condition for proposed approach. In this condition, the pressure fluctuation performs one cycle within four cells in the direction of the fluctuation propagation (Fig. \ref{scen3}). FVM method is now capable of computing the pressure fluctuations resulting from sound wave propagation.
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
@@ -511,7 +515,7 @@ Considered fluctuation travels through the finite volumes in the stationary CFD 
 \label{scen3}
 \end{figure}
 
-\textbf{Scenario 4:} wavelength is larger than 4 minimum cell edge lengths. In this condition, the pressure fluctuation performs one cycle within multiple cells in the direction of the fluctuation propagation (Fig. \ref{scen4}). FVM method computes pressure from the sound wave propagation across multiple cells.
+\textbf{Scenario 4:} wavelength is larger than 4 cell edge lengths. In this condition, the pressure fluctuation performs one cycle within multiple cells in the direction of the fluctuation propagation (Fig. \ref{scen4}). FVM method computes pressure from the sound wave propagation across multiple cells.
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
@@ -521,19 +525,7 @@ Considered fluctuation travels through the finite volumes in the stationary CFD 
 \end{figure}
 %\end{itemize}
 
-Based on these possibilities, the edge sizing of the finite volume cell should be at least four times smaller than the shortest wavelength expected in the flow field.
-
-As there is no information on the pressure fluctuations in the flow field, the range of the further analyses will be limited to audible range of 20Hz to 20 000Hz. The wavelengths are calculated by formula \ref{eq:wl} and divided by four to obtain the required cell sizing. The velocity of sound obtained by equation \ref{eq:sos} with reference temperature $T = 300K$. The results for outermost sound frequencies of the audible range are presented in table \ref{tab:meshsize}
-
-\begin{table}[htb!]
-\centering
-\caption{Test case boundary conditions} \label{tab:meshsize}
-\begin{tabular}{ | r | l | l | } \hline
-Frequency [Hz] & Wave length [m] & Cell size [m] \\ \hline \hline
-20 & 17.390 & 4.347  \\ \hline
-20 000 & 0.01739 & 0.004347 \\ \hline
-\end{tabular}
-\end{table}
+Based on these possibilities, the edge sizing of the finite volume cell should be at least four times smaller than the shortest wavelength expected in the flowfield.
 
 %----------------------------------------------------------------------------------------
 %	SECTION
@@ -541,7 +533,7 @@ Frequency [Hz] & Wave length [m] & Cell size [m] \\ \hline \hline
 \section{Timestep requirements} \label{timestepsize}
 There are two limiting factors for timestep requirements. The high frequency signal is limited by the timestep size, whereas the low frequencies are limited to the total number of timesteps and physical flow time calculated. The timestep size is calculated first.
 
-Once sizing of the mesh is established, time at which the fluctuation passes the cell is established by simple formula \ref{eq:vel2}. Distance $s$ is the cell edge sizing, obtained as in section \ref{meshsize} and the relation between cell size and wave length is presented in equation \ref{eq:dist}.
+Once mesh cell sizing is established, time at which the fluctuation passes the cell is established by simple formula \ref{eq:vel2}. Distance $s$ is the cell edge sizing, obtained as in section \ref{meshsize} and the relation between cell size and wavelength is presented in equation \ref{eq:dist}.
 
 \begin{equation} \label{eq:vel2}
 a = \frac{s}{t}
@@ -563,7 +555,7 @@ By rearranging the equation \ref{eq:vel2} to solve for $t$ and substituting $\la
 t = \frac{s}{a} = \frac{\lambda}{4a} = \frac{a}{f} \cdot \frac{1}{4a} = \frac{1}{4f}
 \end{equation}
 
-Time step $t$ becomes also a sampling frequency for the pressure signal therefore it must be compared with the requirements stated by Shannon-Nyquist-Whitaker theorem: \textit{If a function x(t) contains no frequencies higher than B hertz, it is completely determined by giving its ordinates at a series of points spaced 1/(2B) seconds apart.} Presented time stepping approach fulfills that theorem.
+Time step $t$ must comply with the requirements of the FFT analysis occurring further in the process as it becomes the minimum sampling time for the sound pressure signal. Therefore it must be compared with the requirements stated by Shannon-Nyquist-Whitaker theorem: \textit{If a function x(t) contains no frequencies higher than B hertz, it is completely determined by giving its ordinates at a series of points spaced 1/(2B) seconds apart.}
 
 Equation \ref{eq:mintime} shows that time step for the analysis is dependent from the expected value of high frequency fluctuations. %Four scenarios can be discussed.
 
@@ -604,7 +596,7 @@ Equation \ref{eq:mintime} shows that time step for the analysis is dependent fro
 %\end{figure}
 %\end{itemize}
 
-In order to capture frequencies on the low end of the spectrum, the analysis must be performed long enough to capture at least a single, with optimum 5 or more periods, of the desired low frequency. Assuming lower end of the audible frequency spectrum, the 20Hz frequency, the simulation time must resemble at least 0.05s of flow time with optimum 0.25s of flow time at given timestep.
+In order to capture frequencies on the low end of the spectrum, the analysis must be performed long enough to capture at least a single, with optimum 5 or more fluctuations of the desired low frequency. Assuming lower end of the audible frequency spectrum, the 20Hz frequency, the simulation time must resemble at least 0.05s of flowtime with optimum 0.25s of flowtime at given timestep.
 
 
 %----------------------------------------------------------------------------------------

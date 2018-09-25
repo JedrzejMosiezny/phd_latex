@@ -7,6 +7,11 @@
 {\em Prometheus HPC maunual}, 2018.
 \newblock https://kdm.cyfronet.pl/portal/Prometheus.
 
+\bibitem{anderson_cfd}
+J.~D. Anderson.
+\newblock {\em Computational Fluid Dynamics}.
+\newblock McGraw-Hill, Inc., 1995.
+
 \bibitem{fwhaiaa}
 K.~S. Brentner and F.~Farassat.
 \newblock An analytical comparison of the acoustic analogy and kirchhoff
@@ -103,6 +108,12 @@ D.~C. Urasek, W.~T. Gorrel, and W.~S. Cunnan.
 \newblock Performance of a two-stage fan having a low-aspect-ratio, first-stage
   rotor blading.
 \newblock Technical Report TP-1493, NASA Langley Research Center, 1979.
+
+\bibitem{versteeg_cfd}
+H.~K. Versteeg and W.~Malalasekera.
+\newblock {\em An introduction to Computational Fluid Dynamics: The Finite
+  Volume Method}.
+\newblock Longman Scientific \& Technical, 1995.
 
 \bibitem{LES2}
 C.~Wagner, T.~Hüttl, and P.~Sagaut.
