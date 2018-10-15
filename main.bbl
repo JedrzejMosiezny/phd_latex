@@ -1,5 +1,17 @@
 \begin{thebibliography}{10}
 
+\bibitem{annex16}
+International standards and recommended practices. annex 16 to the convention
+  on international civil aviation. environmental protection. volume i. aircraft
+  noise.
+\newblock Technical report, ICAO, 2011.
+
+\bibitem{eurocontrol}
+7-year ifr flight movements and service units forecast: 2013-2019, 2012.
+
+\bibitem{growth_2013}
+Challenges of growth 2013 task 4: European air traffic in 2035, 2013.
+
 \bibitem{fluenttheory}
 {\em ANSYS Documentation. Fluent Theory Guide}, 2015.
 
@@ -11,6 +23,16 @@
 J.~D. Anderson.
 \newblock {\em Computational Fluid Dynamics}.
 \newblock McGraw-Hill, Inc., 1995.
+
+\bibitem{dahlquist}
+A.~Bjork and G.~Dahlquist.
+\newblock {\em Numerical Methods}.
+\newblock Prentice-Hall, 1974.
+
+\bibitem{bracewell_num}
+R.~Bracewell.
+\newblock {\em The Fourier Transform and Its Applications}.
+\newblock McGraw-Hill, Inc., 1965.
 
 \bibitem{fwhaiaa}
 K.~S. Brentner and F.~Farassat.
@@ -39,7 +61,7 @@ W.~S. Cunnan, W.~Stevans, and D.~C. Urasek.
 
 \bibitem{curle}
 N.~Curle.
-\newblock The influence of solid boundaries upon aerodynamic sound.
+\newblock The influence of solid boundaries upon aerodynamic~sound.
 \newblock {\em Proceedings of the Royal Society. Series A, Mathematical,
   Physical and Engineering Sciences}, 231(1187):505--514, September 1955.
 \newblock http://rspa.royalsocietypublishing.org/content/231/1187/505.
@@ -53,6 +75,11 @@ J.~D. Durrant and J.~H. Lovrinic.
 J.~O. Hinze.
 \newblock {\em Turbulence}.
 \newblock McGraw-Hill Publishing Co., 1975.
+
+\bibitem{ERCD}
+J.~B. Lee, D.~Edmonds, and D.~Rhodes.
+\newblock Ercd report 1101. noise exposure contours for heathrow airport 2010.
+\newblock Technical report, CAA, 2011.
 
 \bibitem{Light1}
 M.~J. Lighthill.
@@ -119,6 +146,12 @@ H.~K. Versteeg and W.~Malalasekera.
 C.~Wagner, T.~Hüttl, and P.~Sagaut.
 \newblock {\em Large-Eddy Simulation for Acoustics}.
 \newblock Cambridge University Press, 2007.
+
+\bibitem{jm_stat}
+I.~Wieczorek and J.~Mosiężny.
+\newblock Development of air transport in statistical terms.
+\newblock {\em Journal of Mechanical and Transport Engineering}, 66(1):51--68,
+  2013.
 
 \bibitem{FWH}
 J.~E.~F. Williams and D.~L. Hawkings.
