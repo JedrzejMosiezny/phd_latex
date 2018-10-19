@@ -76,6 +76,17 @@ J.~O. Hinze.
 \newblock {\em Turbulence}.
 \newblock McGraw-Hill Publishing Co., 1975.
 
+\bibitem{methods}
+D.~L. Huff.
+\newblock Noise reduction technologies for turbofan engines.
+\newblock Technical Report NASA/TM—2007-214495, NASA Glenn Research Center,
+  2007.
+
+\bibitem{tonal}
+R.~King.
+\newblock Part ii: Turbomachinery.
+\newblock In {\em Active Flow Control II}, pages 134--210, 2010.
+
 \bibitem{ERCD}
 J.~B. Lee, D.~Edmonds, and D.~Rhodes.
 \newblock Ercd report 1101. noise exposure contours for heathrow airport 2010.
@@ -105,6 +116,11 @@ J.~Mosiezny.
 T.~Oetkier, H.~Partl, I.~Hyba, and E.~Schleg.
 \newblock {\em The Not So Short Introduction to LATEX 2e}, 2018.
 \newblock https://tobi.oetiker.ch/lshort/lshort.pdf.
+
+\bibitem{combustion}
+A.~Schwarz and J.~Janicka.
+\newblock {\em Combustion Noise}.
+\newblock Springer Science and Business Media, 2009.
 
 \bibitem{LES1}
 J.~Smagorinsky.
