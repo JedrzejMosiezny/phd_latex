@@ -59,21 +59,45 @@ Sound wave like patterns on blade suction surface in the supersonic region requi
 %-----------------------------------
 \subsection{Quantitative analysis} \label{rms_res_quant}
 
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu tempus 1venenatis, dolor elit posuere quam, quis adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor. Phasellus fermentum magna in augue gravida cursus. Cras sed pretium lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu neque.
+A brief quantitative analysis is performed on obtained datasets. RMS sound pressure level obtained from direct approach analysis is compared with RANS flowfield data related to turbulence. As described in chapters \ref{CAA} and  \ref{approach}, the aerodynamically generated sound has its source in turbulence occurring in the flow.
+
+A Pearson correlation coefficient is calculated between flowfield values describing turbulence and RMS sound pressure level. Pearson correlation coefficient is chosen, due to its rather general utilization in establishing the correlation between the two datasets. The data is organized in the same manner as in previous computations, that is on internal surfaces and blade surfaces and compared pointwise for each surface. Value $\rho$ of the correlation coefficient is computed using the formula \ref{eq:pearson1}:
+
+\begin{equation} \label{eq:pearson1}
+\rho_{X, Y} = \frac{cov \left( X, Y \right)}{\sigma_x \sigma_y}
+\end{equation}
+
+\noindent As the populations X and Y are discrete, the covariance of $X$ and $Y$ can be expressed as:
+
+\begin{equation} \label{eq:cov1}
+\text{cov}_{X, Y} = \frac{1}{n} \sum_{i=1}^{n} \left(x_i - E \left( X \right) \right)\cdot \left(y_i - E \left( Y \right) \right)
+\end{equation}
+
+\noindent where $E(X)$ and $E(Y)$ are the expected values of populations $X$ and $Y$ respectively, defined as:
+
+\begin{equation} \label{eq:exp1}
+E \left[ X \right] = \sum_{i=1}^{k} x_i p_i \quad E \left[ Y \right] = \sum_{i=1}^{k} y_i p_i
+\end{equation}
+
+\noindent where: $x_i$ and $y_i$ is the i-th value of the population $X$ and $Y$ respectively, $p_i$ is the probability of the value occurring. As this probability for given population is equal for all values, the expected value of this population is equal to the arithmetic mean of the population.
+
+Calculated correlation between values of: vorticity magnitude, turbulent kinetic energy, specific dissipation rate, turbulent viscosity, turbulence intensity and RMS SPL values are shown in figures \ref{spl_corr_int} for internal surfaces and \ref{spl_corr_blade} for blade surfaces.
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
 \includegraphics[width=0.85\textwidth]{Pictures/spl_pearson_int.png}
-\caption{SPL to flowfield turbulence values correlation}
+\caption{SPL to flowfield turbulence values correlation. Internal surfaces.}
 \label{spl_corr_int}
 \end{figure}
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
 \includegraphics[width=0.85\textwidth]{Pictures/spl_pearson_blade.png}
-\caption{SPL to flowfield turbulence values correlation}
+\caption{SPL to flowfield turbulence values correlation. Blade surfaces.}
 \label{spl_corr_blade}
 \end{figure}
+
+No significant correlation between turbulent values and RMS sound pressure level has been found. Turbulent intensity correlation coefficient for int-01 surface is of value 0.6, however this tendency is not valid for other surfaces. Coefficient for turbulent viscosity is somewhat consistent throughout the surfaces, yet value oscillating around 0.3 shows little correlation between the values.
 
 %-----------------------------------
 %	SECTION
@@ -136,13 +160,13 @@ Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar p
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
 \includegraphics[width=0.85\textwidth]{Pictures/awf_pearson_int.png}
-\caption{SPL to flowfield turbulence values correlation}
+\caption{AWF to flowfield turbulence values correlation. Internal surfaces.}
 \label{awf_corr_int}
 \end{figure}
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
 \includegraphics[width=0.85\textwidth]{Pictures/awf_pearson_blade.png}
-\caption{SPL to flowfield turbulence values correlation}
+\caption{AWF to flowfield turbulence values correlation. Blade surfaces.}
 \label{awf_corr_blade}
 \end{figure}
