@@ -1,70 +1,64 @@
 \select@language {english}
 \contentsline {chapter}{Declaration of Authorship}{iii}{dummy.1}
+\vspace {0em}
 \contentsline {chapter}{Abstract}{v}{dummy.2}
 \vspace {0em}
 \contentsline {chapter}{Acknowledgements}{vii}{dummy.3}
 \vspace {0em}
 \contentsline {chapter}{Contents}{ix}{dummy.4}
-\contentsline {chapter}{List of Figures}{xiii}{dummy.6}
-\contentsline {chapter}{List of Tables}{xvii}{dummy.8}
-\contentsline {chapter}{Abbreviations}{xix}{dummy.10}
-\contentsline {chapter}{Symbols}{xxi}{dummy.13}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.16}
-\contentsline {section}{\numberline {1.1}Introduction and motivation}{1}{section.17}
-\contentsline {section}{\numberline {1.2}Growth of air traffic movements in early 20th century}{2}{section.18}
-\contentsline {subsection}{\numberline {1.2.1}Years 2000 -- 2010}{3}{subsection.19}
-\contentsline {subsection}{\numberline {1.2.2}Years 2010 -- 2035}{4}{subsection.26}
-\contentsline {section}{\numberline {1.3}Some excerpts from airworthiness regulations}{6}{section.29}
-\contentsline {subsection}{\numberline {1.3.1}CAEP regulations}{8}{subsection.30}
-\contentsline {subsection}{\numberline {1.3.2}ICAO Annex 16}{8}{subsection.31}
-\contentsline {subsection}{\numberline {1.3.3}Local regulations}{10}{subsection.37}
-\contentsline {section}{\numberline {1.4}Aircraft propulsion noise generation}{13}{section.42}
-\contentsline {chapter}{\numberline {2}Current research on Computational Aeroacoustics}{15}{chapter.45}
-\contentsline {section}{\numberline {2.1}Classification of CAA methods}{15}{section.46}
-\contentsline {section}{\numberline {2.2}Lighthill-Curle theory of aerodynamic sound}{16}{section.57}
-\contentsline {section}{\numberline {2.3}FW-H Analogy}{18}{section.72}
-\contentsline {section}{\numberline {2.4}Limitations to acoustic analogies}{21}{section.81}
-\contentsline {chapter}{\numberline {3}Approach and direct formulation of noise analysis}{23}{chapter.82}
-\contentsline {section}{\numberline {3.1}Direct formulation of noise analysis}{23}{section.83}
-\contentsline {section}{\numberline {3.2}CFD analysis requirements}{25}{section.102}
-\contentsline {subsection}{\numberline {3.2.1}Govering equations}{26}{subsection.104}
-\contentsline {subsection}{\numberline {3.2.2}Direct Numerical Simulation}{26}{subsection.107}
-\contentsline {subsection}{\numberline {3.2.3}Large Eddy Simulation}{27}{subsection.112}
-\contentsline {subsection}{\numberline {3.2.4}Reynolds Averaged Navier Stokes}{30}{subsection.127}
-\contentsline {subsection}{\numberline {3.2.5}Hybrid RANS/LES Methods}{32}{subsection.139}
-\contentsline {section}{\numberline {3.3}Mesh sizing requirements}{34}{section.153}
-\contentsline {section}{\numberline {3.4}Timestep requirements}{37}{section.161}
-\contentsline {section}{\numberline {3.5}Limiting factors of the direct approach}{38}{section.166}
-\contentsline {chapter}{\numberline {4}Test case}{39}{chapter.167}
-\contentsline {section}{\numberline {4.1}NASA Rotor 67 transonic axial compressor}{39}{section.168}
-\contentsline {section}{\numberline {4.2}3D geometry preparation}{40}{section.171}
-\contentsline {section}{\numberline {4.3}Meshing approach}{41}{section.173}
-\contentsline {chapter}{\numberline {5}CFD Analysis}{47}{chapter.186}
-\contentsline {section}{\numberline {5.1}Case preprocessing}{47}{section.187}
-\contentsline {section}{\numberline {5.2}Flowfield initialization \& RANS}{48}{section.191}
-\contentsline {section}{\numberline {5.3}DDES analysis}{50}{section.196}
-\contentsline {section}{\numberline {5.4}Validation of the results}{52}{section.201}
-\contentsline {chapter}{\numberline {6}Results of flow field noise analysis}{55}{chapter.205}
-\contentsline {section}{\numberline {6.1}Transition from flow-field to sound signal data}{55}{section.206}
-\contentsline {section}{\numberline {6.2}Sound levels results}{55}{section.207}
-\contentsline {subsection}{\numberline {6.2.1}Results postprocessing}{55}{subsection.208}
-\contentsline {subsection}{\numberline {6.2.2}Qualitative analysis}{56}{subsection.209}
-\contentsline {subsection}{\numberline {6.2.3}Quantitative analysis}{57}{subsection.211}
-\contentsline {section}{\numberline {6.3}Frequency analysis results}{58}{section.214}
-\contentsline {subsection}{\numberline {6.3.1}Results postprocessing}{58}{subsection.215}
-\contentsline {subsection}{\numberline {6.3.2}Qualitative analysis}{60}{subsection.219}
-\contentsline {subsection}{\numberline {6.3.3}Quantitative analysis}{61}{subsection.220}
-\contentsline {chapter}{\numberline {7}Conclusions \& Further work}{63}{chapter.223}
-\contentsline {section}{\numberline {7.1}Results discussion}{63}{section.224}
-\contentsline {section}{\numberline {7.2}Improvements to the method}{64}{section.225}
-\contentsline {section}{\numberline {7.3}Further work}{65}{section.226}
-\contentsline {section}{\numberline {7.4}Closing remarks}{66}{section.227}
-\contentsline {chapter}{\numberline {A}RMS values plots}{67}{appendix.228}
-\contentsline {chapter}{\numberline {B}FFT plots}{95}{appendix.257}
-\contentsline {chapter}{\numberline {C}CFD validation}{125}{appendix.287}
-\contentsline {chapter}{\numberline {D}Code for direct formulation of noise analysis}{137}{appendix.300}
-\contentsline {chapter}{\numberline {E}Folder Structure}{139}{appendix.376}
-\contentsline {chapter}{\numberline {F}Code for RMS computation}{141}{appendix.377}
-\contentsline {chapter}{\numberline {G}Code for discrete Fourier analysis}{143}{appendix.415}
-\contentsline {chapter}{\numberline {H}Blade design surface coordinates}{145}{appendix.449}
-\contentsline {chapter}{Bibliography}{159}{dummy.464}
+\contentsline {chapter}{List of Figures}{xi}{dummy.6}
+\contentsline {chapter}{List of Tables}{xiii}{dummy.8}
+\contentsline {chapter}{Abbreviations}{xv}{dummy.10}
+\contentsline {chapter}{Symbols}{xvii}{dummy.13}
+\contentsline {chapter}{Indices}{xix}{dummy.16}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.19}
+\contentsline {section}{\numberline {1.1}Introduction and motivation}{1}{section.20}
+\contentsline {section}{\numberline {1.2}Growth of air traffic movements in early 20th century}{2}{section.21}
+\contentsline {subsection}{\numberline {1.2.1}Years 2000 -- 2010}{3}{subsection.22}
+\contentsline {subsection}{\numberline {1.2.2}Years 2010 -- 2035}{4}{subsection.29}
+\contentsline {section}{\numberline {1.3}Some excerpts from airworthiness regulations}{6}{section.32}
+\contentsline {subsection}{\numberline {1.3.1}CAEP regulations}{8}{subsection.33}
+\contentsline {subsection}{\numberline {1.3.2}ICAO Annex 16}{8}{subsection.34}
+\contentsline {subsection}{\numberline {1.3.3}Local regulations}{10}{subsection.40}
+\contentsline {section}{\numberline {1.4}Aircraft propulsion noise generation}{13}{section.45}
+\contentsline {chapter}{\numberline {2}Current research on Computational Aeroacoustics}{17}{chapter.50}
+\contentsline {section}{\numberline {2.1}Classification of CAA methods}{17}{section.51}
+\contentsline {section}{\numberline {2.2}Lighthill-Curle theory of aerodynamic sound}{18}{section.62}
+\contentsline {section}{\numberline {2.3}FW-H Analogy}{20}{section.77}
+\contentsline {section}{\numberline {2.4}Limitations to acoustic analogies}{23}{section.86}
+\contentsline {chapter}{\numberline {3}Approach and direct formulation of noise analysis}{25}{chapter.87}
+\contentsline {section}{\numberline {3.1}Direct formulation of noise analysis}{25}{section.88}
+\contentsline {section}{\numberline {3.2}CFD analysis requirements}{27}{section.107}
+\contentsline {subsection}{\numberline {3.2.1}Govering equations}{28}{subsection.109}
+\contentsline {subsection}{\numberline {3.2.2}Direct Numerical Simulation}{28}{subsection.112}
+\contentsline {subsection}{\numberline {3.2.3}Large Eddy Simulation}{29}{subsection.117}
+\contentsline {subsection}{\numberline {3.2.4}Reynolds Averaged Navier Stokes}{32}{subsection.132}
+\contentsline {subsection}{\numberline {3.2.5}Hybrid RANS/LES Methods}{34}{subsection.144}
+\contentsline {section}{\numberline {3.3}Mesh sizing requirements}{36}{section.158}
+\contentsline {section}{\numberline {3.4}Timestep requirements}{39}{section.166}
+\contentsline {section}{\numberline {3.5}Limiting factors of the direct approach}{40}{section.171}
+\contentsline {chapter}{\numberline {4}Test case}{41}{chapter.172}
+\contentsline {section}{\numberline {4.1}NASA Rotor 67 transonic axial compressor}{41}{section.173}
+\contentsline {section}{\numberline {4.2}3D geometry preparation}{42}{section.176}
+\contentsline {section}{\numberline {4.3}Meshing approach}{43}{section.178}
+\contentsline {chapter}{\numberline {5}CFD Analysis}{49}{chapter.191}
+\contentsline {section}{\numberline {5.1}Case preprocessing}{49}{section.192}
+\contentsline {section}{\numberline {5.2}Flowfield initialization \& RANS}{50}{section.196}
+\contentsline {section}{\numberline {5.3}DDES analysis}{52}{section.201}
+\contentsline {section}{\numberline {5.4}Validation of the results}{54}{section.206}
+\contentsline {chapter}{\numberline {6}Results of flow field noise analysis}{57}{chapter.210}
+\contentsline {section}{\numberline {6.1}Transition from flow-field to sound signal data}{57}{section.211}
+\contentsline {section}{\numberline {6.2}Sound levels results}{57}{section.212}
+\contentsline {subsection}{\numberline {6.2.1}Results postprocessing}{57}{subsection.213}
+\contentsline {subsection}{\numberline {6.2.2}Qualitative analysis}{58}{subsection.214}
+\contentsline {subsection}{\numberline {6.2.3}Quantitative analysis}{59}{subsection.216}
+\contentsline {section}{\numberline {6.3}Frequency analysis results}{60}{section.219}
+\contentsline {subsection}{\numberline {6.3.1}Results postprocessing}{60}{subsection.220}
+\contentsline {subsection}{\numberline {6.3.2}Qualitative analysis}{62}{subsection.224}
+\contentsline {subsection}{\numberline {6.3.3}Quantitative analysis}{63}{subsection.225}
+\contentsline {chapter}{\numberline {7}Conclusions \& Further work}{65}{chapter.228}
+\contentsline {section}{\numberline {7.1}Results discussion}{65}{section.229}
+\contentsline {section}{\numberline {7.2}Improvements to the method}{66}{section.230}
+\contentsline {section}{\numberline {7.3}Further work}{67}{section.231}
+\contentsline {section}{\numberline {7.4}Closing remarks}{68}{section.232}
+\contentsline {chapter}{Bibliography}{69}{dummy.233}

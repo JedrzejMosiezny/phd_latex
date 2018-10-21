@@ -127,7 +127,7 @@
 
 \Declaration{
 
-%\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+\addtocontents{toc}{\vspace{0em}} % Add a gap in the Contents, for aesthetics
 
 I, \authornames, declare that this thesis titled, '\ttitle' and the work presented in it are my own. I confirm that:
 
@@ -222,19 +222,48 @@ A big recognition goes to the owners and maintainers of the PLGRID - Polish HPC 
 
 \clearpage % Start a new page
 
-\setstretch{1.5} % Set the line spacing to 1.5, this makes the following tables easier to read
+\setstretch{1.0} % Set the line spacing to 1.5, this makes the following tables easier to read
 
 \lhead{\emph{Abbreviations}} % Set the left side page header to "Abbreviations"
 \listofsymbols{ll} % Include a list of Abbreviations (a table of two columns)
 {
+\textbf{APU} & \textbf{A}uxillary \textbf{P}ower \textbf{U}nit \\
+\textbf{BPF} & \textbf{B}lade \textbf{P}assing \textbf{F}requency \\
 \textbf{CAA} & \textbf{C}omputional \textbf{A}ero \textbf{A}coustics \\
+\textbf{CAEP} & \textbf{C}ommitee on \textbf{A}ircraft \textbf{E}ngine \textbf{E}missions\\
+\textbf{CDA} & \textbf{C}ontinuous \textbf{D}escent \textbf{A}pproach \\
 \textbf{CFD} & \textbf{C}omputional \textbf{F}luid \textbf{D}ynamics \\
+\textbf{CS} & \textbf{C}oordinate \textbf{S}ystem \\
 \textbf{DDES} & \textbf{D}elayed \textbf{D}etached \textbf{E}ddy \textbf{S}imulation \\
 \textbf{DES} & \textbf{D}etached \textbf{E}ddy \textbf{S}imulation \\
+\textbf{DFT} & \textbf{D}iscrete \textbf{F}ourier \textbf{T}ransform \\
+\textbf{DNS} & \textbf{D}irecr \textbf{N}umerical \textbf{S}ituation \\
+\textbf{EPNdB} & \textbf{E}ffective \textbf{P}erceived \textbf{N}oise \textbf{dB} \\
+\textbf{FMG} & \textbf{F}ull \textbf{M}ulti \textbf{G}rid \\
+\textbf{FVM} & \textbf{F}inite \textbf{V}olume \textbf{M}ethod \\
+\textbf{FWH} & \textbf{F}fowcks \textbf{W}illiams \textbf{H}awkings \\
 \textbf{HPC} & \textbf{H}ight \textbf{P}ower \textbf{C}omputing \\
+\textbf{HVAC} & \textbf{H}eating \textbf{V}entilation \textbf{A}ir \textbf{C}onditioning\\
+\textbf{ICAO} & \textbf{I}nternational \textbf{C}ivil \textbf{A}viation \textbf{O}rganization\\
+\textbf{IFR} & \textbf{I}nstrumental \textbf{F}light \textbf{R}rules \\
+\textbf{ILU} & \textbf{I}ncomplete \textbf{L}ower \textbf{U}pper \\
+\textbf{LDA} & \textbf{L}aser \textbf{D}oppler \textbf{A}nemometry \\
 \textbf{LES} & \textbf{L}arge \textbf{E}ddy \textbf{S}imulation \\
+\textbf{MCA} & \textbf{M}ultiple \textbf{C}ircular \textbf{A}pproach \\
+\textbf{MTOW} & \textbf{M}aximum \textbf{T}ake \textbf{O}ff \textbf{W}eight\\
 \textbf{N-S} & \textbf{N}avier \textbf{S}tokes \\
+\textbf{PISO} & \textbf{P}ressure \textbf{I}mplicit with \textbf{S}plitting of \textbf{O}perators\\
+\textbf{RANS} & \textbf{R}eynolds \textbf{A}veraged \textbf{N}navier \textbf{S}tokes\\
+\textbf{RMS} & \textbf{R}oot \textbf{M}ean \textbf{S}quare \\
+\textbf{S-A} & \textbf{S}pallart \textbf{A}llmaras \\
+\textbf{SAS} & \textbf{S}cale \textbf{A}daptive \textbf{S}imulation \\
+\textbf{SBES} & \textbf{S}tress \textbf{B}lended \textbf{E}ddy \textbf{S}imulation \\
+\textbf{SDES} & \textbf{S}hielded \textbf{D}etached \textbf{E}ddy \textbf{S}imulation \\
+\textbf{SGS} & \textbf{S}ub \textbf{G}rid \textbf{S}cale \\
+\textbf{SPLdB} & \textbf{S}ound \textbf{P}ressure \textbf{L}evel \textbf{dB} \\
+\textbf{SILdB} & \textbf{S}ound \textbf{I}intensity \textbf{L}evel \textbf{dB} \\
 \textbf{SRS} & \textbf{S}cale \textbf{R}resolving \textbf{S}imulation \\
+\textbf{SST} & \textbf{S}hear \textbf{S}tress \textbf{T}ransport \\
 
 %\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
 %\textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
@@ -264,13 +293,94 @@ A big recognition goes to the owners and maintainers of the PLGRID - Polish HPC 
 
 \listofnomenclature{lll} % Include a list of Symbols (a three column table)
 {
-$a$ & distance & m \\
-$P$ & power & W (Js$^{-1}$) \\
+$Amp$ & Amplitude & -\\
+$C_p$ & Specific heat at constant pressure & -\\
+$Co$ & Courant number & -\\
+$G$ & Filter function & -\\
+$M$ & Moll weight & -\\
+$Ma$ & Mach number & -\\
+$N$ & Total number of samples & -\\
+$H(f)$ & Heaviside function & -\\
+$P_{i}$ & Dipole acoustical strength & Pa\\
+$P_{ij}$ & Compression stress tensor & -\\
+$Q(x, t)$ & Mass introduced to system & kg\\
+$R$ & Gas constant & J/(kg $\cdot$ K) \\
+$Re$ & Reynolds number & -\\
+$S$ & Discontinuity surface & -\\
+$S_{ij}$ & Rate of Strain Tensor & -\\
+$T$ & Temeprature & K \\
+$T_{ij}$ & Lighthill stress tensor & -\\
+$U$ & Velocity vector & -\\
+$V$ & Integration volume & -\\
+$X$ & DFT complex coefficient & -\\
+$a$ & Speed of sound & m/s \\
+$d$ & Mesh wall spacing & m \\
+$e$ & Euler's number & - \\
+$f$ & Frequency & - \\
+$j$ & Imaginary number & - \\
+$k$ & k-th frequency bin & -\\
+$k$ & turbulence kinetic energy & -\\
+$n$ & Normal vector, n-th sample, number of blades, number of cells & -\\
+$p$ & Pressure & Pa \\
+$q(t)$ & Mass introduction rate & kg/s \\
+$r$ & Radiation vector & m \\
+$\Delta s$ & Mesh first layer thickness & m \\
+$t$ & Time & s\\
+$u, v, w$ & Velocity component & m/s \\
+$x, y, z$ & Distance over coordinate, location coordinate & m\\
+% Symbol & Name & Unit \\
+\clearpage
+%& & \\ % Gap to separate the Roman symbols from the Greek
+$\Delta$ & Mesh wall spacing (Spalart-Allmaras)& m\\
+$\Sigma$ & Surface of discontinuity & -\\
+$\delta$ & Mesh wall spacing (Spalart-Allmaras)& m \\
+$\delta_{ij}$, $\delta(f)$ & Dirac delta & - \\
+$\eta$ & Kolmogorov limit & - \\
+$\theta$ & Phase shift & rad\\
+$\kappa$ & Polytropic index & - \\
+$\lambda$ & Wavelength & m \\
+$\lambda$ & Heat conductivity coefficient & W/(m $\cdot$ K) \\
+$\phi$ & Conservation variable & - \\
+$\phi '$ & Variable offset from average & - \\
+$\bar{\phi}$ & Filtered variable (LES derivation) & - \\
+$\bar{\phi}$ & Averaged variable (direct approach) & - \\ 
+$\mu$ & Dynamic viscosity & Pa $\cdot$ s \\
+$\mu_t$ & Turbulent viscosity & Pa $\cdot$ s \\
+$\nu$ & Kinematic viscosity &  $m^2$/s \\
+$\tilde{\nu}$ & Modified turbulent viscosity &  $m^2$/s \\ 
+$\rho$ & Density & kg/m$^3$ \\
+$\sigma_{ij}$ & Molecular viscosity stress tensor & - \\
+$\tau$ & Retarded time & s \\
+$\tau_{ij}$ & Subgrid scale tensor & s \\
+$\omega$ & Angular frequency & rads$^{-1}$ \\
+$\omega$ & Turbulence specific dissipation rate & - \\
+% Symbol & Name & Unit \\
+}
+
+%----------------------------------------------------------------------------------------
+\clearpage % Start a new page
+
+\lhead{\emph{Indices}} % Set the left side page header to "Symbols"
+
+\listofindices{lll} % Include a list of Symbols (a three column table)
+{
+$0$ & initial, ambient conditions & -\\
+$fric$ & denotes friction component & -\\
+$i, j$ & summation indices & - \\
+$k$ & k-th sample, frequency bin & -\\
+$n$ & normal direction & -\\
+$r$ & radiation direction & -\\
+$particle$ & denotes particle specific value & -\\
+$ref$ & denotes reference value & -\\
+$sound$ & denotes sound value & -\\
+$wall$ & denotes near wall component & -\\
+$wm$ & wall modeled & -\\
+$wr$ & wall resolved & -\\
+$x, y, z$ & value in direction of coordinate & m\\
 % Symbol & Name & Unit \\
 
 & & \\ % Gap to separate the Roman symbols from the Greek
-
-$\omega$ & angular frequency & rads$^{-1}$ \\
+%$\Sigma$ & surface of discontinuity & -\\
 % Symbol & Name & Unit \\
 }
 
@@ -316,14 +426,14 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
 
-\input{Appendices/Appendix_rmsresults}
-\input{Appendices/Appendix_fftresults}
-\input{Appendices/Appendix_cfdresults}
-\input{Appendices/Appendix_direct}
-\input{Appendices/Appendix_folders}
-\input{Appendices/Appendix_rms}
-\input{Appendices/Appendix_fft}
-\input{Appendices/Appendix_coords}
+%\input{Appendices/Appendix_rmsresults}
+%\input{Appendices/Appendix_fftresults}
+%\input{Appendices/Appendix_cfdresults}
+%\input{Appendices/Appendix_direct}
+%\input{Appendices/Appendix_folders}
+%\input{Appendices/Appendix_rms}
+%\input{Appendices/Appendix_fft}
+%\input{Appendices/Appendix_coords}
 
 %\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 

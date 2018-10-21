@@ -25,7 +25,7 @@ The process for the direct formulation noise analysis is following:
 \end{equation}
 
 \begin{equation} \label{eq:off}
-p_{n \; sound} = p_n - \bar{p} \qquad \text{and} \qquad u_{n \; particle} = u_n - \bar{u}
+p_{k \; sound} = p_k - \bar{p} \qquad \text{and} \qquad u_{k \; particle} = u_k - \bar{u}
 \end{equation}
 
 Sound pressure signal and flow velocity offset is obtained for every node or cell centroid throughout the simulation flowtime. This dataset can be now post processed. Dataset obtained in described manner now contains sound pressure in the flowfield in every mesh node or cell centroid throughout the computational time. The dataset is now post processed to obtain quantity information of the acoustic nearfield. 
@@ -33,23 +33,23 @@ Sound pressure signal and flow velocity offset is obtained for every node or cel
 Sound intensity for cells/nodes in fluid volume is calculated using formula \ref{eq:sil}. 
 
 \begin{equation} \label{eq:sil}
-I_{n} = p_{n \; sound} \cdot u_{n \; particle}
+I_{k} = p_{k \; sound} \cdot u_{k \; particle}
 \end{equation}
 
 RMS sound pressure level and intensity level can be obtained from the respective data with use of the formula \ref{eq:RMS}.
 
 \begin{equation} \label{eq:RMS}
-p_{rms} = \sqrt{\frac{\sum_{n=1}^{N} p_{n \; sound}^{2}}{N}} \qquad I_{rms} = \sqrt{\frac{\sum_{n=1}^{N} u_{n \; particle}^{2}}{N}}
+p_{rms} = \sqrt{\frac{\sum_{n=1}^{N} p_{k \; sound}^{2}}{N}} \qquad I_{rms} = \sqrt{\frac{\sum_{n=1}^{N} u_{k \; particle}^{2}}{N}}
 \end{equation}
 
 Sound pressure decibel level (SPLdB) for time specific $p_{k \; sound}$ values and RMS values $p_{rms}$ is computed using formula \ref{eq:SPLdB} with standard reference pressure $p_{ref} = 20 \mu Pa$, whereas for sound intensity with formula \ref{eq:SILdB} and with reference intensity $I_{ref} = 1 pW/m^{2}$.
 
 \begin{equation} \label{eq:SPLdB}
-SPLdB = 20 \cdot \log_{10}\left(\frac{|p_{n \; sound}|}{p_{ref}}\right)
+SPLdB = 20 \cdot \log_{10}\left(\frac{|p_{k \; sound}|}{p_{ref}}\right)
 \end{equation}
 
 \begin{equation} \label{eq:SILdB}
-SILdB = 10 \cdot \log_{10}\left(\frac{|I_{n}|}{I_{ref}}\right)
+SILdB = 10 \cdot \log_{10}\left(\frac{|I_{k}|}{I_{ref}}\right)
 \end{equation}
 
 The signal obtained by direct approach is stored in discrete samples. Using a continuous Fourier Transform would require approximation of the sampled signal to a continuous function, which for large datasets is unjustified. In order to obtain ordinary sinuses of the acoustic signal a Discrete Fourier Transform is performed (eq. \ref{eq:dft}).
@@ -402,7 +402,7 @@ G_{\nu} = C_{b1} \rho \tilde{S} \tilde{\nu}
 Y_{\nu} = C_{wq} \rho f_{w} \left(\frac{\tilde{\nu}}{d} \right)^2
 \end{equation}
 
-Where $d$ is the length scale calculated as the distance to the closest wall and $\tilde{S}$ being the measure of deformation tensor:
+\noindent where $d$ is the length scale calculated as the distance to the closest wall and $\tilde{S}$ being the measure of deformation tensor:
 
 \begin{equation} \label{eq:SAdeform}
 \tilde{S} \equiv S + \frac{\tilde{\nu}}{\kappa^2 d^2} f_{v2}
@@ -539,7 +539,7 @@ Once mesh cell sizing is established, time at which the fluctuation passes the c
 a = \frac{s}{t}
 \end{equation}
 
-Where
+\noindent where
 
 \begin{equation} \label{eq:time}
 t = \frac{1}{f}

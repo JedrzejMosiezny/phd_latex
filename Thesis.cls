@@ -449,6 +449,19 @@
 \begin{longtable}[c]{#1}#2\end{longtable}\par
     \cleardoublepage
 }
+%%%% New stuff
+\newcommand\listindices{Indices}
+\usepackage{longtable}
+\newcommand\listofindices[2]{
+\btypeout{\listindices}
+\addtotoc{\listindices}
+    \chapter*{\listindices
+      \@mkboth{
+          \MakeUppercase\listindices}{\MakeUppercase\listindices}}
+\begin{longtable}[c]{#1}#2\end{longtable}\par
+    \cleardoublepage
+}
+%%%%
 \newcommand\acknowledgements[1]{
 \btypeout{Acknowledgements}
 \addtotoc{Acknowledgements}
