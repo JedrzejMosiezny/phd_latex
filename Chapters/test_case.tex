@@ -85,19 +85,37 @@ Following requirements are posed to the mesh for the discussed case:
 \item[-]Possibly low number of elements fulfilling the mesh sizing requirements stated in chapter \ref{direct_approach},
 \item[-] Mesh should be a fully structural mesh including the tip gap,
 \item[-] The periodic boundary mesh must be identical/conforming for both boundaries,
-\item[-] The mesh must have high quality metrics in terms of cell orthogonality and skew as defined by equations \ref{eq:ortho} \& \ref{eq:skew} respectively.
+\item[-] The mesh must have high quality metrics in terms of cell orthogonality and skew.
 %\item The cell aspect ratio should be limited to 5000 as defined by equation \ref{eq:aspect} 
 \end{itemize}
 
+The orthogonal quality (or orhogonality) of the mesh is calculated as in equation \ref{eq:ortho}. The orthogonality value ranges from -1 to 1, where 1 denotes the best orthogonality, 0 -- a zero volume cell and -1 -- a cell with reversed normal direction or negative volume.
 
 \begin{equation} \label{eq:ortho}
 \text{Orthogonality} = \frac{\vec{A_i} \cdot \vec{f_i}}{|\vec{A_i}| \cdot |\vec{f_i}|}
 \end{equation}
 
+Schematic representation of vectors used for calculation of orthogonality are presented in figure \ref{ortho}.
 
-\begin{equation} \label{eq:skew}
-\text{Skewness} = \frac{\text{Optimal Cell Size} - \text{Cell Size}}{\text{Optimal Cell Size}}
-\end{equation}
+\begin{figure}[ht!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/Quality_Orthogonal_cell.png}
+\caption{Vectors Used to Compute Orthogonal Quality for a Cell}
+\label{ortho}
+\end{figure}
+
+For a hexahedral element, skewness is defined as the normalized worst angle between each of the 6 face normals and the vector defined by the centroid of the hexahedron and the center of the face.
+
+\begin{figure}[ht!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/skew.png}
+\caption{Vectors Used to Compute Orthogonal Quality for a Cell}
+\label{skew}
+\end{figure}
+
+%\begin{equation} \label{eq:skew}
+%\text{Skewness} = \frac{\text{Optimal Cell Size} - \text{Cell Size}}{\text{Optimal Cell Size}}
+%\end{equation}
 
 %\begin{equation} \label{eq:aspect}
 %Aspect Ratio = \frac{MinimumElementEdge}{MaximumElementEdge}
@@ -176,7 +194,7 @@ int-tip & 100\% span \\
 \end{tabular}
 \end{table}
 
-Figure \ref{mesh-ortho} provides overview of mesh quality defined by equations \ref{eq:ortho} and \ref{eq:skew}. The quality of created mesh is sufficient for both RANS and DDES analyses (chapter \ref{cfd}). Final mesh reached c.a. 11.5 million cell count. Final mesh is presented in figure \ref{meshfinal} 
+Figure \ref{mesh-ortho} provides overview of mesh quality defined above. The quality of created mesh is sufficient for both RANS and DDES analyses (chapter \ref{cfd}). Final mesh reached c.a. 11.5 million cell count. Final mesh is presented in figure \ref{meshfinal} 
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu

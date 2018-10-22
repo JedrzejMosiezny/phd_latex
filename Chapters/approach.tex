@@ -408,7 +408,7 @@ Y_{\nu} = C_{wq} \rho f_{w} \left(\frac{\tilde{\nu}}{d} \right)^2
 \tilde{S} \equiv S + \frac{\tilde{\nu}}{\kappa^2 d^2} f_{v2}
 \end{equation}
 
-\noindent where:
+\noindent where $C_{b1}$ and $\kappa$ are model constants and $S$ is the scalar measure of deformation tensor:
 
 \begin{equation} \label{eq:SAdeform2}
 S \equiv \lvert \Omega_{ij} \rvert + C_{prod} \text{min} \left(0, \lvert S_{ij} \rvert - \lvert \Omega_{ij} \rvert \right)
@@ -443,7 +443,7 @@ DES and DDES methods can be used with other RANS turbulence models. Further anal
 Y_k = \rho \beta^{*} k \omega F_{DES}
 \end{equation}
 
-\noindent where:
+\noindent where $\beta^{*}$ is the model constant, and:
 
 \begin{equation} \label{eq:deskoFdes}
 F_{DES} = \text{max}\left( \frac{L_t}{C_{DES} \Delta_{max}}\left( 1-F_{SST} \right), 1 \right)
@@ -533,10 +533,10 @@ Based on these possibilities, the edge sizing of the finite volume cell should b
 \section{Timestep requirements} \label{timestepsize}
 There are two limiting factors for timestep requirements. The high frequency signal is limited by the timestep size, whereas the low frequencies are limited to the total number of timesteps and physical flow time calculated. The timestep size is calculated first.
 
-Once mesh cell sizing is established, time at which the fluctuation passes the cell is established by simple formula \ref{eq:vel2}. Distance $s$ is the cell edge sizing, obtained as in section \ref{meshsize} and the relation between cell size and wavelength is presented in equation \ref{eq:dist}.
+Once mesh cell sizing is established, time at which the fluctuation passes the cell is established by simple formula \ref{eq:vel2}. Distance $r$ is the cell edge sizing, obtained as in section \ref{meshsize} and the relation between cell size and wavelength is presented in equation \ref{eq:dist}.
 
 \begin{equation} \label{eq:vel2}
-a = \frac{s}{t}
+a = \frac{r}{t}
 \end{equation}
 
 \noindent where
@@ -546,13 +546,13 @@ t = \frac{1}{f}
 \end{equation}
 
 \begin{equation} \label{eq:dist}
-s = \frac{\lambda}{4}
+r = \frac{\lambda}{4}
 \end{equation}
 
 By rearranging the equation \ref{eq:vel2} to solve for $t$ and substituting $\lambda$ by \ref{eq:wl} we obtain:
 
 \begin{equation} \label{eq:mintime}
-t = \frac{s}{a} = \frac{\lambda}{4a} = \frac{a}{f} \cdot \frac{1}{4a} = \frac{1}{4f}
+t = \frac{r}{a} = \frac{\lambda}{4a} = \frac{a}{f} \cdot \frac{1}{4a} = \frac{1}{4f}
 \end{equation}
 
 Time step $t$ must comply with the requirements of the FFT analysis occurring further in the process as it becomes the minimum sampling time for the sound pressure signal. Therefore it must be compared with the requirements stated by Shannon-Nyquist-Whitaker theorem: \textit{If a function x(t) contains no frequencies higher than B hertz, it is completely determined by giving its ordinates at a series of points spaced 1/(2B) seconds apart.}

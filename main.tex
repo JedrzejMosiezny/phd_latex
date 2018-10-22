@@ -293,6 +293,7 @@ A big recognition goes to the owners and maintainers of the PLGRID - Polish HPC 
 
 \listofnomenclature{lll} % Include a list of Symbols (a three column table)
 {
+$A_i$ & Vector normal to cell wall at wall center & -\\
 $Amp$ & Amplitude & -\\
 $C_p$ & Specific heat at constant pressure & -\\
 $Co$ & Courant number & -\\
@@ -308,19 +309,20 @@ $R$ & Gas constant & J/(kg $\cdot$ K) \\
 $Re$ & Reynolds number & -\\
 $S$ & Discontinuity surface & -\\
 $S_{ij}$ & Rate of Strain Tensor & -\\
-$T$ & Temeprature & K \\
+$T$ & Temperature & K \\
 $T_{ij}$ & Lighthill stress tensor & -\\
 $U$ & Velocity vector & -\\
 $V$ & Integration volume & -\\
 $X$ & DFT complex coefficient & -\\
 $a$ & Speed of sound & m/s \\
 $d$ & Mesh wall spacing & m \\
-$e$ & Euler's number & - \\
+$e$ & Euler number & - \\
 $f$ & Frequency & - \\
+$f_i$ & Vector connecting cell centroid and cell wall center & - \\
 $j$ & Imaginary number & - \\
 $k$ & k-th frequency bin & -\\
-$k$ & turbulence kinetic energy & -\\
-$n$ & Normal vector, n-th sample, number of blades, number of cells & -\\
+$k$ & Turbulence kinetic energy & J/kg\\
+$n$ & Normal vector, n-th sample, blade count, cell count & -\\
 $p$ & Pressure & Pa \\
 $q(t)$ & Mass introduction rate & kg/s \\
 $r$ & Radiation vector & m \\
@@ -333,6 +335,7 @@ $x, y, z$ & Distance over coordinate, location coordinate & m\\
 %& & \\ % Gap to separate the Roman symbols from the Greek
 $\Delta$ & Mesh wall spacing (Spalart-Allmaras)& m\\
 $\Sigma$ & Surface of discontinuity & -\\
+$\Omega$ & Mean rate of rotation & - \\
 $\delta$ & Mesh wall spacing (Spalart-Allmaras)& m \\
 $\delta_{ij}$, $\delta(f)$ & Dirac delta & - \\
 $\eta$ & Kolmogorov limit & - \\
@@ -343,17 +346,18 @@ $\lambda$ & Heat conductivity coefficient & W/(m $\cdot$ K) \\
 $\phi$ & Conservation variable & - \\
 $\phi '$ & Variable offset from average & - \\
 $\bar{\phi}$ & Filtered variable (LES derivation) & - \\
-$\bar{\phi}$ & Averaged variable (direct approach) & - \\ 
+$\bar{\phi}$ & Averaged variable (direct approach) & - \\
+$\tilde{\phi}$ & Density weighted filtering operator (LES derivation) & - \\
 $\mu$ & Dynamic viscosity & Pa $\cdot$ s \\
 $\mu_t$ & Turbulent viscosity & Pa $\cdot$ s \\
 $\nu$ & Kinematic viscosity &  $m^2$/s \\
-$\tilde{\nu}$ & Modified turbulent viscosity &  $m^2$/s \\ 
+$\tilde{\nu}$ & Modified turbulent kinematic viscosity &  $m^2$/s \\ 
 $\rho$ & Density & kg/m$^3$ \\
 $\sigma_{ij}$ & Molecular viscosity stress tensor & - \\
 $\tau$ & Retarded time & s \\
 $\tau_{ij}$ & Subgrid scale tensor & s \\
 $\omega$ & Angular frequency & rads$^{-1}$ \\
-$\omega$ & Turbulence specific dissipation rate & - \\
+$\omega$ & Turbulence specific dissipation rate & 1/s \\
 % Symbol & Name & Unit \\
 }
 
@@ -366,7 +370,7 @@ $\omega$ & Turbulence specific dissipation rate & - \\
 {
 $0$ & initial, ambient conditions & -\\
 $fric$ & denotes friction component & -\\
-$i, j$ & summation indices & - \\
+$i, j, k$ & summation indices & - \\
 $k$ & k-th sample, frequency bin & -\\
 $n$ & normal direction & -\\
 $r$ & radiation direction & -\\
@@ -376,7 +380,7 @@ $sound$ & denotes sound value & -\\
 $wall$ & denotes near wall component & -\\
 $wm$ & wall modeled & -\\
 $wr$ & wall resolved & -\\
-$x, y, z$ & value in direction of coordinate & m\\
+$x, y, z$ & denotes direction of variable & m\\
 % Symbol & Name & Unit \\
 
 & & \\ % Gap to separate the Roman symbols from the Greek
