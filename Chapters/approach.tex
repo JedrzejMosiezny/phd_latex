@@ -21,7 +21,7 @@ The process for the direct formulation noise analysis is following:
 %The process purposely omits transformation of pressure to complex form and forces the analysis on direct signal as measured by a pressure sensor.
 
 \begin{equation} \label{eq:avg}
-\bar{p} = \frac{1}{n} \sum_{n=1}^{N} p_k \qquad \text{and} \qquad \bar{u} = \frac{1}{n} \sum_{n=1}^{N} u_k
+\bar{p} = \frac{1}{n} \sum_{k=1}^{N} p_k \qquad \text{and} \qquad \bar{u} = \frac{1}{n} \sum_{k=1}^{N} u_k
 \end{equation}
 
 \begin{equation} \label{eq:off}
@@ -39,7 +39,7 @@ I_{k} = p_{k \; sound} \cdot u_{k \; particle}
 RMS sound pressure level and intensity level can be obtained from the respective data with use of the formula \ref{eq:RMS}.
 
 \begin{equation} \label{eq:RMS}
-p_{rms} = \sqrt{\frac{\sum_{n=1}^{N} p_{k \; sound}^{2}}{N}} \qquad I_{rms} = \sqrt{\frac{\sum_{n=1}^{N} u_{k \; particle}^{2}}{N}}
+p_{rms} = \sqrt{\frac{\sum_{k=1}^{N} p_{k \; sound}^{2}}{N}} \qquad I_{rms} = \sqrt{\frac{\sum_{k=1}^{N} u_{k \; particle}^{2}}{N}}
 \end{equation}
 
 Sound pressure decibel level (SPLdB) for time specific $p_{k \; sound}$ values and RMS values $p_{rms}$ is computed using formula \ref{eq:SPLdB} with standard reference pressure $p_{ref} = 20 \mu Pa$, whereas for sound intensity with formula \ref{eq:SILdB} and with reference intensity $I_{ref} = 1 pW/m^{2}$.
