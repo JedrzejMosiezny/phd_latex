@@ -310,7 +310,7 @@ By taking the momentum equation \ref{eq:momentum}, switching to the index notati
 
 \begin{equation} \label{eq:mom_decomp1}
 \underbrace{\frac{\partial \left( \overline{u_i} + u'_i \right)}{\partial t}}_\text{1} 
-+ \underbrace{\left( \overline{u_j} + u'_j \right) \frac{\partial \left( \overline{u_j} + u'_j \right)}{\partial x_j}}_\text{2} 
++ \underbrace{\left( \overline{u_j} + u'_j \right) \frac{\partial \left( \overline{u_i} + u'_i \right)}{\partial x_j}}_\text{2} 
 =
 - \underbrace{\frac{1}{\rho} \frac{\partial \left( \overline{p} + p' \right)}{\partial x_i}}_\text{3} 
 + \underbrace{\nu \frac{\partial^2 \left( \overline{u_i} + u'_i \right)}{\partial x_j^2}}_\text{4} 
@@ -492,7 +492,7 @@ Considered fluctuation travels through the finite volumes (that is: CFD mesh cel
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.5\textwidth]{Pictures/placeholder.jpg}
+\includegraphics[width=0.85\textwidth]{Pictures/case1.png}
 \caption{Scenario 1. Wavelength smaller than cell edge length}
 \label{scen1}
 \end{figure}
@@ -501,7 +501,7 @@ Considered fluctuation travels through the finite volumes (that is: CFD mesh cel
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.5\textwidth]{Pictures/placeholder.jpg}
+\includegraphics[width=0.85\textwidth]{Pictures/case2.png}
 \caption{Scenario 2. Wavelength equal to cell edge length}
 \label{scen2}
 \end{figure}
@@ -510,7 +510,7 @@ Considered fluctuation travels through the finite volumes (that is: CFD mesh cel
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.5\textwidth]{Pictures/placeholder.jpg}
+\includegraphics[width=0.85\textwidth]{Pictures/case3.png}
 \caption{Scenario 3. Wavelength equal four minimum edge lengths}
 \label{scen3}
 \end{figure}
@@ -519,7 +519,7 @@ Considered fluctuation travels through the finite volumes (that is: CFD mesh cel
 
 \begin{figure}[h!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
-\includegraphics[width=0.5\textwidth]{Pictures/placeholder.jpg}
+\includegraphics[width=0.85\textwidth]{Pictures/case4.png}
 \caption{Scenario 4. Wavelength larger than four minimum edge lengths}
 \label{scen4}
 \end{figure}
@@ -611,6 +611,6 @@ It is advised to used a turbulence model that is capable of resolving small scal
 
 The range of frequencies captured by this method depends on the mesh sizing and timestep sizing. Therefore, if the range of expected frequencies is known or at least estimated, the mesh sizing and timestep size can be adjusted for the given case. For analysis within audible range, 4000 timesteps are required for one 20Hz period. Considering the mesh sizing requirements, the mesh cell count will rise up to tens of millions for a single passage axial compressor blade. This makes the case files and storing data for each timestep relatively challenging and requires securing adequate storage beforehand.
  
-A major limiting factor is the implementation of the direct noise formulation post-processing. For this thesis, the method was implemented in python v.3.5 high level programming language. Python code is written in C/C++ and provides a vast array of additional libraries for handling files, tabular data and performing mathematical operations. The code is presented in appendices to this dissertation. Although easy to implement, python code is known to be inefficient and slow while managing large amounts of data. Tools and algorithms used in implementing the averaging, obtaining sound pressure and particle velocity as well as DFT are build in tools from specific libraries. As convenient for the implementation, the post-processing code requires some amount of operational memory and disk space for generating the results.
+A major limiting factor is the implementation of the direct noise formulation post-processing. For this thesis, the method was implemented in Python v.3.5 high level programming language. Python programming language is written in C/C++ and provides a vast array of additional libraries for handling files, tabular data and performing mathematical operations. The code is presented in appendices to this dissertation. Although easy to implement, python code is known to be inefficient and slow while managing large amounts of data. Tools and algorithms used in implementing the averaging, obtaining sound pressure and particle velocity as well as DFT are build in tools from specific libraries. As convenient for the implementation, the post-processing code requires some amount of operational memory and disk space for generating the results.
 
 The programming language used for the post-processing of data must be capable of generating 2D and 3D plots for visualization purposes. Ideally the processed and visualized data should resemble the mesh from which the initial data was gathered.
