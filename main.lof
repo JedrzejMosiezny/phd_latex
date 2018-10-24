@@ -10,8 +10,8 @@
 \contentsline {figure}{\numberline {1.8}{\ignorespaces Total traffic in 2035 \citep {eurocontrol}\relax }}{7}{figure.caption.31}
 \contentsline {figure}{\numberline {1.9}{\ignorespaces CDA approach (solid line) vs. Standard approach (dash line)\relax }}{11}{figure.caption.41}
 \contentsline {figure}{\numberline {1.10}{\ignorespaces Heathrow noise contours. 83\% western \& 17\% eastern traffic \citep {ERCD}\relax }}{12}{figure.caption.42}
-\contentsline {figure}{\numberline {1.11}{\ignorespaces Sources of noise of a turbofan engine \citep {traub}\relax }}{14}{figure.caption.46}
-\contentsline {figure}{\numberline {1.12}{\ignorespaces Impact of aircraft noise sources at take-off and landing \citep {traub}\relax }}{14}{figure.caption.47}
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Turbofan engine acoustic emission sources \citep {traub}\relax }}{14}{figure.caption.46}
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Impact of aircraft noise sources at take-off and approach \citep {traub}\relax }}{14}{figure.caption.47}
 \contentsline {figure}{\numberline {1.13}{\ignorespaces Engine nacelle chevron on a GEnx engine\relax }}{15}{figure.caption.48}
 \contentsline {figure}{\numberline {1.14}{\ignorespaces Exemplary analysis on a chevron engine outlet \citep {methods}\relax }}{15}{figure.caption.49}
 \addvspace {10\p@ }
@@ -19,29 +19,29 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Resolving eddies in different kinds of CFD analyses\relax }}{28}{figure.caption.108}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Scenario 1. Wavelength smaller than cell edge length\relax }}{37}{figure.caption.162}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Scenario 2. Wavelength equal to cell edge length\relax }}{38}{figure.caption.163}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Scenario 3. Wavelength equal four minimum edge lengths\relax }}{38}{figure.caption.164}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Scenario 4. Wavelength larger than four minimum edge lengths\relax }}{38}{figure.caption.165}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Scenario 3. Wavelength equal four edge lengths\relax }}{38}{figure.caption.164}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Scenario 4. Wavelength larger than four edge lengths\relax }}{38}{figure.caption.165}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Geometry of NASA R67\relax }}{41}{figure.caption.174}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Final single passage geometry. Some features hidden for clarity\relax }}{44}{figure.caption.177}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Vectors Used to Compute Orthogonal Quality for a Cell\relax }}{45}{figure.caption.180}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Vectors Used to Compute Orthogonal Quality for a Cell\relax }}{45}{figure.caption.181}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Final single passage geometry (some features hidden for clarity)\relax }}{44}{figure.caption.177}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Vectors used to compute orthogonal quality for a cell\relax }}{45}{figure.caption.180}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Vectors used to compute skew quality for a cell\relax }}{45}{figure.caption.181}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Mesh topology with conforming periodic boundaries\relax }}{46}{figure.caption.182}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Mesh h-topology\relax }}{46}{figure.caption.183}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Mesh quality histogram\relax }}{48}{figure.caption.190}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Completed Mesh\relax }}{48}{figure.caption.191}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Flowchart of the PISO algorithm\relax }}{52}{figure.caption.203}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces PISO algorithm flowchart\relax }}{52}{figure.caption.203}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Constant pitch (left) and constant chord (right) lines \citep {r67laser}\relax }}{54}{figure.caption.208}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Inlet pressure validation\relax }}{55}{figure.caption.209}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Outlet pressure validation\relax }}{55}{figure.caption.210}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Tip gap streamlines. Velocity in [m/s]\relax }}{59}{figure.caption.216}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces SPL to flowfield turbulence values correlation. Internal surfaces.\relax }}{61}{figure.caption.221}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces SPL to flowfield turbulence values correlation. Blade surfaces.\relax }}{61}{figure.caption.222}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Exemplary FFT heatmap of magnitude. Random data.\relax }}{62}{figure.caption.225}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces AWF to flowfield turbulence values correlation. Internal surfaces.\relax }}{65}{figure.caption.230}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces AWF to flowfield turbulence values correlation. Blade surfaces.\relax }}{65}{figure.caption.231}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Tip gap streamlines with velocity in [m/s]\relax }}{59}{figure.caption.216}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces SPL to flowfield turbulence values correlation for internal surfaces\relax }}{61}{figure.caption.221}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces SPL to flowfield turbulence values correlation for blade surfaces\relax }}{61}{figure.caption.222}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Exemplary FFT heatmap of magnitude for random data\relax }}{62}{figure.caption.225}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces AWF to flowfield turbulence values correlation for internal surfaces\relax }}{65}{figure.caption.230}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces AWF to flowfield turbulence values correlation for blade surfaces\relax }}{65}{figure.caption.231}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {A.1}{\ignorespaces Blade surface RMS Sound pressure [Pa]\relax }}{73}{figure.caption.238}

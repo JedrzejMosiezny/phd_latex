@@ -72,7 +72,7 @@ Such approach allowed for creating a geometry for single blade passage with cent
 \begin{figure}[ht!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
 \includegraphics[width=0.85\textwidth]{Pictures/r67_geom.jpg}
-\caption{Final single passage geometry. Some features hidden for clarity}
+\caption{Final single passage geometry (some features hidden for clarity)}
 \label{geom_final}
 \end{figure}
 
@@ -89,7 +89,7 @@ Following requirements are posed to the mesh for the discussed case:
 %\item The cell aspect ratio should be limited to 5000 as defined by equation \ref{eq:aspect} 
 \end{itemize}
 
-The orthogonal quality (or orhogonality) of the mesh is calculated as in equation \ref{eq:ortho}. The orthogonality value ranges from -1 to 1, where 1 denotes the best orthogonality, 0 -- a zero volume cell and -1 -- a cell with reversed normal direction or negative volume.
+The orthogonal quality (or orthogonality) of the mesh is calculated as in equation \ref{eq:ortho}. The orthogonality value ranges from -1 to 1, where 1 denotes the best orthogonality, 0 -- a zero volume cell and -1 -- a cell with reversed normal direction or negative volume.
 
 \begin{equation} \label{eq:ortho}
 \text{Orthogonality} = \frac{\vec{A_i} \cdot \vec{f_i}}{|\vec{A_i}| \cdot |\vec{f_i}|}
@@ -100,7 +100,7 @@ Schematic representation of vectors used for calculation of orthogonality are pr
 \begin{figure}[ht!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
 \includegraphics[width=0.85\textwidth]{Pictures/Quality_Orthogonal_cell.png}
-\caption{Vectors Used to Compute Orthogonal Quality for a Cell}
+\caption{Vectors used to compute orthogonal quality for a cell}
 \label{ortho}
 \end{figure}
 
@@ -109,7 +109,7 @@ For a hexahedral element, skewness is defined as the normalized worst angle betw
 \begin{figure}[ht!]
 \centering % bo \centering nie wstawia dodatkowego odstępu
 \includegraphics[width=0.85\textwidth]{Pictures/skew.png}
-\caption{Vectors Used to Compute Orthogonal Quality for a Cell}
+\caption{Vectors used to compute skew quality for a cell}
 \label{skew}
 \end{figure}
 

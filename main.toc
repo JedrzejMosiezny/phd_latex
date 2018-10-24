@@ -67,6 +67,6 @@
 \contentsline {chapter}{\numberline {D}Code for direct formulation of noise analysis}{143}{appendix.309}
 \contentsline {chapter}{\numberline {E}Folder Structure}{145}{appendix.385}
 \contentsline {chapter}{\numberline {F}Code for RMS computation}{147}{appendix.386}
-\contentsline {chapter}{\numberline {G}Code for discrete Fourier analysis}{149}{appendix.424}
+\contentsline {chapter}{\numberline {G}Code for DFT computation}{149}{appendix.424}
 \contentsline {chapter}{\numberline {H}Blade design surface coordinates}{151}{appendix.458}
 \contentsline {chapter}{Bibliography}{165}{dummy.473}
