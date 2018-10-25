@@ -3,7 +3,7 @@
 \chapter{Approach and direct formulation of noise analysis} % Main chapter title
 \label{approach} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
-\lhead{\emph{Approach and direct formulation of noise analysis}} % Change X to a consecutive number; this is for the header on each page - perhaps a shortened title
+\fancyhead[RE, LO]{\emph{Approach and direct formulation of noise analysis}} % Change X to a consecutive number; this is for the header on each page - perhaps a shortened title
 
 %----------------------------------------------------------------------------------------
 %	SECTION
@@ -52,7 +52,7 @@ SPLdB = 20 \cdot \log_{10}\left(\frac{|p_{k \; sound}|}{p_{ref}}\right)
 SILdB = 10 \cdot \log_{10}\left(\frac{|I_{k}|}{I_{ref}}\right)
 \end{equation}
 
-The signal obtained by direct approach is stored in discrete samples. Using a continuous Fourier Transform would require approximation of the sampled signal to a continuous function, which for large datasets is unjustified. In order to obtain ordinary sinuses of the acoustic signal a Discrete Fourier Transform is performed (eq. \ref{eq:dft}).
+The signal obtained by direct approach is stored in discrete samples. A continuous Fourier Transform requires an approximation of the sampled signal to a continuous function, which for large datasets is unjustified. In order to obtain ordinary sinuses of the acoustic signal a Discrete Fourier Transform is performed (eq. \ref{eq:dft}).
 
 \begin{equation} \label{eq:dft}
 X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-\frac{j2 \pi kn}{N}}
@@ -84,7 +84,7 @@ X_k = x_0 [\cos(-b_{0}) + j \sin(-b_{0})] +  \ldots + x_{N-1} [\cos(-b_{N-1}) + 
 Rearranging the equation \ref{eq:dft3} and summing up the real and imaginary components will return a complex vector $X_k$ for "k-th" frequency bin.
 
 \begin{equation} \label{eq:complex}
-X_k = A_k + j B_{k}
+X_k = Real_k + j Img_{k}
 \end{equation}
  
 The frequency resolution of the DFT depends on the sampling frequency and number of samples, and is calculated by formula \ref{eq:samples}. 
@@ -96,11 +96,11 @@ f_{bin} = \frac{f_{s}}{N}
 Fourier coefficients are then used to compute the amplitude (eq. \ref{eq:dftmag}) and phase shift (eq. \ref{eq:dftphase}) for the "k-th" frequency bin ordinary sinus.
 
 \begin{equation} \label{eq:dftmag}
-\text{Amp}_k = 2 \cdot \sqrt{A_{k}^{2} + B_{k}^{2}} \cdot \frac{1}{N}
+\text{Amp}_k = 2 \cdot \sqrt{Real_{k}^{2} + Img_{k}^{2}} \cdot \frac{1}{N}
 \end{equation}
 
 \begin{equation} \label{eq:dftphase}
-\theta_k = \arctan \frac{B_k}{A_k}
+\theta_k = \arctan \frac{Img_k}{Real_k}
 \end{equation}
 
 
@@ -157,7 +157,7 @@ c_f = 0.027 Re_x^{(-1/7)}
 
 For aspect ratio $L_z / L_x = 4$ and $Re_{x_0} = 5 \cdot 10^5$ the node count for streamwise $Re = 10^6$ is roughly $2.99 \cdot 10^{12}$ nodes and for $Re = 10^7$ is roughly $1.92 \cdot 10^{15}$ nodes.
 
-Such node and cell counts are impossible to solve within practical walltime, therefore usage of DNS for sound analysis is limited to small ($10^3$)Reynolds numbers.
+Obtained node and cell counts are impossible to solve within practical walltime, therefore usage of DNS for sound analysis is limited to small ($10^3$) Reynolds numbers.
 
 %Figure \ref{kolmscale} shows the Kolmogorov limit and hence the volume mesh sizing required for the analysis. For Reynolds numbers above 1 million the limit is below $3.1 \cdot 10^{-5}$ meters, for $Re > 10^{7}$ the limit goes below $5.6 \cdot 10^{-6}$ meters. Use of such fine mesh elements generates mesh cell count in order of magnitude of billions for objects like a single passage of the compressor rotor, and hence is plainly impractical to use with high Reynolds numbers.
 

@@ -47,8 +47,9 @@
 
 % Define the page headers using the FancyHdr package and set up for one-sided printing
 \fancyhead{} % Clears all page headers and footers
-\rhead{\thepage} % Sets the right side header to show the page number
-\lhead{} % Clears the left side page header
+\fancyhead[LE, RO]{\thepage}
+%\rhead{\thepage} % Sets the right side header to show the page number
+%\lhead{} % Clears the left side page header
 
 \pagestyle{fancy} % Finally, use the "fancy" page style to implement the FancyHdr headers
 
@@ -194,13 +195,13 @@ Information on generation of sound phenomena occurring in the blade passage are 
 
 \acknowledgements{\addtocontents{toc}{\vspace{0em}} % Add a gap in the Contents, for aesthetics
 
-In this place I would like to thank the Chair of Thermal Engineering of Poznań University of Technology, with special recognition to MSc. Eng. Bartosz Ziegler and PhD Eng. Przemysław Grzymisławski for thorough scientific and personal support during this project.
+In this place I would like to thank the scientific staff of the Chair of Thermal Engineering of Poznań University of Technology, with special recognition to MSc. Eng. Bartosz Ziegler and PhD Eng. Przemysław Grzymisławski for thorough scientific and personal support during this project.
 
 Thanks to PhD Martyna Urbanek -- Trzeciak for thorough training in Python data analysis and support during preparation of Python post processing and visualization scripts.
 
 Thanks to MSc. Eng. Natalia Lewandowska for thorough review, proof reading and providing quality of this work.
 
-A big recognition goes to the owners and maintainers of the PLGRID - Polish HPC infrastructure, especially team in HPC Cyfronet center in AGH University of Science and Technology in Kraków. Being able to use the state of the art HPC clusters for analyses made this project possible.
+A big recognition goes to the owners and maintainers of the PLGRID - Polish HPC infrastructure, especially team in HPC Cyfronet center in AGH University of Science and Technology in Kraków. Being able to use the state of the art HPC clusters made this project possible.
 
 Thank you to the Python and \LaTeX ~community worldwide for tips \& tricks, that helped software development and typesetting of this document. All code and typesetting developed for this project is Open Source and publicly available on the project GitHub repository.
 
@@ -214,14 +215,14 @@ Thank you to the Python and \LaTeX ~community worldwide for tips \& tricks, that
 
 \pagestyle{fancy} % The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
 
-\lhead{\emph{Contents}} % Set the left side page header to "Contents"
+\fancyhead[RE, LO]{\emph{Contents}} % Set the left side page header to "Contents"
 \setcounter{tocdepth}{1}
 \tableofcontents % Write out the Table of Contents
 
-\lhead{\emph{List of Figures}} % Set the left side page header to "List of Figures"
+\fancyhead[RE, LO]{\emph{List of Figures}} % Set the left side page header to "List of Figures"
 \listoffigures % Write out the List of Figures
 
-\lhead{\emph{List of Tables}} % Set the left side page header to "List of Tables"
+\fancyhead[RE, LO]{\emph{List of Tables}} % Set the left side page header to "List of Tables"
 \listoftables % Write out the List of Tables
 
 %----------------------------------------------------------------------------------------
@@ -232,7 +233,7 @@ Thank you to the Python and \LaTeX ~community worldwide for tips \& tricks, that
 
 \setstretch{1.0} % Set the line spacing to 1.5, this makes the following tables easier to read
 
-\lhead{\emph{Abbreviations}} % Set the left side page header to "Abbreviations"
+\fancyhead[RE, LO]{\emph{Abbreviations}} % Set the left side page header to "Abbreviations"
 \listofsymbols{ll} % Include a list of Abbreviations (a table of two columns)
 {
 \textbf{APU} & \textbf{A}uxillary \textbf{P}ower \textbf{U}nit \\
@@ -297,7 +298,7 @@ Thank you to the Python and \LaTeX ~community worldwide for tips \& tricks, that
 
 \clearpage % Start a new page
 
-\lhead{\emph{Symbols}} % Set the left side page header to "Symbols"
+\fancyhead[RE, LO] {\emph{Symbols}} % Set the left side page header to "Symbols"
 
 \listofnomenclature{lll} % Include a list of Symbols (a three column table)
 {
@@ -372,7 +373,7 @@ $\omega$ & Turbulence specific dissipation rate & 1/s \\
 %----------------------------------------------------------------------------------------
 \clearpage % Start a new page
 
-\lhead{\emph{Indices}} % Set the left side page header to "Symbols"
+\fancyhead[RE, LO]{\emph{Indices}} % Set the left side page header to "Symbols"
 
 \listofindices{lll} % Include a list of Symbols (a three column table)
 {
@@ -457,7 +458,7 @@ $x, y, z$ & denotes direction of variable & m\\
 
 \label{Bibliography}
 
-\lhead{\emph{Bibliography}} % Change the page header to say "Bibliography"
+\fancyhead[RE, LO]{\emph{Bibliography}} % Change the page header to say "Bibliography"
 
 \bibliographystyle{abbrv} % "abbrv" Use the "unsrtnat" BibTeX style for formatting the Bibliography
 \nocite{*}
